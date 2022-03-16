@@ -19,7 +19,7 @@ indent_mode=2
 
 [project]
 name=BluePill
-base_path=/home/pi/src/arm/src/stm32f1_blue
+base_path=/home/pi/src/git/pakosep/stm32/stm32f1_blue/
 description=
 file_patterns=
 
@@ -29,12 +29,6 @@ long_line_column=100
 
 [files]
 current_page=0
-FILE_NAME_0=7770;C;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fsrc%2Farm%2Fsrc%2Fstm32f1_blue%2Fmain.c;0;2
-FILE_NAME_1=2524;Make;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fsrc%2Farm%2Fsrc%2Fstm32f1_blue%2FMakefile;0;2
-FILE_NAME_2=11885;C++;0;EISO-8859-1;1;1;0;%2Fhome%2Fpi%2Fsrc%2Farm%2Fsrc%2Fstm32f1_blue%2Fconfig.h;0;2
-FILE_NAME_3=11611;C;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fsrc%2Farm%2Fsrc%2Fstm32f1_blue%2Finc%2Ftool%2FUARTLib.c;0;2
-FILE_NAME_4=875;C++;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fsrc%2Farm%2Fsrc%2Fstm32f1_blue%2Finc%2Ftool%2FUARTLib.h;0;2
-FILE_NAME_5=2019;C;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fsrc%2Farm%2Fsrc%2Fstm32f1_blue%2Finc%2Ftool%2Fsp_term.c;0;2
 
 [VTE]
 last_dir=/home/pi
