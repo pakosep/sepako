@@ -43,12 +43,10 @@
 #define TIM_SEC	(F_CPU/(8))
 
 #define TIM3_ARR	0xffff
-
 #define TC 							  6
 //#define NVIC_VectTab_RAM 	0x20000000
 #define 	NVIC_VectTab_RAM    ((uint32_t)0x20000000)
 #define 	NVIC_VectTab_FLASH  ((uint32_t)0x08000000)
-
 #define Offset 						0x0
 
 /*

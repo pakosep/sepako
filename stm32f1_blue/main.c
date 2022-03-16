@@ -268,10 +268,12 @@ void minios(void){
 			u08 i2weg[3];
 			
 			i2c1r_init();
+			
 			i2weg[0]=0;     // Register
 			i2weg[1]=0x1f;  // MSB Data
 			i2weg[2]=0x77;  // LSB Data
-			i2c1_write(INA219_ADDR,i2weg,3);
+			//i2c1_write(INA219_ADDR,i2weg,3);
+			UaPutS("debug_0");
 		
 			i2weg[0]=5;    	// Register
 			i2weg[1]=0x1; 	// MSB Data
@@ -307,10 +309,12 @@ void minios(void){
 				int2uart (cur,4,3);
 				
 				tr_locate(1,2);
+				LED ^= 1;	
 			}
 			
+			
+			
 			if(PB11_i==1) {
-				LED ^= 1;	
 				cnt2++;
 			}
 			
