@@ -1,0 +1,1082 @@
+ARM GAS  /tmp/cc6o0uHi.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   3              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   4              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   5              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   6              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   7              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+   8              		.eabi_attribute 30, 2	@ Tag_ABI_optimization_goals
+   9              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  10              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  11              		.file	"rtc.c"
+  12              	@ GNU C99 (15:7-2018-q2-6) version 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]
+  13              	@	compiled by GNU C version 8.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl ve
+  14              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  15              	@ options passed:  -I . -imultilib thumb/v7-m -MD out/rtc.d -MF out/rtc.d
+  16              	@ -MP -MQ out/rtc.o -D__USES_INITFINI__ -D RAMCODE -D STM32F10X_HD
+  17              	@ inc/rtc/rtc.c -mcpu=cortex-m3 -mthumb -auxbase-strip out/rtc.o -O2 -Wall
+  18              	@ -Wstrict-prototypes -Wextra -Wno-uninitialized
+  19              	@ -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable
+  20              	@ -std=gnu99 -ffunction-sections -fdata-sections -fverbose-asm
+  21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
+  22              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
+  23              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
+  24              	@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
+  25              	@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
+  26              	@ -fchkp-use-static-const-bounds -fchkp-use-wrappers -fcode-hoisting
+  27              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  28              	@ -fcrossjumping -fcse-follow-jumps -fdata-sections -fdefer-pop
+  29              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+  30              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  31              	@ -fexpensive-optimizations -fforward-propagate -ffp-int-builtin-inexact
+  32              	@ -ffunction-cse -ffunction-sections -fgcse -fgcse-lm -fgnu-runtime
+  33              	@ -fgnu-unique -fguess-branch-probability -fhoist-adjacent-loads -fident
+  34              	@ -fif-conversion -fif-conversion2 -findirect-inlining -finline
+  35              	@ -finline-atomics -finline-functions-called-once -finline-small-functions
+  36              	@ -fipa-bit-cp -fipa-cp -fipa-icf -fipa-icf-functions -fipa-icf-variables
+  37              	@ -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
+  38              	@ -fipa-vrp -fira-hoist-pressure -fira-share-save-slots
+  39              	@ -fira-share-spill-slots -fisolate-erroneous-paths-dereference -fivopts
+  40              	@ -fkeep-static-consts -fleading-underscore -flifetime-dse -flra-remat
+  41              	@ -flto-odr-type-merging -fmath-errno -fmerge-constants
+  42              	@ -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
+  43              	@ -foptimize-sibling-calls -foptimize-strlen -fpartial-inlining -fpeephole
+  44              	@ -fpeephole2 -fplt -fprefetch-loop-arrays -freg-struct-return
+  45              	@ -freorder-blocks -freorder-functions -frerun-cse-after-loop
+  46              	@ -fsched-critical-path-heuristic -fsched-dep-count-heuristic
+  47              	@ -fsched-group-heuristic -fsched-interblock -fsched-last-insn-heuristic
+  48              	@ -fsched-pressure -fsched-rank-heuristic -fsched-spec
+  49              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  50              	@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
+  51              	@ -fshow-column -fshrink-wrap -fshrink-wrap-separate -fsigned-zeros
+  52              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fssa-backprop -fssa-phiopt
+  53              	@ -fstdarg-opt -fstore-merging -fstrict-aliasing -fstrict-overflow
+  54              	@ -fstrict-volatile-bitfields -fsync-libcalls -fthread-jumps
+  55              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  56              	@ -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim
+  57              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+ARM GAS  /tmp/cc6o0uHi.s 			page 2
+
+
+  58              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  59              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  60              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr
+  61              	@ -ftree-sra -ftree-switch-conversion -ftree-tail-merge -ftree-ter
+  62              	@ -ftree-vrp -funit-at-a-time -fverbose-asm -fzero-initialized-in-bss
+  63              	@ -masm-syntax-unified -mfix-cortex-m3-ldrd -mlittle-endian
+  64              	@ -mpic-data-is-text-relative -msched-prolog -mthumb -munaligned-access
+  65              	@ -mvectorize-with-neon-quad
+  66              	
+  67              		.text
+  68              		.section	.text.BkpRegInit,"ax",%progbits
+  69              		.align	1
+  70              		.p2align 2,,3
+  71              		.global	BkpRegInit
+  72              		.syntax unified
+  73              		.thumb
+  74              		.thumb_func
+  75              		.fpu softvfp
+  76              		.type	BkpRegInit, %function
+  77              	BkpRegInit:
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80              		@ link register save eliminated.
+  81              	@ inc/rtc/rtc.c:15: 		bPWR_CR_DBP = 1;			   //Enable access to the Backup register and RTC;
+  82 0000 0120     		movs	r0, #1	@ tmp115,
+  83              	@ inc/rtc/rtc.c:14: 		RCC->APB1ENR |= RCC_APB1ENR_BKPEN | RCC_APB1ENR_PWREN ;  //Enable Power and c
+  84 0002 044A     		ldr	r2, .L3	@ tmp112,
+  85              	@ inc/rtc/rtc.c:15: 		bPWR_CR_DBP = 1;			   //Enable access to the Backup register and RTC;
+  86 0004 0449     		ldr	r1, .L3+4	@ tmp114,
+  87              	@ inc/rtc/rtc.c:14: 		RCC->APB1ENR |= RCC_APB1ENR_BKPEN | RCC_APB1ENR_PWREN ;  //Enable Power and c
+  88 0006 D369     		ldr	r3, [r2, #28]	@ _1, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+  89 0008 43F0C053 		orr	r3, r3, #402653184	@ _2, _1,
+  90 000c D361     		str	r3, [r2, #28]	@ _2, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+  91              	@ inc/rtc/rtc.c:15: 		bPWR_CR_DBP = 1;			   //Enable access to the Backup register and RTC;
+  92 000e 0860     		str	r0, [r1]	@ tmp115, MEM[(volatile long unsigned int *)1108213792B]
+  93              	@ inc/rtc/rtc.c:17: 	}
+  94 0010 7047     		bx	lr	@
+  95              	.L4:
+  96 0012 00BF     		.align	2
+  97              	.L3:
+  98 0014 00100240 		.word	1073876992
+  99 0018 20000E42 		.word	1108213792
+ 100              		.size	BkpRegInit, .-BkpRegInit
+ 101              		.section	.text.rtc_time2unix,"ax",%progbits
+ 102              		.align	1
+ 103              		.p2align 2,,3
+ 104              		.global	rtc_time2unix
+ 105              		.syntax unified
+ 106              		.thumb
+ 107              		.thumb_func
+ 108              		.fpu softvfp
+ 109              		.type	rtc_time2unix, %function
+ 110              	rtc_time2unix:
+ 111              		@ args = 0, pretend = 0, frame = 0
+ 112              		@ frame_needed = 0, uses_anonymous_args = 0
+ 113              	@ inc/rtc/rtc.c:66: 		if (y > 2106 || !rtx->mon || !rtx->mdy) return 1;
+ 114 0000 40F63A02 		movw	r2, #2106	@ tmp153,
+ARM GAS  /tmp/cc6o0uHi.s 			page 3
+
+
+ 115              	@ inc/rtc/rtc.c:65: 		y = rtx->yer - 1970;
+ 116 0004 CB88     		ldrh	r3, [r1, #6]	@ rtx_34(D)->yer, rtx_34(D)->yer
+ 117 0006 A3F2B273 		subw	r3, r3, #1970	@ y, rtx_34(D)->yer,
+ 118              	@ inc/rtc/rtc.c:66: 		if (y > 2106 || !rtx->mon || !rtx->mdy) return 1;
+ 119 000a 9342     		cmp	r3, r2	@ y, tmp153
+ 120 000c 25D8     		bhi	.L16	@,
+ 121              	@ inc/rtc/rtc.c:62: u08  rtc_time2unix (uint32_t *uxt, const T_RTC *rtx)	{ // Oblicz unixtime z dat
+ 122 000e F0B5     		push	{r4, r5, r6, r7, lr}	@
+ 123              	@ inc/rtc/rtc.c:66: 		if (y > 2106 || !rtx->mon || !rtx->mdy) return 1;
+ 124 0010 0D79     		ldrb	r5, [r1, #4]	@ zero_extendqisi2	@ _4, rtx_34(D)->mon
+ 125 0012 FDB1     		cbz	r5, .L18	@ _4,
+ 126              	@ inc/rtc/rtc.c:66: 		if (y > 2106 || !rtx->mon || !rtx->mdy) return 1;
+ 127 0014 CF78     		ldrb	r7, [r1, #3]	@ zero_extendqisi2	@ _5, rtx_34(D)->mdy
+ 128 0016 EFB1     		cbz	r7, .L18	@ _5,
+ 129              	@ inc/rtc/rtc.c:69: 		utc += y * 365 + (y > 2 ? 1 : 0);
+ 130 0018 40F26D12 		movw	r2, #365	@ tmp158,
+ 131              	@ inc/rtc/rtc.c:68: 		utc = y / 4 * 1461; y %= 4;
+ 132 001c 40F2B554 		movw	r4, #1461	@ tmp156,
+ 133 0020 03F0030E 		and	lr, r3, #3	@ y, y,
+ 134              	@ inc/rtc/rtc.c:69: 		utc += y * 365 + (y > 2 ? 1 : 0);
+ 135 0024 02FB0EF2 		mul	r2, r2, lr	@ tmp157, tmp158, y
+ 136              	@ inc/rtc/rtc.c:68: 		utc = y / 4 * 1461; y %= 4;
+ 137 0028 9B08     		lsrs	r3, r3, #2	@ tmp154, y,
+ 138 002a 04FB0323 		mla	r3, r4, r3, r2	@ _41, tmp156, tmp154, tmp157
+ 139              	@ inc/rtc/rtc.c:70: 		for (i = 0; i < 12 && i + 1 < rtx->mon; i++) {
+ 140 002e 0022     		movs	r2, #0	@ i,
+ 141              	@ inc/rtc/rtc.c:69: 		utc += y * 365 + (y > 2 ? 1 : 0);
+ 142 0030 BEF1030F 		cmp	lr, #3	@ y,
+ 143 0034 08BF     		it	eq	@
+ 144 0036 0133     		addeq	r3, r3, #1	@,, utc, _41
+ 145              	@ inc/rtc/rtc.c:71: 			utc += samurai[i];
+ 146 0038 DFF884C0 		ldr	ip, .L29+4	@ tmp179,
+ 147              	.L7:
+ 148              	@ inc/rtc/rtc.c:70: 		for (i = 0; i < 12 && i + 1 < rtx->mon; i++) {
+ 149 003c 541C     		adds	r4, r2, #1	@ _11, i,
+ 150 003e AC42     		cmp	r4, r5	@ _11, _4
+ 151 0040 0FD2     		bcs	.L10	@,
+ 152              	@ inc/rtc/rtc.c:71: 			utc += samurai[i];
+ 153 0042 1CF80260 		ldrb	r6, [ip, r2]	@ zero_extendqisi2	@ tmp162, samurai
+ 154              	@ inc/rtc/rtc.c:72: 			if (i == 1 && y == 2) utc++;
+ 155 0046 012A     		cmp	r2, #1	@ i,
+ 156              	@ inc/rtc/rtc.c:71: 			utc += samurai[i];
+ 157 0048 3344     		add	r3, r3, r6	@ utc, tmp162
+ 158              	@ inc/rtc/rtc.c:72: 			if (i == 1 && y == 2) utc++;
+ 159 004a 20D0     		beq	.L28	@,
+ 160              	@ inc/rtc/rtc.c:70: 		for (i = 0; i < 12 && i + 1 < rtx->mon; i++) {
+ 161 004c 0C2C     		cmp	r4, #12	@ _11,
+ 162 004e 08D0     		beq	.L10	@,
+ 163              	@ inc/rtc/rtc.c:70: 		for (i = 0; i < 12 && i + 1 < rtx->mon; i++) {
+ 164 0050 2246     		mov	r2, r4	@ i, _11
+ 165 0052 F3E7     		b	.L7	@
+ 166              	.L18:
+ 167              	@ inc/rtc/rtc.c:66: 		if (y > 2106 || !rtx->mon || !rtx->mdy) return 1;
+ 168 0054 0122     		movs	r2, #1	@ <retval>,
+ 169              	@ inc/rtc/rtc.c:81: 	}
+ 170 0056 1046     		mov	r0, r2	@, <retval>
+ 171 0058 F0BD     		pop	{r4, r5, r6, r7, pc}	@
+ARM GAS  /tmp/cc6o0uHi.s 			page 4
+
+
+ 172              	.L16:
+ 173              	@ inc/rtc/rtc.c:66: 		if (y > 2106 || !rtx->mon || !rtx->mdy) return 1;
+ 174 005a 0122     		movs	r2, #1	@ <retval>,
+ 175              	@ inc/rtc/rtc.c:81: 	}
+ 176 005c 1046     		mov	r0, r2	@, <retval>
+ 177 005e 7047     		bx	lr	@
+ 178              	.L19:
+ 179              	@ inc/rtc/rtc.c:72: 			if (i == 1 && y == 2) utc++;
+ 180 0060 1346     		mov	r3, r2	@ utc, utc
+ 181              	.L10:
+ 182              	@ inc/rtc/rtc.c:76: 		utc += rtx->hor * 3600 + rtx->min * 60 + rtx->sec;
+ 183 0062 4FF46165 		mov	r5, #3600	@ tmp167,
+ 184 0066 4C78     		ldrb	r4, [r1, #1]	@ zero_extendqisi2	@ rtx_34(D)->min, rtx_34(D)->min
+ 185 0068 8A78     		ldrb	r2, [r1, #2]	@ zero_extendqisi2	@ rtx_34(D)->hor, rtx_34(D)->hor
+ 186 006a C4EB0414 		rsb	r4, r4, r4, lsl #4	@ tmp171, rtx_34(D)->min, rtx_34(D)->min,
+ 187 006e A400     		lsls	r4, r4, #2	@ tmp172, tmp171,
+ 188 0070 05FB0242 		mla	r2, r5, r2, r4	@ tmp173, tmp167, rtx_34(D)->hor, tmp172
+ 189 0074 0978     		ldrb	r1, [r1]	@ zero_extendqisi2	@ rtx_34(D)->sec, rtx_34(D)->sec
+ 190              	@ inc/rtc/rtc.c:74: 		utc += rtx->mdy - 1;
+ 191 0076 013F     		subs	r7, r7, #1	@ tmp163, _5,
+ 192              	@ inc/rtc/rtc.c:76: 		utc += rtx->hor * 3600 + rtx->min * 60 + rtx->sec;
+ 193 0078 0A44     		add	r2, r2, r1	@ tmp175, rtx_34(D)->sec
+ 194              	@ inc/rtc/rtc.c:74: 		utc += rtx->mdy - 1;
+ 195 007a 3B44     		add	r3, r3, r7	@ utc, tmp163
+ 196              	@ inc/rtc/rtc.c:78: 		utc -= (long)(_RTC_TDIF * 3600);
+ 197 007c A2F5E157 		sub	r7, r2, #7200	@ tmp176, tmp175,
+ 198              	@ inc/rtc/rtc.c:80: 		return 0;
+ 199 0080 0022     		movs	r2, #0	@ <retval>,
+ 200              	@ inc/rtc/rtc.c:75: 		utc *= 86400;
+ 201 0082 0E49     		ldr	r1, .L29	@ tmp164,
+ 202              	@ inc/rtc/rtc.c:78: 		utc -= (long)(_RTC_TDIF * 3600);
+ 203 0084 01FB0373 		mla	r3, r1, r3, r7	@ utc, tmp164, utc, tmp176
+ 204              	@ inc/rtc/rtc.c:79: 		*uxt = utc;
+ 205 0088 0360     		str	r3, [r0]	@ utc, *uxt_46(D)
+ 206              	@ inc/rtc/rtc.c:81: 	}
+ 207 008a 1046     		mov	r0, r2	@, <retval>
+ 208 008c F0BD     		pop	{r4, r5, r6, r7, pc}	@
+ 209              	.L28:
+ 210              	@ inc/rtc/rtc.c:72: 			if (i == 1 && y == 2) utc++;
+ 211 008e BEF1020F 		cmp	lr, #2	@ y,
+ 212 0092 09D0     		beq	.L9	@,
+ 213              	@ inc/rtc/rtc.c:70: 		for (i = 0; i < 12 && i + 1 < rtx->mon; i++) {
+ 214 0094 032D     		cmp	r5, #3	@ _4,
+ 215 0096 E4D9     		bls	.L10	@,
+ 216 0098 042D     		cmp	r5, #4	@ _4,
+ 217              	@ inc/rtc/rtc.c:71: 			utc += samurai[i];
+ 218 009a 03F11F02 		add	r2, r3, #31	@ utc, utc,
+ 219              	@ inc/rtc/rtc.c:70: 		for (i = 0; i < 12 && i + 1 < rtx->mon; i++) {
+ 220 009e DFD9     		bls	.L19	@,
+ 221              	@ inc/rtc/rtc.c:71: 			utc += samurai[i];
+ 222 00a0 3D33     		adds	r3, r3, #61	@ utc, utc,
+ 223              	.L14:
+ 224              	@ inc/rtc/rtc.c:62: u08  rtc_time2unix (uint32_t *uxt, const T_RTC *rtx)	{ // Oblicz unixtime z dat
+ 225 00a2 0424     		movs	r4, #4	@ _11,
+ 226              	@ inc/rtc/rtc.c:70: 		for (i = 0; i < 12 && i + 1 < rtx->mon; i++) {
+ 227 00a4 2246     		mov	r2, r4	@ i, _11
+ 228 00a6 C9E7     		b	.L7	@
+ARM GAS  /tmp/cc6o0uHi.s 			page 5
+
+
+ 229              	.L9:
+ 230              	@ inc/rtc/rtc.c:70: 		for (i = 0; i < 12 && i + 1 < rtx->mon; i++) {
+ 231 00a8 032D     		cmp	r5, #3	@ _4,
+ 232              	@ inc/rtc/rtc.c:72: 			if (i == 1 && y == 2) utc++;
+ 233 00aa 03F10102 		add	r2, r3, #1	@ utc, utc,
+ 234              	@ inc/rtc/rtc.c:70: 		for (i = 0; i < 12 && i + 1 < rtx->mon; i++) {
+ 235 00ae D7D9     		bls	.L19	@,
+ 236              	@ inc/rtc/rtc.c:70: 		for (i = 0; i < 12 && i + 1 < rtx->mon; i++) {
+ 237 00b0 042D     		cmp	r5, #4	@ _4,
+ 238              	@ inc/rtc/rtc.c:71: 			utc += samurai[i];
+ 239 00b2 03F12002 		add	r2, r3, #32	@ utc, utc,
+ 240              	@ inc/rtc/rtc.c:70: 		for (i = 0; i < 12 && i + 1 < rtx->mon; i++) {
+ 241 00b6 D3D9     		bls	.L19	@,
+ 242              	@ inc/rtc/rtc.c:71: 			utc += samurai[i];
+ 243 00b8 3E33     		adds	r3, r3, #62	@ utc, utc,
+ 244 00ba F2E7     		b	.L14	@
+ 245              	.L30:
+ 246              		.align	2
+ 247              	.L29:
+ 248 00bc 80510100 		.word	86400
+ 249 00c0 00000000 		.word	.LANCHOR0
+ 250              		.size	rtc_time2unix, .-rtc_time2unix
+ 251              		.section	.text.RtcInit,"ax",%progbits
+ 252              		.align	1
+ 253              		.p2align 2,,3
+ 254              		.global	RtcInit
+ 255              		.syntax unified
+ 256              		.thumb
+ 257              		.thumb_func
+ 258              		.fpu softvfp
+ 259              		.type	RtcInit, %function
+ 260              	RtcInit:
+ 261              		@ args = 0, pretend = 0, frame = 8
+ 262              		@ frame_needed = 0, uses_anonymous_args = 0
+ 263 0000 70B5     		push	{r4, r5, r6, lr}	@
+ 264              	@ inc/rtc/rtc.c:22: 		PWR->CR = PWR_CR_DBP;
+ 265 0002 4FF48074 		mov	r4, #256	@ tmp128,
+ 266              	@ inc/rtc/rtc.c:20: 		RCC->APB1ENR |= RCC_APB1ENR_BKPEN | RCC_APB1ENR_PWREN ;  //Enable Power and c
+ 267 0006 214B     		ldr	r3, .L41	@ tmp125,
+ 268              	@ inc/rtc/rtc.c:22: 		PWR->CR = PWR_CR_DBP;
+ 269 0008 2148     		ldr	r0, .L41+4	@ tmp127,
+ 270              	@ inc/rtc/rtc.c:26: 		while( ~RCC->BDCR & RCC_BDCR_LSERDY );
+ 271 000a 1A46     		mov	r2, r3	@ tmp131, tmp125
+ 272              	@ inc/rtc/rtc.c:20: 		RCC->APB1ENR |= RCC_APB1ENR_BKPEN | RCC_APB1ENR_PWREN ;  //Enable Power and c
+ 273 000c D969     		ldr	r1, [r3, #28]	@ _1, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ 274              	@ inc/rtc/rtc.c:19: void RtcInit(void)						{
+ 275 000e 82B0     		sub	sp, sp, #8	@,,
+ 276              	@ inc/rtc/rtc.c:20: 		RCC->APB1ENR |= RCC_APB1ENR_BKPEN | RCC_APB1ENR_PWREN ;  //Enable Power and c
+ 277 0010 41F0C051 		orr	r1, r1, #402653184	@ _2, _1,
+ 278 0014 D961     		str	r1, [r3, #28]	@ _2, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ 279              	@ inc/rtc/rtc.c:22: 		PWR->CR = PWR_CR_DBP;
+ 280 0016 0460     		str	r4, [r0]	@ tmp128, MEM[(struct PWR_TypeDef *)1073770496B].CR
+ 281              	@ inc/rtc/rtc.c:25: 		RCC->BDCR |= RCC_BDCR_LSEON  ; 					//start RTC must be after PWR->CR
+ 282 0018 196A     		ldr	r1, [r3, #32]	@ _3, MEM[(struct RCC_TypeDef *)1073876992B].BDCR
+ 283 001a 41F00101 		orr	r1, r1, #1	@ _4, _3,
+ 284 001e 1962     		str	r1, [r3, #32]	@ _4, MEM[(struct RCC_TypeDef *)1073876992B].BDCR
+ 285              	.L32:
+ARM GAS  /tmp/cc6o0uHi.s 			page 6
+
+
+ 286              	@ inc/rtc/rtc.c:26: 		while( ~RCC->BDCR & RCC_BDCR_LSERDY );
+ 287 0020 136A     		ldr	r3, [r2, #32]	@ _5, MEM[(struct RCC_TypeDef *)1073876992B].BDCR
+ 288 0022 9B07     		lsls	r3, r3, #30	@, _5,
+ 289 0024 FCD5     		bpl	.L32	@,
+ 290              	@ inc/rtc/rtc.c:42: 		Rtc.sec=45;	// 0..59 
+ 291 0026 42F62D60 		movw	r0, #11821	@ tmp138,
+ 292              	@ inc/rtc/rtc.c:41: 		Rtc.min=46;	// 0..59 
+ 293 002a 40F60A46 		movw	r6, #3082	@ tmp141,
+ 294              	@ inc/rtc/rtc.c:39: 		Rtc.mdy=12;	// 1..31 
+ 295 002e 40F20945 		movw	r5, #1033	@ tmp144,
+ 296              	@ inc/rtc/rtc.c:43: 		Rtc.wdy=4;	// 0..6 (Niedziela..Sobota) 
+ 297 0032 40F2E374 		movw	r4, #2019	@ tmp147,
+ 298              	@ inc/rtc/rtc.c:27: 		RCC->BDCR |= RCC_BDCR_RTCEN | RCC_BDCR_RTCSEL_0 ;
+ 299 0036 116A     		ldr	r1, [r2, #32]	@ _8, MEM[(struct RCC_TypeDef *)1073876992B].BDCR
+ 300              	@ inc/rtc/rtc.c:42: 		Rtc.sec=45;	// 0..59 
+ 301 0038 164B     		ldr	r3, .L41+8	@ tmp136,
+ 302              	@ inc/rtc/rtc.c:27: 		RCC->BDCR |= RCC_BDCR_RTCEN | RCC_BDCR_RTCSEL_0 ;
+ 303 003a 41F40141 		orr	r1, r1, #33024	@ _9, _8,
+ 304 003e 1162     		str	r1, [r2, #32]	@ _9, MEM[(struct RCC_TypeDef *)1073876992B].BDCR
+ 305              	@ inc/rtc/rtc.c:42: 		Rtc.sec=45;	// 0..59 
+ 306 0040 1880     		strh	r0, [r3]	@ movhi	@ tmp138, MEM[(unsigned char *)&Rtc]
+ 307              	@ inc/rtc/rtc.c:44: 		rtc_time2unix ( &uxt, &Rtc);
+ 308 0042 1946     		mov	r1, r3	@, tmp136
+ 309 0044 01A8     		add	r0, sp, #4	@,,
+ 310              	@ inc/rtc/rtc.c:41: 		Rtc.min=46;	// 0..59 
+ 311 0046 5E80     		strh	r6, [r3, #2]	@ movhi	@ tmp141, MEM[(unsigned char *)&Rtc + 2B]
+ 312              	@ inc/rtc/rtc.c:39: 		Rtc.mdy=12;	// 1..31 
+ 313 0048 9D80     		strh	r5, [r3, #4]	@ movhi	@ tmp144, MEM[(void *)&Rtc + 4B]
+ 314              	@ inc/rtc/rtc.c:43: 		Rtc.wdy=4;	// 0..6 (Niedziela..Sobota) 
+ 315 004a DC80     		strh	r4, [r3, #6]	@ movhi	@ tmp147, MEM[(void *)&Rtc + 6B]
+ 316              	@ inc/rtc/rtc.c:44: 		rtc_time2unix ( &uxt, &Rtc);
+ 317 004c FFF7FEFF 		bl	rtc_time2unix	@
+ 318              	@ inc/rtc/rtc.c:46: 		while(!bRTC_CRL_RTOFF); 	//wait to synchro
+ 319 0050 114A     		ldr	r2, .L41+12	@ tmp150,
+ 320              	.L33:
+ 321              	@ inc/rtc/rtc.c:46: 		while(!bRTC_CRL_RTOFF); 	//wait to synchro
+ 322 0052 1368     		ldr	r3, [r2]	@ _10, MEM[(volatile long unsigned int *)1107624084B]
+ 323 0054 002B     		cmp	r3, #0	@ _10
+ 324 0056 FCD0     		beq	.L33	@
+ 325              	@ inc/rtc/rtc.c:47: 		bRTC_CRL_CNF = 1;					//Start edit mode
+ 326 0058 0123     		movs	r3, #1	@ tmp152,
+ 327              	@ inc/rtc/rtc.c:48: 		RTC->PRLL = 0x7ffe;				//Set prescaler		ones
+ 328 005a 47F6FE72 		movw	r2, #32766	@ tmp155,
+ 329              	@ inc/rtc/rtc.c:51: 		bRTC_CRL_CNF = 0;					//End edit mode
+ 330 005e 0024     		movs	r4, #0	@ tmp162,
+ 331              	@ inc/rtc/rtc.c:47: 		bRTC_CRL_CNF = 1;					//Start edit mode
+ 332 0060 0E48     		ldr	r0, .L41+16	@ tmp151,
+ 333              	@ inc/rtc/rtc.c:48: 		RTC->PRLL = 0x7ffe;				//Set prescaler		ones
+ 334 0062 0F49     		ldr	r1, .L41+20	@ tmp153,
+ 335              	@ inc/rtc/rtc.c:47: 		bRTC_CRL_CNF = 1;					//Start edit mode
+ 336 0064 0360     		str	r3, [r0]	@ tmp152, MEM[(volatile long unsigned int *)1107624080B]
+ 337              	@ inc/rtc/rtc.c:49: 		RTC->CNTL = uxt&0xffff;		//Set time low		set counter/point time
+ 338 0066 019B     		ldr	r3, [sp, #4]	@ uxt.0_11, uxt
+ 339              	@ inc/rtc/rtc.c:48: 		RTC->PRLL = 0x7ffe;				//Set prescaler		ones
+ 340 0068 8A81     		strh	r2, [r1, #12]	@ movhi	@ tmp155, MEM[(struct RTC_TypeDef *)1073752064B].PRLL
+ 341              	@ inc/rtc/rtc.c:49: 		RTC->CNTL = uxt&0xffff;		//Set time low		set counter/point time
+ 342 006a 9DB2     		uxth	r5, r3	@ _12, uxt.0_11
+ARM GAS  /tmp/cc6o0uHi.s 			page 7
+
+
+ 343              	@ inc/rtc/rtc.c:52: 		while(!bRTC_CRL_RTOFF); 	//wait to synchro
+ 344 006c 0A4A     		ldr	r2, .L41+12	@ tmp163,
+ 345              	@ inc/rtc/rtc.c:50: 		RTC->CNTH = (uxt>>16);		//Set time high		set counter/point time		
+ 346 006e 1B0C     		lsrs	r3, r3, #16	@ _14, uxt.0_11,
+ 347              	@ inc/rtc/rtc.c:49: 		RTC->CNTL = uxt&0xffff;		//Set time low		set counter/point time
+ 348 0070 8D83     		strh	r5, [r1, #28]	@ movhi	@ _12, MEM[(struct RTC_TypeDef *)1073752064B].CNTL
+ 349              	@ inc/rtc/rtc.c:50: 		RTC->CNTH = (uxt>>16);		//Set time high		set counter/point time		
+ 350 0072 0B83     		strh	r3, [r1, #24]	@ movhi	@ _14, MEM[(struct RTC_TypeDef *)1073752064B].CNTH
+ 351              	@ inc/rtc/rtc.c:51: 		bRTC_CRL_CNF = 0;					//End edit mode
+ 352 0074 0460     		str	r4, [r0]	@ tmp162, MEM[(volatile long unsigned int *)1107624080B]
+ 353              	.L34:
+ 354              	@ inc/rtc/rtc.c:52: 		while(!bRTC_CRL_RTOFF); 	//wait to synchro
+ 355 0076 1368     		ldr	r3, [r2]	@ _15, MEM[(volatile long unsigned int *)1107624084B]
+ 356 0078 002B     		cmp	r3, #0	@ _15
+ 357 007a FCD0     		beq	.L34	@
+ 358              	@ inc/rtc/rtc.c:56: 		RTC->CRH = RTC_CRH_SECIE;		// Set time interrupt
+ 359 007c 0120     		movs	r0, #1	@ tmp166,
+ 360              	@ ./inc/core_cm3.h:1504:   NVIC->ISER[((uint32_t)(IRQn) >> 5)] = (1 << ((uint32_t)(IRQn) & 0x1F)); 
+ 361 007e 0822     		movs	r2, #8	@ tmp168,
+ 362              	@ inc/rtc/rtc.c:56: 		RTC->CRH = RTC_CRH_SECIE;		// Set time interrupt
+ 363 0080 0749     		ldr	r1, .L41+20	@ tmp164,
+ 364              	@ ./inc/core_cm3.h:1504:   NVIC->ISER[((uint32_t)(IRQn) >> 5)] = (1 << ((uint32_t)(IRQn) & 0x1F)); 
+ 365 0082 084B     		ldr	r3, .L41+24	@ tmp167,
+ 366              	@ inc/rtc/rtc.c:56: 		RTC->CRH = RTC_CRH_SECIE;		// Set time interrupt
+ 367 0084 0880     		strh	r0, [r1]	@ movhi	@ tmp166, MEM[(struct RTC_TypeDef *)1073752064B].CRH
+ 368              	@ ./inc/core_cm3.h:1504:   NVIC->ISER[((uint32_t)(IRQn) >> 5)] = (1 << ((uint32_t)(IRQn) & 0x1F)); 
+ 369 0086 1A60     		str	r2, [r3]	@ tmp168, MEM[(struct NVIC_Type *)3758153984B].ISER
+ 370              	@ inc/rtc/rtc.c:60: 	}
+ 371 0088 02B0     		add	sp, sp, #8	@,,
+ 372              		@ sp needed	@
+ 373 008a 70BD     		pop	{r4, r5, r6, pc}	@
+ 374              	.L42:
+ 375              		.align	2
+ 376              	.L41:
+ 377 008c 00100240 		.word	1073876992
+ 378 0090 00700040 		.word	1073770496
+ 379 0094 00000000 		.word	Rtc
+ 380 0098 94000542 		.word	1107624084
+ 381 009c 90000542 		.word	1107624080
+ 382 00a0 00280040 		.word	1073752064
+ 383 00a4 00E100E0 		.word	-536813312
+ 384              		.size	RtcInit, .-RtcInit
+ 385              		.section	.text.rtc_unix2time,"ax",%progbits
+ 386              		.align	1
+ 387              		.p2align 2,,3
+ 388              		.global	rtc_unix2time
+ 389              		.syntax unified
+ 390              		.thumb
+ 391              		.thumb_func
+ 392              		.fpu softvfp
+ 393              		.type	rtc_unix2time, %function
+ 394              	rtc_unix2time:
+ 395              		@ args = 0, pretend = 0, frame = 0
+ 396              		@ frame_needed = 0, uses_anonymous_args = 0
+ 397 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}	@
+ 398              	@ inc/rtc/rtc.c:93: 		rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 399 0004 40F2B55E 		movw	lr, #1461	@ tmp234,
+ARM GAS  /tmp/cc6o0uHi.s 			page 8
+
+
+ 400              	@ inc/rtc/rtc.c:90: 		rtx->hor = (uint8_t) (utc % 24); utc /= 24;
+ 401 0008 434E     		ldr	r6, .L61	@ tmp203,
+ 402              	@ inc/rtc/rtc.c:86: 		utc += (long)(_RTC_TDIF * 3600);
+ 403 000a 00F5E150 		add	r0, r0, #7200	@ utc, utc,
+ 404              	@ inc/rtc/rtc.c:90: 		rtx->hor = (uint8_t) (utc % 24); utc /= 24;
+ 405 000e A6FB0036 		umull	r3, r6, r6, r0	@ tmp271, tmp202, tmp203, utc
+ 406              	@ inc/rtc/rtc.c:88: 		rtx->sec = (uint8_t) (utc % 60); utc /= 60;
+ 407 0012 424C     		ldr	r4, .L61+4	@ tmp150,
+ 408              	@ inc/rtc/rtc.c:89: 		rtx->min = (uint8_t) (utc % 60); utc /= 60;
+ 409 0014 424B     		ldr	r3, .L61+8	@ tmp182,
+ 410              	@ inc/rtc/rtc.c:88: 		rtx->sec = (uint8_t) (utc % 60); utc /= 60;
+ 411 0016 A4FB0025 		umull	r2, r5, r4, r0	@ tmp272, tmp149, tmp150, utc
+ 412              	@ inc/rtc/rtc.c:89: 		rtx->min = (uint8_t) (utc % 60); utc /= 60;
+ 413 001a A3FB003C 		umull	r3, ip, r3, r0	@ tmp273, tmp181, tmp182, utc
+ 414              	@ inc/rtc/rtc.c:93: 		rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 415 001e 414B     		ldr	r3, .L61+12	@ tmp232,
+ 416              	@ inc/rtc/rtc.c:90: 		rtx->hor = (uint8_t) (utc % 24); utc /= 24;
+ 417 0020 360C     		lsrs	r6, r6, #16	@ utc, tmp202,
+ 418              	@ inc/rtc/rtc.c:93: 		rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 419 0022 A3FB0673 		umull	r7, r3, r3, r6	@ tmp274, tmp231, tmp232, utc
+ 420              	@ inc/rtc/rtc.c:88: 		rtx->sec = (uint8_t) (utc % 60); utc /= 60;
+ 421 0026 6D09     		lsrs	r5, r5, #5	@ tmp148, tmp149,
+ 422              	@ inc/rtc/rtc.c:89: 		rtx->min = (uint8_t) (utc % 60); utc /= 60;
+ 423 0028 A4FB0574 		umull	r7, r4, r4, r5	@ tmp275, tmp161, tmp150, tmp148
+ 424              	@ inc/rtc/rtc.c:91: 		rtx->wdy = (uint8_t) ((utc + 4) % 7);
+ 425 002c 3E4A     		ldr	r2, .L61+16	@ tmp207,
+ 426 002e 371D     		adds	r7, r6, #4	@ tmp204, utc,
+ 427              	@ inc/rtc/rtc.c:93: 		rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 428 0030 DB09     		lsrs	r3, r3, #7	@ utc, tmp231,
+ 429              	@ inc/rtc/rtc.c:91: 		rtx->wdy = (uint8_t) ((utc + 4) % 7);
+ 430 0032 A2FB0782 		umull	r8, r2, r2, r7	@ tmp276, tmp206, tmp207, tmp204
+ 431              	@ inc/rtc/rtc.c:93: 		rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 432 0036 0EFB1363 		mls	r3, lr, r3, r6	@ utc, tmp234, utc, utc
+ 433              	@ inc/rtc/rtc.c:90: 		rtx->hor = (uint8_t) (utc % 24); utc /= 24;
+ 434 003a 3C4E     		ldr	r6, .L61+20	@ tmp185,
+ 435              	@ inc/rtc/rtc.c:89: 		rtx->min = (uint8_t) (utc % 60); utc /= 60;
+ 436 003c 4FEADC2C 		lsr	ip, ip, #11	@ utc, tmp181,
+ 437 0040 6409     		lsrs	r4, r4, #5	@ tmp160, tmp161,
+ 438              	@ inc/rtc/rtc.c:90: 		rtx->hor = (uint8_t) (utc % 24); utc /= 24;
+ 439 0042 A6FB0C6E 		umull	r6, lr, r6, ip	@ tmp277, tmp184, tmp185, utc
+ 440              	@ inc/rtc/rtc.c:89: 		rtx->min = (uint8_t) (utc % 60); utc /= 60;
+ 441 0046 C4EB0414 		rsb	r4, r4, r4, lsl #4	@ tmp165, tmp160, tmp160,
+ 442              	@ inc/rtc/rtc.c:93: 		rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 443 004a 394E     		ldr	r6, .L61+24	@ tmp228,
+ 444              	@ inc/rtc/rtc.c:89: 		rtx->min = (uint8_t) (utc % 60); utc /= 60;
+ 445 004c A5EB8404 		sub	r4, r5, r4, lsl #2	@ tmp167, tmp148, tmp165,
+ 446              	@ inc/rtc/rtc.c:88: 		rtx->sec = (uint8_t) (utc % 60); utc /= 60;
+ 447 0050 C5EB0515 		rsb	r5, r5, r5, lsl #4	@ tmp153, tmp148, tmp148,
+ 448              	@ inc/rtc/rtc.c:93: 		rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 449 0054 A6FB0086 		umull	r8, r6, r6, r0	@ tmp278, tmp227, tmp228, utc
+ 450              	@ inc/rtc/rtc.c:88: 		rtx->sec = (uint8_t) (utc % 60); utc /= 60;
+ 451 0058 A0EB8505 		sub	r5, r0, r5, lsl #2	@ tmp155, utc, tmp153,
+ 452              	@ inc/rtc/rtc.c:91: 		rtx->wdy = (uint8_t) ((utc + 4) % 7);
+ 453 005c B81A     		subs	r0, r7, r2	@ tmp208, tmp204, tmp206
+ 454 005e 02EB5002 		add	r2, r2, r0, lsr #1	@ tmp210, tmp206, tmp208,
+ 455              	@ inc/rtc/rtc.c:90: 		rtx->hor = (uint8_t) (utc % 24); utc /= 24;
+ 456 0062 4FEA1E1E 		lsr	lr, lr, #4	@ tmp183, tmp184,
+ARM GAS  /tmp/cc6o0uHi.s 			page 9
+
+
+ 457              	@ inc/rtc/rtc.c:91: 		rtx->wdy = (uint8_t) ((utc + 4) % 7);
+ 458 0066 9208     		lsrs	r2, r2, #2	@ tmp205, tmp210,
+ 459 0068 C2EBC202 		rsb	r2, r2, r2, lsl #3	@ tmp213, tmp205, tmp205,
+ 460              	@ inc/rtc/rtc.c:90: 		rtx->hor = (uint8_t) (utc % 24); utc /= 24;
+ 461 006c 0EEB4E0E 		add	lr, lr, lr, lsl #1	@ tmp188, tmp183, tmp183,
+ 462              	@ inc/rtc/rtc.c:91: 		rtx->wdy = (uint8_t) ((utc + 4) % 7);
+ 463 0070 BF1A     		subs	r7, r7, r2	@ tmp214, tmp204, tmp213
+ 464              	@ inc/rtc/rtc.c:90: 		rtx->hor = (uint8_t) (utc % 24); utc /= 24;
+ 465 0072 ACEBCE0E 		sub	lr, ip, lr, lsl #3	@ tmp190, utc, tmp188,
+ 466              	@ inc/rtc/rtc.c:93: 		rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 467 0076 F20D     		lsrs	r2, r6, #23	@ tmp226, tmp227,
+ 468              	@ inc/rtc/rtc.c:94: 		n = ((utc >= 1096) ? utc - 1 : utc) / 365;
+ 469 0078 B3F5896F 		cmp	r3, #1096	@ utc,
+ 470              	@ inc/rtc/rtc.c:88: 		rtx->sec = (uint8_t) (utc % 60); utc /= 60;
+ 471 007c 0D70     		strb	r5, [r1]	@ tmp155, rtx_32(D)->sec
+ 472              	@ inc/rtc/rtc.c:89: 		rtx->min = (uint8_t) (utc % 60); utc /= 60;
+ 473 007e 4C70     		strb	r4, [r1, #1]	@ tmp167, rtx_32(D)->min
+ 474              	@ inc/rtc/rtc.c:90: 		rtx->hor = (uint8_t) (utc % 24); utc /= 24;
+ 475 0080 81F802E0 		strb	lr, [r1, #2]	@ tmp190, rtx_32(D)->hor
+ 476              	@ inc/rtc/rtc.c:91: 		rtx->wdy = (uint8_t) ((utc + 4) % 7);
+ 477 0084 4F71     		strb	r7, [r1, #5]	@ tmp214, rtx_32(D)->wdy
+ 478              	@ inc/rtc/rtc.c:93: 		rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 479 0086 4FEA8202 		lsl	r2, r2, #2	@ _12, tmp226,
+ 480              	@ inc/rtc/rtc.c:94: 		n = ((utc >= 1096) ? utc - 1 : utc) / 365;
+ 481 008a 1ED3     		bcc	.L44	@,
+ 482              	@ inc/rtc/rtc.c:95: 		rtx->yer += n;
+ 483 008c 4FF48960 		mov	r0, #1096	@ prephitmp_14,
+ 484              	@ inc/rtc/rtc.c:94: 		n = ((utc >= 1096) ? utc - 1 : utc) / 365;
+ 485 0090 0327     		movs	r7, #3	@ iftmp.4_41,
+ 486              	@ inc/rtc/rtc.c:95: 		rtx->yer += n;
+ 487 0092 02F2B572 		addw	r2, r2, #1973	@ tmp241, _12,
+ 488 0096 CA80     		strh	r2, [r1, #6]	@ movhi	@ tmp241, rtx_32(D)->yer
+ 489              	.L45:
+ 490              	@ inc/rtc/rtc.c:97: 		utc -= n * 365 + (n > 2 ? 1 : 0);
+ 491 0098 1B1A     		subs	r3, r3, r0	@ utc, utc, prephitmp_14
+ 492 009a 0024     		movs	r4, #0	@ ivtmp.26,
+ 493 009c 0120     		movs	r0, #1	@ ivtmp.27,
+ 494 009e 1F22     		movs	r2, #31	@ pretmp_53,
+ 495 00a0 244E     		ldr	r6, .L61+28	@ tmp270,
+ 496 00a2 02E0     		b	.L46	@
+ 497              	.L51:
+ 498 00a4 325C     		ldrb	r2, [r6, r0]	@ zero_extendqisi2	@ pretmp_53, samurai
+ 499 00a6 0134     		adds	r4, r4, #1	@ ivtmp.26, ivtmp.26,
+ 500 00a8 0130     		adds	r0, r0, #1	@ ivtmp.27, ivtmp.27,
+ 501              	.L46:
+ 502              	@ inc/rtc/rtc.c:100: 			if (i == 1 && n == 2) d++;
+ 503 00aa 012C     		cmp	r4, #1	@ ivtmp.26,
+ 504              	@ inc/rtc/rtc.c:99: 			d = samurai[i];
+ 505 00ac 1546     		mov	r5, r2	@ d, pretmp_53
+ 506              	@ inc/rtc/rtc.c:100: 			if (i == 1 && n == 2) d++;
+ 507 00ae 29D0     		beq	.L57	@,
+ 508              	@ inc/rtc/rtc.c:101: 			if (utc < d) break;
+ 509 00b0 9A42     		cmp	r2, r3	@ pretmp_53, utc
+ 510 00b2 1FD8     		bhi	.L58	@,
+ 511              	@ inc/rtc/rtc.c:98: 		for (i = 0; i < 12; i++) {
+ 512 00b4 0C28     		cmp	r0, #12	@ ivtmp.27,
+ 513              	@ inc/rtc/rtc.c:102: 			utc -= d;
+ARM GAS  /tmp/cc6o0uHi.s 			page 10
+
+
+ 514 00b6 A3EB0203 		sub	r3, r3, r2	@ utc, utc, pretmp_53
+ 515              	@ inc/rtc/rtc.c:98: 		for (i = 0; i < 12; i++) {
+ 516 00ba F3D1     		bne	.L51	@,
+ 517 00bc 0D24     		movs	r4, #13	@ _82,
+ 518              	.L50:
+ 519              	@ inc/rtc/rtc.c:105: 		rtx->mdy = (uint8_t)(1 + utc);
+ 520 00be 0133     		adds	r3, r3, #1	@ tmp267, utc,
+ 521 00c0 CB70     		strb	r3, [r1, #3]	@ tmp267, rtx_32(D)->mdy
+ 522              	@ inc/rtc/rtc.c:104: 		rtx->mon = (uint8_t)(1 + i);
+ 523 00c2 0C71     		strb	r4, [r1, #4]	@ _82, rtx_32(D)->mon
+ 524              	@ inc/rtc/rtc.c:108: 	}
+ 525 00c4 0846     		mov	r0, r1	@, rtx
+ 526 00c6 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}	@
+ 527              	.L44:
+ 528              	@ inc/rtc/rtc.c:94: 		n = ((utc >= 1096) ? utc - 1 : utc) / 365;
+ 529 00ca 1B4F     		ldr	r7, .L61+32	@ tmp244,
+ 530              	@ inc/rtc/rtc.c:93: 		rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 531 00cc 02F2B272 		addw	r2, r2, #1970	@ tmp253, _12,
+ 532              	@ inc/rtc/rtc.c:94: 		n = ((utc >= 1096) ? utc - 1 : utc) / 365;
+ 533 00d0 A7FB0307 		umull	r0, r7, r7, r3	@ tmp279, tmp243, tmp244, utc
+ 534 00d4 D81B     		subs	r0, r3, r7	@ tmp245, utc, tmp243
+ 535 00d6 07EB5007 		add	r7, r7, r0, lsr #1	@ tmp247, tmp243, tmp245,
+ 536 00da 3F0A     		lsrs	r7, r7, #8	@ iftmp.4_41, tmp247,
+ 537              	@ inc/rtc/rtc.c:97: 		utc -= n * 365 + (n > 2 ? 1 : 0);
+ 538 00dc A7F10304 		sub	r4, r7, #3	@ tmp261, iftmp.4_41,
+ 539 00e0 B4FA84F4 		clz	r4, r4	@ tmp261, tmp261
+ 540 00e4 40F26D10 		movw	r0, #365	@ tmp259,
+ 541 00e8 6409     		lsrs	r4, r4, #5	@ tmp261, tmp261,
+ 542              	@ inc/rtc/rtc.c:95: 		rtx->yer += n;
+ 543 00ea 3A44     		add	r2, r2, r7	@ tmp256, iftmp.4_41
+ 544 00ec 00FB0740 		mla	r0, r0, r7, r4	@ prephitmp_14, tmp259, iftmp.4_41, tmp261
+ 545 00f0 CA80     		strh	r2, [r1, #6]	@ movhi	@ tmp256, rtx_32(D)->yer
+ 546 00f2 D1E7     		b	.L45	@
+ 547              	.L58:
+ 548 00f4 0134     		adds	r4, r4, #1	@ tmp264, ivtmp.26,
+ 549 00f6 E4B2     		uxtb	r4, r4	@ _82, tmp264
+ 550              	@ inc/rtc/rtc.c:105: 		rtx->mdy = (uint8_t)(1 + utc);
+ 551 00f8 0133     		adds	r3, r3, #1	@ tmp267, utc,
+ 552 00fa CB70     		strb	r3, [r1, #3]	@ tmp267, rtx_32(D)->mdy
+ 553              	@ inc/rtc/rtc.c:104: 		rtx->mon = (uint8_t)(1 + i);
+ 554 00fc 0C71     		strb	r4, [r1, #4]	@ _82, rtx_32(D)->mon
+ 555              	@ inc/rtc/rtc.c:108: 	}
+ 556 00fe 0846     		mov	r0, r1	@, rtx
+ 557 0100 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}	@
+ 558              	.L57:
+ 559              	@ inc/rtc/rtc.c:100: 			if (i == 1 && n == 2) d++;
+ 560 0104 022F     		cmp	r7, #2	@ iftmp.4_41,
+ 561 0106 03D0     		beq	.L59	@,
+ 562              	.L48:
+ 563              	@ inc/rtc/rtc.c:101: 			if (utc < d) break;
+ 564 0108 9D42     		cmp	r5, r3	@ d, utc
+ 565 010a 03D8     		bhi	.L60	@,
+ 566              	@ inc/rtc/rtc.c:102: 			utc -= d;
+ 567 010c 5B1B     		subs	r3, r3, r5	@ utc, utc, d
+ 568 010e C9E7     		b	.L51	@
+ 569              	.L59:
+ 570              	@ inc/rtc/rtc.c:100: 			if (i == 1 && n == 2) d++;
+ARM GAS  /tmp/cc6o0uHi.s 			page 11
+
+
+ 571 0110 0135     		adds	r5, r5, #1	@ d, d,
+ 572 0112 F9E7     		b	.L48	@
+ 573              	.L60:
+ 574              	@ inc/rtc/rtc.c:101: 			if (utc < d) break;
+ 575 0114 0224     		movs	r4, #2	@ _82,
+ 576 0116 D2E7     		b	.L50	@
+ 577              	.L62:
+ 578              		.align	2
+ 579              	.L61:
+ 580 0118 07452EC2 		.word	-1037155065
+ 581 011c 89888888 		.word	-2004318071
+ 582 0120 C5B3A291 		.word	-1851608123
+ 583 0124 73B06D16 		.word	376287347
+ 584 0128 25499224 		.word	613566757
+ 585 012c ABAAAAAA 		.word	-1431655765
+ 586 0130 792D0311 		.word	285420921
+ 587 0134 00000000 		.word	.LANCHOR0
+ 588 0138 61F31967 		.word	1729753953
+ 589              		.size	rtc_unix2time, .-rtc_unix2time
+ 590              		.section	.text.rtc_GetTime,"ax",%progbits
+ 591              		.align	1
+ 592              		.p2align 2,,3
+ 593              		.global	rtc_GetTime
+ 594              		.syntax unified
+ 595              		.thumb
+ 596              		.thumb_func
+ 597              		.fpu softvfp
+ 598              		.type	rtc_GetTime, %function
+ 599              	rtc_GetTime:
+ 600              		@ args = 0, pretend = 0, frame = 0
+ 601              		@ frame_needed = 0, uses_anonymous_args = 0
+ 602              		@ link register save eliminated.
+ 603 0000 F0B4     		push	{r4, r5, r6, r7}	@
+ 604              	@ inc/rtc/rtc.c:110: 		u32 utc = RTC->CNTL + (RTC->CNTH<<16);
+ 605 0002 5B4C     		ldr	r4, .L98	@ tmp162,
+ 606              	@ inc/rtc/rtc.c:115: 		rtx->sec = (uint8_t) (utc % 60); 
+ 607 0004 5B4B     		ldr	r3, .L98+4	@ tmp170,
+ 608              	@ inc/rtc/rtc.c:110: 		u32 utc = RTC->CNTL + (RTC->CNTH<<16);
+ 609 0006 A28B     		ldrh	r2, [r4, #28]	@, MEM[(struct RTC_TypeDef *)1073752064B].CNTL
+ 610 0008 248B     		ldrh	r4, [r4, #24]	@, MEM[(struct RTC_TypeDef *)1073752064B].CNTH
+ 611 000a 02EB0442 		add	r2, r2, r4, lsl #16	@ utc, MEM[(struct RTC_TypeDef *)1073752064B].CNTL, MEM[(struct RTC_TypeDe
+ 612              	@ inc/rtc/rtc.c:113: 		utc += (long)(_RTC_TDIF * 3600);
+ 613 000e 02F5E152 		add	r2, r2, #7200	@ utc, utc,
+ 614              	@ inc/rtc/rtc.c:115: 		rtx->sec = (uint8_t) (utc % 60); 
+ 615 0012 A3FB0254 		umull	r5, r4, r3, r2	@ tmp344, tmp169, tmp170, utc
+ 616 0016 6409     		lsrs	r4, r4, #5	@ _7, tmp169,
+ 617 0018 C4EB0415 		rsb	r5, r4, r4, lsl #4	@ tmp173, _7, _7,
+ 618 001c A2EB8505 		sub	r5, r2, r5, lsl #2	@ _7, utc, tmp173,
+ 619 0020 0D70     		strb	r5, [r1]	@ _7, rtx_40(D)->sec
+ 620              	@ inc/rtc/rtc.c:116: 		if(!rtx->sec || force){
+ 621 0022 002D     		cmp	r5, #0	@ _7
+ 622 0024 56D0     		beq	.L64	@
+ 623              	@ inc/rtc/rtc.c:116: 		if(!rtx->sec || force){
+ 624 0026 0028     		cmp	r0, #0	@ force
+ 625 0028 52D0     		beq	.L63	@
+ 626 002a 5348     		ldr	r0, .L98+8	@ tmp322,
+ 627              	@ inc/rtc/rtc.c:118: 			utc /= 60;			rtx->min = (uint8_t) (utc % 60); 
+ARM GAS  /tmp/cc6o0uHi.s 			page 12
+
+
+ 628 002c A3FB0453 		umull	r5, r3, r3, r4	@ tmp355, tmp304, tmp170, _7
+ 629 0030 A0FB0250 		umull	r5, r0, r0, r2	@ tmp356, tmp321, tmp322, utc
+ 630 0034 514D     		ldr	r5, .L98+12	@ tmp325,
+ 631 0036 C00A     		lsrs	r0, r0, #11	@ tmp320, tmp321,
+ 632 0038 A5FB0065 		umull	r6, r5, r5, r0	@ tmp357, tmp324, tmp325, tmp320
+ 633 003c 5B09     		lsrs	r3, r3, #5	@ _84, tmp304,
+ 634 003e 2D09     		lsrs	r5, r5, #4	@ tmp323, tmp324,
+ 635 0040 C3EB0313 		rsb	r3, r3, r3, lsl #4	@ tmp308, _84, _84,
+ 636 0044 05EB4505 		add	r5, r5, r5, lsl #1	@ tmp328, tmp323, tmp323,
+ 637 0048 A4EB8303 		sub	r3, r4, r3, lsl #2	@ _84, _7, tmp308,
+ 638 004c A0EBC500 		sub	r0, r0, r5, lsl #3	@ tmp330, tmp320, tmp328,
+ 639 0050 4B70     		strb	r3, [r1, #1]	@ _84, rtx_40(D)->min
+ 640 0052 C0B2     		uxtb	r0, r0	@ _109, tmp330
+ 641              	.L79:
+ 642              	@ inc/rtc/rtc.c:121: 				utc /= 60; rtx->hor = (uint8_t) (utc % 24); 
+ 643 0054 8870     		strb	r0, [r1, #2]	@ _109, rtx_40(D)->hor
+ 644              	.L70:
+ 645              	@ inc/rtc/rtc.c:125: 					rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 646 0056 40F2B557 		movw	r7, #1461	@ tmp266,
+ 647              	@ inc/rtc/rtc.c:123: 					utc /= 24;
+ 648 005a 494D     		ldr	r5, .L98+16	@ tmp235,
+ 649              	@ inc/rtc/rtc.c:125: 					rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 650 005c 494B     		ldr	r3, .L98+20	@ tmp264,
+ 651              	@ inc/rtc/rtc.c:123: 					utc /= 24;
+ 652 005e A5FB0205 		umull	r0, r5, r5, r2	@ tmp350, tmp234, tmp235, utc
+ 653              	@ inc/rtc/rtc.c:124: 					rtx->wdy = (uint8_t) ((utc + 4) % 7);
+ 654 0062 4948     		ldr	r0, .L98+24	@ tmp239,
+ 655              	@ inc/rtc/rtc.c:123: 					utc /= 24;
+ 656 0064 2D0C     		lsrs	r5, r5, #16	@ utc, tmp234,
+ 657              	@ inc/rtc/rtc.c:124: 					rtx->wdy = (uint8_t) ((utc + 4) % 7);
+ 658 0066 2E1D     		adds	r6, r5, #4	@ tmp236, utc,
+ 659              	@ inc/rtc/rtc.c:125: 					rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 660 0068 A3FB0543 		umull	r4, r3, r3, r5	@ tmp351, tmp263, tmp264, utc
+ 661              	@ inc/rtc/rtc.c:124: 					rtx->wdy = (uint8_t) ((utc + 4) % 7);
+ 662 006c A0FB0640 		umull	r4, r0, r0, r6	@ tmp352, tmp238, tmp239, tmp236
+ 663              	@ inc/rtc/rtc.c:125: 					rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 664 0070 464C     		ldr	r4, .L98+28	@ tmp260,
+ 665 0072 DB09     		lsrs	r3, r3, #7	@ utc, tmp263,
+ 666 0074 A4FB0242 		umull	r4, r2, r4, r2	@ tmp353, tmp259, tmp260, utc
+ 667 0078 07FB1353 		mls	r3, r7, r3, r5	@ utc, tmp266, utc, utc
+ 668              	@ inc/rtc/rtc.c:124: 					rtx->wdy = (uint8_t) ((utc + 4) % 7);
+ 669 007c 341A     		subs	r4, r6, r0	@ tmp240, tmp236, tmp238
+ 670 007e 00EB5400 		add	r0, r0, r4, lsr #1	@ tmp242, tmp238, tmp240,
+ 671 0082 8008     		lsrs	r0, r0, #2	@ tmp237, tmp242,
+ 672 0084 C0EBC000 		rsb	r0, r0, r0, lsl #3	@ tmp245, tmp237, tmp237,
+ 673 0088 301A     		subs	r0, r6, r0	@ tmp246, tmp236, tmp245
+ 674              	@ inc/rtc/rtc.c:125: 					rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 675 008a D20D     		lsrs	r2, r2, #23	@ tmp258, tmp259,
+ 676              	@ inc/rtc/rtc.c:128: 					n = ((utc >= 1096) ? utc - 1 : utc) / 365;
+ 677 008c B3F5896F 		cmp	r3, #1096	@ utc,
+ 678              	@ inc/rtc/rtc.c:124: 					rtx->wdy = (uint8_t) ((utc + 4) % 7);
+ 679 0090 4871     		strb	r0, [r1, #5]	@ tmp246, rtx_40(D)->wdy
+ 680              	@ inc/rtc/rtc.c:125: 					rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 681 0092 4FEA8202 		lsl	r2, r2, #2	@ _20, tmp258,
+ 682              	@ inc/rtc/rtc.c:128: 					n = ((utc >= 1096) ? utc - 1 : utc) / 365;
+ 683 0096 39D3     		bcc	.L71	@,
+ 684              	@ inc/rtc/rtc.c:129: 					rtx->yer += n;
+ARM GAS  /tmp/cc6o0uHi.s 			page 13
+
+
+ 685 0098 4FF48960 		mov	r0, #1096	@ _9,
+ 686              	@ inc/rtc/rtc.c:128: 					n = ((utc >= 1096) ? utc - 1 : utc) / 365;
+ 687 009c 0327     		movs	r7, #3	@ iftmp.6_50,
+ 688              	@ inc/rtc/rtc.c:129: 					rtx->yer += n;
+ 689 009e 02F2B572 		addw	r2, r2, #1973	@ tmp273, _20,
+ 690 00a2 CA80     		strh	r2, [r1, #6]	@ movhi	@ tmp273, rtx_40(D)->yer
+ 691              	.L72:
+ 692              	@ inc/rtc/rtc.c:131: 					utc -= n * 365 + (n > 2 ? 1 : 0);
+ 693 00a4 1B1A     		subs	r3, r3, r0	@ utc, utc, _9
+ 694 00a6 0024     		movs	r4, #0	@ ivtmp.31,
+ 695 00a8 0120     		movs	r0, #1	@ ivtmp.32,
+ 696 00aa 1F22     		movs	r2, #31	@ pretmp_98,
+ 697 00ac 384E     		ldr	r6, .L98+32	@ tmp343,
+ 698 00ae 02E0     		b	.L73	@
+ 699              	.L78:
+ 700 00b0 325C     		ldrb	r2, [r6, r0]	@ zero_extendqisi2	@ pretmp_98, samurai
+ 701 00b2 0134     		adds	r4, r4, #1	@ ivtmp.31, ivtmp.31,
+ 702 00b4 0130     		adds	r0, r0, #1	@ ivtmp.32, ivtmp.32,
+ 703              	.L73:
+ 704              	@ inc/rtc/rtc.c:134: 						if (i == 1 && n == 2) d++;
+ 705 00b6 012C     		cmp	r4, #1	@ ivtmp.31,
+ 706              	@ inc/rtc/rtc.c:133: 						d = samurai[i];
+ 707 00b8 1546     		mov	r5, r2	@ d, pretmp_98
+ 708              	@ inc/rtc/rtc.c:134: 						if (i == 1 && n == 2) d++;
+ 709 00ba 4FD0     		beq	.L94	@,
+ 710              	@ inc/rtc/rtc.c:135: 						if (utc < d) break;
+ 711 00bc 9A42     		cmp	r2, r3	@ pretmp_98, utc
+ 712 00be 4AD8     		bhi	.L95	@,
+ 713              	@ inc/rtc/rtc.c:132: 					for (i = 0; i < 12; i++) {
+ 714 00c0 0C28     		cmp	r0, #12	@ ivtmp.32,
+ 715              	@ inc/rtc/rtc.c:136: 						utc -= d;
+ 716 00c2 A3EB0203 		sub	r3, r3, r2	@ utc, utc, pretmp_98
+ 717              	@ inc/rtc/rtc.c:132: 					for (i = 0; i < 12; i++) {
+ 718 00c6 F3D1     		bne	.L78	@,
+ 719 00c8 0D24     		movs	r4, #13	@ _104,
+ 720              	.L77:
+ 721              	@ inc/rtc/rtc.c:139: 					rtx->mdy = (uint8_t)(1 + utc);
+ 722 00ca 0133     		adds	r3, r3, #1	@ tmp299, utc,
+ 723 00cc CB70     		strb	r3, [r1, #3]	@ tmp299, rtx_40(D)->mdy
+ 724              	@ inc/rtc/rtc.c:138: 					rtx->mon = (uint8_t)(1 + i);
+ 725 00ce 0C71     		strb	r4, [r1, #4]	@ _104, rtx_40(D)->mon
+ 726              	.L63:
+ 727              	@ inc/rtc/rtc.c:144: 	}
+ 728 00d0 F0BC     		pop	{r4, r5, r6, r7}	@
+ 729 00d2 7047     		bx	lr	@
+ 730              	.L64:
+ 731              	@ inc/rtc/rtc.c:118: 			utc /= 60;			rtx->min = (uint8_t) (utc % 60); 
+ 732 00d4 A3FB0453 		umull	r5, r3, r3, r4	@ tmp345, tmp179, tmp170, _7
+ 733 00d8 5B09     		lsrs	r3, r3, #5	@ _10, tmp179,
+ 734 00da C3EB0313 		rsb	r3, r3, r3, lsl #4	@ tmp183, _10, _10,
+ 735 00de A4EB8303 		sub	r3, r4, r3, lsl #2	@ _10, _7, tmp183,
+ 736 00e2 4B70     		strb	r3, [r1, #1]	@ _10, rtx_40(D)->min
+ 737              	@ inc/rtc/rtc.c:119: 			if(!rtx->min || force){
+ 738 00e4 3BBB     		cbnz	r3, .L96	@ _10,
+ 739              	@ inc/rtc/rtc.c:121: 				utc /= 60; rtx->hor = (uint8_t) (utc % 24); 
+ 740 00e6 244C     		ldr	r4, .L98+8	@ tmp218,
+ 741 00e8 244B     		ldr	r3, .L98+12	@ tmp220,
+ARM GAS  /tmp/cc6o0uHi.s 			page 14
+
+
+ 742 00ea A4FB0254 		umull	r5, r4, r4, r2	@ tmp348, tmp217, tmp218, utc
+ 743 00ee E40A     		lsrs	r4, r4, #11	@ utc, tmp217,
+ 744 00f0 A3FB0453 		umull	r5, r3, r3, r4	@ tmp349, tmp219, tmp220, utc
+ 745 00f4 1B09     		lsrs	r3, r3, #4	@ _13, tmp219,
+ 746 00f6 03EB4303 		add	r3, r3, r3, lsl #1	@ tmp223, _13, _13,
+ 747 00fa A4EBC303 		sub	r3, r4, r3, lsl #3	@ _13, utc, tmp223,
+ 748 00fe 8B70     		strb	r3, [r1, #2]	@ _13, rtx_40(D)->hor
+ 749              	@ inc/rtc/rtc.c:122: 				if(!rtx->hor || force){
+ 750 0100 002B     		cmp	r3, #0	@ _13
+ 751 0102 A8D0     		beq	.L70	@
+ 752              	@ inc/rtc/rtc.c:122: 				if(!rtx->hor || force){
+ 753 0104 0028     		cmp	r0, #0	@ force
+ 754 0106 A6D1     		bne	.L70	@
+ 755              	@ inc/rtc/rtc.c:144: 	}
+ 756 0108 F0BC     		pop	{r4, r5, r6, r7}	@
+ 757 010a 7047     		bx	lr	@
+ 758              	.L71:
+ 759              	@ inc/rtc/rtc.c:128: 					n = ((utc >= 1096) ? utc - 1 : utc) / 365;
+ 760 010c 214F     		ldr	r7, .L98+36	@ tmp276,
+ 761              	@ inc/rtc/rtc.c:125: 					rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
+ 762 010e 02F2B272 		addw	r2, r2, #1970	@ tmp285, _20,
+ 763              	@ inc/rtc/rtc.c:128: 					n = ((utc >= 1096) ? utc - 1 : utc) / 365;
+ 764 0112 A7FB0307 		umull	r0, r7, r7, r3	@ tmp354, tmp275, tmp276, utc
+ 765 0116 D81B     		subs	r0, r3, r7	@ tmp277, utc, tmp275
+ 766 0118 07EB5007 		add	r7, r7, r0, lsr #1	@ tmp279, tmp275, tmp277,
+ 767 011c 3F0A     		lsrs	r7, r7, #8	@ iftmp.6_50, tmp279,
+ 768              	@ inc/rtc/rtc.c:131: 					utc -= n * 365 + (n > 2 ? 1 : 0);
+ 769 011e A7F10304 		sub	r4, r7, #3	@ tmp293, iftmp.6_50,
+ 770 0122 B4FA84F4 		clz	r4, r4	@ tmp293, tmp293
+ 771 0126 40F26D10 		movw	r0, #365	@ tmp291,
+ 772 012a 6409     		lsrs	r4, r4, #5	@ tmp293, tmp293,
+ 773              	@ inc/rtc/rtc.c:129: 					rtx->yer += n;
+ 774 012c 3A44     		add	r2, r2, r7	@ tmp288, iftmp.6_50
+ 775 012e 00FB0740 		mla	r0, r0, r7, r4	@ _9, tmp291, iftmp.6_50, tmp293
+ 776 0132 CA80     		strh	r2, [r1, #6]	@ movhi	@ tmp288, rtx_40(D)->yer
+ 777 0134 B6E7     		b	.L72	@
+ 778              	.L96:
+ 779              	@ inc/rtc/rtc.c:119: 			if(!rtx->min || force){
+ 780 0136 0028     		cmp	r0, #0	@ force
+ 781 0138 CAD0     		beq	.L63	@
+ 782 013a 0F48     		ldr	r0, .L98+8	@ tmp197,
+ 783 013c 0F4B     		ldr	r3, .L98+12	@ tmp200,
+ 784 013e A0FB0240 		umull	r4, r0, r0, r2	@ tmp346, tmp196, tmp197, utc
+ 785 0142 C00A     		lsrs	r0, r0, #11	@ tmp195, tmp196,
+ 786 0144 A3FB0043 		umull	r4, r3, r3, r0	@ tmp347, tmp199, tmp200, tmp195
+ 787 0148 1B09     		lsrs	r3, r3, #4	@ tmp198, tmp199,
+ 788 014a 03EB4303 		add	r3, r3, r3, lsl #1	@ tmp203, tmp198, tmp198,
+ 789 014e A0EBC300 		sub	r0, r0, r3, lsl #3	@ tmp205, tmp195, tmp203,
+ 790 0152 C0B2     		uxtb	r0, r0	@ _109, tmp205
+ 791 0154 7EE7     		b	.L79	@
+ 792              	.L95:
+ 793 0156 0134     		adds	r4, r4, #1	@ tmp296, ivtmp.31,
+ 794 0158 E4B2     		uxtb	r4, r4	@ _104, tmp296
+ 795 015a B6E7     		b	.L77	@
+ 796              	.L94:
+ 797              	@ inc/rtc/rtc.c:134: 						if (i == 1 && n == 2) d++;
+ 798 015c 022F     		cmp	r7, #2	@ iftmp.6_50,
+ARM GAS  /tmp/cc6o0uHi.s 			page 15
+
+
+ 799 015e 00D1     		bne	.L75	@,
+ 800              	@ inc/rtc/rtc.c:134: 						if (i == 1 && n == 2) d++;
+ 801 0160 0135     		adds	r5, r5, #1	@ d, d,
+ 802              	.L75:
+ 803              	@ inc/rtc/rtc.c:135: 						if (utc < d) break;
+ 804 0162 9D42     		cmp	r5, r3	@ d, utc
+ 805 0164 01D8     		bhi	.L97	@,
+ 806              	@ inc/rtc/rtc.c:136: 						utc -= d;
+ 807 0166 5B1B     		subs	r3, r3, r5	@ utc, utc, d
+ 808 0168 A2E7     		b	.L78	@
+ 809              	.L97:
+ 810              	@ inc/rtc/rtc.c:135: 						if (utc < d) break;
+ 811 016a 0224     		movs	r4, #2	@ _104,
+ 812 016c ADE7     		b	.L77	@
+ 813              	.L99:
+ 814 016e 00BF     		.align	2
+ 815              	.L98:
+ 816 0170 00280040 		.word	1073752064
+ 817 0174 89888888 		.word	-2004318071
+ 818 0178 C5B3A291 		.word	-1851608123
+ 819 017c ABAAAAAA 		.word	-1431655765
+ 820 0180 07452EC2 		.word	-1037155065
+ 821 0184 73B06D16 		.word	376287347
+ 822 0188 25499224 		.word	613566757
+ 823 018c 792D0311 		.word	285420921
+ 824 0190 00000000 		.word	.LANCHOR0
+ 825 0194 61F31967 		.word	1729753953
+ 826              		.size	rtc_GetTime, .-rtc_GetTime
+ 827              		.section	.text.rtc_SetTime,"ax",%progbits
+ 828              		.align	1
+ 829              		.p2align 2,,3
+ 830              		.global	rtc_SetTime
+ 831              		.syntax unified
+ 832              		.thumb
+ 833              		.thumb_func
+ 834              		.fpu softvfp
+ 835              		.type	rtc_SetTime, %function
+ 836              	rtc_SetTime:
+ 837              		@ args = 0, pretend = 0, frame = 8
+ 838              		@ frame_needed = 0, uses_anonymous_args = 0
+ 839 0000 30B5     		push	{r4, r5, lr}	@
+ 840 0002 83B0     		sub	sp, sp, #12	@,,
+ 841              	@ inc/rtc/rtc.c:159: 		if (!rtc_time2unix (&uxt, rtx)	){
+ 842 0004 0146     		mov	r1, r0	@, rtx
+ 843 0006 01A8     		add	r0, sp, #4	@,,
+ 844 0008 FFF7FEFF 		bl	rtc_time2unix	@
+ 845 000c 90B9     		cbnz	r0, .L100	@,
+ 846              	@ inc/rtc/rtc.c:161: 			while(!bRTC_CRL_RTOFF); //wait to synchro
+ 847 000e 0A4A     		ldr	r2, .L109	@ tmp120,
+ 848              	.L102:
+ 849              	@ inc/rtc/rtc.c:161: 			while(!bRTC_CRL_RTOFF); //wait to synchro
+ 850 0010 1368     		ldr	r3, [r2]	@ _2, MEM[(volatile long unsigned int *)1107624084B]
+ 851 0012 002B     		cmp	r3, #0	@ _2
+ 852 0014 FCD0     		beq	.L102	@
+ 853              	@ inc/rtc/rtc.c:162: 			bRTC_CRL_CNF = 1;				//Start edit mode
+ 854 0016 0123     		movs	r3, #1	@ tmp122,
+ 855              	@ inc/rtc/rtc.c:166: 			bRTC_CRL_CNF = 0;				//End edit mode
+ARM GAS  /tmp/cc6o0uHi.s 			page 16
+
+
+ 856 0018 0024     		movs	r4, #0	@ tmp129,
+ 857              	@ inc/rtc/rtc.c:162: 			bRTC_CRL_CNF = 1;				//Start edit mode
+ 858 001a 0849     		ldr	r1, .L109+4	@ tmp121,
+ 859              	@ inc/rtc/rtc.c:164: 			RTC->CNTL = uxt&0xffff;		  //Set time low		set counter/point time
+ 860 001c 0848     		ldr	r0, .L109+8	@ tmp123,
+ 861              	@ inc/rtc/rtc.c:162: 			bRTC_CRL_CNF = 1;				//Start edit mode
+ 862 001e 0B60     		str	r3, [r1]	@ tmp122, MEM[(volatile long unsigned int *)1107624080B]
+ 863              	@ inc/rtc/rtc.c:164: 			RTC->CNTL = uxt&0xffff;		  //Set time low		set counter/point time
+ 864 0020 019B     		ldr	r3, [sp, #4]	@ uxt.8_3, uxt
+ 865              	@ inc/rtc/rtc.c:167: 			while(!bRTC_CRL_RTOFF); //wait to synchro
+ 866 0022 054A     		ldr	r2, .L109	@ tmp130,
+ 867              	@ inc/rtc/rtc.c:164: 			RTC->CNTL = uxt&0xffff;		  //Set time low		set counter/point time
+ 868 0024 9DB2     		uxth	r5, r3	@ _4, uxt.8_3
+ 869              	@ inc/rtc/rtc.c:165: 			RTC->CNTH = (uxt>>16);		  //Set time high		set counter/point time		
+ 870 0026 1B0C     		lsrs	r3, r3, #16	@ _6, uxt.8_3,
+ 871              	@ inc/rtc/rtc.c:164: 			RTC->CNTL = uxt&0xffff;		  //Set time low		set counter/point time
+ 872 0028 8583     		strh	r5, [r0, #28]	@ movhi	@ _4, MEM[(struct RTC_TypeDef *)1073752064B].CNTL
+ 873              	@ inc/rtc/rtc.c:165: 			RTC->CNTH = (uxt>>16);		  //Set time high		set counter/point time		
+ 874 002a 0383     		strh	r3, [r0, #24]	@ movhi	@ _6, MEM[(struct RTC_TypeDef *)1073752064B].CNTH
+ 875              	@ inc/rtc/rtc.c:166: 			bRTC_CRL_CNF = 0;				//End edit mode
+ 876 002c 0C60     		str	r4, [r1]	@ tmp129, MEM[(volatile long unsigned int *)1107624080B]
+ 877              	.L103:
+ 878              	@ inc/rtc/rtc.c:167: 			while(!bRTC_CRL_RTOFF); //wait to synchro
+ 879 002e 1368     		ldr	r3, [r2]	@ _7, MEM[(volatile long unsigned int *)1107624084B]
+ 880 0030 002B     		cmp	r3, #0	@ _7
+ 881 0032 FCD0     		beq	.L103	@
+ 882              	.L100:
+ 883              	@ inc/rtc/rtc.c:169: 	}
+ 884 0034 03B0     		add	sp, sp, #12	@,,
+ 885              		@ sp needed	@
+ 886 0036 30BD     		pop	{r4, r5, pc}	@
+ 887              	.L110:
+ 888              		.align	2
+ 889              	.L109:
+ 890 0038 94000542 		.word	1107624084
+ 891 003c 90000542 		.word	1107624080
+ 892 0040 00280040 		.word	1073752064
+ 893              		.size	rtc_SetTime, .-rtc_SetTime
+ 894              		.section	.text.SleepMode,"ax",%progbits
+ 895              		.align	1
+ 896              		.p2align 2,,3
+ 897              		.global	SleepMode
+ 898              		.syntax unified
+ 899              		.thumb
+ 900              		.thumb_func
+ 901              		.fpu softvfp
+ 902              		.type	SleepMode, %function
+ 903              	SleepMode:
+ 904              		@ args = 0, pretend = 0, frame = 0
+ 905              		@ frame_needed = 0, uses_anonymous_args = 0
+ 906              		@ link register save eliminated.
+ 907              	@ inc/rtc/rtc.c:179: 		RCC->APB1ENR |= RCC_APB1ENR_BKPEN | RCC_APB1ENR_PWREN; 
+ 908 0000 174A     		ldr	r2, .L117	@ tmp127,
+ 909              	@ inc/rtc/rtc.c:188:     switch (sleep)
+ 910 0002 0128     		cmp	r0, #1	@ sleep,
+ 911              	@ inc/rtc/rtc.c:179: 		RCC->APB1ENR |= RCC_APB1ENR_BKPEN | RCC_APB1ENR_PWREN; 
+ 912 0004 D369     		ldr	r3, [r2, #28]	@ _1, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ARM GAS  /tmp/cc6o0uHi.s 			page 17
+
+
+ 913 0006 43F0C053 		orr	r3, r3, #402653184	@ _2, _1,
+ 914 000a D361     		str	r3, [r2, #28]	@ _2, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ 915              	@ inc/rtc/rtc.c:188:     switch (sleep)
+ 916 000c 18D0     		beq	.L113	@,
+ 917 000e 0DD3     		bcc	.L114	@,
+ 918 0010 0228     		cmp	r0, #2	@ sleep,
+ 919 0012 0AD1     		bne	.L116	@,
+ 920              	@ inc/rtc/rtc.c:203: 				SCB->SCR |=  SCB_SCR_SLEEPDEEP;			// Select Deep Sleep mode (stop or stand
+ 921 0014 1349     		ldr	r1, .L117+4	@ tmp139,
+ 922              	@ inc/rtc/rtc.c:204: 				PWR->CR  |=  PWR_CR_PDDS; 					// Select STANDBY mode   3uA all reset
+ 923 0016 144A     		ldr	r2, .L117+8	@ tmp141,
+ 924              	@ inc/rtc/rtc.c:203: 				SCB->SCR |=  SCB_SCR_SLEEPDEEP;			// Select Deep Sleep mode (stop or stand
+ 925 0018 0B69     		ldr	r3, [r1, #16]	@ _13, MEM[(struct SCB_Type *)3758157056B].SCR
+ 926 001a 43F00403 		orr	r3, r3, #4	@ _14, _13,
+ 927 001e 0B61     		str	r3, [r1, #16]	@ _14, MEM[(struct SCB_Type *)3758157056B].SCR
+ 928              	@ inc/rtc/rtc.c:204: 				PWR->CR  |=  PWR_CR_PDDS; 					// Select STANDBY mode   3uA all reset
+ 929 0020 1368     		ldr	r3, [r2]	@ _15, MEM[(struct PWR_TypeDef *)1073770496B].CR
+ 930 0022 43F00203 		orr	r3, r3, #2	@ _16, _15,
+ 931 0026 1360     		str	r3, [r2]	@ _16, MEM[(struct PWR_TypeDef *)1073770496B].CR
+ 932              	@ inc/rtc/rtc.c:209: 	}
+ 933 0028 7047     		bx	lr	@
+ 934              	.L116:
+ 935 002a 7047     		bx	lr	@
+ 936              	.L114:
+ 937              	@ inc/rtc/rtc.c:191: 				SCB->SCR &= ~SCB_SCR_SLEEPDEEP;
+ 938 002c 0D4B     		ldr	r3, .L117+4	@ tmp129,
+ 939 002e 1A69     		ldr	r2, [r3, #16]	@ _3, MEM[(struct SCB_Type *)3758157056B].SCR
+ 940 0030 22F00402 		bic	r2, r2, #4	@ _4, _3,
+ 941 0034 1A61     		str	r2, [r3, #16]	@ _4, MEM[(struct SCB_Type *)3758157056B].SCR
+ 942              	@ inc/rtc/rtc.c:192: 				SCB->SCR |=  SCB_SCR_SLEEPONEXIT; // eneter sleep on return from interrupt
+ 943 0036 1A69     		ldr	r2, [r3, #16]	@ _5, MEM[(struct SCB_Type *)3758157056B].SCR
+ 944 0038 42F00202 		orr	r2, r2, #2	@ _6, _5,
+ 945 003c 1A61     		str	r2, [r3, #16]	@ _6, MEM[(struct SCB_Type *)3758157056B].SCR
+ 946              	@ inc/rtc/rtc.c:194:       break;
+ 947 003e 7047     		bx	lr	@
+ 948              	.L113:
+ 949              	@ inc/rtc/rtc.c:197: 				PWR->CR  |= (PWR_CR_LPDS | PWR_CR_CSBF | PWR_CR_CWUF);
+ 950 0040 094B     		ldr	r3, .L117+8	@ tmp133,
+ 951              	@ inc/rtc/rtc.c:199: 				SCB->SCR |=  SCB_SCR_SLEEPDEEP;							
+ 952 0042 0849     		ldr	r1, .L117+4	@ tmp137,
+ 953              	@ inc/rtc/rtc.c:197: 				PWR->CR  |= (PWR_CR_LPDS | PWR_CR_CSBF | PWR_CR_CWUF);
+ 954 0044 1A68     		ldr	r2, [r3]	@ _7, MEM[(struct PWR_TypeDef *)1073770496B].CR
+ 955 0046 42F00D02 		orr	r2, r2, #13	@ _8, _7,
+ 956 004a 1A60     		str	r2, [r3]	@ _8, MEM[(struct PWR_TypeDef *)1073770496B].CR
+ 957              	@ inc/rtc/rtc.c:198: 				PWR->CR  &= ~PWR_CR_PDDS;   		
+ 958 004c 1A68     		ldr	r2, [r3]	@ _9, MEM[(struct PWR_TypeDef *)1073770496B].CR
+ 959 004e 22F00202 		bic	r2, r2, #2	@ _10, _9,
+ 960 0052 1A60     		str	r2, [r3]	@ _10, MEM[(struct PWR_TypeDef *)1073770496B].CR
+ 961              	@ inc/rtc/rtc.c:199: 				SCB->SCR |=  SCB_SCR_SLEEPDEEP;							
+ 962 0054 0B69     		ldr	r3, [r1, #16]	@ _11, MEM[(struct SCB_Type *)3758157056B].SCR
+ 963 0056 43F00403 		orr	r3, r3, #4	@ _12, _11,
+ 964 005a 0B61     		str	r3, [r1, #16]	@ _12, MEM[(struct SCB_Type *)3758157056B].SCR
+ 965              	@ inc/rtc/rtc.c:201:       break;
+ 966 005c 7047     		bx	lr	@
+ 967              	.L118:
+ 968 005e 00BF     		.align	2
+ 969              	.L117:
+ARM GAS  /tmp/cc6o0uHi.s 			page 18
+
+
+ 970 0060 00100240 		.word	1073876992
+ 971 0064 00ED00E0 		.word	-536810240
+ 972 0068 00700040 		.word	1073770496
+ 973              		.size	SleepMode, .-SleepMode
+ 974              		.global	samurai
+ 975              		.comm	PutChar,4,4
+ 976              		.comm	ptm,36,4
+ 977              		.section	.rodata.samurai,"a",%progbits
+ 978              		.align	2
+ 979              		.set	.LANCHOR0,. + 0
+ 980              		.type	samurai, %object
+ 981              		.size	samurai, 12
+ 982              	samurai:
+ 983 0000 1F       		.byte	31
+ 984 0001 1C       		.byte	28
+ 985 0002 1F       		.byte	31
+ 986 0003 1E       		.byte	30
+ 987 0004 1F       		.byte	31
+ 988 0005 1E       		.byte	30
+ 989 0006 1F       		.byte	31
+ 990 0007 1F       		.byte	31
+ 991 0008 1E       		.byte	30
+ 992 0009 1F       		.byte	31
+ 993 000a 1E       		.byte	30
+ 994 000b 1F       		.byte	31
+ 995              		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
+ARM GAS  /tmp/cc6o0uHi.s 			page 19
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 rtc.c
+     /tmp/cc6o0uHi.s:69     .text.BkpRegInit:00000000 $t
+     /tmp/cc6o0uHi.s:77     .text.BkpRegInit:00000000 BkpRegInit
+     /tmp/cc6o0uHi.s:98     .text.BkpRegInit:00000014 $d
+     /tmp/cc6o0uHi.s:102    .text.rtc_time2unix:00000000 $t
+     /tmp/cc6o0uHi.s:110    .text.rtc_time2unix:00000000 rtc_time2unix
+     /tmp/cc6o0uHi.s:248    .text.rtc_time2unix:000000bc $d
+     /tmp/cc6o0uHi.s:252    .text.RtcInit:00000000 $t
+     /tmp/cc6o0uHi.s:260    .text.RtcInit:00000000 RtcInit
+     /tmp/cc6o0uHi.s:377    .text.RtcInit:0000008c $d
+     /tmp/cc6o0uHi.s:386    .text.rtc_unix2time:00000000 $t
+     /tmp/cc6o0uHi.s:394    .text.rtc_unix2time:00000000 rtc_unix2time
+     /tmp/cc6o0uHi.s:580    .text.rtc_unix2time:00000118 $d
+     /tmp/cc6o0uHi.s:591    .text.rtc_GetTime:00000000 $t
+     /tmp/cc6o0uHi.s:599    .text.rtc_GetTime:00000000 rtc_GetTime
+     /tmp/cc6o0uHi.s:816    .text.rtc_GetTime:00000170 $d
+     /tmp/cc6o0uHi.s:828    .text.rtc_SetTime:00000000 $t
+     /tmp/cc6o0uHi.s:836    .text.rtc_SetTime:00000000 rtc_SetTime
+     /tmp/cc6o0uHi.s:890    .text.rtc_SetTime:00000038 $d
+     /tmp/cc6o0uHi.s:895    .text.SleepMode:00000000 $t
+     /tmp/cc6o0uHi.s:903    .text.SleepMode:00000000 SleepMode
+     /tmp/cc6o0uHi.s:970    .text.SleepMode:00000060 $d
+     /tmp/cc6o0uHi.s:982    .rodata.samurai:00000000 samurai
+                            *COM*:00000004 PutChar
+                            *COM*:00000024 ptm
+     /tmp/cc6o0uHi.s:978    .rodata.samurai:00000000 $d
+
+UNDEFINED SYMBOLS
+Rtc

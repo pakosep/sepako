@@ -1,0 +1,22 @@
+
+First, when in custom frame mode, you shouldn’t use printf function. Printf converts numbers to text, in binary mode you should send them directly. I don’t know what library you are using but you should have a function to send data byte by byte. Let’s say we have a function named uart_send(uint8_t data) that sends 1 byte from uart. In this case you would send the frame start with this:
+uart_send(0xFF);
+Second, you don’t send number of channels as part of the frame. Maybe I should add this as an option. But it is not supported at the moment.
+Third, if you select the ‘Fixed Size’ option you don’t send the payload size as part of the frame, you should set it in the SerialPlot interface only.
+Here is a complete example (I’m assuming you have a function named `uart_send`):
+
+
+float temp[10];
+uint8_t* data = (uint8_t*) temp; // type casting for ease of access
+
+uart_send(0xFF); // send frame start
+
+uart_send(40); // payload size, remove this line if 'fixed size' option is selected
+
+// send samples array byte by byte
+for (int i = 0; i < 40; i++) { uart_send(data[i]); }
+
+I hope this is helpful.
+Reply
+
+

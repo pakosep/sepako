@@ -1,0 +1,190 @@
+.MCAD 303010000 1 74 62 0
+.CMD PLOTFORMAT
+0 0 1 1 0 0 1 
+0 0 1 1 0 0 1 
+0 1 0 0 NO-TRACE-STRING
+0 2 1 0 NO-TRACE-STRING
+0 3 2 0 NO-TRACE-STRING
+0 4 3 0 NO-TRACE-STRING
+0 1 4 0 NO-TRACE-STRING
+0 2 5 0 NO-TRACE-STRING
+0 3 6 0 NO-TRACE-STRING
+0 4 0 0 NO-TRACE-STRING
+0 1 1 0 NO-TRACE-STRING
+0 2 2 0 NO-TRACE-STRING
+0 3 3 0 NO-TRACE-STRING
+0 4 4 0 NO-TRACE-STRING
+0 1 5 0 NO-TRACE-STRING
+0 2 6 0 NO-TRACE-STRING
+0 3 0 0 NO-TRACE-STRING
+0 4 1 0 NO-TRACE-STRING
+0 1 21 15 0 3 
+.CMD FORMAT  rd=d ct=10 im=i et=3 zt=15 pr=3 mass length time charge temperature tr=0 vm=0
+.CMD SET ORIGIN 0
+.CMD SET TOL 0.001000000000000
+.CMD SET PRNCOLWIDTH 8
+.CMD SET PRNPRECISION 4
+.CMD PRINT_SETUP 1.200000 0.979167 1.200000 1.200000 0
+.CMD HEADER_FOOTER 1 1 *empty* *empty* *empty* 0 1 *empty* *empty* *empty*
+.CMD HEADER_FOOTER_FONT fontID=14 family=Arial points=10 bold=0 italic=0 underline=0
+.CMD HEADER_FOOTER_FONT fontID=15 family=Arial points=10 bold=0 italic=0 underline=0
+.CMD DEFINE_FONTSTYLE_NAME fontID=0 name=Variables
+.CMD DEFINE_FONTSTYLE_NAME fontID=1 name=Constants
+.CMD DEFINE_FONTSTYLE_NAME fontID=2 name=Text
+.CMD DEFINE_FONTSTYLE_NAME fontID=4 name=User^1
+.CMD DEFINE_FONTSTYLE_NAME fontID=5 name=User^2
+.CMD DEFINE_FONTSTYLE_NAME fontID=6 name=User^3
+.CMD DEFINE_FONTSTYLE_NAME fontID=7 name=User^4
+.CMD DEFINE_FONTSTYLE_NAME fontID=8 name=User^5
+.CMD DEFINE_FONTSTYLE_NAME fontID=9 name=User^6
+.CMD DEFINE_FONTSTYLE_NAME fontID=10 name=User^7
+.CMD DEFINE_FONTSTYLE fontID=0 family=Times^New^Roman points=10 bold=0 italic=0 underline=0
+.CMD DEFINE_FONTSTYLE fontID=1 family=Times^New^Roman points=10 bold=0 italic=0 underline=0
+.CMD DEFINE_FONTSTYLE fontID=2 family=Arial points=10 bold=0 italic=0 underline=0
+.CMD DEFINE_FONTSTYLE fontID=4 family=Arial points=10 bold=0 italic=0 underline=0
+.CMD DEFINE_FONTSTYLE fontID=5 family=Courier^New points=10 bold=0 italic=0 underline=0
+.CMD DEFINE_FONTSTYLE fontID=6 family=System points=10 bold=0 italic=0 underline=0
+.CMD DEFINE_FONTSTYLE fontID=7 family=Script points=10 bold=0 italic=0 underline=0
+.CMD DEFINE_FONTSTYLE fontID=8 family=Roman points=10 bold=0 italic=0 underline=0
+.CMD DEFINE_FONTSTYLE fontID=9 family=Modern points=10 bold=0 italic=0 underline=0
+.CMD DEFINE_FONTSTYLE fontID=10 family=Times^New^Roman points=10 bold=0 italic=0 underline=0
+.CMD UNITS U=1
+.CMD DIMENSIONS_ANALYSIS 0 0
+.EQN 15 4 1 0
+((10*10+2*12)*288+18*9*32+64)/(8)-10*512={0}?_n_u_l_l_
+.EQN 0 40 5 0
+((10*10+2*11)*288)/(8)={19043}?_n_u_l_l_
+.EQN 5 -39 2 0
+512={51763}?_n_u_l_l_
+.EQN 3 0 3 0
+10*200h={51763}?_n_u_l_l_
+.EQN 2 55 26 0
+(7)/(2)={0}?_n_u_l_l_
+.EQN 1 -20 7 0
+12*(10)/(8)={0}?_n_u_l_l_
+.EQN 0 10 8 0
+2*(12)/(8)={0}?_n_u_l_l_
+.EQN 1 -45 4 0
+3c51h+((10*10+2*11)*288)/(8)={51763}?_n_u_l_l_
+.EQN 4 0 6 0
+5a21h-3c51h={19043}?_n_u_l_l_
+.EQN 5 0 22 0
+((12*10+10*11)*288+32*15)/(8)-10*512={0}?_n_u_l_l_
+.EQN 5 -1 9 0
+((8*10+4*12)*288+32*3*36*0)/(8)-9*512={0}?_n_u_l_l_
+.EQN 5 0 10 0
+{0:n}NAME:0;20
+.EQN 0 8 11 0
+({0:a8}NAME)[({0:n}NAME):8*{0:n}NAME
+.EQN 0 8 15 0
+({0:b10}NAME)[({0:n}NAME):(10*{0:n}NAME)/(8)
+.EQN 0 10 14 0
+({0:c12}NAME)[({0:n}NAME):(12*{0:n}NAME)/(8)
+.EQN 0 10 18 0
+({0:d11}NAME)[({0:n}NAME):(11*{0:n}NAME)/(8)
+.EQN 0 13 24 0
+({0:a9}NAME)[({0:n}NAME):9*{0:n}NAME
+.EQN 4 -52 13 0
+{0:n}NAME=
+.EQN 0 4 12 0
+({0:a8}NAME)[({0:n}NAME)=
+.EQN 0 5 16 0
+({0:b10}NAME)[({0:n}NAME)=
+.EQN 0 6 17 0
+({0:c12}NAME)[({0:n}NAME)=
+.EQN 0 6 19 0
+({0:d11}NAME)[({0:n}NAME)=
+.EQN 1 34 25 0
+({0:a9}NAME)[({0:n}NAME)=
+.EQN 2 -21 20 0
+36*8={0}?_n_u_l_l_
+.EQN 6 0 21 0
+(288)/(32)={0}?_n_u_l_l_
+.EQN 8 -3 23 0
+((8*10+4*12)*288)/(8)-9*512={0}?_n_u_l_l_
+.EQN 26 62 50 0
+288*1.5={0}?_n_u_l_l_
+.EQN 3 18 55 0
+288*1.5={18992}?_n_u_l_l_
+.EQN 2 -18 52 0
+(288)/(12)={0}?_n_u_l_l_
+.EQN 0 18 61 0
+288*1.6={0}?_n_u_l_l_
+.EQN 3 -9 54 0
+{0:n}NAME:24;1
+.EQN 1 -44 60 0
+(288)/({0:n}NAME*12){18995}=
+.EQN 0 6 58 0
+{0:n}NAME*(12)/(288)=
+.EQN 0 11 53 0
+288*{0:n}NAME*(12)/(288)=
+.EQN 1 -75 27 0
+{0:x}NAME:1;11
+.EQN 0 10 33 0
+({0:a}NAME)[({0:x}NAME):{0:x}NAME-0
+.EQN 0 60 56 0
+{0:n}NAME=
+.EQN 0 47 62 0
+460-432={0}?_n_u_l_l_
+.EQN 1 -98 28 0
+({0:A}NAME)[({0:x}NAME):0,2,4,6,8,10,8,6,4,2,0
+.EQN 3 -19 35 0
+{0:y}NAME:1;5
+.EQN 0 10 40 0
+({0:b}NAME)[({0:y}NAME):{0:y}NAME-0
+.EQN 1 15 43 0
+({0:C}NAME)[({0:x}NAME):{0:x}NAME*1.5
+.EQN 0 8 36 0
+({0:B}NAME)[({0:y}NAME):(({0:A}NAME)[(2*{0:y}NAME)+({0:A}NAME)[(2*{0:y}NAME-1))/(2)
+.EQN 6 13 51 0
+({0:C}NAME)[({0:x}NAME)=
+.EQN 1 -10 42 0
+({0:A}NAME)[({0:x}NAME)=
+.EQN 0 4 41 0
+({0:B}NAME)[({0:y}NAME)=
+.EQN 13 50 45 0
+{0:p}NAME:0.1,0.11;10
+.EQN 0 13 46 0
+{0:k}NAME({0:p}NAME):(1)/({0:p}NAME)
+.EQN 8 -17 47 0
+&&(_n_u_l_l_&_n_u_l_l_)&{0:k}NAME({0:p}NAME)@&&(_n_u_l_l_&_n_u_l_l_)&{0:p}NAME
+0 0 1 1 0 0 1 
+0 0 1 1 0 0 1 
+0 1 0 0 NO-TRACE-STRING
+0 2 1 0 NO-TRACE-STRING
+0 3 2 0 NO-TRACE-STRING
+0 4 3 0 NO-TRACE-STRING
+0 1 4 0 NO-TRACE-STRING
+0 2 5 0 NO-TRACE-STRING
+0 3 6 0 NO-TRACE-STRING
+0 4 0 0 NO-TRACE-STRING
+0 1 1 0 NO-TRACE-STRING
+0 2 2 0 NO-TRACE-STRING
+0 3 3 0 NO-TRACE-STRING
+0 4 4 0 NO-TRACE-STRING
+0 1 5 0 NO-TRACE-STRING
+0 2 6 0 NO-TRACE-STRING
+0 3 0 0 NO-TRACE-STRING
+0 4 1 0 NO-TRACE-STRING
+0 1 51 38 0 3 
+.EQN 7 -84 31 0
+&&(_n_u_l_l_&_n_u_l_l_)&({0:A}NAME)[({0:x}NAME),({0:B}NAME)[({0:y}NAME)@&1&(_n_u_l_l_&_n_u_l_l_)&({0:a}NAME)[({0:x}NAME),({0:b}NAME)[({0:y}NAME)
+0 1 1 1 11 0 1 
+0 1 1 1 10 0 1 
+0 1 0 0 NO-TRACE-STRING
+0 1 1 0 NO-TRACE-STRING
+0 3 2 0 NO-TRACE-STRING
+0 4 3 0 NO-TRACE-STRING
+0 1 4 0 NO-TRACE-STRING
+0 2 5 0 NO-TRACE-STRING
+0 3 6 0 NO-TRACE-STRING
+0 4 0 0 NO-TRACE-STRING
+0 1 1 0 NO-TRACE-STRING
+0 2 2 0 NO-TRACE-STRING
+0 3 3 0 NO-TRACE-STRING
+0 4 4 0 NO-TRACE-STRING
+0 1 5 0 NO-TRACE-STRING
+0 2 6 0 NO-TRACE-STRING
+0 3 0 0 NO-TRACE-STRING
+0 4 1 0 NO-TRACE-STRING
+0 1 43 31 0 3 

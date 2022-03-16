@@ -1,0 +1,7 @@
+Pracuje na podobnym funkcjonalnie wyswietlaczu tyle ,ze na kontrolerze hx8347. Dokladnie tak samo nie mam wyprowadzonych pinow konfiguracyjnych i tak samo przy rysowaniu pelnego wyswietlacza bylo wydac jak scena jest tworzona. Bylo to na tyle irytujace ,ze musialem znalezc jakies rozwiazanie... i znalazlem Razz
+Mianowicie zerujac bit DTE wylaczam "zasilanie" lcd,a ze krysztaly sa juz spolaryzowane wg poprzedniej sceny to w miedzyczasie rysowania nastepnej sceny nie zdarza sie "rozladowac" (nawet nie ma efektu przygaszenia), wstawiajac spowrotem 1 do DTE natychmiast scena ktora znajduje sie w GRAM jest wyswietlana na wyswietlaczu, wiec mamy wyswietlona scene bez efektu rysowania.
+
+bit DTE w obu kontrolerach wystepuje jako 4 w hx8347 jest to rejestr 26h w sd1289 rejestr 07h
+Daj znac czy sd1289 zachowuje sie tak samo
+pozdrowienia
+
