@@ -321,7 +321,7 @@ void minios(void){
 				switch (swh){
 					case 'a':
 					UaPutS("\r\n");
-					UaPutS("\t\ta Podaj liczbe ");
+					UaPutS("\t\ta Podaj liczbe  ");
 					vr1 = UART_getNum();
 					UaPutS(" num=");	
 					unt2uart(vr1,4);
