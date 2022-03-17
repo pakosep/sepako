@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccpmJ073.s 			page 1
+ARM GAS  /tmp/ccGIYrAe.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
   55              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
   56              	@ -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim
   57              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
-ARM GAS  /tmp/ccpmJ073.s 			page 2
+ARM GAS  /tmp/ccGIYrAe.s 			page 2
 
 
   58              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  112 003a 02EB5702 		add	r2, r2, r7, lsr #1	@ tmp255, tmp251, tmp253,
  113 003e 9208     		lsrs	r2, r2, #2	@ tmp256, tmp255,
  114              	@ main.c:5604: 	tmbuf->tm_sec = dayclock % 60;
-ARM GAS  /tmp/ccpmJ073.s 			page 3
+ARM GAS  /tmp/ccGIYrAe.s 			page 3
 
 
  115 0040 6409     		lsrs	r4, r4, #5	@ tmp199, tmp197,
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  169 00a8 EFD2     		bcs	.L23	@,
  170              	.L17:
  171 00aa 4FF4C870 		mov	r0, #400	@ tmp355,
-ARM GAS  /tmp/ccpmJ073.s 			page 4
+ARM GAS  /tmp/ccGIYrAe.s 			page 4
 
 
  172 00ae 2E49     		ldr	r1, .L35+20	@ tmp353,
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  226 011a BB42     		cmp	r3, r7	@ dayno, _73
  227 011c F7D2     		bcs	.L9	@,
  228              	.L16:
-ARM GAS  /tmp/ccpmJ073.s 			page 5
+ARM GAS  /tmp/ccGIYrAe.s 			page 5
 
 
  229              	@ main.c:5622: 	tmbuf->tm_isdst = 1;
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  283              		@ args = 0, pretend = 0, frame = 0
  284              		@ frame_needed = 0, uses_anonymous_args = 0
  285 0000 08B5     		push	{r3, lr}	@
-ARM GAS  /tmp/ccpmJ073.s 			page 6
+ARM GAS  /tmp/ccGIYrAe.s 			page 6
 
 
  286              	@ main.c:217: 		tr_pen_color( TGREEN );
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  340              	@ main.c:253: 		GPIOB->CRL = (GPIOB->CRL & 0x0fffffff) | 0x10000000;	// PB7
  341 001e 23F07043 		bic	r3, r3, #-268435456	@ tmp180, _1,
  342 0022 43F08053 		orr	r3, r3, #268435456	@ _3, tmp180,
-ARM GAS  /tmp/ccpmJ073.s 			page 7
+ARM GAS  /tmp/ccGIYrAe.s 			page 7
 
 
  343 0026 2360     		str	r3, [r4]	@ _3, MEM[(struct GPIO_TypeDef *)1073810432B].CRL
@@ -405,7 +405,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  384 006c 2B60     		str	r3, [r5]	@ _125, MEM[(struct GPIO_TypeDef *)1073809408B].CRL
  385              	@ main.c:5367: 	USART2->CR1 |= (USART_CR1_UE |USART_CR1_TE | USART_CR1_RE	|USART_CR1_RXNEIE);
  386 006e BCF80C30 		ldrh	r3, [ip, #12]	@, MEM[(struct USART_TypeDef *)1073759232B].CR1
- 387              	@ main.c:258: 			UaPutS("\f UART1 "); UaPutS (uint2str( (F_CPU/1)/(1*USART1->BRR-1),buf));	
+ 387              	@ main.c:258: 			UaPutS("\f UART1  "); UaPutS (uint2str( (F_CPU/1)/(1*USART1->BRR-1),buf));	
  388 0072 844D     		ldr	r5, .L53+16	@ tmp228,
  389              	@ main.c:5367: 	USART2->CR1 |= (USART_CR1_UE |USART_CR1_TE | USART_CR1_RE	|USART_CR1_RXNEIE);
  390 0074 1843     		orrs	r0, r0, r3	@, _127, tmp191, MEM[(struct USART_TypeDef *)1073759232B].CR1
@@ -418,14 +418,14 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  397              	@ main.c:257: 			PutChar = UART1_putc;	tr_pen_color ( TYELLOW );
  398 0080 0320     		movs	r0, #3	@,
  399              	@ ./inc/core_cm3.h:1504:   NVIC->ISER[((uint32_t)(IRQn) >> 5)] = (1 << ((uint32_t)(IRQn) & 0x1F)); 
-ARM GAS  /tmp/ccpmJ073.s 			page 8
+ARM GAS  /tmp/ccGIYrAe.s 			page 8
 
 
  400 0082 7A60     		str	r2, [r7, #4]	@ tmp217, MEM[(struct NVIC_Type *)3758153984B].ISER
  401              	@ main.c:257: 			PutChar = UART1_putc;	tr_pen_color ( TYELLOW );
  402 0084 CBF80030 		str	r3, [fp]	@ tmp314, PutChar
  403 0088 FFF7FEFF 		bl	tr_pen_color	@
- 404              	@ main.c:258: 			UaPutS("\f UART1 "); UaPutS (uint2str( (F_CPU/1)/(1*USART1->BRR-1),buf));	
+ 404              	@ main.c:258: 			UaPutS("\f UART1  "); UaPutS (uint2str( (F_CPU/1)/(1*USART1->BRR-1),buf));	
  405 008c 7F48     		ldr	r0, .L53+24	@,
  406 008e FFF7FEFF 		bl	UaPutS	@
  407 0092 2089     		ldrh	r0, [r4, #8]	@, MEM[(struct USART_TypeDef *)1073821696B].BRR
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  454 00f4 0322     		movs	r2, #3	@,
  455 00f6 04A9     		add	r1, sp, #16	@,,
  456 00f8 8020     		movs	r0, #128	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 9
+ARM GAS  /tmp/ccGIYrAe.s 			page 9
 
 
  457              	@ main.c:278: 			i2weg[0]=5;    	// Register
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  511 015e 08BF     		it	eq
  512 0160 0135     		addeq	r5, r5, #1	@ tmp289, cnt2,
  513              	@ main.c:321: 			if(p_Fifo1->rct){
-ARM GAS  /tmp/ccpmJ073.s 			page 10
+ARM GAS  /tmp/ccGIYrAe.s 			page 10
 
 
  514 0162 9BB2     		uxth	r3, r3	@ _51, p_Fifo1.3_50->rct
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  568 01c0 0521     		movs	r1, #5	@,
  569 01c2 2046     		mov	r0, r4	@, cnt
  570              	@ main.c:296: 				PutChar = UART1_putc;
-ARM GAS  /tmp/ccpmJ073.s 			page 11
+ARM GAS  /tmp/ccGIYrAe.s 			page 11
 
 
  571 01c4 CBF80030 		str	r3, [fp]	@ tmp320, PutChar
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  625 022c 1846     		mov	r0, r3	@, cur
  626 022e 0421     		movs	r1, #4	@,
  627 0230 FFF7FEFF 		bl	int2uart	@
-ARM GAS  /tmp/ccpmJ073.s 			page 12
+ARM GAS  /tmp/ccGIYrAe.s 			page 12
 
 
  628              	@ main.c:311: 				tr_locate(1,2);
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  682 02b8 38000000 		.word	.LC17
  683 02bc 40000000 		.word	.LC18
  684 02c0 B4012242 		.word	1109524916
-ARM GAS  /tmp/ccpmJ073.s 			page 13
+ARM GAS  /tmp/ccGIYrAe.s 			page 13
 
 
  685 02c4 48000000 		.word	.LC19
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  739              	@ main.c:5654: 	while (!RCC_CR_PLLRDY_bb);			// wait for PLL lock
  740 0026 1368     		ldr	r3, [r2]	@ _21, MEM[(volatile long unsigned int *)1111621732B]
  741 0028 002B     		cmp	r3, #0	@ _21
-ARM GAS  /tmp/ccpmJ073.s 			page 14
+ARM GAS  /tmp/ccGIYrAe.s 			page 14
 
 
  742 002a FCD0     		beq	.L57	@
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  796 007c 00100240 		.word	1073876992
  797 0080 60004242 		.word	1111621728
  798 0084 64004242 		.word	1111621732
-ARM GAS  /tmp/ccpmJ073.s 			page 15
+ARM GAS  /tmp/ccGIYrAe.s 			page 15
 
 
  799 0088 00ED00E0 		.word	-536810240
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  853 005c 7244     		add	r2, r2, lr	@ tmp217, _3
  854 005e 2A81     		strh	r2, [r5, #8]	@ movhi	@ tmp217, MEM[(s16 *)v_82(D) + 8B]
  855              	@ main.c:350: 		v[5] = v[0]-v[6]*v[2]/100;  //b=y-ax
-ARM GAS  /tmp/ccpmJ073.s 			page 16
+ARM GAS  /tmp/ccGIYrAe.s 			page 16
 
 
  856 0060 6881     		strh	r0, [r5, #10]	@ movhi	@ _20, MEM[(s16 *)v_82(D) + 10B]
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  910 00c8 F281     		strh	r2, [r6, #14]	@ movhi	@ tmp261, MEM[(s16 *)c_87(D) + 14B]
  911              	@ main.c:359: 		UaPutS("v="); sint2uart(v[6]); sint2uart(v[5]); sint2uart(v[4]); sint2uart(v[7]); U
  912 00ca FFF7FEFF 		bl	UaPutS	@
-ARM GAS  /tmp/ccpmJ073.s 			page 17
+ARM GAS  /tmp/ccGIYrAe.s 			page 17
 
 
  913 00ce B5F90C00 		ldrsh	r0, [r5, #12]	@, MEM[(s16 *)v_82(D) + 12B]
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  967              	@ main.c:364: 		BkpRegInit();
  968 000a FFF7FEFF 		bl	BkpRegInit	@
  969              	@ main.c:370: 		PB12_o = 0;		// rozladowanie
-ARM GAS  /tmp/ccpmJ073.s 			page 18
+ARM GAS  /tmp/ccGIYrAe.s 			page 18
 
 
  970 000e 0022     		movs	r2, #0	@ tmp150,
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1024              	@ main.c:371: 		PB13_o = 0;   // ladowanie
  1025 0068 3A60     		str	r2, [r7]	@ tmp150, MEM[(volatile long unsigned int *)1109492148B]
  1026              	@ main.c:372: 		PB14_o = 1;   // dzwonek
-ARM GAS  /tmp/ccpmJ073.s 			page 19
+ARM GAS  /tmp/ccGIYrAe.s 			page 19
 
 
  1027 006a 3160     		str	r1, [r6]	@ tmp154, MEM[(volatile long unsigned int *)1109492152B]
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1081 00d4 FFF7FEFF 		bl	liontrend	@
  1082              	.L72:
  1083 00d8 FEE7     		b	.L72	@
-ARM GAS  /tmp/ccpmJ073.s 			page 20
+ARM GAS  /tmp/ccGIYrAe.s 			page 20
 
 
  1084              	.L75:
@@ -1152,7 +1152,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1092 00f0 B8812142 		.word	1109492152
  1093 00f4 00000000 		.word	PutChar
  1094 00f8 00000000 		.word	UART1_putc
- 1095 00fc 00000000 		.word	.LC10
+ 1095 00fc 00000000 		.word	.LC24
  1096 0100 00A24A04 		.word	72000000
  1097 0104 00000000 		.word	.LANCHOR1
  1098 0108 0C000000 		.word	.LC11
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1138              	@ main.c:5359: 	GPIOA->CRH = (GPIOA->CRH & 0xfffff00f) | 0x00000490; // PA9=TX, PA10=RX
  1139 0030 4368     		ldr	r3, [r0, #4]	@ _205, MEM[(struct GPIO_TypeDef *)1073809408B].CRH
  1140              	@ ./inc/core_cm3.h:1504:   NVIC->ISER[((uint32_t)(IRQn) >> 5)] = (1 << ((uint32_t)(IRQn) & 0x1F)); 
-ARM GAS  /tmp/ccpmJ073.s 			page 21
+ARM GAS  /tmp/ccGIYrAe.s 			page 21
 
 
  1141 0032 A649     		ldr	r1, .L102+8	@ tmp244,
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1195              	@ main.c:410: 		UaPutS (" b/s \r\n");
  1196 009e 9148     		ldr	r0, .L102+32	@,
  1197 00a0 FFF7FEFF 		bl	UaPutS	@
-ARM GAS  /tmp/ccpmJ073.s 			page 22
+ARM GAS  /tmp/ccGIYrAe.s 			page 22
 
 
  1198              	@ main.c:432: 		i2weg[0]=0;    // Register
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1252 00fc 43F0AA63 		orr	r3, r3, #89128960	@ _9, tmp288,
  1253 0100 43F4A023 		orr	r3, r3, #327680	@ _9, _9,
  1254              	@ main.c:455: 		cap = (BKP->DR2<<16) + BKP->DR1;
-ARM GAS  /tmp/ccpmJ073.s 			page 23
+ARM GAS  /tmp/ccGIYrAe.s 			page 23
 
 
  1255 0104 DFF80CE2 		ldr	lr, .L102+80	@ tmp298,
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1309              	@ main.c:517: 				if(vacu > 2000 && vacu < 2750){
  1310 0166 D318     		adds	r3, r2, r3	@ tmp425, vacu.29_86,
  1311 0168 9BB2     		uxth	r3, r3	@ tmp426, tmp425
-ARM GAS  /tmp/ccpmJ073.s 			page 24
+ARM GAS  /tmp/ccGIYrAe.s 			page 24
 
 
  1312 016a B3F53B7F 		cmp	r3, #748	@ tmp426,
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1366 01dc 3F010000 		.word	.L91+1
  1367 01e0 3F010000 		.word	.L91+1
  1368 01e4 3F010000 		.word	.L91+1
-ARM GAS  /tmp/ccpmJ073.s 			page 25
+ARM GAS  /tmp/ccGIYrAe.s 			page 25
 
 
  1369 01e8 3F010000 		.word	.L91+1
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1423              	@ main.c:574: 					PB14_o = 1;
  1424 0242 0123     		movs	r3, #1	@ tmp494,
  1425              	@ main.c:573: 					beep  ^= 1;
-ARM GAS  /tmp/ccpmJ073.s 			page 26
+ARM GAS  /tmp/ccGIYrAe.s 			page 26
 
 
  1426 0244 019A     		ldr	r2, [sp, #4]	@ beep, %sfp
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1480 0284 0860     		str	r0, [r1]	@ tmp441, MEM[(volatile long unsigned int *)1109492144B]
  1481              	@ main.c:526: 					cap = 0;
  1482 0286 2B60     		str	r3, [r5]	@ tmp439, cap
-ARM GAS  /tmp/ccpmJ073.s 			page 27
+ARM GAS  /tmp/ccGIYrAe.s 			page 27
 
 
  1483              	@ main.c:527: 					BKP->DR1 = 0;
@@ -1606,7 +1606,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1525 02d0 00440040 		.word	1073759232
  1526 02d4 00000000 		.word	PutChar
  1527 02d8 00000000 		.word	UART1_putc
- 1528 02dc 00000000 		.word	.LC10
+ 1528 02dc 00000000 		.word	.LC24
  1529 02e0 00A24A04 		.word	72000000
  1530 02e4 0C000000 		.word	.LC11
  1531 02e8 000C0140 		.word	1073810432
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1537 0300 40548900 		.word	9000000
  1538 0304 40A5AE02 		.word	45000000
  1539 0308 B4812142 		.word	1109492148
-ARM GAS  /tmp/ccpmJ073.s 			page 28
+ARM GAS  /tmp/ccGIYrAe.s 			page 28
 
 
  1540 030c 00000000 		.word	trg2
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1594 038a 81EAE170 		eor	r0, r1, r1, asr #31	@ tmp364, _38, _38,
  1595              	@ main.c:489: 				vacu = vbus + cur*108/1000;
  1596 038e 87FB023E 		smull	r3, lr, r7, r2	@ tmp517, tmp346, tmp532, tmp343
-ARM GAS  /tmp/ccpmJ073.s 			page 29
+ARM GAS  /tmp/ccGIYrAe.s 			page 29
 
 
  1597 0392 D317     		asrs	r3, r2, #31	@ tmp349, tmp343,
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1651 03f2 3548     		ldr	r0, .L104+28	@,
  1652 03f4 FFF7FEFF 		bl	UaPutS	@
  1653              	@ main.c:500: 				int2uart (cur  ,5,0);				UaPutS("mA");
-ARM GAS  /tmp/ccpmJ073.s 			page 30
+ARM GAS  /tmp/ccGIYrAe.s 			page 30
 
 
  1654 03f8 0022     		movs	r2, #0	@,
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1708 046e B0F90000 		ldrsh	r0, [r0]	@, pow
  1709 0472 FFF7FEFF 		bl	int2uarz	@
  1710 0476 2C20     		movs	r0, #44	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 31
+ARM GAS  /tmp/ccGIYrAe.s 			page 31
 
 
  1711 0478 FFF7FEFF 		bl	UaPutC	@
@@ -1838,12 +1838,12 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1745 04bc 00000000 		.word	.LANCHOR6
  1746 04c0 00000000 		.word	PutChar
  1747 04c4 00000000 		.word	UART1_putc
- 1748 04c8 00000000 		.word	.LC24
- 1749 04cc 04000000 		.word	.LC25
- 1750 04d0 08000000 		.word	.LC26
+ 1748 04c8 00000000 		.word	.LC25
+ 1749 04cc 04000000 		.word	.LC26
+ 1750 04d0 08000000 		.word	.LC27
  1751 04d4 398EE338 		.word	954437177
- 1752 04d8 0C000000 		.word	.LC27
- 1753 04dc 10000000 		.word	.LC28
+ 1752 04d8 0C000000 		.word	.LC28
+ 1753 04dc 10000000 		.word	.LC29
  1754 04e0 00000000 		.word	UART2_putc
  1755 04e4 00000000 		.word	trg2
  1756 04e8 B4012242 		.word	1109524916
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1765              		.fpu softvfp
  1766              		.type	uht, %function
  1767              	uht:
-ARM GAS  /tmp/ccpmJ073.s 			page 32
+ARM GAS  /tmp/ccGIYrAe.s 			page 32
 
 
  1768              		@ args = 0, pretend = 0, frame = 0
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1822 0030 43F48833 		orr	r3, r3, #69632	@ _7, tmp146,
  1823              	@ main.c:670: 		oled_hw.sck  = (u32*) m_BITBAND_PERIPH(&GPIOB->ODR,4);
  1824 0034 374F     		ldr	r7, .L132+16	@ tmp149,
-ARM GAS  /tmp/ccpmJ073.s 			page 33
+ARM GAS  /tmp/ccGIYrAe.s 			page 33
 
 
  1825              	@ main.c:671: 		oled_hw.mosi = (u32*) m_BITBAND_PERIPH(&GPIOB->ODR,3);
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1879              	@ main.c:703: 				trg0 = SysTick->VAL; 
  1880 008c C8F800C0 		str	ip, [r8]	@ _13, trg0
  1881              	@ main.c:705: 				i2c1_read( DS3231_ADDR,0,tm,3);
-ARM GAS  /tmp/ccpmJ073.s 			page 34
+ARM GAS  /tmp/ccGIYrAe.s 			page 34
 
 
  1882 0090 FFF7FEFF 		bl	i2c1_read	@
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1936 00e0 0622     		movs	r2, #6	@,
  1937 00e2 0298     		ldr	r0, [sp, #8]	@, tim4
  1938 00e4 FFF7FEFF 		bl	int2str	@
-ARM GAS  /tmp/ccpmJ073.s 			page 35
+ARM GAS  /tmp/ccGIYrAe.s 			page 35
 
 
  1939              	@ main.c:724: 				int2str(123,tbuf,6,0); 
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  1993              		.fpu softvfp
  1994              		.type	veml6075, %function
  1995              	veml6075:
-ARM GAS  /tmp/ccpmJ073.s 			page 36
+ARM GAS  /tmp/ccGIYrAe.s 			page 36
 
 
  1996              		@ args = 0, pretend = 0, frame = 16
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2050              	@ main.c:775: 		oled_hw.mosi = (u32*) m_BITBAND_PERIPH(&GPIOB->ODR,3);
  2051 004c 1D60     		str	r5, [r3]	@ tmp146, oled_hw.mosi
  2052              	@ main.c:796: 		oled_refresh_gram();
-ARM GAS  /tmp/ccpmJ073.s 			page 37
+ARM GAS  /tmp/ccGIYrAe.s 			page 37
 
 
  2053 004e 0027     		movs	r7, #0	@ ivtmp.406,
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2107 00bc BC012142 		.word	1109459388
  2108 00c0 8C812142 		.word	1109492108
  2109 00c4 B0012142 		.word	1109459376
-ARM GAS  /tmp/ccpmJ073.s 			page 38
+ARM GAS  /tmp/ccGIYrAe.s 			page 38
 
 
  2110 00c8 00000000 		.word	trg0
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2164 003a 592B     		cmp	r3, #89	@ tmp137,
  2165 003c FAD9     		bls	.L145	@,
  2166              	@ main.c:930: 			if (wMISO)			byte |= 0x01;
-ARM GAS  /tmp/ccpmJ073.s 			page 39
+ARM GAS  /tmp/ccGIYrAe.s 			page 39
 
 
  2167 003e D9F80030 		ldr	r3, [r9]	@ _2, MEM[(volatile long unsigned int *)1109459224B]
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2221 000a 0124     		movs	r4, #1	@ tmp133,
  2222              	@ main.c:943: 			else				wMOSI = 0;
  2223 000c 0A4E     		ldr	r6, .L168	@ tmp131,
-ARM GAS  /tmp/ccpmJ073.s 			page 40
+ARM GAS  /tmp/ccGIYrAe.s 			page 40
 
 
  2224              	@ main.c:945: 			wSCK = 0; /* a slave shifts out output data bit */
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2278 0002 6320     		movs	r0, #99	@ tmp139,
  2279              	@ main.c:953: void ili9486(void){
  2280 0004 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}	@
-ARM GAS  /tmp/ccpmJ073.s 			page 41
+ARM GAS  /tmp/ccGIYrAe.s 			page 41
 
 
  2281              	@ main.c:956: 		p_Fifo1->rct=1;	p_Fifo1->rwi=1;	p_Fifo1->rbuf[0]='c';
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2335 0064 3548     		ldr	r0, .L201+20	@,
  2336 0066 FFF7FEFF 		bl	UaPutK	@
  2337              	@ main.c:970: 					wCS = 0;		dat = softSPI_r(reg); 	wCS = 1;
-ARM GAS  /tmp/ccpmJ073.s 			page 42
+ARM GAS  /tmp/ccGIYrAe.s 			page 42
 
 
  2338 006a 0022     		movs	r2, #0	@ tmp154,
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2392              	@ main.c:985: 					UaPutK("\n\r\n======= ILI9486 ==================================\r\n");
  2393 00b4 2448     		ldr	r0, .L201+32	@,
  2394 00b6 FFF7FEFF 		bl	UaPutK	@
-ARM GAS  /tmp/ccpmJ073.s 			page 43
+ARM GAS  /tmp/ccGIYrAe.s 			page 43
 
 
  2395              	@ main.c:986: 					UaPutK(" r - Read   c - Clear page  \r\n");
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2449              	@ main.c:940: 		for(counter = 8; counter; counter--)
  2450 0104 EDD1     		bne	.L186	@,
  2451              	@ main.c:976: 					for(u08 i=0;i<64;i++){
-ARM GAS  /tmp/ccpmJ073.s 			page 44
+ARM GAS  /tmp/ccGIYrAe.s 			page 44
 
 
  2452 0106 0BF1010B 		add	fp, fp, #1	@ tmp185, i,
@@ -2608,14 +2608,14 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2476 012c 9C012142 		.word	1109459356
  2477 0130 94012142 		.word	1109459348
  2478 0134 34000000 		.word	.LC16
- 2479 0138 00000000 		.word	.LC29
- 2480 013c 0C000000 		.word	.LC30
+ 2479 0138 00000000 		.word	.LC30
+ 2480 013c 0C000000 		.word	.LC31
  2481 0140 90012142 		.word	1109459344
- 2482 0144 18000000 		.word	.LC31
- 2483 0148 1C000000 		.word	.LC32
- 2484 014c 54000000 		.word	.LC33
- 2485 0150 74000000 		.word	.LC34
- 2486 0154 94000000 		.word	.LC35
+ 2482 0144 18000000 		.word	.LC32
+ 2483 0148 1C000000 		.word	.LC33
+ 2484 014c 54000000 		.word	.LC34
+ 2485 0150 74000000 		.word	.LC35
+ 2486 0154 94000000 		.word	.LC36
  2487 0158 18012142 		.word	1109459224
  2488 015c 48000000 		.word	.LC19
  2489 0160 00000000 		.word	p_Fifo1
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2506 0006 FFF7FEFF 		bl	SPI1_init_	@
  2507              	@ main.c:1005: 	GPIOB->CRL = (GPIOB->CRL & 0xffffff0f) | 0x00000010;	
  2508 000a 1A49     		ldr	r1, .L210	@ tmp130,
-ARM GAS  /tmp/ccpmJ073.s 			page 45
+ARM GAS  /tmp/ccGIYrAe.s 			page 45
 
 
  2509              	@ main.c:1006: 	GPIOC->CRH = (GPIOC->CRH & 0xf0ffffff) | 0x01000000;	// LED Blue  PC14
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2563 0064 3B68     		ldr	r3, [r7]	@ _21, *_20
  2564 0066 002B     		cmp	r3, #0	@ _21
  2565 0068 E7D1     		bne	.L205	@
-ARM GAS  /tmp/ccpmJ073.s 			page 46
+ARM GAS  /tmp/ccGIYrAe.s 			page 46
 
 
  2566              	@ main.c:1083: 			flag_9 ^=1;
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2620              	@ main.c:5235: 		RCC_APB2RSTR_ADC1RST_bb = 0;
  2621 0022 0022     		movs	r2, #0	@ tmp136,
  2622              	@ main.c:1107: 		ADC1->SMPR2 = (4<<5*3 );
-ARM GAS  /tmp/ccpmJ073.s 			page 47
+ARM GAS  /tmp/ccGIYrAe.s 			page 47
 
 
  2623 0024 4FF40036 		mov	r6, #131072	@ tmp142,
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2677              	@ main.c:1117: 			while(PB0_i==0);
  2678 0076 F1E7     		b	.L213	@
  2679              	.L222:
-ARM GAS  /tmp/ccpmJ073.s 			page 48
+ARM GAS  /tmp/ccGIYrAe.s 			page 48
 
 
  2680              		.align	2
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2734              		.size	IRQLoraInit, .-IRQLoraInit
  2735              		.section	.text.LoRaRX,"ax",%progbits
  2736              		.align	1
-ARM GAS  /tmp/ccpmJ073.s 			page 49
+ARM GAS  /tmp/ccGIYrAe.s 			page 49
 
 
  2737              		.p2align 2,,3
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2791 003e 04F50044 		add	r4, r4, #32768	@ tmp176, tmp176,
  2792              	@ main.c:1202: 		SX1278_begin(&SX1278_1, SX1278_433MHZ, SX1278_POWER_11DBM, SX1278_LORA_SF_7,SX1278
  2793 0042 1146     		mov	r1, r2	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 50
+ARM GAS  /tmp/ccGIYrAe.s 			page 50
 
 
  2794 0044 0123     		movs	r3, #1	@,
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2848 0092 2368     		ldr	r3, [r4]	@ _49, *_12
  2849              	@ main.c:1330: 			if((STCLK_MS*300 < (trg1 - SysTick->VAL)) && LED==0){	
  2850 0094 354A     		ldr	r2, .L237+40	@ tmp235,
-ARM GAS  /tmp/ccpmJ073.s 			page 51
+ARM GAS  /tmp/ccGIYrAe.s 			page 51
 
 
  2851              	@ main.c:1328: 			if(flag_10 && (*SX1278_hw1.dio0)==0 ) { flag_10=0; }
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2905 00fa 92B2     		uxth	r2, r2	@ Cnt, tmp215
  2906              	@ main.c:1288: 				t2 = (s16)(buf_rx[2]+(buf_rx[3]<<8));
  2907 00fc 0114     		asrs	r1, r0, #16	@ t2,,
-ARM GAS  /tmp/ccpmJ073.s 			page 52
+ARM GAS  /tmp/ccGIYrAe.s 			page 52
 
 
  2908              	@ main.c:1282: 				memcpy(buf_rx, SX1278_1.rxBuffer, 7);
@@ -3117,8 +3117,8 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  2961 0164 00001001 		.word	.LANCHOR8+17825792
  2962 0168 00000000 		.word	trg1
  2963 016c E0322900 		.word	2700000
- 2964 0170 00000000 		.word	.LC36
-ARM GAS  /tmp/ccpmJ073.s 			page 53
+ 2964 0170 00000000 		.word	.LC37
+ARM GAS  /tmp/ccGIYrAe.s 			page 53
 
 
  2965 0174 80012142 		.word	1109459328
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3019 003c DFF86CE2 		ldr	lr, .L265+116	@ tmp180,
  3020              	@ main.c:1352: 		GPIOB->CRH = (GPIOB->CRH & 0x0000ff00) | 0x43430033;	//   
  3021 0040 4360     		str	r3, [r0, #4]	@ _9, MEM[(struct GPIO_TypeDef *)1073810432B].CRH
-ARM GAS  /tmp/ccpmJ073.s 			page 54
+ARM GAS  /tmp/ccGIYrAe.s 			page 54
 
 
  3022              	@ main.c:1366: 		SX1278_1.hw = &SX1278_hw1;			// wybor modulu		
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3076 009a 0795     		str	r5, [sp, #28]	@ _125, MEM[(volatile u32 *)&tim]
  3077              	@ main.c:1379: 		UaPutK(" Time=");		uint2uart(tim/TIM_US);			
  3078 009c FFF7FEFF 		bl	UaPutK	@
-ARM GAS  /tmp/ccpmJ073.s 			page 55
+ARM GAS  /tmp/ccGIYrAe.s 			page 55
 
 
  3079 00a0 6E48     		ldr	r0, .L265+36	@ tmp205,
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3133 00fc DFE803F0 		tbb	[pc, r3]	@ tmp211
  3134              	.L244:
  3135 0100 53       		.byte	(.L243-.L244)/2
-ARM GAS  /tmp/ccpmJ073.s 			page 56
+ARM GAS  /tmp/ccGIYrAe.s 			page 56
 
 
  3136 0101 16       		.byte	(.L242-.L244)/2
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3190 0158 FFF7FEFF 		bl	SX1278_LoRaRxPacket	@
  3191              	@ main.c:1445: 				if(message_length){
  3192 015c 0028     		cmp	r0, #0	@
-ARM GAS  /tmp/ccpmJ073.s 			page 57
+ARM GAS  /tmp/ccGIYrAe.s 			page 57
 
 
  3193 015e B6D0     		beq	.L252	@
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3247 01c8 4FF0000B 		mov	fp, #0	@ ivtmp.447,
  3248              	.L250:
  3249              	@ main.c:1397: 						dat = SX1278_SPIRead(&SX1278_1, n);
-ARM GAS  /tmp/ccpmJ073.s 			page 58
+ARM GAS  /tmp/ccGIYrAe.s 			page 58
 
 
  3250 01cc 5FFA8BF1 		uxtb	r1, fp	@, ivtmp.447
@@ -3478,31 +3478,31 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3304 0240 33004343 		.word	1128464435
  3305 0244 00000000 		.word	.LANCHOR11
  3306 0248 00000000 		.word	.LANCHOR12
-ARM GAS  /tmp/ccpmJ073.s 			page 59
+ARM GAS  /tmp/ccGIYrAe.s 			page 59
 
 
  3307 024c 00001001 		.word	.LANCHOR8+17825792
  3308 0250 10E000E0 		.word	-536813552
  3309 0254 00000000 		.word	Timt
- 3310 0258 00000000 		.word	.LC37
+ 3310 0258 00000000 		.word	.LC38
  3311 025c 398EE338 		.word	954437177
  3312 0260 00000000 		.word	trg0
  3313 0264 40548900 		.word	9000000
- 3314 0268 40000000 		.word	.LC43
- 3315 026c 48000000 		.word	.LC44
- 3316 0270 74000000 		.word	.LC49
+ 3314 0268 40000000 		.word	.LC44
+ 3315 026c 48000000 		.word	.LC45
+ 3316 0270 74000000 		.word	.LC50
  3317 0274 00000000 		.word	.LANCHOR13
- 3318 0278 80000000 		.word	.LC50
- 3319 027c 60000000 		.word	.LC47
- 3320 0280 68000000 		.word	.LC48
- 3321 0284 50000000 		.word	.LC45
- 3322 0288 58000000 		.word	.LC46
+ 3318 0278 80000000 		.word	.LC51
+ 3319 027c 60000000 		.word	.LC48
+ 3320 0280 68000000 		.word	.LC49
+ 3321 0284 50000000 		.word	.LC46
+ 3322 0288 58000000 		.word	.LC47
  3323 028c 48000000 		.word	.LC19
- 3324 0290 2C000000 		.word	.LC41
- 3325 0294 34000000 		.word	.LC42
- 3326 0298 08000000 		.word	.LC38
- 3327 029c 18000000 		.word	.LC39
- 3328 02a0 24000000 		.word	.LC40
+ 3324 0290 2C000000 		.word	.LC42
+ 3325 0294 34000000 		.word	.LC43
+ 3326 0298 08000000 		.word	.LC39
+ 3327 029c 18000000 		.word	.LC40
+ 3328 02a0 24000000 		.word	.LC41
  3329 02a4 00000000 		.word	p_Fifo1
  3330 02a8 B0812142 		.word	1109492144
  3331 02ac 34812142 		.word	1109492020
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3361 0016 42F00202 		orr	r2, r2, #2	@ _72, _71,
  3362 001a FA61     		str	r2, [r7, #28]	@ _72, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
  3363              	@ main.c:5444: 		TIM3->ARR = TIM3_ARR - 1;
-ARM GAS  /tmp/ccpmJ073.s 			page 60
+ARM GAS  /tmp/ccGIYrAe.s 			page 60
 
 
  3364 001c 4FF6FE7E 		movw	lr, #65534	@ tmp166,
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3418 0076 4D4D     		ldr	r5, .L272+20	@ tmp197,
  3419 0078 DFF854E1 		ldr	lr, .L272+56	@ tmp198,
  3420              	@ main.c:1508: 		SX1278_hw1.miso = (u32 *)m_BITBAND_PERIPH(&GPIOA->IDR, 1); 
-ARM GAS  /tmp/ccpmJ073.s 			page 61
+ARM GAS  /tmp/ccGIYrAe.s 			page 61
 
 
  3421 007c DFF854C1 		ldr	ip, .L272+60	@ tmp200,
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3475              	@ main.c:1530: 		flag_9 = 0;		
  3476 00e2 5201     		lsls	r2, r2, #5	@ tmp218, tmp217,
  3477 00e4 5462     		str	r4, [r2, #36]	@ tmp160, *_17
-ARM GAS  /tmp/ccpmJ073.s 			page 62
+ARM GAS  /tmp/ccGIYrAe.s 			page 62
 
 
  3478              	@ main.c:1531: 		LED	   = 1;		
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3532 013c 82F00102 		eor	r2, r2, #1	@ _28, _27,
  3533 0140 CBF80020 		str	r2, [fp]	@ _28, MEM[(volatile long unsigned int *)1109524916B]
  3534              	@ main.c:1575: 				strcat (buf_tx,unt2str(n++,str_num,5));
-ARM GAS  /tmp/ccpmJ073.s 			page 63
+ARM GAS  /tmp/ccGIYrAe.s 			page 63
 
 
  3535 0144 1F49     		ldr	r1, .L272+44	@,
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3589 01ac 00000000 		.word	.LANCHOR14
  3590 01b0 00001001 		.word	.LANCHOR8+17825792
  3591 01b4 B4012242 		.word	1109524916
-ARM GAS  /tmp/ccpmJ073.s 			page 64
+ARM GAS  /tmp/ccGIYrAe.s 			page 64
 
 
  3592 01b8 00000000 		.word	trg0
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3646              		@ frame_needed = 0, uses_anonymous_args = 0
  3647              		@ link register save eliminated.
  3648              	@ main.c:1713: 			dma_buf[0]=0xe0;	dma_buf[8]  =0xe0;	dma_buf[16]=0xe0;
-ARM GAS  /tmp/ccpmJ073.s 			page 65
+ARM GAS  /tmp/ccGIYrAe.s 			page 65
 
 
  3649 0000 4FF0E032 		mov	r2, #-522133280	@ tmp111,
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3703 0004 4FF44774 		mov	r4, #796	@ tmp152,
  3704              	@ main.c:1737: 		GPIOA->CRL = (GPIOA->CRL & 0x0000ffff) | 0xBBB30000;	// PA5~7
  3705 0008 3648     		ldr	r0, .L295	@ tmp143,
-ARM GAS  /tmp/ccpmJ073.s 			page 66
+ARM GAS  /tmp/ccGIYrAe.s 			page 66
 
 
  3706              	@ main.c:1741: 		RCC->APB2ENR   |= RCC_APB2ENR_SPI1EN;
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3760 0058 D960     		str	r1, [r3, #12]	@ tmp168, MEM[(struct DMA_Channel_TypeDef *)1073872944B].CMAR
  3761              	@ main.c:1758: 		DMA1_Channel3->CPAR = (uint32_t)&SPI1->DR;	//Source PERIPHERAL address:
  3762 005a 9A60     		str	r2, [r3, #8]	@ tmp171, MEM[(struct DMA_Channel_TypeDef *)1073872944B].CPAR
-ARM GAS  /tmp/ccpmJ073.s 			page 67
+ARM GAS  /tmp/ccGIYrAe.s 			page 67
 
 
  3763              	@ main.c:1773: 		DMA1->IFCR = DMA_IFCR_CGIF3 | DMA_IFCR_CTCIF3;
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3817 00ac 8268     		ldr	r2, [r0, #8]	@ _57, MEM[(struct SysTick_Type *)3758153744B].VAL
  3818 00ae 9B1A     		subs	r3, r3, r2	@ tmp197, delay_us.48_56, _57
  3819 00b0 B3F5E17F 		cmp	r3, #450	@ tmp197,
-ARM GAS  /tmp/ccpmJ073.s 			page 68
+ARM GAS  /tmp/ccGIYrAe.s 			page 68
 
 
  3820 00b4 F9D3     		bcc	.L286	@,
@@ -4064,7 +4064,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3860 00f4 00000000 		.word	.LANCHOR18
  3861 00f8 0C300140 		.word	1073819660
  3862 00fc 00000240 		.word	1073872896
- 3863 0100 00000000 		.word	.LC51
+ 3863 0100 00000000 		.word	.LC52
  3864 0104 00000000 		.word	trg0
  3865 0108 00000000 		.word	delay_us
  3866 010c 10E000E0 		.word	-536813552
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3874              		.p2align 2,,3
  3875              		.global	lexmark_lcd
  3876              		.syntax unified
-ARM GAS  /tmp/ccpmJ073.s 			page 69
+ARM GAS  /tmp/ccGIYrAe.s 			page 69
 
 
  3877              		.thumb
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3931              	@ main.c:1913: 		UaPutS(" T[us]="); sint2uart(tim/TIM_US);
  3932 004c 0E48     		ldr	r0, .L302+28	@,
  3933              	@ inc/tool/delay.h:91: 		Timt = SysTick->VAL;
-ARM GAS  /tmp/ccpmJ073.s 			page 70
+ARM GAS  /tmp/ccGIYrAe.s 			page 70
 
 
  3934 004e 1A60     		str	r2, [r3]	@ _16, Timt
@@ -4158,14 +4158,14 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3948              	.L303:
  3949 006a 00BF     		.align	2
  3950              	.L302:
- 3951 006c 00000000 		.word	.LC52
- 3952 0070 18000000 		.word	.LC53
+ 3951 006c 00000000 		.word	.LC53
+ 3952 0070 18000000 		.word	.LC54
  3953 0074 10E000E0 		.word	-536813552
  3954 0078 00000000 		.word	delay_us
  3955 007c 3F548900 		.word	8999999
- 3956 0080 34000000 		.word	.LC54
+ 3956 0080 34000000 		.word	.LC55
  3957 0084 00000000 		.word	Timt
- 3958 0088 50000000 		.word	.LC55
+ 3958 0088 50000000 		.word	.LC56
  3959 008c 398EE338 		.word	954437177
  3960              		.size	lexmark_lcd, .-lexmark_lcd
  3961              		.section	.text.softUTX_init,"ax",%progbits
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  3988              		.align	1
  3989              		.p2align 2,,3
  3990              		.global	sofUTX
-ARM GAS  /tmp/ccpmJ073.s 			page 71
+ARM GAS  /tmp/ccGIYrAe.s 			page 71
 
 
  3991              		.syntax unified
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4045              	@ inc/tool/delay.h:99: 		delay_us = SysTick->VAL; 
  4046 0038 8368     		ldr	r3, [r0, #8]	@ _20, MEM[(struct SysTick_Type *)3758153744B].VAL
  4047              	@ main.c:1993: 		 cTX <<= 1;
-ARM GAS  /tmp/ccpmJ073.s 			page 72
+ARM GAS  /tmp/ccGIYrAe.s 			page 72
 
 
  4048 003a 6400     		lsls	r4, r4, #1	@ tmp145, cTX,
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4102              		@ frame_needed = 0, uses_anonymous_args = 0
  4103 0000 70B5     		push	{r4, r5, r6, lr}	@
  4104              	@ main.c:1999: void ToLED(u16 B,u16 A,u08 dot)	{
-ARM GAS  /tmp/ccpmJ073.s 			page 73
+ARM GAS  /tmp/ccGIYrAe.s 			page 73
 
 
  4105 0002 0546     		mov	r5, r0	@ B, B
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4159              	@ main.c:2011: 			else							sMOSI = 0;
  4160 0020 CCF80070 		strpl	r7, [ip]	@ tmp146, MEM[(volatile long unsigned int *)1109459356B]
  4161              	@ main.c:2013: 			sSCK = 1; /* a slave latches input data bit */
-ARM GAS  /tmp/ccpmJ073.s 			page 74
+ARM GAS  /tmp/ccGIYrAe.s 			page 74
 
 
  4162 0024 C6F80080 		str	r8, [r6]	@ MEM[(volatile long unsigned int *)1109459348B], MEM[(volatile long unsigned int *)1
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4216 0000 30B4     		push	{r4, r5}	@
  4217              	@ main.c:2020: u16  CalculateLux(u16 iGain, u16 tInt, u16 ch0, u16 ch1, int iType)	{
  4218 0002 029D     		ldr	r5, [sp, #8]	@ iType, iType
-ARM GAS  /tmp/ccpmJ073.s 			page 75
+ARM GAS  /tmp/ccGIYrAe.s 			page 75
 
 
  4219              	@ main.c:2038:     switch (tInt)
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4273              	.L354:
  4274 0062 40F2AD13 		movw	r3, #429	@ _166,
  4275 0066 4FF40172 		mov	r2, #516	@ _164,
-ARM GAS  /tmp/ccpmJ073.s 			page 76
+ARM GAS  /tmp/ccGIYrAe.s 			page 76
 
 
  4276 006a EBE7     		b	.L344	@
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4330 00c4 2EDD     		ble	.L352	@,
  4331              	@ main.c:2087:             else if (ratio <= K7T)
  4332 00c6 40F29A22 		movw	r2, #666	@ tmp145,
-ARM GAS  /tmp/ccpmJ073.s 			page 77
+ARM GAS  /tmp/ccGIYrAe.s 			page 77
 
 
  4333 00ca 9342     		cmp	r3, r2	@ prephitmp_18, tmp145
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4387              		.syntax unified
  4388              		.thumb
  4389              		.thumb_func
-ARM GAS  /tmp/ccpmJ073.s 			page 78
+ARM GAS  /tmp/ccGIYrAe.s 			page 78
 
 
  4390              		.fpu softvfp
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4444 0040 4146     		mov	r1, r8	@, tmp195
  4445 0042 0222     		movs	r2, #2	@,
  4446 0044 7220     		movs	r0, #114	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 79
+ARM GAS  /tmp/ccGIYrAe.s 			page 79
 
 
  4447 0046 FFF7FEFF 		bl	i2c2_write	@
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4501 00ac FFF7FEFF 		bl	sint2uart	@
  4502              	@ main.c:2182: 				ch1	= (buf[1]<<8)+buf[0];
  4503 00b0 1FFA89F9 		uxth	r9, r9	@ ch1, tmp185
-ARM GAS  /tmp/ccpmJ073.s 			page 80
+ARM GAS  /tmp/ccGIYrAe.s 			page 80
 
 
  4504              	@ main.c:2193: 				UaPutK(",");	
@@ -4774,7 +4774,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4534 00f0 00000000 		.word	Timt
  4535 00f4 10E000E0 		.word	-536813552
  4536 00f8 E0322900 		.word	2700000
- 4537 00fc 00000000 		.word	.LC56
+ 4537 00fc 00000000 		.word	.LC57
  4538 0100 48000000 		.word	.LC19
  4539              		.size	TSL2561_i2c, .-TSL2561_i2c
  4540              		.section	.text.set_mode,"ax",%progbits
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4558 0008 0D46     		mov	r5, r1	@ enable, enable
  4559              	@ main.c:2228: 		i2c1_read(APDS9960_ADR, APDS9960_ENABLE, buf,1 );
  4560 000a 01AA     		add	r2, sp, #4	@ tmp134,,
-ARM GAS  /tmp/ccpmJ073.s 			page 81
+ARM GAS  /tmp/ccGIYrAe.s 			page 81
 
 
  4561 000c 8021     		movs	r1, #128	@,
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4615              		.thumb_func
  4616              		.fpu softvfp
  4617              		.type	MAX44009_i2c, %function
-ARM GAS  /tmp/ccpmJ073.s 			page 82
+ARM GAS  /tmp/ccGIYrAe.s 			page 82
 
 
  4618              	MAX44009_i2c:
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4672 005c 7B60     		str	r3, [r7, #4]	@ _13, MEM[(struct GPIO_TypeDef *)1073810432B].CRH
  4673              	@ main.c:2274: 		RCC->APB1ENR |= RCC_APB1ENR_I2C1EN;
  4674 005e D769     		ldr	r7, [r2, #28]	@ _14, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
-ARM GAS  /tmp/ccpmJ073.s 			page 83
+ARM GAS  /tmp/ccGIYrAe.s 			page 83
 
 
  4675              	@ main.c:2275: 		I2C1->TRISE   = 37;               		// limit slope
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4729 00b4 1368     		ldr	r3, [r2]	@ delay_us.116_123, delay_us
  4730 00b6 8468     		ldr	r4, [r0, #8]	@ _124, MEM[(struct SysTick_Type *)3758153744B].VAL
  4731 00b8 1B1B     		subs	r3, r3, r4	@ tmp243, delay_us.116_123, _124
-ARM GAS  /tmp/ccpmJ073.s 			page 84
+ARM GAS  /tmp/ccGIYrAe.s 			page 84
 
 
  4732 00ba 8B42     		cmp	r3, r1	@ tmp243, tmp244
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4786 011a 8C21     		movs	r1, #140	@,
  4787 011c 7220     		movs	r0, #114	@,
  4788 011e FFF7FEFF 		bl	i2c2_read	@
-ARM GAS  /tmp/ccpmJ073.s 			page 85
+ARM GAS  /tmp/ccGIYrAe.s 			page 85
 
 
  4789              	@ main.c:2351: 				ch0 = (buf[1]<<8)+buf[0];
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4843 0190 9DF81330 		ldrb	r3, [sp, #19]	@ zero_extendqisi2	@ buf, buf
  4844              	@ main.c:2363: 				aC = (buf[1]<<8)+buf[0];
  4845 0194 00EB0C20 		add	r0, r0, ip, lsl #8	@ tmp328, buf, buf,
-ARM GAS  /tmp/ccpmJ073.s 			page 86
+ARM GAS  /tmp/ccGIYrAe.s 			page 86
 
 
  4846              	@ main.c:2365: 				aG = (buf[5]<<8)+buf[4];
@@ -5148,17 +5148,17 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4890 01f0 00100240 		.word	1073876992
  4891 01f4 00580040 		.word	1073764352
  4892 01f8 00540040 		.word	1073763328
- 4893 01fc 00000000 		.word	.LC57
+ 4893 01fc 00000000 		.word	.LC58
  4894 0200 10E000E0 		.word	-536813552
  4895 0204 00000000 		.word	delay_us
  4896 0208 3F771B00 		.word	1799999
  4897 020c 00000000 		.word	trg0
  4898 0210 A0BB0D00 		.word	900000
  4899 0214 48000000 		.word	.LC19
- 4900 0218 00000000 		.word	.LC56
+ 4900 0218 00000000 		.word	.LC57
  4901 021c 00000140 		.word	1073807360
  4902 0220 D34D6210 		.word	274877907
-ARM GAS  /tmp/ccpmJ073.s 			page 87
+ARM GAS  /tmp/ccGIYrAe.s 			page 87
 
 
  4903              		.size	MAX44009_i2c, .-MAX44009_i2c
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  4957 0038 D021     		movs	r1, #208	@,
  4958              	@ main.c:2396: 		I2C2->TRISE = 37;               		// limit slope
  4959 003a A4F820E0 		strh	lr, [r4, #32]	@ movhi	@ tmp319, MEM[(struct I2C_TypeDef *)1073764352B].TRISE
-ARM GAS  /tmp/ccpmJ073.s 			page 88
+ARM GAS  /tmp/ccGIYrAe.s 			page 88
 
 
  4960              	@ main.c:2403: 		i2c2_read(BMP280_ADR,  0xD0, buf,1 );
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5014 009e 0592     		str	r2, [sp, #20]	@ buf, %sfp
  5015              	@ main.c:2419: 		dig_T3 = (s16)((buf[5]<<8) | buf[4]);
  5016 00a0 069A     		ldr	r2, [sp, #24]	@ buf, %sfp
-ARM GAS  /tmp/ccpmJ073.s 			page 89
+ARM GAS  /tmp/ccGIYrAe.s 			page 89
 
 
  5017              	@ main.c:2422: 		dig_P2 = (s16)((buf[9]<<8 ) | buf[8]);
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5071              	@ main.c:2424: 		dig_P4 = (s16)((buf[13]<<8) | buf[12]);
  5072 0104 9DF84500 		ldrb	r0, [sp, #69]	@ zero_extendqisi2	@ buf, buf
  5073 0108 9DF84440 		ldrb	r4, [sp, #68]	@ zero_extendqisi2	@ buf, buf
-ARM GAS  /tmp/ccpmJ073.s 			page 90
+ARM GAS  /tmp/ccGIYrAe.s 			page 90
 
 
  5074              	@ main.c:2427: 		dig_P7 = (s16)((buf[19]<<8) | buf[18]);
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5128 015c 44EA0024 		orr	r4, r4, r0, lsl #8	@ tmp367, buf, buf,
  5129              	@ main.c:2431: 		i2c2_read(BMP280_ADR,  0xf4, buf,1 ); hex2uart(buf[0],2);
  5130 0160 F421     		movs	r1, #244	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 91
+ARM GAS  /tmp/ccGIYrAe.s 			page 91
 
 
  5131 0162 EC20     		movs	r0, #236	@,
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5185 01c6 0EAA     		add	r2, sp, #56	@ tmp558,,
  5186 01c8 FA21     		movs	r1, #250	@,
  5187 01ca EC20     		movs	r0, #236	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 92
+ARM GAS  /tmp/ccGIYrAe.s 			page 92
 
 
  5188 01cc FFF7FEFF 		bl	i2c2_read	@
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5242 022e 0322     		movs	r2, #3	@,
  5243 0230 0521     		movs	r1, #5	@,
  5244 0232 FFF7FEFF 		bl	num2uart	@
-ARM GAS  /tmp/ccpmJ073.s 			page 93
+ARM GAS  /tmp/ccGIYrAe.s 			page 93
 
 
  5245              	@ main.c:2477: 				i2c2_read(BMP280_ADR,  0xF7, buf,3 );				
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5299 0296 05EB9303 		add	r3, r5, r3, lsr #2	@ var2, _139, var2,
  5300              	@ inc/tool/delay.h:91: 		Timt = SysTick->VAL;
  5301 029a 3C60     		str	r4, [r7]	@ _255, Timt
-ARM GAS  /tmp/ccpmJ073.s 			page 94
+ARM GAS  /tmp/ccGIYrAe.s 			page 94
 
 
  5302              	@ main.c:2487: 				if (var1 == 0) 
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5356 0306 0D94     		str	r4, [sp, #52]	@ _262, MEM[(volatile u32 *)&tim]
  5357              	@ main.c:2505: 				UaPutS(" tp="); sint2uart(tim/TIM_US);
  5358 0308 FFF7FEFF 		bl	UaPutS	@
-ARM GAS  /tmp/ccpmJ073.s 			page 95
+ARM GAS  /tmp/ccGIYrAe.s 			page 95
 
 
  5359 030c 174B     		ldr	r3, .L404+56	@ tmp577,
@@ -5670,15 +5670,15 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5385 033c 3C000B42 		.word	1108017212
  5386 0340 D8034242 		.word	1111622616
  5387 0344 00000B42 		.word	1108017152
- 5388 0348 00000000 		.word	.LC58
+ 5388 0348 00000000 		.word	.LC59
  5389 034c 00000000 		.word	Timt
  5390 0350 10E000E0 		.word	-536813552
- 5391 0354 14000000 		.word	.LC59
- 5392 0358 20000000 		.word	.LC60
- 5393 035c 24000000 		.word	.LC61
+ 5391 0354 14000000 		.word	.LC60
+ 5392 0358 20000000 		.word	.LC61
+ 5393 035c 24000000 		.word	.LC62
  5394 0360 CBF3FFFF 		.word	-3125
- 5395 0364 28000000 		.word	.LC62
- 5396 0368 30000000 		.word	.LC63
+ 5395 0364 28000000 		.word	.LC63
+ 5396 0368 30000000 		.word	.LC64
  5397 036c 398EE338 		.word	954437177
  5398 0370 00000000 		.word	trg1
  5399 0374 00000000 		.word	trg0
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5413              		@ args = 0, pretend = 0, frame = 16
  5414              		@ frame_needed = 0, uses_anonymous_args = 0
  5415 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}	@
-ARM GAS  /tmp/ccpmJ073.s 			page 96
+ARM GAS  /tmp/ccGIYrAe.s 			page 96
 
 
  5416              	@ main.c:2529: 		SPI1->CR1 = SPI_CR1_SSM|SPI_CR1_SSI|7<<3|SPI_CR1_MSTR|SPI_CR1_CPOL|SPI_CR1_CPHA;		
@@ -5758,7 +5758,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5470              	@ main.c:2548: 		spi1_rw(0xB6); 			    // reset value
  5471 0056 B620     		movs	r0, #182	@,
  5472 0058 FFF7FEFF 		bl	spi1_rw	@
-ARM GAS  /tmp/ccpmJ073.s 			page 97
+ARM GAS  /tmp/ccGIYrAe.s 			page 97
 
 
  5473              	@ inc/tool/delay.h:109: 		delay_us = SysTick->VAL; 
@@ -5818,7 +5818,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5527 00b4 FFF7FEFF 		bl	spi1_rw	@
  5528              	@ main.c:2573: 				ctrl_meas = spi1_rw(0xff);
  5529 00b8 FF20     		movs	r0, #255	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 98
+ARM GAS  /tmp/ccGIYrAe.s 			page 98
 
 
  5530 00ba FFF7FEFF 		bl	spi1_rw	@
@@ -5878,7 +5878,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5584              	@ main.c:2593: 				value[2] = spi1_rw(0xff);
  5585 0128 FF20     		movs	r0, #255	@,
  5586 012a FFF7FEFF 		bl	spi1_rw	@
-ARM GAS  /tmp/ccpmJ073.s 			page 99
+ARM GAS  /tmp/ccGIYrAe.s 			page 99
 
 
  5587              	@ main.c:2599: 				RX1276_CS1 = 1;
@@ -5938,7 +5938,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5641              	@ main.c:2617:         var2 = (((((adc>>4) - ((s32)dig_T1)) * ((adc>>4) - ((s32)dig_T1))) >> 12)
  5642 0192 000B     		lsrs	r0, r0, #12	@ tmp276, tmp275,
  5643              	@ main.c:2616: 				var1 = ((((adc>>3) - ((s32)dig_T1<<1))) * ((s32)dig_T2)) >> 11;
-ARM GAS  /tmp/ccpmJ073.s 			page 100
+ARM GAS  /tmp/ccGIYrAe.s 			page 100
 
 
  5644 0194 C5EBD705 		rsb	r5, r5, r7, lsr #3	@ tmp272, tmp271, adc,
@@ -5973,8 +5973,8 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5673 01d8 00000000 		.word	delay_us
  5674 01dc 8F5F0100 		.word	89999
  5675 01e0 80A81201 		.word	18000000
- 5676 01e4 00000000 		.word	.LC64
- 5677 01e8 24000000 		.word	.LC61
+ 5676 01e4 00000000 		.word	.LC65
+ 5677 01e8 24000000 		.word	.LC62
  5678 01ec 30000000 		.word	.LC15
  5679 01f0 00000000 		.word	trg2
  5680              		.size	BMP280_spi, .-BMP280_spi
@@ -5998,7 +5998,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5698              	@ main.c:2644: 	switch(znak){
  5699 000a 1428     		cmp	r0, #20	@ tmp279,
  5700 000c 00F28880 		bhi	.L416	@
-ARM GAS  /tmp/ccpmJ073.s 			page 101
+ARM GAS  /tmp/ccGIYrAe.s 			page 101
 
 
  5701 0010 DFE810F0 		tbh	[pc, r0, lsl #1]	@ tmp279
@@ -6058,7 +6058,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5755 006c 00F04F81 		beq	.L434	@
  5756              	@ main.c:2767: 			UaPutS("\r\n ");
  5757 0070 AD48     		ldr	r0, .L455+16	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 102
+ARM GAS  /tmp/ccGIYrAe.s 			page 102
 
 
  5758 0072 FFF7FEFF 		bl	UaPutS	@
@@ -6118,7 +6118,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5812              	@ main.c:2781: 				for(u08 k=0;k<16;k++){
  5813 00da 5C45     		cmp	r4, fp	@ ivtmp.518, ivtmp.509
  5814 00dc F4D1     		bne	.L439	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 103
+ARM GAS  /tmp/ccGIYrAe.s 			page 103
 
 
  5815 00de 1036     		adds	r6, r6, #16	@ ivtmp.527, ivtmp.527,
@@ -6178,7 +6178,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5869              	@ inc/tool/delay.h:91: 		Timt = SysTick->VAL;
  5870 014a 2360     		str	r3, [r4]	@ _161, Timt
  5871              	@ main.c:2701: 		EraseFlashPage(strBlock);
-ARM GAS  /tmp/ccpmJ073.s 			page 104
+ARM GAS  /tmp/ccGIYrAe.s 			page 104
 
 
  5872 014c FFF7FEFF 		bl	EraseFlashPage	@
@@ -6238,7 +6238,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5926 01b0 25D0     		beq	.L454	@,
  5927              	.L431:
  5928 01b2 0135     		adds	r5, r5, #1	@ ivtmp.499, ivtmp.499,
-ARM GAS  /tmp/ccpmJ073.s 			page 105
+ARM GAS  /tmp/ccGIYrAe.s 			page 105
 
 
  5929              	.L441:
@@ -6298,7 +6298,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  5983 0214 FFF7FEFF 		bl	UaPutK	@
  5984              	@ main.c:2648: 		UaPutK("\r\n FLASH memory Read = ");
  5985 0218 4E48     		ldr	r0, .L455+60	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 106
+ARM GAS  /tmp/ccGIYrAe.s 			page 106
 
 
  5986 021a FFF7FEFF 		bl	UaPutK	@
@@ -6358,7 +6358,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6040              	.L425:
  6041              	@ main.c:2675: 					hex2uart(p_buf[k+i], 2);
  6042 027e 15F8010B 		ldrb	r0, [r5], #1	@ zero_extendqisi2	@, *_7
-ARM GAS  /tmp/ccpmJ073.s 			page 107
+ARM GAS  /tmp/ccGIYrAe.s 			page 107
 
 
  6043 0282 0221     		movs	r1, #2	@,
@@ -6418,7 +6418,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6097              	@ main.c:2726: 		datetime.sec=30;		// 0..59	sekunda
  6098 02e6 214A     		ldr	r2, .L455+84	@ tmp319,
  6099              	@ main.c:2727: 		rtc_SetTime(&datetime );
-ARM GAS  /tmp/ccpmJ073.s 			page 108
+ARM GAS  /tmp/ccGIYrAe.s 			page 108
 
 
  6100 02e8 2046     		mov	r0, r4	@, tmp309
@@ -6451,34 +6451,34 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6127              	.L456:
  6128 0316 00BF     		.align	2
  6129              	.L455:
- 6130 0318 E0000000 		.word	.LC80
- 6131 031c EC000000 		.word	.LC81
+ 6130 0318 E0000000 		.word	.LC81
+ 6131 031c EC000000 		.word	.LC82
  6132 0320 10E000E0 		.word	-536813552
  6133 0324 00000000 		.word	Timt
- 6134 0328 30000000 		.word	.LC67
- 6135 032c 34000000 		.word	.LC68
- 6136 0330 00010000 		.word	.LC82
+ 6134 0328 30000000 		.word	.LC68
+ 6135 032c 34000000 		.word	.LC69
+ 6136 0330 00010000 		.word	.LC83
  6137 0334 398EE338 		.word	954437177
- 6138 0338 40000000 		.word	.LC70
- 6139 033c 48000000 		.word	.LC71
- 6140 0340 60000000 		.word	.LC72
- 6141 0344 D4000000 		.word	.LC79
- 6142 0348 B0000000 		.word	.LC76
- 6143 034c C0000000 		.word	.LC77
- 6144 0350 C4000000 		.word	.LC78
- 6145 0354 00000000 		.word	.LC65
- 6146 0358 18000000 		.word	.LC66
- 6147 035c 80000000 		.word	.LC73
+ 6138 0338 40000000 		.word	.LC71
+ 6139 033c 48000000 		.word	.LC72
+ 6140 0340 60000000 		.word	.LC73
+ 6141 0344 D4000000 		.word	.LC80
+ 6142 0348 B0000000 		.word	.LC77
+ 6143 034c C0000000 		.word	.LC78
+ 6144 0350 C4000000 		.word	.LC79
+ 6145 0354 00000000 		.word	.LC66
+ 6146 0358 18000000 		.word	.LC67
+ 6147 035c 80000000 		.word	.LC74
  6148 0360 00000000 		.word	.LANCHOR19
- 6149 0364 90000000 		.word	.LC74
- 6150 0368 A0000000 		.word	.LC75
+ 6149 0364 90000000 		.word	.LC75
+ 6150 0368 A0000000 		.word	.LC76
  6151 036c 1E320A12 		.word	302658078
- 6152 0370 0C010000 		.word	.LC83
- 6153 0374 3C000000 		.word	.LC69
+ 6152 0370 0C010000 		.word	.LC84
+ 6153 0374 3C000000 		.word	.LC70
  6154 0378 48000000 		.word	.LC19
  6155              		.size	fun_tool, .-fun_tool
  6156              		.section	.text.qtouch_mesaure,"ax",%progbits
-ARM GAS  /tmp/ccpmJ073.s 			page 109
+ARM GAS  /tmp/ccGIYrAe.s 			page 109
 
 
  6157              		.align	1
@@ -6538,7 +6538,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6211 0032 FBD0     		beq	.L460	@
  6212              	@ main.c:3150: 		PE2_o = 0;
  6213 0034 0022     		movs	r2, #0	@ tmp129,
-ARM GAS  /tmp/ccpmJ073.s 			page 110
+ARM GAS  /tmp/ccGIYrAe.s 			page 110
 
 
  6214 0036 014B     		ldr	r3, .L466	@ tmp128,
@@ -6598,7 +6598,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6268 0036 0746     		mov	r7, r0	@ qt,
  6269              	@ main.c:3160: 				UaPutS("\r\n QT =");		sint2uart(qt);
  6270 0038 4046     		mov	r0, r8	@, tmp132
-ARM GAS  /tmp/ccpmJ073.s 			page 111
+ARM GAS  /tmp/ccGIYrAe.s 			page 111
 
 
  6271 003a FFF7FEFF 		bl	UaPutS	@
@@ -6612,7 +6612,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6279 004c 00000000 		.word	trg0
  6280 0050 10E000E0 		.word	-536813552
  6281 0054 20AA4400 		.word	4500000
- 6282 0058 00000000 		.word	.LC84
+ 6282 0058 00000000 		.word	.LC85
  6283              		.size	qtouch, .-qtouch
  6284              		.section	.text.DHT_Tool,"ax",%progbits
  6285              		.align	1
@@ -6658,7 +6658,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6325              	.L476:
  6326 002c 00080140 		.word	1073809408
  6327 0030 000C0140 		.word	1073810432
-ARM GAS  /tmp/ccpmJ073.s 			page 112
+ARM GAS  /tmp/ccGIYrAe.s 			page 112
 
 
  6328 0034 00000000 		.word	oled_hw
@@ -6697,11 +6697,11 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6361              	.L481:
  6362              		.align	2
  6363              	.L480:
- 6364 0024 00000000 		.word	.LC85
- 6365 0028 38000000 		.word	.LC86
- 6366 002c 70000000 		.word	.LC87
- 6367 0030 A8000000 		.word	.LC88
- 6368 0034 94000000 		.word	.LC35
+ 6364 0024 00000000 		.word	.LC86
+ 6365 0028 38000000 		.word	.LC87
+ 6366 002c 70000000 		.word	.LC88
+ 6367 0030 A8000000 		.word	.LC89
+ 6368 0034 94000000 		.word	.LC36
  6369              		.size	SPI_Tool_Menu, .-SPI_Tool_Menu
  6370              		.section	.text.SPI_Tool,"ax",%progbits
  6371              		.align	1
@@ -6718,7 +6718,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6382              	@ main.c:3375: 	LED=1;
  6383 0000 0122     		movs	r2, #1	@ tmp125,
  6384 0002 444B     		ldr	r3, .L495	@ tmp124,
-ARM GAS  /tmp/ccpmJ073.s 			page 113
+ARM GAS  /tmp/ccGIYrAe.s 			page 113
 
 
  6385              	@ main.c:3377: 		GPIOA->CRH = (GPIOA->CRH & 0x0ff00fff) | 0x10011000;
@@ -6778,7 +6778,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6439              	@ main.c:3389: 	oled_num24(0, 4,tbuf);
  6440 0052 01AA     		add	r2, sp, #4	@ tmp176,,
  6441 0054 0421     		movs	r1, #4	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 114
+ARM GAS  /tmp/ccGIYrAe.s 			page 114
 
 
  6442 0056 0020     		movs	r0, #0	@,
@@ -6838,7 +6838,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6496 00b4 0120     		movs	r0, #1	@,
  6497 00b6 FFF7FEFF 		bl	uint2uart	@
  6498              	@ main.c:3415: 			break;
-ARM GAS  /tmp/ccpmJ073.s 			page 115
+ARM GAS  /tmp/ccGIYrAe.s 			page 115
 
 
  6499 00ba DCE7     		b	.L483	@
@@ -6898,18 +6898,18 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6553 0130 AC012142 		.word	1109459372
  6554 0134 BC012142 		.word	1109459388
  6555 0138 4E61BC00 		.word	12345678
-ARM GAS  /tmp/ccpmJ073.s 			page 116
+ARM GAS  /tmp/ccGIYrAe.s 			page 116
 
 
  6556 013c 00000000 		.word	p_Fifo1
- 6557 0140 30000000 		.word	.LC67
- 6558 0144 00000000 		.word	.LC89
- 6559 0148 68000000 		.word	.LC95
- 6560 014c 20000000 		.word	.LC91
- 6561 0150 2C000000 		.word	.LC92
- 6562 0154 40000000 		.word	.LC93
- 6563 0158 54000000 		.word	.LC94
- 6564 015c 14000000 		.word	.LC90
+ 6557 0140 30000000 		.word	.LC68
+ 6558 0144 00000000 		.word	.LC90
+ 6559 0148 68000000 		.word	.LC96
+ 6560 014c 20000000 		.word	.LC92
+ 6561 0150 2C000000 		.word	.LC93
+ 6562 0154 40000000 		.word	.LC94
+ 6563 0158 54000000 		.word	.LC95
+ 6564 015c 14000000 		.word	.LC91
  6565              		.size	SPI_Tool, .-SPI_Tool
  6566              		.section	.text.Menu1,"ax",%progbits
  6567              		.align	1
@@ -6944,11 +6944,11 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6596              	.L500:
  6597              		.align	2
  6598              	.L499:
- 6599 0024 00000000 		.word	.LC96
- 6600 0028 38000000 		.word	.LC97
- 6601 002c 70000000 		.word	.LC98
- 6602 0030 A8000000 		.word	.LC99
- 6603 0034 94000000 		.word	.LC35
+ 6599 0024 00000000 		.word	.LC97
+ 6600 0028 38000000 		.word	.LC98
+ 6601 002c 70000000 		.word	.LC99
+ 6602 0030 A8000000 		.word	.LC100
+ 6603 0034 94000000 		.word	.LC36
  6604              		.size	Menu1, .-Menu1
  6605              		.section	.text.MemCard_Menu,"ax",%progbits
  6606              		.align	1
@@ -6958,7 +6958,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6610              		.thumb
  6611              		.thumb_func
  6612              		.fpu softvfp
-ARM GAS  /tmp/ccpmJ073.s 			page 117
+ARM GAS  /tmp/ccGIYrAe.s 			page 117
 
 
  6613              		.type	MemCard_Menu, %function
@@ -7018,7 +7018,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6667 005a 1A68     		ldr	r2, [r3]	@ p_Fifo1.181_7, p_Fifo1
  6668              	.L505:
  6669              	@ main.c:3919: 		while(!p_Fifo1->rct);
-ARM GAS  /tmp/ccpmJ073.s 			page 118
+ARM GAS  /tmp/ccGIYrAe.s 			page 118
 
 
  6670 005c 9388     		ldrh	r3, [r2, #4]	@, p_Fifo1.181_7->rct
@@ -7078,7 +7078,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6724 00cc 7902     		.2byte	(.L506-.L508)/2
  6725 00ce 2700     		.2byte	(.L518-.L508)/2
  6726              		.p2align 1
-ARM GAS  /tmp/ccpmJ073.s 			page 119
+ARM GAS  /tmp/ccGIYrAe.s 			page 119
 
 
  6727              	.L518:
@@ -7138,7 +7138,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6781 012e 6E48     		ldr	r0, .L615+40	@,
  6782 0130 FFF7FEFF 		bl	UaPutK	@
  6783 0134 2046     		mov	r0, r4	@, strBlock
-ARM GAS  /tmp/ccpmJ073.s 			page 120
+ARM GAS  /tmp/ccGIYrAe.s 			page 120
 
 
  6784 0136 0821     		movs	r1, #8	@,
@@ -7198,7 +7198,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6838 0190 0028     		cmp	r0, #0	@ tmp478
  6839 0192 40F07382 		bne	.L609	@
  6840              	@ main.c:4081: 				UaPutK("\r\n Read Error = ");
-ARM GAS  /tmp/ccpmJ073.s 			page 121
+ARM GAS  /tmp/ccGIYrAe.s 			page 121
 
 
  6841 0196 5C48     		ldr	r0, .L615+72	@,
@@ -7258,7 +7258,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6895              	@ inc/tool/delay.h:94: 		*tim = (Timt - SysTick->VAL);
  6896 01fc 414B     		ldr	r3, .L615+68	@ tmp751,
  6897              	@ main.c:4207: 				if(p_Fifo1->rct) break;
-ARM GAS  /tmp/ccpmJ073.s 			page 122
+ARM GAS  /tmp/ccGIYrAe.s 			page 122
 
 
  6898 01fe 334A     		ldr	r2, .L615+12	@ tmp752,
@@ -7318,7 +7318,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  6952              	@ main.c:4226: 					UaPutS("  ");
  6953 025c DFF8C0B0 		ldr	fp, .L615+96	@ tmp625,
  6954              	@ main.c:4231: 					UaPutS("\r\n ");
-ARM GAS  /tmp/ccpmJ073.s 			page 123
+ARM GAS  /tmp/ccGIYrAe.s 			page 123
 
 
  6955 0260 DFF86CA0 		ldr	r10, .L615+16	@ tmp626,
@@ -7370,32 +7370,32 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7001              	.L615:
  7002 02c0 00000000 		.word	.LANCHOR20
  7003 02c4 00000000 		.word	CardType
- 7004 02c8 00000000 		.word	.LC100
+ 7004 02c8 00000000 		.word	.LC101
  7005 02cc 00000000 		.word	p_Fifo1
- 7006 02d0 30000000 		.word	.LC67
- 7007 02d4 14030000 		.word	.LC144
- 7008 02d8 68020000 		.word	.LC135
- 7009 02dc 7C020000 		.word	.LC136
- 7010 02e0 94020000 		.word	.LC137
+ 7006 02d0 30000000 		.word	.LC68
+ 7007 02d4 14030000 		.word	.LC145
+ 7008 02d8 68020000 		.word	.LC136
+ 7009 02dc 7C020000 		.word	.LC137
+ 7010 02e0 94020000 		.word	.LC138
  7011 02e4 00000000 		.word	buffer.8851
-ARM GAS  /tmp/ccpmJ073.s 			page 124
+ARM GAS  /tmp/ccGIYrAe.s 			page 124
 
 
- 7012 02e8 BC020000 		.word	.LC139
- 7013 02ec D0020000 		.word	.LC140
- 7014 02f0 8C000000 		.word	.LC106
- 7015 02f4 A0000000 		.word	.LC107
- 7016 02f8 E0000000 		.word	.LC80
- 7017 02fc DC010000 		.word	.LC126
+ 7012 02e8 BC020000 		.word	.LC140
+ 7013 02ec D0020000 		.word	.LC141
+ 7014 02f0 8C000000 		.word	.LC107
+ 7015 02f4 A0000000 		.word	.LC108
+ 7016 02f8 E0000000 		.word	.LC81
+ 7017 02fc DC010000 		.word	.LC127
  7018 0300 10E000E0 		.word	-536813552
  7019 0304 00000000 		.word	Timt
- 7020 0308 00020000 		.word	.LC128
+ 7020 0308 00020000 		.word	.LC129
  7021 030c FFCBDA01 		.word	31116287
- 7022 0310 E4020000 		.word	.LC141
- 7023 0314 00030000 		.word	.LC143
- 7024 0318 34000000 		.word	.LC68
+ 7022 0310 E4020000 		.word	.LC142
+ 7023 0314 00030000 		.word	.LC144
+ 7024 0318 34000000 		.word	.LC69
  7025 031c FF010000 		.word	buffer.8851+511
- 7026 0320 3C000000 		.word	.LC69
+ 7026 0320 3C000000 		.word	.LC70
  7027              	.L511:
  7028              	@ main.c:3929: 			dinit=mci_init();
  7029 0324 FFF7FEFF 		bl	mmc_init	@
@@ -7438,7 +7438,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7066              	@ main.c:3964: 			UaPutK("\r\n Start Block  = 0x");		strBlock=UART_getHex();
  7067 037a A148     		ldr	r0, .L617+24	@,
  7068 037c FFF7FEFF 		bl	UaPutK	@
-ARM GAS  /tmp/ccpmJ073.s 			page 125
+ARM GAS  /tmp/ccGIYrAe.s 			page 125
 
 
  7069 0380 FFF7FEFF 		bl	UART_getHex	@
@@ -7498,7 +7498,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7123 03e0 3FF438AE 		beq	.L504	@,
  7124 03e4 0135     		adds	r5, r5, #1	@ strBlock, strBlock,
  7125              	.L526:
-ARM GAS  /tmp/ccpmJ073.s 			page 126
+ARM GAS  /tmp/ccGIYrAe.s 			page 126
 
 
  7126              	@ inc/tool/delay.h:91: 		Timt = SysTick->VAL;
@@ -7558,7 +7558,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7180 0452 C0F30805 		ubfx	r5, r0, #0, #9	@ dbl, dstBlock,,
  7181 0456 C4F30804 		ubfx	r4, r4, #0, #9	@ sMem, strBlock,,
  7182              	@ main.c:4021: 			for(u32 bl=(dstBlock/512);bl <= ((dstBlock+lenBlock-1)/512); bl++){
-ARM GAS  /tmp/ccpmJ073.s 			page 127
+ARM GAS  /tmp/ccGIYrAe.s 			page 127
 
 
  7183 045a FFF4FBAD 		bcc	.L504	@,
@@ -7618,7 +7618,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7237              	@ main.c:4028: 					UaPutK("  WriteB 0x");								hex2uart(bl, 		3);
  7238 04cc 5B48     		ldr	r0, .L617+84	@,
  7239 04ce FFF7FEFF 		bl	UaPutK	@
-ARM GAS  /tmp/ccpmJ073.s 			page 128
+ARM GAS  /tmp/ccGIYrAe.s 			page 128
 
 
  7240 04d2 0321     		movs	r1, #3	@,
@@ -7678,7 +7678,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7294 0538 3FF48CAD 		beq	.L504	@
  7295              	@ main.c:4004: 				UaPutS("\r\n Memory Data = 0x");
  7296 053c 4548     		ldr	r0, .L617+108	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 129
+ARM GAS  /tmp/ccGIYrAe.s 			page 129
 
 
  7297 053e FFF7FEFF 		bl	UaPutS	@
@@ -7738,7 +7738,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7351 059e 0896     		str	r6, [sp, #32]	@ _369, MEM[(volatile u32 *)&tim]
  7352              	@ main.c:3986: 						UaPutS("\r\n Fill OK ");
  7353 05a0 FFF7FEFF 		bl	UaPutS	@
-ARM GAS  /tmp/ccpmJ073.s 			page 130
+ARM GAS  /tmp/ccGIYrAe.s 			page 130
 
 
  7354              	@ main.c:3987: 						hex2uart(strBlock,  8);
@@ -7780,45 +7780,45 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7390              		.align	2
  7391              	.L617:
  7392 05e8 00000000 		.word	.LANCHOR20
- 7393 05ec 2C000000 		.word	.LC102
- 7394 05f0 44000000 		.word	.LC103
- 7395 05f4 5C000000 		.word	.LC104
- 7396 05f8 74000000 		.word	.LC105
- 7397 05fc B4000000 		.word	.LC108
- 7398 0600 C0000000 		.word	.LC109
- 7399 0604 D8000000 		.word	.LC110
- 7400 0608 F0000000 		.word	.LC111
- 7401 060c 04010000 		.word	.LC112
+ 7393 05ec 2C000000 		.word	.LC103
+ 7394 05f0 44000000 		.word	.LC104
+ 7395 05f4 5C000000 		.word	.LC105
+ 7396 05f8 74000000 		.word	.LC106
+ 7397 05fc B4000000 		.word	.LC109
+ 7398 0600 C0000000 		.word	.LC110
+ 7399 0604 D8000000 		.word	.LC111
+ 7400 0608 F0000000 		.word	.LC112
+ 7401 060c 04010000 		.word	.LC113
  7402 0610 FFFFFFFF 		.word	buffer.8851-1
  7403 0614 10E000E0 		.word	-536813552
  7404 0618 00000000 		.word	Timt
- 7405 061c 1C010000 		.word	.LC113
- 7406 0620 20000000 		.word	.LC91
- 7407 0624 2C000000 		.word	.LC92
- 7408 0628 40000000 		.word	.LC93
- 7409 062c 54000000 		.word	.LC94
- 7410 0630 A8010000 		.word	.LC121
-ARM GAS  /tmp/ccpmJ073.s 			page 131
+ 7405 061c 1C010000 		.word	.LC114
+ 7406 0620 20000000 		.word	.LC92
+ 7407 0624 2C000000 		.word	.LC93
+ 7408 0628 40000000 		.word	.LC94
+ 7409 062c 54000000 		.word	.LC95
+ 7410 0630 A8010000 		.word	.LC122
+ARM GAS  /tmp/ccGIYrAe.s 			page 131
 
 
- 7411 0634 B4010000 		.word	.LC122
- 7412 0638 C0010000 		.word	.LC123
- 7413 063c C8010000 		.word	.LC124
- 7414 0640 D4010000 		.word	.LC125
- 7415 0644 14000000 		.word	.LC101
- 7416 0648 4C010000 		.word	.LC116
- 7417 064c 5C010000 		.word	.LC117
+ 7411 0634 B4010000 		.word	.LC123
+ 7412 0638 C0010000 		.word	.LC124
+ 7413 063c C8010000 		.word	.LC125
+ 7414 0640 D4010000 		.word	.LC126
+ 7415 0644 14000000 		.word	.LC102
+ 7416 0648 4C010000 		.word	.LC117
+ 7417 064c 5C010000 		.word	.LC118
  7418 0650 00000000 		.word	buffer.8851
- 7419 0654 70010000 		.word	.LC118
- 7420 0658 84010000 		.word	.LC119
- 7421 065c 98010000 		.word	.LC120
- 7422 0660 20030000 		.word	.LC145
- 7423 0664 F0020000 		.word	.LC142
+ 7419 0654 70010000 		.word	.LC119
+ 7420 0658 84010000 		.word	.LC120
+ 7421 065c 98010000 		.word	.LC121
+ 7422 0660 20030000 		.word	.LC146
+ 7423 0664 F0020000 		.word	.LC143
  7424 0668 00000000 		.word	p_Fifo1
- 7425 066c 3C010000 		.word	.LC115
- 7426 0670 E4020000 		.word	.LC141
- 7427 0674 A4020000 		.word	.LC138
- 7428 0678 30010000 		.word	.LC114
+ 7425 066c 3C010000 		.word	.LC116
+ 7426 0670 E4020000 		.word	.LC142
+ 7427 0674 A4020000 		.word	.LC139
+ 7428 0678 30010000 		.word	.LC115
  7429              	.L609:
  7430              	@ main.c:4055: 				UaPutS("\r\n ");
  7431 067c 7548     		ldr	r0, .L619	@,
@@ -7858,7 +7858,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7465 06bc 3446     		mov	r4, r6	@ ivtmp.651, ivtmp.660
  7466              	.L532:
  7467              	@ main.c:4064: 						hex2uart(buffer[k+i], 2);
-ARM GAS  /tmp/ccpmJ073.s 			page 132
+ARM GAS  /tmp/ccGIYrAe.s 			page 132
 
 
  7468 06be 14F8010B 		ldrb	r0, [r4], #1	@ zero_extendqisi2	@, MEM[base: _428, offset: 0B]
@@ -7918,7 +7918,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7522 0726 2468     		ldr	r4, [r4]	@ Timt.47_374, Timt
  7523 0728 AB68     		ldr	r3, [r5, #8]	@ _375, MEM[(struct SysTick_Type *)3758153744B].VAL
  7524              	@ main.c:4078: 				UaPutK(" crc = ");	hex2uart(crc,4);
-ARM GAS  /tmp/ccpmJ073.s 			page 133
+ARM GAS  /tmp/ccGIYrAe.s 			page 133
 
 
  7525 072a 5248     		ldr	r0, .L619+32	@,
@@ -7978,7 +7978,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7579              	@ main.c:4128: 					if(p_Fifo1->rct) break;
  7580 0798 3C4B     		ldr	r3, .L619+56	@ tmp747,
  7581              	@ main.c:4097: 				while(dstBlock--){
-ARM GAS  /tmp/ccpmJ073.s 			page 134
+ARM GAS  /tmp/ccGIYrAe.s 			page 134
 
 
  7582 079a 3A4A     		ldr	r2, .L619+48	@ tmp550,
@@ -8038,7 +8038,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7636              	.L540:
  7637              	@ main.c:4116: 							y2 = tim/(3*TIM_MS);
  7638 07f8 284A     		ldr	r2, .L619+72	@ tmp744,
-ARM GAS  /tmp/ccpmJ073.s 			page 135
+ARM GAS  /tmp/ccGIYrAe.s 			page 135
 
 
  7639 07fa EB08     		lsrs	r3, r5, #3	@ tmp524, _380,
@@ -8092,32 +8092,32 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7687              	.L620:
  7688 0852 00BF     		.align	2
  7689              	.L619:
- 7690 0854 30000000 		.word	.LC67
+ 7690 0854 30000000 		.word	.LC68
  7691 0858 00000000 		.word	buffer.8851
- 7692 085c 34000000 		.word	.LC68
+ 7692 085c 34000000 		.word	.LC69
  7693 0860 00020000 		.word	buffer.8851+512
- 7694 0864 00010000 		.word	.LC82
+ 7694 0864 00010000 		.word	.LC83
  7695 0868 398EE338 		.word	954437177
-ARM GAS  /tmp/ccpmJ073.s 			page 136
+ARM GAS  /tmp/ccGIYrAe.s 			page 136
 
 
  7696 086c 10E000E0 		.word	-536813552
  7697 0870 00000000 		.word	Timt
- 7698 0874 40000000 		.word	.LC70
- 7699 0878 F4010000 		.word	.LC127
- 7700 087c 14020000 		.word	.LC129
- 7701 0880 28020000 		.word	.LC130
+ 7698 0874 40000000 		.word	.LC71
+ 7699 0878 F4010000 		.word	.LC128
+ 7700 087c 14020000 		.word	.LC130
+ 7701 0880 28020000 		.word	.LC131
  7702 0884 41420F00 		.word	1000001
  7703 0888 5B268B1C 		.word	478881371
  7704 088c 00000000 		.word	p_Fifo1
- 7705 0890 50020000 		.word	.LC132
- 7706 0894 5C020000 		.word	.LC133
- 7707 0898 64020000 		.word	.LC134
+ 7705 0890 50020000 		.word	.LC133
+ 7706 0894 5C020000 		.word	.LC134
+ 7707 0898 64020000 		.word	.LC135
  7708 089c CF0DD626 		.word	651562447
- 7709 08a0 3C020000 		.word	.LC131
- 7710 08a4 14000000 		.word	.LC101
+ 7709 08a0 3C020000 		.word	.LC132
+ 7710 08a4 14000000 		.word	.LC102
  7711 08a8 00000000 		.word	CardType
- 7712 08ac 3C000000 		.word	.LC69
+ 7712 08ac 3C000000 		.word	.LC70
  7713              		.size	MemCard_Menu, .-MemCard_Menu
  7714              		.section	.text.CopyClock,"ax",%progbits
  7715              		.align	1
@@ -8158,7 +8158,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7750              	@ main.c:4990: 		dczas += 3; memcpy(dczas,unt2str(lrtc->mdy,tbuf,2) ,2);
  7751 0028 E878     		ldrb	r0, [r5, #3]	@ zero_extendqisi2	@, lrtc_21(D)->mdy
  7752 002a 0222     		movs	r2, #2	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 137
+ARM GAS  /tmp/ccGIYrAe.s 			page 137
 
 
  7753 002c FFF7FEFF 		bl	unt2str	@
@@ -8218,7 +8218,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7807              	@ main.c:2852: 		UaPutS("\r\n Start programu... \r\n"); 
  7808 000c B448     		ldr	r0, .L680	@,
  7809 000e FFF7FEFF 		bl	UaPutS	@
-ARM GAS  /tmp/ccpmJ073.s 			page 138
+ARM GAS  /tmp/ccGIYrAe.s 			page 138
 
 
  7810              	@ main.c:2879: 		UaPutS("\r\n Debug0..."); 
@@ -8278,7 +8278,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7864 005c 4FF4C045 		mov	r5, #24576	@ tmp270,
  7865              	@ main.c:5195: 		TIM4->CCER  = TIM_CCER_CC4E;
  7866 0060 4FF48050 		mov	r0, #4096	@ tmp273,
-ARM GAS  /tmp/ccpmJ073.s 			page 139
+ARM GAS  /tmp/ccGIYrAe.s 			page 139
 
 
  7867              	@ main.c:5190: 		TIM4->PSC   = 100-1;
@@ -8338,7 +8338,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7921 00b8 5360     		str	r3, [r2, #4]	@ _207, MEM[(struct ADC_TypeDef *)1073816576B].CR1
  7922              	@ main.c:5205: 		ADC1->CR2 =  ADC_CR2_DMA | ADC_CR2_ADON | ADC_CR2_EXTTRIG | ADC_CR2_EXTSEL_2 | ADC
  7923 00ba 9060     		str	r0, [r2, #8]	@ tmp284, MEM[(struct ADC_TypeDef *)1073816576B].CR2
-ARM GAS  /tmp/ccpmJ073.s 			page 140
+ARM GAS  /tmp/ccGIYrAe.s 			page 140
 
 
  7924              	@ inc/tool/delay.h:104: 		delay_us = SysTick->VAL; 
@@ -8398,7 +8398,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  7978              	@ main.c:5221: 		ADC1->CR2 |= ADC_CR2_ADON;						// start conversion
  7979 00fe 42F00102 		orr	r2, r2, #1	@ _221, _220,
  7980 0102 9A60     		str	r2, [r3, #8]	@ _221, MEM[(struct ADC_TypeDef *)1073816576B].CR2
-ARM GAS  /tmp/ccpmJ073.s 			page 141
+ARM GAS  /tmp/ccGIYrAe.s 			page 141
 
 
  7981              	.L628:
@@ -8458,7 +8458,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8035 015e FFF7FEFF 		bl	TFT_Fill	@
  8036              	@ main.c:2912: 			yb[f] =wYmin;	
  8037 0162 0123     		movs	r3, #1	@ tmp321,
-ARM GAS  /tmp/ccpmJ073.s 			page 142
+ARM GAS  /tmp/ccGIYrAe.s 			page 142
 
 
  8038 0164 DFF8DCA1 		ldr	r10, .L680+100	@ tmp498,
@@ -8518,7 +8518,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8092 01c0 0593     		str	r3, [sp, #20]	@ _82, %sfp
  8093              	.L631:
  8094              	@ main.c:2960: 			if( STCLK_MS*BKP->DR41 < (trg0 - SysTick->VAL) ){
-ARM GAS  /tmp/ccpmJ073.s 			page 143
+ARM GAS  /tmp/ccGIYrAe.s 			page 143
 
 
  8095 01c2 42F22830 		movw	r0, #9000	@ tmp367,
@@ -8578,7 +8578,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8149 0238 00F2E680 		bhi	.L674	@,
  8150              	.L643:
  8151              	@ main.c:3093: 			if(p_Fifo1->rct){	// Wywolanie interfejsu szeregowego gdy odebrano znak
-ARM GAS  /tmp/ccpmJ073.s 			page 144
+ARM GAS  /tmp/ccGIYrAe.s 			page 144
 
 
  8152 023c 3E4B     		ldr	r3, .L680+88	@ tmp553,
@@ -8638,7 +8638,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8206 029a 0494     		str	r4, [sp, #16]	@ c_dma1, %sfp
  8207              	@ inc/tool/delay.h:91: 		Timt = SysTick->VAL;
  8208 029c 284C     		ldr	r4, .L680+96	@ tmp537,
-ARM GAS  /tmp/ccpmJ073.s 			page 145
+ARM GAS  /tmp/ccGIYrAe.s 			page 145
 
 
  8209              	@ main.c:3005: 				TFT_Fill(wXmin+(wXmax-wXmin)/2,wYmin-1,wXmin+(wXmax-wXmin)/2,wYmax+1,DGRAY);	// 
@@ -8674,8 +8674,8 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8239              	.L681:
  8240              		.align	2
  8241              	.L680:
- 8242 02e0 00000000 		.word	.LC146
- 8243 02e4 18000000 		.word	.LC147
+ 8242 02e0 00000000 		.word	.LC147
+ 8243 02e4 18000000 		.word	.LC148
  8244 02e8 00000000 		.word	Rtc
  8245 02ec 10E000E0 		.word	-536813552
  8246 02f0 00100240 		.word	1073876992
@@ -8688,7 +8688,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8253 030c 00040040 		.word	1073742848
  8254 0310 00001001 		.word	.LANCHOR8+17825792
  8255 0314 00000000 		.word	.LANCHOR22
- 8256 0318 28000000 		.word	.LC148
+ 8256 0318 28000000 		.word	.LC149
  8257 031c 00000000 		.word	.LANCHOR23
  8258 0320 00E100E0 		.word	-536813312
  8259 0324 006C0040 		.word	1073769472
@@ -8698,7 +8698,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8263 0334 20AA4400 		.word	4500000
  8264 0338 00000000 		.word	p_Fifo1
  8265 033c 00000000 		.word	.LANCHOR25
-ARM GAS  /tmp/ccpmJ073.s 			page 146
+ARM GAS  /tmp/ccGIYrAe.s 			page 146
 
 
  8266 0340 00000000 		.word	Timt
@@ -8758,7 +8758,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8320 0394 36F81230 		ldrh	r3, [r6, r2, lsl #1]	@, dma_buf
  8321 0398 3D48     		ldr	r0, .L682	@ tmp542,
  8322 039a 2A78     		ldrb	r2, [r5]	@ zero_extendqisi2	@ prephitmp_27, yn
-ARM GAS  /tmp/ccpmJ073.s 			page 147
+ARM GAS  /tmp/ccGIYrAe.s 			page 147
 
 
  8323 039c 0380     		strh	r3, [r0]	@ movhi	@ tmp431, val
@@ -8818,7 +8818,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8377              	@ main.c:3076: 				trg1 = SysTick->VAL;
  8378 0408 234B     		ldr	r3, .L682+8	@ tmp546,
  8379              	@ main.c:3086: 				TFT_txt(int2str(val[0],str,4,0),30,229-12*0,WHITE);
-ARM GAS  /tmp/ccpmJ073.s 			page 148
+ARM GAS  /tmp/ccGIYrAe.s 			page 148
 
 
  8380 040a 2148     		ldr	r0, .L682	@ tmp548,
@@ -8878,7 +8878,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8434 047e 9BB2     		uxth	r3, r3	@ _79, MEM[(struct BKP_TypeDef *)1073769472B].DR42
  8435 0480 A385     		strh	r3, [r4, #44]	@ movhi	@ _79, MEM[(struct TIM_TypeDef *)1073743872B].ARR
  8436              	.L647:
-ARM GAS  /tmp/ccpmJ073.s 			page 149
+ARM GAS  /tmp/ccGIYrAe.s 			page 149
 
 
  8437              	@ main.c:3105: 					UaPutS("\r\n");
@@ -8897,7 +8897,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8450 049c 00000000 		.word	trg1
  8451 04a0 D55204E9 		.word	-385592619
  8452 04a4 00080040 		.word	1073743872
- 8453 04a8 34000000 		.word	.LC149
+ 8453 04a8 34000000 		.word	.LC150
  8454 04ac 006C0040 		.word	1073769472
  8455 04b0 48000000 		.word	.LC19
  8456              		.size	Intro2, .-Intro2
@@ -8938,7 +8938,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8491              	@ main.c:5002: 		dczas += 3; memcpy(dczas,unt2str(lrtc->min,tbuf,2) ,2);
  8492 0024 A4F80330 		strh	r3, [r4, #3]	@ unaligned	@ _17, MEM[(char * {ref-all})dczas_10(D) + 3B]
  8493              	@ main.c:5003: 		dczas += 3; memcpy(dczas,unt2str(lrtc->sec,tbuf,2) ,2);
-ARM GAS  /tmp/ccpmJ073.s 			page 150
+ARM GAS  /tmp/ccGIYrAe.s 			page 150
 
 
  8494 0028 2878     		ldrb	r0, [r5]	@ zero_extendqisi2	@, lrtc_12(D)->sec
@@ -8998,7 +8998,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8548              		@ sp needed	@
  8549 0036 30BD     		pop	{r4, r5, pc}	@
  8550              		.size	CopyDate, .-CopyDate
-ARM GAS  /tmp/ccpmJ073.s 			page 151
+ARM GAS  /tmp/ccGIYrAe.s 			page 151
 
 
  8551              		.section	.text.Zegarek,"ax",%progbits
@@ -9058,7 +9058,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8605              	@ main.c:906: 				rtc_GetTime(1,&Rtc);
  8606 003c FFF7FEFF 		bl	rtc_GetTime	@
  8607              	@ main.c:907: 				CopyTime(tbuf,&Rtc);
-ARM GAS  /tmp/ccpmJ073.s 			page 152
+ARM GAS  /tmp/ccGIYrAe.s 			page 152
 
 
  8608 0040 3946     		mov	r1, r7	@, tmp136
@@ -9072,8 +9072,8 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8616              	.L694:
  8617 0052 00BF     		.align	2
  8618              	.L693:
- 8619 0054 00000000 		.word	.LC150
- 8620 0058 0C000000 		.word	.LC151
+ 8619 0054 00000000 		.word	.LC151
+ 8620 0058 0C000000 		.word	.LC152
  8621 005c 00000000 		.word	trg0
  8622 0060 10E000E0 		.word	-536813552
  8623 0064 40548900 		.word	9000000
@@ -9118,7 +9118,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8662              	@ main.c:5060: 		n = (Tim1 + STCLK_LD); Tim1 = n;
  8663 001c 0A68     		ldr	r2, [r1]	@ Tim1.217_6, Tim1
  8664              	@ main.c:5062: 		n = (trg0 + STCLK_LD); trg0 = n;
-ARM GAS  /tmp/ccpmJ073.s 			page 153
+ARM GAS  /tmp/ccGIYrAe.s 			page 153
 
 
  8665 001e 1248     		ldr	r0, .L696+20	@ tmp142,
@@ -9178,7 +9178,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8719 006c 00000000 		.word	trg1
  8720 0070 00000000 		.word	trg2
  8721 0074 00000000 		.word	trg3
-ARM GAS  /tmp/ccpmJ073.s 			page 154
+ARM GAS  /tmp/ccGIYrAe.s 			page 154
 
 
  8722 0078 00000000 		.word	trg4
@@ -9238,7 +9238,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8776              		@ args = 0, pretend = 0, frame = 0
  8777              		@ frame_needed = 0, uses_anonymous_args = 0
  8778              		@ link register save eliminated.
-ARM GAS  /tmp/ccpmJ073.s 			page 155
+ARM GAS  /tmp/ccGIYrAe.s 			page 155
 
 
  8779 0000 6846     		mov	r0, sp	@,
@@ -9298,7 +9298,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8833              	.L702:
  8834 0044 00040040 		.word	1073742848
  8835 0048 00000000 		.word	Timt3
-ARM GAS  /tmp/ccpmJ073.s 			page 156
+ARM GAS  /tmp/ccGIYrAe.s 			page 156
 
 
  8836 004c 00000000 		.word	delay3_us
@@ -9358,7 +9358,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8890              		.p2align 2,,3
  8891              		.global	EXTI1_IRQHandler
  8892              		.syntax unified
-ARM GAS  /tmp/ccpmJ073.s 			page 157
+ARM GAS  /tmp/ccGIYrAe.s 			page 157
 
 
  8893              		.thumb
@@ -9418,7 +9418,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  8947              	@ main.c:5105: 		bEXTI_PR_2 = 1;
  8948 0008 0121     		movs	r1, #1	@ tmp113,
  8949 000a 054B     		ldr	r3, .L715	@ tmp112,
-ARM GAS  /tmp/ccpmJ073.s 			page 158
+ARM GAS  /tmp/ccGIYrAe.s 			page 158
 
 
  8950              	@ main.c:5106: 		LED ^= 1;
@@ -9478,7 +9478,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9004 001a 1360     		str	r3, [r2]	@ _2, MEM[(volatile long unsigned int *)1109524916B]
  9005              	@ main.c:5111: 	}
  9006 001c 8546     		mov	sp, r0	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 159
+ARM GAS  /tmp/ccGIYrAe.s 			page 159
 
 
  9007 001e 7047     		bx	lr	@
@@ -9538,7 +9538,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9061              		.thumb
  9062              		.thumb_func
  9063              		.fpu softvfp
-ARM GAS  /tmp/ccpmJ073.s 			page 160
+ARM GAS  /tmp/ccGIYrAe.s 			page 160
 
 
  9064              		.type	EXTI15_10_IRQHandler, %function
@@ -9598,7 +9598,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9118 0010 03F18043 		add	r3, r3, #1073741824	@ tmp121, tmp121,
  9119 0014 03F58233 		add	r3, r3, #66560	@ tmp121, tmp121,
  9120 0018 5A69     		ldr	r2, [r3, #20]	@ _2, MEM[(struct EXTI_TypeDef *)1073808384B].PR
-ARM GAS  /tmp/ccpmJ073.s 			page 161
+ARM GAS  /tmp/ccGIYrAe.s 			page 161
 
 
  9121 001a 5206     		lsls	r2, r2, #25	@, _2,
@@ -9658,7 +9658,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9175              	@ main.c:5140: 		f3_rtc_1sec = 1;
  9176 0012 5B01     		lsls	r3, r3, #5	@ tmp120, tmp119,
  9177              	@ main.c:5141: 		while( bRTC_CRL_RTOFF == 0 );
-ARM GAS  /tmp/ccpmJ073.s 			page 162
+ARM GAS  /tmp/ccGIYrAe.s 			page 162
 
 
  9178 0014 064A     		ldr	r2, .L741+8	@ tmp122,
@@ -9718,7 +9718,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9232 001c 01BC     		pop	{r0}	@
  9233              	@ main.c:5145: 		EXTI->PR |= EXTI_PR_PR17;
  9234 001e 43F40033 		orr	r3, r3, #131072	@ _4, _3,
-ARM GAS  /tmp/ccpmJ073.s 			page 163
+ARM GAS  /tmp/ccGIYrAe.s 			page 163
 
 
  9235 0022 5361     		str	r3, [r2, #20]	@ _4, MEM[(struct EXTI_TypeDef *)1073808384B].PR
@@ -9778,7 +9778,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9289              	@ main.c:5160: 	}
  9290 0026 11BC     		pop	{r0, r4}	@
  9291 0028 8546     		mov	sp, r0	@,
-ARM GAS  /tmp/ccpmJ073.s 			page 164
+ARM GAS  /tmp/ccGIYrAe.s 			page 164
 
 
  9292 002a 7047     		bx	lr	@
@@ -9838,7 +9838,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9346 000c 0A49     		ldr	r1, .L756+8	@ tmp122,
  9347              	@ main.c:5345: 	RCC->APB1ENR  |= RCC_APB1ENR_DACEN;
  9348 000e 42F00052 		orr	r2, r2, #536870912	@ _2, _1,
-ARM GAS  /tmp/ccpmJ073.s 			page 165
+ARM GAS  /tmp/ccGIYrAe.s 			page 165
 
 
  9349 0012 C261     		str	r2, [r0, #28]	@ _2, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
@@ -9898,7 +9898,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9403              		.align	2
  9404              	.L759:
  9405 0010 00080040 		.word	1073743872
-ARM GAS  /tmp/ccpmJ073.s 			page 166
+ARM GAS  /tmp/ccGIYrAe.s 			page 166
 
 
  9406 0014 00000000 		.word	Tim4
@@ -9958,7 +9958,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9460 0034 8B63     		str	r3, [r1, #56]	@ _12, MEM[(struct ADC_TypeDef *)1073816576B].JSQR
  9461              	@ main.c:5476: 	ADC1->CR2 = ADC_CR2_JEXTSEL_JSWSTART | ADC_CR2_JEXTTRIG | ADC_CR2_CAL | ADC_CR2_ADO
  9462 0036 8D60     		str	r5, [r1, #8]	@ tmp142, MEM[(struct ADC_TypeDef *)1073816576B].CR2
-ARM GAS  /tmp/ccpmJ073.s 			page 167
+ARM GAS  /tmp/ccGIYrAe.s 			page 167
 
 
  9463              	@ main.c:5478: 	ADC1_CR1_SCAN_bb = 1;									// enable scan mode (multi channel mode)
@@ -10018,7 +10018,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9517              	.L772:
  9518              	@ main.c:5495: 	while (ADC1_SR_JSTRT_bb == 0);			// wait for conversion to start
  9519 000c 0B68     		ldr	r3, [r1]	@ _1, MEM[(volatile long unsigned int *)1109688332B]
-ARM GAS  /tmp/ccpmJ073.s 			page 168
+ARM GAS  /tmp/ccGIYrAe.s 			page 168
 
 
  9520 000e 002B     		cmp	r3, #0	@ _1
@@ -10078,7 +10078,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9574 0050 10BC     		pop	{r4}	@
  9575 0052 7047     		bx	lr	@
  9576              	.L786:
-ARM GAS  /tmp/ccpmJ073.s 			page 169
+ARM GAS  /tmp/ccGIYrAe.s 			page 169
 
 
  9577              		.align	2
@@ -10138,7 +10138,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9631 0028 05D0     		beq	.L790	@,
  9632              	.L797:
  9633 002a 53F8042B 		ldr	r2, [r3], #4	@ pretmp_4, MEM[base: _23, offset: 0B]
-ARM GAS  /tmp/ccpmJ073.s 			page 170
+ARM GAS  /tmp/ccGIYrAe.s 			page 170
 
 
  9634              	@ main.c:5521: 		value += *jdrs[i];
@@ -10198,7 +10198,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9688 000a 084A     		ldr	r2, .L802+4	@ _2,
  9689 000c CE68     		ldr	r6, [r1, #12]	@ _1, MEM[(struct SCB_Type *)3758157056B].AIRCR
  9690              	@ main.c:5537: 	NVIC->IP[ADC1_2_IRQn]  = (2<<4);
-ARM GAS  /tmp/ccpmJ073.s 			page 171
+ARM GAS  /tmp/ccGIYrAe.s 			page 171
 
 
  9691 000e 084B     		ldr	r3, .L802+8	@ tmp115,
@@ -10258,7 +10258,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9745              	@ main.c:5552: 	memset((char *)u1buf,0,16);
  9746 0018 CDE90677 		strd	r7, r7, [sp, #24]	@ tmp152, tmp152,,
  9747 001c CDE90877 		strd	r7, r7, [sp, #32]	@ tmp152, tmp152,,
-ARM GAS  /tmp/ccpmJ073.s 			page 172
+ARM GAS  /tmp/ccGIYrAe.s 			page 172
 
 
  9748              	@ main.c:5553: 	UaPutS("\r\n mies = ");
@@ -10318,7 +10318,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9802 008c DFF830B1 		ldr	fp, .L820+36	@ tmp226,
  9803              	@ main.c:5566: 	u08 sec = str2int((char *)u1buf);
  9804 0090 0190     		str	r0, [sp, #4]	@, %sfp
-ARM GAS  /tmp/ccpmJ073.s 			page 173
+ARM GAS  /tmp/ccGIYrAe.s 			page 173
 
 
  9805 0092 ADB2     		uxth	r5, r5	@ _92, _1
@@ -10378,7 +10378,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9859              	@ main.c:5594: 	while(Uxt);
  9860 00ee 002C     		cmp	r4, #0	@ Uxt
  9861 00f0 D5D1     		bne	.L813	@
-ARM GAS  /tmp/ccpmJ073.s 			page 174
+ARM GAS  /tmp/ccGIYrAe.s 			page 174
 
 
  9862 00f2 E1E7     		b	.L804	@
@@ -10438,7 +10438,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9916 0174 FFF7FEFF 		bl	UaPutC	@
  9917              	@ main.c:5584: 								UaPutS(uint2str(ptm.tm_sec,tbuf));		UaPutS("\r\n TimStmp = ");
  9918 0178 02A9     		add	r1, sp, #8	@,,
-ARM GAS  /tmp/ccpmJ073.s 			page 175
+ARM GAS  /tmp/ccGIYrAe.s 			page 175
 
 
  9919 017a DBF80000 		ldr	r0, [fp]	@, ptm.tm_sec
@@ -10456,15 +10456,15 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9931              	.L821:
  9932 019a 00BF     		.align	2
  9933              	.L820:
- 9934 019c 00000000 		.word	.LC152
- 9935 01a0 0C000000 		.word	.LC153
- 9936 01a4 18000000 		.word	.LC154
- 9937 01a8 24000000 		.word	.LC155
- 9938 01ac 30000000 		.word	.LC156
- 9939 01b0 3C000000 		.word	.LC157
+ 9934 019c 00000000 		.word	.LC153
+ 9935 01a0 0C000000 		.word	.LC154
+ 9936 01a4 18000000 		.word	.LC155
+ 9937 01a8 24000000 		.word	.LC156
+ 9938 01ac 30000000 		.word	.LC157
+ 9939 01b0 3C000000 		.word	.LC158
  9940 01b4 DFEFBC72 		.word	1924984799
- 9941 01b8 30000000 		.word	.LC67
- 9942 01bc 48000000 		.word	.LC158
+ 9941 01b8 30000000 		.word	.LC68
+ 9942 01bc 48000000 		.word	.LC159
  9943 01c0 00000000 		.word	ptm
  9944              		.size	SetDate, .-SetDate
  9945              		.section	.text.flash_latency,"ax",%progbits
@@ -10498,7 +10498,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  9973 0018 1368     		ldr	r3, [r2]	@ _1, MEM[(struct FLASH_TypeDef *)1073881088B].ACR
  9974 001a 1843     		orrs	r0, r0, r3	@, _2, wait_states, _1
  9975 001c 1060     		str	r0, [r2]	@ _2, MEM[(struct FLASH_TypeDef *)1073881088B].ACR
-ARM GAS  /tmp/ccpmJ073.s 			page 176
+ARM GAS  /tmp/ccGIYrAe.s 			page 176
 
 
  9976              	@ main.c:5639: }
@@ -10558,7 +10558,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10030 0016 1E00     		.short	30
  10031 0018 0000     		.short	0
  10032 001a 0000     		.short	0
-ARM GAS  /tmp/ccpmJ073.s 			page 177
+ARM GAS  /tmp/ccGIYrAe.s 			page 177
 
 
  10033 001c 0000     		.short	0
@@ -10618,7 +10618,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10079              	SX1278_1.8497:
  10080 0000 00000000 		.space	76
  10080      00000000 
-ARM GAS  /tmp/ccpmJ073.s 			page 178
+ARM GAS  /tmp/ccGIYrAe.s 			page 178
 
 
  10080      00000000 
@@ -10678,7 +10678,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10114      00000000 
  10114      00000000 
  10114      00000000 
-ARM GAS  /tmp/ccpmJ073.s 			page 179
+ARM GAS  /tmp/ccGIYrAe.s 			page 179
 
 
  10115              		.section	.bss.buf_tx.8499,"aw",%nobits
@@ -10738,7 +10738,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10162              		.align	2
  10163              		.set	.LANCHOR18,. + 0
  10164              		.type	dma_buf, %object
-ARM GAS  /tmp/ccpmJ073.s 			page 180
+ARM GAS  /tmp/ccGIYrAe.s 			page 180
 
 
  10165              		.size	dma_buf, 24
@@ -10798,7 +10798,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10206              		.type	vbus.8269, %object
  10207              		.size	vbus.8269, 2
  10208              	vbus.8269:
-ARM GAS  /tmp/ccpmJ073.s 			page 181
+ARM GAS  /tmp/ccGIYrAe.s 			page 181
 
 
  10209 0000 0000     		.space	2
@@ -10835,35 +10835,35 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10236      3A303000 
  10237              		.section	.rodata.BMP280_i2c.str1.4,"aMS",%progbits,1
  10238              		.align	2
- 10239              	.LC58:
+ 10239              	.LC59:
  10240 0000 0D0A2069 		.ascii	"\015\012 i2c_BMP280 = 0x\000"
  10240      32635F42 
  10240      4D503238 
  10240      30203D20 
  10240      307800
  10241 0013 00       		.space	1
- 10242              	.LC59:
+ 10242              	.LC60:
  10243 0014 0D0A2042 		.ascii	"\015\012 BMP280 \000"
  10243      4D503238 
  10243      302000
  10244 001f 00       		.space	1
- 10245              	.LC60:
+ 10245              	.LC61:
  10246 0020 74743D00 		.ascii	"tt=\000"
- 10247              	.LC61:
+ 10247              	.LC62:
  10248 0024 20543D00 		.ascii	" T=\000"
- 10249              	.LC62:
+ 10249              	.LC63:
  10250 0028 20703D20 		.ascii	" p= \000"
  10250      00
  10251 002d 000000   		.space	3
- 10252              	.LC63:
+ 10252              	.LC64:
  10253 0030 2074703D 		.ascii	" tp=\000"
  10253      00
-ARM GAS  /tmp/ccpmJ073.s 			page 182
+ARM GAS  /tmp/ccGIYrAe.s 			page 182
 
 
  10254              		.section	.rodata.BMP280_spi.str1.4,"aMS",%progbits,1
  10255              		.align	2
- 10256              	.LC64:
+ 10256              	.LC65:
  10257 0000 0D0A2042 		.ascii	"\015\012 BMP280T1 = 0x\000"
  10257      4D503238 
  10257      30543120 
@@ -10871,24 +10871,24 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10257      00
  10258              		.section	.rodata.Intro2.str1.4,"aMS",%progbits,1
  10259              		.align	2
- 10260              	.LC146:
+ 10260              	.LC147:
  10261 0000 0D0A2053 		.ascii	"\015\012 Start programu... \015\012\000"
  10261      74617274 
  10261      2070726F 
  10261      6772616D 
  10261      752E2E2E 
- 10262              	.LC147:
+ 10262              	.LC148:
  10263 0018 0D0A2044 		.ascii	"\015\012 Debug0...\000"
  10263      65627567 
  10263      302E2E2E 
  10263      00
  10264 0025 000000   		.space	3
- 10265              	.LC148:
+ 10265              	.LC149:
  10266 0028 0D0A2077 		.ascii	"\015\012 wXlen \000"
  10266      586C656E 
  10266      2000
  10267 0032 0000     		.space	2
- 10268              	.LC149:
+ 10268              	.LC150:
  10269 0034 0D0A2054 		.ascii	"\015\012 TIM4->PSC/ARR=\000"
  10269      494D342D 
  10269      3E505343 
@@ -10896,73 +10896,73 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10269      3D00
  10270              		.section	.rodata.LoRaRX.str1.4,"aMS",%progbits,1
  10271              		.align	2
- 10272              	.LC36:
+ 10272              	.LC37:
  10273 0000 0A00     		.ascii	"\012\000"
  10274              		.section	.rodata.LoRaRX1.str1.4,"aMS",%progbits,1
  10275              		.align	2
- 10276              	.LC37:
+ 10276              	.LC38:
  10277 0000 2054696D 		.ascii	" Time=\000"
  10277      653D00
  10278 0007 00       		.space	1
- 10279              	.LC38:
+ 10279              	.LC39:
  10280 0008 0D0A2052 		.ascii	"\015\012 Read Reg1=0x\000"
  10280      65616420 
  10280      52656731 
  10280      3D307800 
- 10281              	.LC39:
+ 10281              	.LC40:
  10282 0018 20526567 		.ascii	" Reg1 0x\000"
  10282      31203078 
  10282      00
  10283 0021 000000   		.space	3
- 10284              	.LC40:
+ 10284              	.LC41:
  10285 0024 3D203078 		.ascii	"= 0x\000"
  10285      00
  10286 0029 000000   		.space	3
-ARM GAS  /tmp/ccpmJ073.s 			page 183
+ARM GAS  /tmp/ccGIYrAe.s 			page 183
 
 
- 10287              	.LC41:
+ 10287              	.LC42:
  10288 002c 0D0A2030 		.ascii	"\015\012 0-3(\000"
  10288      2D332800 
- 10289              	.LC42:
+ 10289              	.LC43:
  10290 0034 2920504F 		.ascii	") POWER=\000"
  10290      5745523D 
  10290      00
  10291 003d 000000   		.space	3
- 10292              	.LC43:
+ 10292              	.LC44:
  10293 0040 0D0A2030 		.ascii	"\015\012 0-6(\000"
  10293      2D362800 
- 10294              	.LC44:
+ 10294              	.LC45:
  10295 0048 29205346 		.ascii	") SF=\000"
  10295      3D00
  10296 004e 0000     		.space	2
- 10297              	.LC45:
+ 10297              	.LC46:
  10298 0050 0D0A2030 		.ascii	"\015\012 0-9(\000"
  10298      2D392800 
- 10299              	.LC46:
+ 10299              	.LC47:
  10300 0058 29204257 		.ascii	") BW=\000"
  10300      3D00
  10301 005e 0000     		.space	2
- 10302              	.LC47:
+ 10302              	.LC48:
  10303 0060 0D0A2073 		.ascii	"\015\012 sek(\000"
  10303      656B2800 
- 10304              	.LC48:
+ 10304              	.LC49:
  10305 0068 29204465 		.ascii	") Delay=\000"
  10305      6C61793D 
  10305      00
  10306 0071 000000   		.space	3
- 10307              	.LC49:
+ 10307              	.LC50:
  10308 0074 0D0A204D 		.ascii	"\015\012 Menu > \000"
  10308      656E7520 
  10308      3E2000
  10309 007f 00       		.space	1
- 10310              	.LC50:
+ 10310              	.LC51:
  10311 0080 0D0A2070 		.ascii	"\015\012 prssi->\000"
  10311      72737369 
  10311      2D3E00
  10312              		.section	.rodata.MAX44009_i2c.str1.4,"aMS",%progbits,1
  10313              		.align	2
- 10314              	.LC57:
+ 10314              	.LC58:
  10315 0000 0D0A2041 		.ascii	"\015\012 APDS9960_ID=0x\000"
  10315      50445339 
  10315      3936305F 
@@ -10970,15 +10970,15 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10315      7800
  10316              		.section	.rodata.MemCard_Menu.str1.4,"aMS",%progbits,1
  10317              		.align	2
- 10318              	.LC100:
+ 10318              	.LC101:
  10319 0000 0D0A5344 		.ascii	"\015\012SD Card Init = \000"
  10319      20436172 
  10319      6420496E 
  10319      6974203D 
  10319      2000
  10320 0012 0000     		.space	2
- 10321              	.LC101:
-ARM GAS  /tmp/ccpmJ073.s 			page 184
+ 10321              	.LC102:
+ARM GAS  /tmp/ccGIYrAe.s 			page 184
 
 
  10322 0014 0D0A5344 		.ascii	"\015\012SD Card Init ERROR \000"
@@ -10987,58 +10987,58 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10322      69742045 
  10322      52524F52 
  10323 002a 0000     		.space	2
- 10324              	.LC102:
+ 10324              	.LC103:
  10325 002c 0D0A5344 		.ascii	"\015\012SD Card ser_num    = \000"
  10325      20436172 
  10325      64207365 
  10325      725F6E75 
  10325      6D202020 
- 10326              	.LC103:
+ 10326              	.LC104:
  10327 0044 0D0A5344 		.ascii	"\015\012SD Card block_num  = \000"
  10327      20436172 
  10327      6420626C 
  10327      6F636B5F 
  10327      6E756D20 
- 10328              	.LC104:
+ 10328              	.LC105:
  10329 005c 0D0A5344 		.ascii	"\015\012SD Card read_blen  = \000"
  10329      20436172 
  10329      64207265 
  10329      61645F62 
  10329      6C656E20 
- 10330              	.LC105:
+ 10330              	.LC106:
  10331 0074 0D0A5344 		.ascii	"\015\012SD Card write_blen = \000"
  10331      20436172 
  10331      64207772 
  10331      6974655F 
  10331      626C656E 
- 10332              	.LC106:
+ 10332              	.LC107:
  10333 008c 53746174 		.ascii	"Statistic Card  \000"
  10333      69737469 
  10333      63204361 
  10333      72642020 
  10333      00
  10334 009d 000000   		.space	3
- 10335              	.LC107:
+ 10335              	.LC108:
  10336 00a0 0D0A5344 		.ascii	"\015\012SD Card Not Init\000"
  10336      20436172 
  10336      64204E6F 
  10336      7420496E 
  10336      697400
  10337 00b3 00       		.space	1
- 10338              	.LC108:
+ 10338              	.LC109:
  10339 00b4 46696C6C 		.ascii	"Fill sector\000"
  10339      20736563 
  10339      746F7200 
- 10340              	.LC109:
+ 10340              	.LC110:
  10341 00c0 0D0A2053 		.ascii	"\015\012 Start Block  = 0x\000"
  10341      74617274 
  10341      20426C6F 
  10341      636B2020 
  10341      3D203078 
  10342 00d5 000000   		.space	3
- 10343              	.LC110:
+ 10343              	.LC111:
  10344 00d8 0D0A2045 		.ascii	"\015\012 End   Blocks = 0x\000"
-ARM GAS  /tmp/ccpmJ073.s 			page 185
+ARM GAS  /tmp/ccGIYrAe.s 			page 185
 
 
  10344      6E642020 
@@ -11046,119 +11046,119 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10344      636B7320 
  10344      3D203078 
  10345 00ed 000000   		.space	3
- 10346              	.LC111:
+ 10346              	.LC112:
  10347 00f0 0D0A204E 		.ascii	"\015\012 Num Blocks   = \000"
  10347      756D2042 
  10347      6C6F636B 
  10347      73202020 
  10347      3D2000
  10348 0103 00       		.space	1
- 10349              	.LC112:
+ 10349              	.LC113:
  10350 0104 0D0A2044 		.ascii	"\015\012 Data to fill = 0x\000"
  10350      61746120 
  10350      746F2066 
  10350      696C6C20 
  10350      3D203078 
  10351 0119 000000   		.space	3
- 10352              	.LC113:
+ 10352              	.LC114:
  10353 011c 0D0A2046 		.ascii	"\015\012 Fill error = 0x\000"
  10353      696C6C20 
  10353      6572726F 
  10353      72203D20 
  10353      307800
  10354 012f 00       		.space	1
- 10355              	.LC114:
+ 10355              	.LC115:
  10356 0130 0D0A2046 		.ascii	"\015\012 Fill OK \000"
  10356      696C6C20 
  10356      4F4B2000 
- 10357              	.LC115:
+ 10357              	.LC116:
  10358 013c 2054696D 		.ascii	" Time[us] = \000"
  10358      655B7573 
  10358      5D203D20 
  10358      00
  10359 0149 000000   		.space	3
- 10360              	.LC116:
+ 10360              	.LC117:
  10361 014c 4D6F6469 		.ascii	"Modify memory\000"
  10361      6679206D 
  10361      656D6F72 
  10361      7900
  10362 015a 0000     		.space	2
- 10363              	.LC117:
+ 10363              	.LC118:
  10364 015c 0D0A204D 		.ascii	"\015\012 Memory Addr = 0x\000"
  10364      656D6F72 
  10364      79204164 
  10364      6472203D 
  10364      20307800 
- 10365              	.LC118:
+ 10365              	.LC119:
  10366 0170 0D0A204D 		.ascii	"\015\012 Memory Data = 0x\000"
  10366      656D6F72 
  10366      79204461 
  10366      7461203D 
  10366      20307800 
- 10367              	.LC119:
+ 10367              	.LC120:
  10368 0184 0D0A204E 		.ascii	"\015\012 New Data    = 0x\000"
  10368      65772044 
-ARM GAS  /tmp/ccpmJ073.s 			page 186
+ARM GAS  /tmp/ccGIYrAe.s 			page 186
 
 
  10368      61746120 
  10368      2020203D 
  10368      20307800 
- 10369              	.LC120:
+ 10369              	.LC121:
  10370 0198 0D0A204D 		.ascii	"\015\012 Modify OK\000"
  10370      6F646966 
  10370      79204F4B 
  10370      00
  10371 01a5 000000   		.space	3
- 10372              	.LC121:
+ 10372              	.LC122:
  10373 01a8 0D0A2052 		.ascii	"\015\012 ReadB 0x\000"
  10373      65616442 
  10373      20307800 
- 10374              	.LC122:
+ 10374              	.LC123:
  10375 01b4 20204672 		.ascii	"  From 0x\000"
  10375      6F6D2030 
  10375      7800
  10376 01be 0000     		.space	2
- 10377              	.LC123:
+ 10377              	.LC124:
  10378 01c0 2D3E3078 		.ascii	"->0x\000"
  10378      00
  10379 01c5 000000   		.space	3
- 10380              	.LC124:
+ 10380              	.LC125:
  10381 01c8 20205772 		.ascii	"  WriteB 0x\000"
  10381      69746542 
  10381      20307800 
- 10382              	.LC125:
+ 10382              	.LC126:
  10383 01d4 20203078 		.ascii	"  0x\000"
  10383      00
  10384 01d9 000000   		.space	3
- 10385              	.LC126:
+ 10385              	.LC127:
  10386 01dc 0D0A2073 		.ascii	"\015\012 sectorNumber = 0x\000"
  10386      6563746F 
  10386      724E756D 
  10386      62657220 
  10386      3D203078 
  10387 01f1 000000   		.space	3
- 10388              	.LC127:
+ 10388              	.LC128:
  10389 01f4 20745F63 		.ascii	" t_crc = \000"
  10389      7263203D 
  10389      2000
  10390 01fe 0000     		.space	2
- 10391              	.LC128:
+ 10391              	.LC129:
  10392 0200 0D0A2052 		.ascii	"\015\012 Read Error = \000"
  10392      65616420 
  10392      4572726F 
  10392      72203D20 
  10392      00
  10393 0211 000000   		.space	3
- 10394              	.LC129:
+ 10394              	.LC130:
  10395 0214 52656164 		.ascii	"Read multi sector\000"
  10395      206D756C 
  10395      74692073 
  10395      6563746F 
  10395      7200
  10396 0226 0000     		.space	2
- 10397              	.LC130:
-ARM GAS  /tmp/ccpmJ073.s 			page 187
+ 10397              	.LC131:
+ARM GAS  /tmp/ccGIYrAe.s 			page 187
 
 
  10398 0228 0D0A204E 		.ascii	"\015\012 Num Sectors  = \000"
@@ -11167,89 +11167,89 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10398      72732020 
  10398      3D2000
  10399 023b 00       		.space	1
- 10400              	.LC131:
+ 10400              	.LC132:
  10401 023c 0D0A2052 		.ascii	"\015\012 Read error = 0x\000"
  10401      65616420 
  10401      6572726F 
  10401      72203D20 
  10401      307800
  10402 024f 00       		.space	1
- 10403              	.LC132:
+ 10403              	.LC133:
  10404 0250 0D0A2052 		.ascii	"\015\012 Read OK \000"
  10404      65616420 
  10404      4F4B2000 
- 10405              	.LC133:
+ 10405              	.LC134:
  10406 025c 20793220 		.ascii	" y2 = \000"
  10406      3D2000
  10407 0263 00       		.space	1
- 10408              	.LC134:
+ 10408              	.LC135:
  10409 0264 0900     		.ascii	"\011\000"
  10410 0266 0000     		.space	2
- 10411              	.LC135:
+ 10411              	.LC136:
  10412 0268 56696577 		.ascii	"View last sector\000"
  10412      206C6173 
  10412      74207365 
  10412      63746F72 
  10412      00
  10413 0279 000000   		.space	3
- 10414              	.LC136:
+ 10414              	.LC137:
  10415 027c 0D0A2046 		.ascii	"\015\012 First Sector = 0x\000"
  10415      69727374 
  10415      20536563 
  10415      746F7220 
  10415      3D203078 
  10416 0291 000000   		.space	3
- 10417              	.LC137:
+ 10417              	.LC138:
  10418 0294 0D0A2053 		.ascii	"\015\012 Searching \000"
  10418      65617263 
  10418      68696E67 
  10418      2000
  10419 02a2 0000     		.space	2
- 10420              	.LC138:
+ 10420              	.LC139:
  10421 02a4 0D0A2045 		.ascii	"\015\012 Exit Read Error !!!\000"
  10421      78697420 
  10421      52656164 
  10421      20457272 
  10421      6F722021 
  10422 02bb 00       		.space	1
- 10423              	.LC139:
+ 10423              	.LC140:
  10424 02bc 0D0A2046 		.ascii	"\015\012 Find Sector = 0x\000"
  10424      696E6420 
  10424      53656374 
  10424      6F72203D 
  10424      20307800 
-ARM GAS  /tmp/ccpmJ073.s 			page 188
+ARM GAS  /tmp/ccGIYrAe.s 			page 188
 
 
- 10425              	.LC140:
+ 10425              	.LC141:
  10426 02d0 0D0A2020 		.ascii	"\015\012     lenBlock= \000"
  10426      2020206C 
  10426      656E426C 
  10426      6F636B3D 
  10426      2000
  10427 02e2 0000     		.space	2
- 10428              	.LC141:
+ 10428              	.LC142:
  10429 02e4 0D0A2042 		.ascii	"\015\012 Block = \000"
  10429      6C6F636B 
  10429      203D2000 
- 10430              	.LC142:
+ 10430              	.LC143:
  10431 02f0 0D0A2052 		.ascii	"\015\012 Read Error \000"
  10431      65616420 
  10431      4572726F 
  10431      722000
  10432 02ff 00       		.space	1
- 10433              	.LC143:
+ 10433              	.LC144:
  10434 0300 0D0A2053 		.ascii	"\015\012 SD_Status \015\012 \000"
  10434      445F5374 
  10434      61747573 
  10434      200D0A20 
  10434      00
  10435 0311 000000   		.space	3
- 10436              	.LC144:
+ 10436              	.LC145:
  10437 0314 54657374 		.ascii	"Testing ...\000"
  10437      696E6720 
  10437      2E2E2E00 
- 10438              	.LC145:
+ 10438              	.LC146:
  10439 0320 556E6B72 		.ascii	"Unkr_dma_buf Command !\000"
  10439      5F646D61 
  10439      5F627566 
@@ -11257,7 +11257,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10439      6D616E64 
  10440              		.section	.rodata.Menu1.str1.4,"aMS",%progbits,1
  10441              		.align	2
- 10442              	.LC96:
+ 10442              	.LC97:
  10443 0000 0A0D0A3D 		.ascii	"\012\015\012======= STM32F4 SD/MMC Card ==========="
  10443      3D3D3D3D 
  10443      3D3D2053 
@@ -11267,7 +11267,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10444      3D3D3D3D 
  10444      3D3D3D0D 
  10444      0A00
- 10445              	.LC97:
+ 10445              	.LC98:
  10446 0038 2069202D 		.ascii	" i - Init      r - Read  sector  e - Erase sector  "
  10446      20496E69 
  10446      74202020 
@@ -11275,10 +11275,10 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10446      202D2052 
  10447 006b 200D0A00 		.ascii	" \015\012\000"
  10448 006f 00       		.space	1
- 10449              	.LC98:
+ 10449              	.LC99:
  10450 0070 2064202D 		.ascii	" d - Delete    f - Write sector  s - Statistic Card"
  10450      2044656C 
-ARM GAS  /tmp/ccpmJ073.s 			page 189
+ARM GAS  /tmp/ccGIYrAe.s 			page 189
 
 
  10450      65746520 
@@ -11286,7 +11286,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10450      202D2057 
  10451 00a3 200D0A00 		.ascii	" \015\012\000"
  10452 00a7 00       		.space	1
- 10453              	.LC99:
+ 10453              	.LC100:
  10454 00a8 206D202D 		.ascii	" m - Modf mem  c - Copy  sector  n - Next Cluster  "
  10454      204D6F64 
  10454      66206D65 
@@ -11295,41 +11295,41 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10455 00db 0D0A00   		.ascii	"\015\012\000"
  10456              		.section	.rodata.SPI_Tool.str1.4,"aMS",%progbits,1
  10457              		.align	2
- 10458              	.LC89:
+ 10458              	.LC90:
  10459 0000 0D0A496E 		.ascii	"\015\012Init spi    = \000"
  10459      69742073 
  10459      70692020 
  10459      20203D20 
  10459      00
  10460 0011 000000   		.space	3
- 10461              	.LC90:
+ 10461              	.LC91:
  10462 0014 0D0A2052 		.ascii	"\015\012 Reg = \000"
  10462      6567203D 
  10462      2000
  10463 001e 0000     		.space	2
- 10464              	.LC91:
+ 10464              	.LC92:
  10465 0020 436F7079 		.ascii	"Copy memory\000"
  10465      206D656D 
  10465      6F727900 
- 10466              	.LC92:
+ 10466              	.LC93:
  10467 002c 0D0A2053 		.ascii	"\015\012 Src Mem adr = 0x\000"
  10467      7263204D 
  10467      656D2061 
  10467      6472203D 
  10467      20307800 
- 10468              	.LC93:
+ 10468              	.LC94:
  10469 0040 0D0A2048 		.ascii	"\015\012 How many byte = \000"
  10469      6F77206D 
  10469      616E7920 
  10469      62797465 
  10469      203D2000 
- 10470              	.LC94:
+ 10470              	.LC95:
  10471 0054 0D0A2044 		.ascii	"\015\012 Dst mem adr = 0x\000"
  10471      7374206D 
  10471      656D2061 
  10471      6472203D 
  10471      20307800 
- 10472              	.LC95:
+ 10472              	.LC96:
  10473 0068 4E69657A 		.ascii	"Nieznana Komenda\000"
  10473      6E616E61 
  10473      204B6F6D 
@@ -11337,8 +11337,8 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10473      00
  10474              		.section	.rodata.SPI_Tool_Menu.str1.4,"aMS",%progbits,1
  10475              		.align	2
- 10476              	.LC85:
-ARM GAS  /tmp/ccpmJ073.s 			page 190
+ 10476              	.LC86:
+ARM GAS  /tmp/ccGIYrAe.s 			page 190
 
 
  10477 0000 0A0D0A3D 		.ascii	"\012\015\012======= STM32F1 SPI TOOL =============="
@@ -11350,7 +11350,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10478      3D3D3D3D 
  10478      3D3D3D0D 
  10478      0A00
- 10479              	.LC86:
+ 10479              	.LC87:
  10480 0038 2069202D 		.ascii	" i - Init      r - Read  sector  e -               "
  10480      20496E69 
  10480      74202020 
@@ -11358,7 +11358,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10480      202D2052 
  10481 006b 200D0A00 		.ascii	" \015\012\000"
  10482 006f 00       		.space	1
- 10483              	.LC87:
+ 10483              	.LC88:
  10484 0070 2064202D 		.ascii	" d - Delete    f - Write sector  s -               "
  10484      2044656C 
  10484      65746520 
@@ -11366,7 +11366,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10484      202D2057 
  10485 00a3 200D0A00 		.ascii	" \015\012\000"
  10486 00a7 00       		.space	1
- 10487              	.LC88:
+ 10487              	.LC89:
  10488 00a8 206D202D 		.ascii	" m - Modf      c - Copy  sector  n -               "
  10488      204D6F64 
  10488      66202020 
@@ -11375,55 +11375,55 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10489 00db 0D0A00   		.ascii	"\015\012\000"
  10490              		.section	.rodata.SetDate.str1.4,"aMS",%progbits,1
  10491              		.align	2
- 10492              	.LC152:
+ 10492              	.LC153:
  10493 0000 0D0A2072 		.ascii	"\015\012 rok = \000"
  10493      6F6B203D 
  10493      2000
  10494 000a 0000     		.space	2
- 10495              	.LC153:
+ 10495              	.LC154:
  10496 000c 0D0A206D 		.ascii	"\015\012 mies = \000"
  10496      69657320 
  10496      3D2000
  10497 0017 00       		.space	1
- 10498              	.LC154:
+ 10498              	.LC155:
  10499 0018 0D0A2064 		.ascii	"\015\012 dzien = \000"
  10499      7A69656E 
  10499      203D2000 
- 10500              	.LC155:
+ 10500              	.LC156:
  10501 0024 0D0A2067 		.ascii	"\015\012 gdz = \000"
  10501      647A203D 
  10501      2000
  10502 002e 0000     		.space	2
- 10503              	.LC156:
+ 10503              	.LC157:
  10504 0030 0D0A206D 		.ascii	"\015\012 min = \000"
  10504      696E203D 
  10504      2000
-ARM GAS  /tmp/ccpmJ073.s 			page 191
+ARM GAS  /tmp/ccGIYrAe.s 			page 191
 
 
  10505 003a 0000     		.space	2
- 10506              	.LC157:
+ 10506              	.LC158:
  10507 003c 0D0A2073 		.ascii	"\015\012 sek = \000"
  10507      656B203D 
  10507      2000
  10508 0046 0000     		.space	2
- 10509              	.LC158:
+ 10509              	.LC159:
  10510 0048 0D0A2054 		.ascii	"\015\012 TimStmp = \000"
  10510      696D5374 
  10510      6D70203D 
  10510      2000
  10511              		.section	.rodata.TSL2561_i2c.str1.4,"aMS",%progbits,1
  10512              		.align	2
- 10513              	.LC56:
+ 10513              	.LC57:
  10514 0000 2C00     		.ascii	",\000"
  10515              		.section	.rodata.Zegarek.str1.4,"aMS",%progbits,1
  10516              		.align	2
- 10517              	.LC150:
+ 10517              	.LC151:
  10518 0000 30302D30 		.ascii	"00-00-00\000"
  10518      302D3030 
  10518      00
  10519 0009 000000   		.space	3
- 10520              	.LC151:
+ 10520              	.LC152:
  10521 000c 30303030 		.ascii	"0000-00-00\000"
  10521      2D30302D 
  10521      303000
@@ -11458,104 +11458,104 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10550 0058 1E000000 		.word	30
  10551 005c 1F000000 		.word	31
  10552              		.section	.rodata.fun_tool.str1.4,"aMS",%progbits,1
-ARM GAS  /tmp/ccpmJ073.s 			page 192
+ARM GAS  /tmp/ccGIYrAe.s 			page 192
 
 
  10553              		.align	2
- 10554              	.LC65:
+ 10554              	.LC66:
  10555 0000 0D0A2046 		.ascii	"\015\012 FLASH memory Read = \000"
  10555      4C415348 
  10555      206D656D 
  10555      6F727920 
  10555      52656164 
- 10556              	.LC66:
+ 10556              	.LC67:
  10557 0018 0D0A2046 		.ascii	"\015\012 Flash memory Page =\000"
  10557      6C617368 
  10557      206D656D 
  10557      6F727920 
  10557      50616765 
  10558 002f 00       		.space	1
- 10559              	.LC67:
+ 10559              	.LC68:
  10560 0030 0D0A2000 		.ascii	"\015\012 \000"
- 10561              	.LC68:
+ 10561              	.LC69:
  10562 0034 0D0A0A20 		.ascii	"\015\012\012 \000"
  10562      00
  10563 0039 000000   		.space	3
- 10564              	.LC69:
+ 10564              	.LC70:
  10565 003c 202000   		.ascii	"  \000"
  10566 003f 00       		.space	1
- 10567              	.LC70:
+ 10567              	.LC71:
  10568 0040 20637263 		.ascii	" crc = \000"
  10568      203D2000 
- 10569              	.LC71:
+ 10569              	.LC72:
  10570 0048 0D0A2046 		.ascii	"\015\012 Flash memory Page = \000"
  10570      6C617368 
  10570      206D656D 
  10570      6F727920 
  10570      50616765 
- 10571              	.LC72:
+ 10571              	.LC73:
  10572 0060 0D0A204B 		.ascii	"\015\012 Kasowanie pamieci FLASH = \000"
  10572      61736F77 
  10572      616E6965 
  10572      2070616D 
  10572      69656369 
  10573 007e 0000     		.space	2
- 10574              	.LC73:
+ 10574              	.LC74:
  10575 0080 0D0A2047 		.ascii	"\015\012 Godzina = \000"
  10575      6F647A69 
  10575      6E61203D 
  10575      2000
  10576 008e 0000     		.space	2
- 10577              	.LC74:
+ 10577              	.LC75:
  10578 0090 0D0A204D 		.ascii	"\015\012 Minut   = \000"
  10578      696E7574 
  10578      2020203D 
  10578      2000
  10579 009e 0000     		.space	2
- 10580              	.LC75:
+ 10580              	.LC76:
  10581 00a0 0D0A2053 		.ascii	"\015\012 Sekunda = \000"
  10581      656B756E 
  10581      6461203D 
  10581      2000
  10582 00ae 0000     		.space	2
-ARM GAS  /tmp/ccpmJ073.s 			page 193
+ARM GAS  /tmp/ccGIYrAe.s 			page 193
 
 
- 10583              	.LC76:
+ 10583              	.LC77:
  10584 00b0 0D0A2052 		.ascii	"\015\012 Read Start !\000"
  10584      65616420 
  10584      53746172 
  10584      74202100 
- 10585              	.LC77:
+ 10585              	.LC78:
  10586 00c0 2E00     		.ascii	".\000"
  10587 00c2 0000     		.space	2
- 10588              	.LC78:
+ 10588              	.LC79:
  10589 00c4 0D0A2052 		.ascii	"\015\012 Read Done !\000"
  10589      65616420 
  10589      446F6E65 
  10589      202100
  10590 00d3 00       		.space	1
- 10591              	.LC79:
+ 10591              	.LC80:
  10592 00d4 0D0A2043 		.ascii	"\015\012 Clear !\000"
  10592      6C656172 
  10592      202100
  10593 00df 00       		.space	1
- 10594              	.LC80:
+ 10594              	.LC81:
  10595 00e0 52656164 		.ascii	"Read sector\000"
  10595      20736563 
  10595      746F7200 
- 10596              	.LC81:
+ 10596              	.LC82:
  10597 00ec 0D0A2073 		.ascii	"\015\012 sectorNumber = \000"
  10597      6563746F 
  10597      724E756D 
  10597      62657220 
  10597      3D2000
  10598 00ff 00       		.space	1
- 10599              	.LC82:
+ 10599              	.LC83:
  10600 0100 20745F72 		.ascii	" t_rsdio = \000"
  10600      7364696F 
  10600      203D2000 
- 10601              	.LC83:
+ 10601              	.LC84:
  10602 010c 0D0A2052 		.ascii	"\015\012 Read Error !!!\000"
  10602      65616420 
  10602      4572726F 
@@ -11575,21 +11575,21 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10609      00
  10610              		.section	.rodata.ili9486.str1.4,"aMS",%progbits,1
  10611              		.align	2
- 10612              	.LC29:
+ 10612              	.LC30:
  10613 0000 0D0A2072 		.ascii	"\015\012 reg = 0x\000"
  10613      6567203D 
-ARM GAS  /tmp/ccpmJ073.s 			page 194
+ARM GAS  /tmp/ccGIYrAe.s 			page 194
 
 
  10613      20307800 
- 10614              	.LC30:
+ 10614              	.LC31:
  10615 000c 0D0A2064 		.ascii	"\015\012 dat = 0x\000"
  10615      6174203D 
  10615      20307800 
- 10616              	.LC31:
+ 10616              	.LC32:
  10617 0018 0C00     		.ascii	"\014\000"
  10618 001a 0000     		.space	2
- 10619              	.LC32:
+ 10619              	.LC33:
  10620 001c 0A0D0A3D 		.ascii	"\012\015\012======= ILI9486 ======================="
  10620      3D3D3D3D 
  10620      3D3D2049 
@@ -11599,21 +11599,21 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10621      3D3D3D3D 
  10621      3D3D3D0D 
  10621      0A00
- 10622              	.LC33:
+ 10622              	.LC34:
  10623 0054 2072202D 		.ascii	" r - Read   c - Clear page  \015\012\000"
  10623      20526561 
  10623      64202020 
  10623      63202D20 
  10623      436C6561 
  10624 0073 00       		.space	1
- 10625              	.LC34:
+ 10625              	.LC35:
  10626 0074 2077202D 		.ascii	" w - Write  l - Loop read   \015\012\000"
  10626      20577269 
  10626      74652020 
  10626      6C202D20 
  10626      4C6F6F70 
  10627 0093 00       		.space	1
- 10628              	.LC35:
+ 10628              	.LC36:
  10629 0094 3D3D3D3D 		.ascii	"==================================================\015"
  10629      3D3D3D3D 
  10629      3D3D3D3D 
@@ -11633,47 +11633,47 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10640 000c 48240140 		.word	1073816648
  10641              		.section	.rodata.lexmark_lcd.str1.4,"aMS",%progbits,1
  10642              		.align	2
- 10643              	.LC52:
+ 10643              	.LC53:
  10644 0000 57697461 		.ascii	"Witaj szkolo         \000"
  10644      6A20737A 
  10644      6B6F6C6F 
  10644      20202020 
-ARM GAS  /tmp/ccpmJ073.s 			page 195
+ARM GAS  /tmp/ccGIYrAe.s 			page 195
 
 
  10644      20202020 
  10645 0016 0000     		.space	2
- 10646              	.LC53:
+ 10646              	.LC54:
  10647 0018 5A617072 		.ascii	"Zapraszam do pracy        \000"
  10647      61737A61 
  10647      6D20646F 
  10647      20707261 
  10647      63792020 
  10648 0033 00       		.space	1
- 10649              	.LC54:
+ 10649              	.LC55:
  10650 0034 20202020 		.ascii	"                          \000"
  10650      20202020 
  10650      20202020 
  10650      20202020 
  10650      20202020 
  10651 004f 00       		.space	1
- 10652              	.LC55:
+ 10652              	.LC56:
  10653 0050 20545B75 		.ascii	" T[us]=\000"
  10653      735D3D00 
  10654              		.section	.rodata.lion_updown.str1.4,"aMS",%progbits,1
  10655              		.align	2
- 10656              	.LC24:
+ 10656              	.LC25:
  10657 0000 5600     		.ascii	"V\000"
  10658 0002 0000     		.space	2
- 10659              	.LC25:
+ 10659              	.LC26:
  10660 0004 6D4100   		.ascii	"mA\000"
  10661 0007 00       		.space	1
- 10662              	.LC26:
+ 10662              	.LC27:
  10663 0008 5700     		.ascii	"W\000"
  10664 000a 0000     		.space	2
- 10665              	.LC27:
+ 10665              	.LC28:
  10666 000c 6D416800 		.ascii	"mAh\000"
- 10667              	.LC28:
+ 10667              	.LC29:
  10668 0010 0D2000   		.ascii	"\015 \000"
  10669              		.section	.rodata.liontrend.str1.4,"aMS",%progbits,1
  10670              		.align	2
@@ -11685,10 +11685,10 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10676              		.section	.rodata.minios.str1.4,"aMS",%progbits,1
  10677              		.align	2
  10678              	.LC10:
- 10679 0000 0C205541 		.ascii	"\014 UART1 \000"
+ 10679 0000 0C205541 		.ascii	"\014 UART1  \000"
  10679      52543120 
- 10679      00
- 10680 0009 000000   		.space	3
+ 10679      2000
+ 10680 000a 0000     		.space	2
  10681              	.LC11:
  10682 000c 20622F73 		.ascii	" b/s \015\012\000"
  10682      200D0A00 
@@ -11698,7 +11698,7 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10684      00
  10685 001d 000000   		.space	3
  10686              	.LC13:
-ARM GAS  /tmp/ccpmJ073.s 			page 196
+ARM GAS  /tmp/ccGIYrAe.s 			page 196
 
 
  10687 0020 64656275 		.ascii	"debug_0\000"
@@ -11733,361 +11733,368 @@ ARM GAS  /tmp/ccpmJ073.s 			page 1
  10708              	.LC21:
  10709 0060 206E756D 		.ascii	" num=\000"
  10709      3D00
- 10710              		.section	.rodata.qtouch.str1.4,"aMS",%progbits,1
+ 10710              		.section	.rodata.oblicz.str1.4,"aMS",%progbits,1
  10711              		.align	2
- 10712              	.LC84:
- 10713 0000 0D0A2051 		.ascii	"\015\012 QT =\000"
- 10713      54203D00 
- 10714              		.section	.rodata.ws2812led.str1.4,"aMS",%progbits,1
+ 10712              	.LC24:
+ 10713 0000 0C205541 		.ascii	"\014 UART1 \000"
+ 10713      52543120 
+ 10713      00
+ 10714              		.section	.rodata.qtouch.str1.4,"aMS",%progbits,1
  10715              		.align	2
- 10716              	.LC51:
- 10717 0000 0D0A2044 		.ascii	"\015\012 DMA start...\000"
- 10717      4D412073 
- 10717      74617274 
- 10717      2E2E2E00 
- 10718              		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
-ARM GAS  /tmp/ccpmJ073.s 			page 197
+ 10716              	.LC85:
+ 10717 0000 0D0A2051 		.ascii	"\015\012 QT =\000"
+ 10717      54203D00 
+ 10718              		.section	.rodata.ws2812led.str1.4,"aMS",%progbits,1
+ 10719              		.align	2
+ 10720              	.LC52:
+ 10721 0000 0D0A2044 		.ascii	"\015\012 DMA start...\000"
+ 10721      4D412073 
+ 10721      74617274 
+ 10721      2E2E2E00 
+ 10722              		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
+ARM GAS  /tmp/ccGIYrAe.s 			page 197
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-     /tmp/ccpmJ073.s:69     .text.gmtime_r.isra.0.constprop.2:00000000 $t
-     /tmp/ccpmJ073.s:76     .text.gmtime_r.isra.0.constprop.2:00000000 gmtime_r.isra.0.constprop.2
-     /tmp/ccpmJ073.s:264    .text.gmtime_r.isra.0.constprop.2:00000154 $d
+     /tmp/ccGIYrAe.s:69     .text.gmtime_r.isra.0.constprop.2:00000000 $t
+     /tmp/ccGIYrAe.s:76     .text.gmtime_r.isra.0.constprop.2:00000000 gmtime_r.isra.0.constprop.2
+     /tmp/ccGIYrAe.s:264    .text.gmtime_r.isra.0.constprop.2:00000154 $d
                             *COM*:00000024 ptm
-     /tmp/ccpmJ073.s:274    .text.head:00000000 $t
-     /tmp/ccpmJ073.s:282    .text.head:00000000 head
-     /tmp/ccpmJ073.s:305    .text.head:00000024 $d
-     /tmp/ccpmJ073.s:309    .text.minios:00000000 $t
-     /tmp/ccpmJ073.s:317    .text.minios:00000000 minios
-     /tmp/ccpmJ073.s:665    .text.minios:00000274 $d
+     /tmp/ccGIYrAe.s:274    .text.head:00000000 $t
+     /tmp/ccGIYrAe.s:282    .text.head:00000000 head
+     /tmp/ccGIYrAe.s:305    .text.head:00000024 $d
+     /tmp/ccGIYrAe.s:309    .text.minios:00000000 $t
+     /tmp/ccGIYrAe.s:317    .text.minios:00000000 minios
+     /tmp/ccGIYrAe.s:665    .text.minios:00000274 $d
                             *COM*:00000004 trg0
                             *COM*:00000004 PutChar
-     /tmp/ccpmJ073.s:695    .text.startup.main:00000000 $t
-     /tmp/ccpmJ073.s:703    .text.startup.main:00000000 main
-     /tmp/ccpmJ073.s:794    .text.startup.main:00000074 $d
-     /tmp/ccpmJ073.s:805    .text.liontrend:00000000 $t
-     /tmp/ccpmJ073.s:813    .text.liontrend:00000000 liontrend
-     /tmp/ccpmJ073.s:942    .text.liontrend:00000124 $d
-     /tmp/ccpmJ073.s:948    .text.oblicz:00000000 $t
-     /tmp/ccpmJ073.s:956    .text.oblicz:00000000 oblicz
-     /tmp/ccpmJ073.s:1087   .text.oblicz:000000dc $d
-     /tmp/ccpmJ073.s:1102   .text.lion_updown:00000000 $t
-     /tmp/ccpmJ073.s:1110   .text.lion_updown:00000000 lion_updown
-     /tmp/ccpmJ073.s:1356   .text.lion_updown:000001b4 $d
-     /tmp/ccpmJ073.s:1382   .text.lion_updown:0000021c $t
-     /tmp/ccpmJ073.s:1522   .text.lion_updown:000002c4 $d
+     /tmp/ccGIYrAe.s:695    .text.startup.main:00000000 $t
+     /tmp/ccGIYrAe.s:703    .text.startup.main:00000000 main
+     /tmp/ccGIYrAe.s:794    .text.startup.main:00000074 $d
+     /tmp/ccGIYrAe.s:805    .text.liontrend:00000000 $t
+     /tmp/ccGIYrAe.s:813    .text.liontrend:00000000 liontrend
+     /tmp/ccGIYrAe.s:942    .text.liontrend:00000124 $d
+     /tmp/ccGIYrAe.s:948    .text.oblicz:00000000 $t
+     /tmp/ccGIYrAe.s:956    .text.oblicz:00000000 oblicz
+     /tmp/ccGIYrAe.s:1087   .text.oblicz:000000dc $d
+     /tmp/ccGIYrAe.s:1102   .text.lion_updown:00000000 $t
+     /tmp/ccGIYrAe.s:1110   .text.lion_updown:00000000 lion_updown
+     /tmp/ccGIYrAe.s:1356   .text.lion_updown:000001b4 $d
+     /tmp/ccGIYrAe.s:1382   .text.lion_updown:0000021c $t
+     /tmp/ccGIYrAe.s:1522   .text.lion_updown:000002c4 $d
                             *COM*:00000004 trg1
                             *COM*:00000004 trg2
-     /tmp/ccpmJ073.s:1552   .text.lion_updown:00000334 $t
-     /tmp/ccpmJ073.s:1741   .text.lion_updown:000004ac $d
-     /tmp/ccpmJ073.s:1759   .text.uht:00000000 $t
-     /tmp/ccpmJ073.s:1767   .text.uht:00000000 uht
-     /tmp/ccpmJ073.s:1782   .text.uht:00000010 $d
-     /tmp/ccpmJ073.s:1785   .text.rtc_calibrate:00000000 $t
-     /tmp/ccpmJ073.s:1793   .text.rtc_calibrate:00000000 rtc_calibrate
-     /tmp/ccpmJ073.s:1956   .text.rtc_calibrate:00000104 $d
+     /tmp/ccGIYrAe.s:1552   .text.lion_updown:00000334 $t
+     /tmp/ccGIYrAe.s:1741   .text.lion_updown:000004ac $d
+     /tmp/ccGIYrAe.s:1759   .text.uht:00000000 $t
+     /tmp/ccGIYrAe.s:1767   .text.uht:00000000 uht
+     /tmp/ccGIYrAe.s:1782   .text.uht:00000010 $d
+     /tmp/ccGIYrAe.s:1785   .text.rtc_calibrate:00000000 $t
+     /tmp/ccGIYrAe.s:1793   .text.rtc_calibrate:00000000 rtc_calibrate
+     /tmp/ccGIYrAe.s:1956   .text.rtc_calibrate:00000104 $d
                             *COM*:00000004 Timt
                             *COM*:00000004 delay_us
-     /tmp/ccpmJ073.s:1971   .text.testwsk:00000000 $t
-     /tmp/ccpmJ073.s:1979   .text.testwsk:00000000 testwsk
-     /tmp/ccpmJ073.s:1987   .text.veml6075:00000000 $t
-     /tmp/ccpmJ073.s:1995   .text.veml6075:00000000 veml6075
-     /tmp/ccpmJ073.s:2100   .text.veml6075:000000a0 $d
-     /tmp/ccpmJ073.s:2115   .text.softSPI_w:00000000 $t
-     /tmp/ccpmJ073.s:2123   .text.softSPI_w:00000000 softSPI_w
-     /tmp/ccpmJ073.s:2193   .text.softSPI_w:00000064 $d
-     /tmp/ccpmJ073.s:2200   .text.softSPI_r:00000000 $t
-     /tmp/ccpmJ073.s:2208   .text.softSPI_r:00000000 softSPI_r
-     /tmp/ccpmJ073.s:2260   .text.softSPI_r:00000038 $d
-     /tmp/ccpmJ073.s:2265   .text.ili9486:00000000 $t
-     /tmp/ccpmJ073.s:2273   .text.ili9486:00000000 ili9486
-     /tmp/ccpmJ073.s:2475   .text.ili9486:00000128 $d
-     /tmp/ccpmJ073.s:2492   .text.wiznet5500:00000000 $t
-     /tmp/ccpmJ073.s:2500   .text.wiznet5500:00000000 wiznet5500
-     /tmp/ccpmJ073.s:2574   .text.wiznet5500:00000074 $d
-ARM GAS  /tmp/ccpmJ073.s 			page 198
+     /tmp/ccGIYrAe.s:1971   .text.testwsk:00000000 $t
+     /tmp/ccGIYrAe.s:1979   .text.testwsk:00000000 testwsk
+     /tmp/ccGIYrAe.s:1987   .text.veml6075:00000000 $t
+     /tmp/ccGIYrAe.s:1995   .text.veml6075:00000000 veml6075
+     /tmp/ccGIYrAe.s:2100   .text.veml6075:000000a0 $d
+     /tmp/ccGIYrAe.s:2115   .text.softSPI_w:00000000 $t
+     /tmp/ccGIYrAe.s:2123   .text.softSPI_w:00000000 softSPI_w
+     /tmp/ccGIYrAe.s:2193   .text.softSPI_w:00000064 $d
+     /tmp/ccGIYrAe.s:2200   .text.softSPI_r:00000000 $t
+     /tmp/ccGIYrAe.s:2208   .text.softSPI_r:00000000 softSPI_r
+     /tmp/ccGIYrAe.s:2260   .text.softSPI_r:00000038 $d
+     /tmp/ccGIYrAe.s:2265   .text.ili9486:00000000 $t
+     /tmp/ccGIYrAe.s:2273   .text.ili9486:00000000 ili9486
+     /tmp/ccGIYrAe.s:2475   .text.ili9486:00000128 $d
+     /tmp/ccGIYrAe.s:2492   .text.wiznet5500:00000000 $t
+     /tmp/ccGIYrAe.s:2500   .text.wiznet5500:00000000 wiznet5500
+     /tmp/ccGIYrAe.s:2574   .text.wiznet5500:00000074 $d
+ARM GAS  /tmp/ccGIYrAe.s 			page 198
 
 
-     /tmp/ccpmJ073.s:2584   .text.uv_meter:00000000 $t
-     /tmp/ccpmJ073.s:2592   .text.uv_meter:00000000 uv_meter
-     /tmp/ccpmJ073.s:2682   .text.uv_meter:00000078 $d
-     /tmp/ccpmJ073.s:2690   .text.IRQLoraInit:00000000 $t
-     /tmp/ccpmJ073.s:2698   .text.IRQLoraInit:00000000 IRQLoraInit
-     /tmp/ccpmJ073.s:2731   .text.IRQLoraInit:0000001c $d
-     /tmp/ccpmJ073.s:2736   .text.LoRaRX:00000000 $t
-     /tmp/ccpmJ073.s:2744   .text.LoRaRX:00000000 LoRaRX
-     /tmp/ccpmJ073.s:2953   .text.LoRaRX:00000144 $d
-     /tmp/ccpmJ073.s:2971   .text.LoRaRX1:00000000 $t
-     /tmp/ccpmJ073.s:2979   .text.LoRaRX1:00000000 LoRaRX1
-     /tmp/ccpmJ073.s:3135   .text.LoRaRX1:00000100 $d
-     /tmp/ccpmJ073.s:3153   .text.LoRaRX1:00000112 $t
-     /tmp/ccpmJ073.s:3302   .text.LoRaRX1:00000238 $d
-     /tmp/ccpmJ073.s:3334   .text.LoRaTX:00000000 $t
-     /tmp/ccpmJ073.s:3342   .text.LoRaTX:00000000 LoRaTX
-     /tmp/ccpmJ073.s:3584   .text.LoRaTX:00000198 $d
-     /tmp/ccpmJ073.s:3604   .text.col1:00000000 $t
-     /tmp/ccpmJ073.s:3612   .text.col1:00000000 col1
-     /tmp/ccpmJ073.s:3632   .text.col1:00000018 $d
-     /tmp/ccpmJ073.s:3636   .text.col2:00000000 $t
-     /tmp/ccpmJ073.s:3644   .text.col2:00000000 col2
-     /tmp/ccpmJ073.s:3660   .text.col2:00000014 $d
-     /tmp/ccpmJ073.s:3663   .text.col0:00000000 $t
-     /tmp/ccpmJ073.s:3671   .text.col0:00000000 col0
-     /tmp/ccpmJ073.s:3687   .text.col0:00000014 $d
-     /tmp/ccpmJ073.s:3690   .text.ws2812led:00000000 $t
-     /tmp/ccpmJ073.s:3698   .text.ws2812led:00000000 ws2812led
-     /tmp/ccpmJ073.s:3856   .text.ws2812led:000000e4 $d
-     /tmp/ccpmJ073.s:3873   .text.lexmark_lcd:00000000 $t
-     /tmp/ccpmJ073.s:3881   .text.lexmark_lcd:00000000 lexmark_lcd
-     /tmp/ccpmJ073.s:3951   .text.lexmark_lcd:0000006c $d
-     /tmp/ccpmJ073.s:3962   .text.softUTX_init:00000000 $t
-     /tmp/ccpmJ073.s:3970   .text.softUTX_init:00000000 softUTX_init
-     /tmp/ccpmJ073.s:3985   .text.softUTX_init:00000010 $d
-     /tmp/ccpmJ073.s:3988   .text.sofUTX:00000000 $t
-     /tmp/ccpmJ073.s:3996   .text.sofUTX:00000000 sofUTX
-     /tmp/ccpmJ073.s:4087   .text.sofUTX:0000006c $d
-     /tmp/ccpmJ073.s:4092   .text.ToLED:00000000 $t
-     /tmp/ccpmJ073.s:4100   .text.ToLED:00000000 ToLED
-     /tmp/ccpmJ073.s:4128   .text.cmd_LCD:00000000 $t
-     /tmp/ccpmJ073.s:4136   .text.cmd_LCD:00000000 cmd_LCD
-     /tmp/ccpmJ073.s:4198   .text.cmd_LCD:00000058 $d
-     /tmp/ccpmJ073.s:4204   .text.CalculateLux:00000000 $t
-     /tmp/ccpmJ073.s:4212   .text.CalculateLux:00000000 CalculateLux
-     /tmp/ccpmJ073.s:4384   .text.TSL2561_i2c:00000000 $t
-     /tmp/ccpmJ073.s:4392   .text.TSL2561_i2c:00000000 TSL2561_i2c
-     /tmp/ccpmJ073.s:4529   .text.TSL2561_i2c:000000dc $d
-     /tmp/ccpmJ073.s:4541   .text.set_mode:00000000 $t
-     /tmp/ccpmJ073.s:4549   .text.set_mode:00000000 set_mode
-     /tmp/ccpmJ073.s:4610   .text.MAX44009_i2c:00000000 $t
-     /tmp/ccpmJ073.s:4618   .text.MAX44009_i2c:00000000 MAX44009_i2c
-     /tmp/ccpmJ073.s:4889   .text.MAX44009_i2c:000001ec $d
-     /tmp/ccpmJ073.s:4905   .text.BMP280_i2c:00000000 $t
-     /tmp/ccpmJ073.s:4913   .text.BMP280_i2c:00000000 BMP280_i2c
-     /tmp/ccpmJ073.s:5383   .text.BMP280_i2c:00000334 $d
-     /tmp/ccpmJ073.s:5404   .text.BMP280_spi:00000000 $t
-ARM GAS  /tmp/ccpmJ073.s 			page 199
+     /tmp/ccGIYrAe.s:2584   .text.uv_meter:00000000 $t
+     /tmp/ccGIYrAe.s:2592   .text.uv_meter:00000000 uv_meter
+     /tmp/ccGIYrAe.s:2682   .text.uv_meter:00000078 $d
+     /tmp/ccGIYrAe.s:2690   .text.IRQLoraInit:00000000 $t
+     /tmp/ccGIYrAe.s:2698   .text.IRQLoraInit:00000000 IRQLoraInit
+     /tmp/ccGIYrAe.s:2731   .text.IRQLoraInit:0000001c $d
+     /tmp/ccGIYrAe.s:2736   .text.LoRaRX:00000000 $t
+     /tmp/ccGIYrAe.s:2744   .text.LoRaRX:00000000 LoRaRX
+     /tmp/ccGIYrAe.s:2953   .text.LoRaRX:00000144 $d
+     /tmp/ccGIYrAe.s:2971   .text.LoRaRX1:00000000 $t
+     /tmp/ccGIYrAe.s:2979   .text.LoRaRX1:00000000 LoRaRX1
+     /tmp/ccGIYrAe.s:3135   .text.LoRaRX1:00000100 $d
+     /tmp/ccGIYrAe.s:3153   .text.LoRaRX1:00000112 $t
+     /tmp/ccGIYrAe.s:3302   .text.LoRaRX1:00000238 $d
+     /tmp/ccGIYrAe.s:3334   .text.LoRaTX:00000000 $t
+     /tmp/ccGIYrAe.s:3342   .text.LoRaTX:00000000 LoRaTX
+     /tmp/ccGIYrAe.s:3584   .text.LoRaTX:00000198 $d
+     /tmp/ccGIYrAe.s:3604   .text.col1:00000000 $t
+     /tmp/ccGIYrAe.s:3612   .text.col1:00000000 col1
+     /tmp/ccGIYrAe.s:3632   .text.col1:00000018 $d
+     /tmp/ccGIYrAe.s:3636   .text.col2:00000000 $t
+     /tmp/ccGIYrAe.s:3644   .text.col2:00000000 col2
+     /tmp/ccGIYrAe.s:3660   .text.col2:00000014 $d
+     /tmp/ccGIYrAe.s:3663   .text.col0:00000000 $t
+     /tmp/ccGIYrAe.s:3671   .text.col0:00000000 col0
+     /tmp/ccGIYrAe.s:3687   .text.col0:00000014 $d
+     /tmp/ccGIYrAe.s:3690   .text.ws2812led:00000000 $t
+     /tmp/ccGIYrAe.s:3698   .text.ws2812led:00000000 ws2812led
+     /tmp/ccGIYrAe.s:3856   .text.ws2812led:000000e4 $d
+     /tmp/ccGIYrAe.s:3873   .text.lexmark_lcd:00000000 $t
+     /tmp/ccGIYrAe.s:3881   .text.lexmark_lcd:00000000 lexmark_lcd
+     /tmp/ccGIYrAe.s:3951   .text.lexmark_lcd:0000006c $d
+     /tmp/ccGIYrAe.s:3962   .text.softUTX_init:00000000 $t
+     /tmp/ccGIYrAe.s:3970   .text.softUTX_init:00000000 softUTX_init
+     /tmp/ccGIYrAe.s:3985   .text.softUTX_init:00000010 $d
+     /tmp/ccGIYrAe.s:3988   .text.sofUTX:00000000 $t
+     /tmp/ccGIYrAe.s:3996   .text.sofUTX:00000000 sofUTX
+     /tmp/ccGIYrAe.s:4087   .text.sofUTX:0000006c $d
+     /tmp/ccGIYrAe.s:4092   .text.ToLED:00000000 $t
+     /tmp/ccGIYrAe.s:4100   .text.ToLED:00000000 ToLED
+     /tmp/ccGIYrAe.s:4128   .text.cmd_LCD:00000000 $t
+     /tmp/ccGIYrAe.s:4136   .text.cmd_LCD:00000000 cmd_LCD
+     /tmp/ccGIYrAe.s:4198   .text.cmd_LCD:00000058 $d
+     /tmp/ccGIYrAe.s:4204   .text.CalculateLux:00000000 $t
+     /tmp/ccGIYrAe.s:4212   .text.CalculateLux:00000000 CalculateLux
+     /tmp/ccGIYrAe.s:4384   .text.TSL2561_i2c:00000000 $t
+     /tmp/ccGIYrAe.s:4392   .text.TSL2561_i2c:00000000 TSL2561_i2c
+     /tmp/ccGIYrAe.s:4529   .text.TSL2561_i2c:000000dc $d
+     /tmp/ccGIYrAe.s:4541   .text.set_mode:00000000 $t
+     /tmp/ccGIYrAe.s:4549   .text.set_mode:00000000 set_mode
+     /tmp/ccGIYrAe.s:4610   .text.MAX44009_i2c:00000000 $t
+     /tmp/ccGIYrAe.s:4618   .text.MAX44009_i2c:00000000 MAX44009_i2c
+     /tmp/ccGIYrAe.s:4889   .text.MAX44009_i2c:000001ec $d
+     /tmp/ccGIYrAe.s:4905   .text.BMP280_i2c:00000000 $t
+     /tmp/ccGIYrAe.s:4913   .text.BMP280_i2c:00000000 BMP280_i2c
+     /tmp/ccGIYrAe.s:5383   .text.BMP280_i2c:00000334 $d
+     /tmp/ccGIYrAe.s:5404   .text.BMP280_spi:00000000 $t
+ARM GAS  /tmp/ccGIYrAe.s 			page 199
 
 
-     /tmp/ccpmJ073.s:5412   .text.BMP280_spi:00000000 BMP280_spi
-     /tmp/ccpmJ073.s:5666   .text.BMP280_spi:000001bc $d
-     /tmp/ccpmJ073.s:5682   .text.fun_tool:00000000 $t
-     /tmp/ccpmJ073.s:5690   .text.fun_tool:00000000 fun_tool
-     /tmp/ccpmJ073.s:5703   .text.fun_tool:00000014 $d
-     /tmp/ccpmJ073.s:5724   .text.fun_tool:0000003e $t
-     /tmp/ccpmJ073.s:6130   .text.fun_tool:00000318 $d
-     /tmp/ccpmJ073.s:6157   .text.qtouch_mesaure:00000000 $t
-     /tmp/ccpmJ073.s:6165   .text.qtouch_mesaure:00000000 qtouch_mesaure
-     /tmp/ccpmJ073.s:6221   .text.qtouch_mesaure:0000003c $d
-     /tmp/ccpmJ073.s:6227   .text.qtouch:00000000 $t
-     /tmp/ccpmJ073.s:6235   .text.qtouch:00000000 qtouch
-     /tmp/ccpmJ073.s:6278   .text.qtouch:00000048 $d
-     /tmp/ccpmJ073.s:6285   .text.DHT_Tool:00000000 $t
-     /tmp/ccpmJ073.s:6293   .text.DHT_Tool:00000000 DHT_Tool
-     /tmp/ccpmJ073.s:6326   .text.DHT_Tool:0000002c $d
-     /tmp/ccpmJ073.s:6332   .text.SPI_Tool_Menu:00000000 $t
-     /tmp/ccpmJ073.s:6340   .text.SPI_Tool_Menu:00000000 SPI_Tool_Menu
-     /tmp/ccpmJ073.s:6364   .text.SPI_Tool_Menu:00000024 $d
-     /tmp/ccpmJ073.s:6371   .text.SPI_Tool:00000000 $t
-     /tmp/ccpmJ073.s:6379   .text.SPI_Tool:00000000 SPI_Tool
-     /tmp/ccpmJ073.s:6546   .text.SPI_Tool:00000114 $d
-     /tmp/ccpmJ073.s:6567   .text.Menu1:00000000 $t
-     /tmp/ccpmJ073.s:6575   .text.Menu1:00000000 Menu1
-     /tmp/ccpmJ073.s:6599   .text.Menu1:00000024 $d
-     /tmp/ccpmJ073.s:6606   .text.MemCard_Menu:00000000 $t
-     /tmp/ccpmJ073.s:6614   .text.MemCard_Menu:00000000 MemCard_Menu
-     /tmp/ccpmJ073.s:6687   .text.MemCard_Menu:00000082 $d
-     /tmp/ccpmJ073.s:6726   .text.MemCard_Menu:000000d0 $t
-     /tmp/ccpmJ073.s:7002   .text.MemCard_Menu:000002c0 $d
-     /tmp/ccpmJ073.s:10126  .bss.buffer.8851:00000000 buffer.8851
-     /tmp/ccpmJ073.s:7029   .text.MemCard_Menu:00000324 $t
-     /tmp/ccpmJ073.s:7392   .text.MemCard_Menu:000005e8 $d
-     /tmp/ccpmJ073.s:7431   .text.MemCard_Menu:0000067c $t
-     /tmp/ccpmJ073.s:7690   .text.MemCard_Menu:00000854 $d
-     /tmp/ccpmJ073.s:7715   .text.CopyClock:00000000 $t
-     /tmp/ccpmJ073.s:7723   .text.CopyClock:00000000 CopyClock
-     /tmp/ccpmJ073.s:7789   .text.Intro2:00000000 $t
-     /tmp/ccpmJ073.s:7797   .text.Intro2:00000000 Intro2
-     /tmp/ccpmJ073.s:8242   .text.Intro2:000002e0 $d
+     /tmp/ccGIYrAe.s:5412   .text.BMP280_spi:00000000 BMP280_spi
+     /tmp/ccGIYrAe.s:5666   .text.BMP280_spi:000001bc $d
+     /tmp/ccGIYrAe.s:5682   .text.fun_tool:00000000 $t
+     /tmp/ccGIYrAe.s:5690   .text.fun_tool:00000000 fun_tool
+     /tmp/ccGIYrAe.s:5703   .text.fun_tool:00000014 $d
+     /tmp/ccGIYrAe.s:5724   .text.fun_tool:0000003e $t
+     /tmp/ccGIYrAe.s:6130   .text.fun_tool:00000318 $d
+     /tmp/ccGIYrAe.s:6157   .text.qtouch_mesaure:00000000 $t
+     /tmp/ccGIYrAe.s:6165   .text.qtouch_mesaure:00000000 qtouch_mesaure
+     /tmp/ccGIYrAe.s:6221   .text.qtouch_mesaure:0000003c $d
+     /tmp/ccGIYrAe.s:6227   .text.qtouch:00000000 $t
+     /tmp/ccGIYrAe.s:6235   .text.qtouch:00000000 qtouch
+     /tmp/ccGIYrAe.s:6278   .text.qtouch:00000048 $d
+     /tmp/ccGIYrAe.s:6285   .text.DHT_Tool:00000000 $t
+     /tmp/ccGIYrAe.s:6293   .text.DHT_Tool:00000000 DHT_Tool
+     /tmp/ccGIYrAe.s:6326   .text.DHT_Tool:0000002c $d
+     /tmp/ccGIYrAe.s:6332   .text.SPI_Tool_Menu:00000000 $t
+     /tmp/ccGIYrAe.s:6340   .text.SPI_Tool_Menu:00000000 SPI_Tool_Menu
+     /tmp/ccGIYrAe.s:6364   .text.SPI_Tool_Menu:00000024 $d
+     /tmp/ccGIYrAe.s:6371   .text.SPI_Tool:00000000 $t
+     /tmp/ccGIYrAe.s:6379   .text.SPI_Tool:00000000 SPI_Tool
+     /tmp/ccGIYrAe.s:6546   .text.SPI_Tool:00000114 $d
+     /tmp/ccGIYrAe.s:6567   .text.Menu1:00000000 $t
+     /tmp/ccGIYrAe.s:6575   .text.Menu1:00000000 Menu1
+     /tmp/ccGIYrAe.s:6599   .text.Menu1:00000024 $d
+     /tmp/ccGIYrAe.s:6606   .text.MemCard_Menu:00000000 $t
+     /tmp/ccGIYrAe.s:6614   .text.MemCard_Menu:00000000 MemCard_Menu
+     /tmp/ccGIYrAe.s:6687   .text.MemCard_Menu:00000082 $d
+     /tmp/ccGIYrAe.s:6726   .text.MemCard_Menu:000000d0 $t
+     /tmp/ccGIYrAe.s:7002   .text.MemCard_Menu:000002c0 $d
+     /tmp/ccGIYrAe.s:10126  .bss.buffer.8851:00000000 buffer.8851
+     /tmp/ccGIYrAe.s:7029   .text.MemCard_Menu:00000324 $t
+     /tmp/ccGIYrAe.s:7392   .text.MemCard_Menu:000005e8 $d
+     /tmp/ccGIYrAe.s:7431   .text.MemCard_Menu:0000067c $t
+     /tmp/ccGIYrAe.s:7690   .text.MemCard_Menu:00000854 $d
+     /tmp/ccGIYrAe.s:7715   .text.CopyClock:00000000 $t
+     /tmp/ccGIYrAe.s:7723   .text.CopyClock:00000000 CopyClock
+     /tmp/ccGIYrAe.s:7789   .text.Intro2:00000000 $t
+     /tmp/ccGIYrAe.s:7797   .text.Intro2:00000000 Intro2
+     /tmp/ccGIYrAe.s:8242   .text.Intro2:000002e0 $d
                             *COM*:00000008 Rtc
-     /tmp/ccpmJ073.s:8270   .text.Intro2:00000348 $t
-     /tmp/ccpmJ073.s:8447   .text.Intro2:00000490 $d
-     /tmp/ccpmJ073.s:8458   .text.CopyTime:00000000 $t
-     /tmp/ccpmJ073.s:8466   .text.CopyTime:00000000 CopyTime
-     /tmp/ccpmJ073.s:8505   .text.CopyDate:00000000 $t
-     /tmp/ccpmJ073.s:8513   .text.CopyDate:00000000 CopyDate
-     /tmp/ccpmJ073.s:8552   .text.Zegarek:00000000 $t
-     /tmp/ccpmJ073.s:8560   .text.Zegarek:00000000 Zegarek
-     /tmp/ccpmJ073.s:8619   .text.Zegarek:00000054 $d
-     /tmp/ccpmJ073.s:8627   .text.SysTick_Handler:00000000 $t
-     /tmp/ccpmJ073.s:8635   .text.SysTick_Handler:00000000 SysTick_Handler
-     /tmp/ccpmJ073.s:8713   .text.SysTick_Handler:00000054 $d
+     /tmp/ccGIYrAe.s:8270   .text.Intro2:00000348 $t
+     /tmp/ccGIYrAe.s:8447   .text.Intro2:00000490 $d
+     /tmp/ccGIYrAe.s:8458   .text.CopyTime:00000000 $t
+     /tmp/ccGIYrAe.s:8466   .text.CopyTime:00000000 CopyTime
+     /tmp/ccGIYrAe.s:8505   .text.CopyDate:00000000 $t
+     /tmp/ccGIYrAe.s:8513   .text.CopyDate:00000000 CopyDate
+     /tmp/ccGIYrAe.s:8552   .text.Zegarek:00000000 $t
+     /tmp/ccGIYrAe.s:8560   .text.Zegarek:00000000 Zegarek
+     /tmp/ccGIYrAe.s:8619   .text.Zegarek:00000054 $d
+     /tmp/ccGIYrAe.s:8627   .text.SysTick_Handler:00000000 $t
+     /tmp/ccGIYrAe.s:8635   .text.SysTick_Handler:00000000 SysTick_Handler
+     /tmp/ccGIYrAe.s:8713   .text.SysTick_Handler:00000054 $d
                             *COM*:00000004 Tim0
                             *COM*:00000004 Tim1
                             *COM*:00000004 trg3
                             *COM*:00000004 trg4
-ARM GAS  /tmp/ccpmJ073.s 			page 200
+ARM GAS  /tmp/ccGIYrAe.s 			page 200
 
 
                             *COM*:00000004 trg5
-     /tmp/ccpmJ073.s:8726   .text.TIM2_IRQHandler:00000000 $t
-     /tmp/ccpmJ073.s:8734   .text.TIM2_IRQHandler:00000000 TIM2_IRQHandler
-     /tmp/ccpmJ073.s:8763   .text.TIM2_IRQHandler:0000001c $d
-     /tmp/ccpmJ073.s:8766   .text.TIM3_IRQHandler:00000000 $t
-     /tmp/ccpmJ073.s:8774   .text.TIM3_IRQHandler:00000000 TIM3_IRQHandler
-     /tmp/ccpmJ073.s:8834   .text.TIM3_IRQHandler:00000044 $d
+     /tmp/ccGIYrAe.s:8726   .text.TIM2_IRQHandler:00000000 $t
+     /tmp/ccGIYrAe.s:8734   .text.TIM2_IRQHandler:00000000 TIM2_IRQHandler
+     /tmp/ccGIYrAe.s:8763   .text.TIM2_IRQHandler:0000001c $d
+     /tmp/ccGIYrAe.s:8766   .text.TIM3_IRQHandler:00000000 $t
+     /tmp/ccGIYrAe.s:8774   .text.TIM3_IRQHandler:00000000 TIM3_IRQHandler
+     /tmp/ccGIYrAe.s:8834   .text.TIM3_IRQHandler:00000044 $d
                             *COM*:00000004 Timt3
                             *COM*:00000004 delay3_us
                             *COM*:00000004 t3rg0
                             *COM*:00000004 t3rg1
                             *COM*:00000004 t3rg2
-     /tmp/ccpmJ073.s:8842   .text.EXTI0_IRQHandler:00000000 $t
-     /tmp/ccpmJ073.s:8850   .text.EXTI0_IRQHandler:00000000 EXTI0_IRQHandler
-     /tmp/ccpmJ073.s:8884   .text.EXTI0_IRQHandler:00000024 $d
-     /tmp/ccpmJ073.s:8889   .text.EXTI1_IRQHandler:00000000 $t
-     /tmp/ccpmJ073.s:8897   .text.EXTI1_IRQHandler:00000000 EXTI1_IRQHandler
-     /tmp/ccpmJ073.s:8927   .text.EXTI1_IRQHandler:00000020 $d
-     /tmp/ccpmJ073.s:8931   .text.EXTI2_IRQHandler:00000000 $t
-     /tmp/ccpmJ073.s:8939   .text.EXTI2_IRQHandler:00000000 EXTI2_IRQHandler
-     /tmp/ccpmJ073.s:8969   .text.EXTI2_IRQHandler:00000020 $d
-     /tmp/ccpmJ073.s:8973   .text.EXTI3_IRQHandler:00000000 $t
-     /tmp/ccpmJ073.s:8981   .text.EXTI3_IRQHandler:00000000 EXTI3_IRQHandler
-     /tmp/ccpmJ073.s:9011   .text.EXTI3_IRQHandler:00000020 $d
-     /tmp/ccpmJ073.s:9015   .text.EXTI4_IRQHandler:00000000 $t
-     /tmp/ccpmJ073.s:9023   .text.EXTI4_IRQHandler:00000000 EXTI4_IRQHandler
-     /tmp/ccpmJ073.s:9053   .text.EXTI4_IRQHandler:00000020 $d
-     /tmp/ccpmJ073.s:9057   .text.EXTI15_10_IRQHandler:00000000 $t
-     /tmp/ccpmJ073.s:9065   .text.EXTI15_10_IRQHandler:00000000 EXTI15_10_IRQHandler
-     /tmp/ccpmJ073.s:9091   .text.EXTI15_10_IRQHandler:0000001c $d
-     /tmp/ccpmJ073.s:9094   .text.EXTI9_5_IRQHandler:00000000 $t
-     /tmp/ccpmJ073.s:9102   .text.EXTI9_5_IRQHandler:00000000 EXTI9_5_IRQHandler
-     /tmp/ccpmJ073.s:9145   .text.EXTI9_5_IRQHandler:00000038 $d
-     /tmp/ccpmJ073.s:9149   .text.RTC_IRQHandler:00000000 $t
-     /tmp/ccpmJ073.s:9157   .text.RTC_IRQHandler:00000000 RTC_IRQHandler
-     /tmp/ccpmJ073.s:9195   .text.RTC_IRQHandler:00000028 $d
-     /tmp/ccpmJ073.s:9200   .text.RTCAlarm_IRQHandler:00000000 $t
-     /tmp/ccpmJ073.s:9208   .text.RTCAlarm_IRQHandler:00000000 RTCAlarm_IRQHandler
-     /tmp/ccpmJ073.s:9242   .text.RTCAlarm_IRQHandler:00000028 $d
-     /tmp/ccpmJ073.s:9246   .text.DMA1_Channel1_IRQHandler:00000000 $t
-     /tmp/ccpmJ073.s:9254   .text.DMA1_Channel1_IRQHandler:00000000 DMA1_Channel1_IRQHandler
-     /tmp/ccpmJ073.s:9296   .text.DMA1_Channel1_IRQHandler:0000002c $d
-     /tmp/ccpmJ073.s:9301   .text.FSMC_IRQHandler:00000000 $t
-     /tmp/ccpmJ073.s:9309   .text.FSMC_IRQHandler:00000000 FSMC_IRQHandler
-     /tmp/ccpmJ073.s:9324   .text.DACDmaInit:00000000 $t
-     /tmp/ccpmJ073.s:9332   .text.DACDmaInit:00000000 DACDmaInit
-     /tmp/ccpmJ073.s:9371   .text.DACDmaInit:00000030 $d
-     /tmp/ccpmJ073.s:9377   .text.TIM4_IRQHandler:00000000 $t
-     /tmp/ccpmJ073.s:9385   .text.TIM4_IRQHandler:00000000 TIM4_IRQHandler
-     /tmp/ccpmJ073.s:9405   .text.TIM4_IRQHandler:00000010 $d
+     /tmp/ccGIYrAe.s:8842   .text.EXTI0_IRQHandler:00000000 $t
+     /tmp/ccGIYrAe.s:8850   .text.EXTI0_IRQHandler:00000000 EXTI0_IRQHandler
+     /tmp/ccGIYrAe.s:8884   .text.EXTI0_IRQHandler:00000024 $d
+     /tmp/ccGIYrAe.s:8889   .text.EXTI1_IRQHandler:00000000 $t
+     /tmp/ccGIYrAe.s:8897   .text.EXTI1_IRQHandler:00000000 EXTI1_IRQHandler
+     /tmp/ccGIYrAe.s:8927   .text.EXTI1_IRQHandler:00000020 $d
+     /tmp/ccGIYrAe.s:8931   .text.EXTI2_IRQHandler:00000000 $t
+     /tmp/ccGIYrAe.s:8939   .text.EXTI2_IRQHandler:00000000 EXTI2_IRQHandler
+     /tmp/ccGIYrAe.s:8969   .text.EXTI2_IRQHandler:00000020 $d
+     /tmp/ccGIYrAe.s:8973   .text.EXTI3_IRQHandler:00000000 $t
+     /tmp/ccGIYrAe.s:8981   .text.EXTI3_IRQHandler:00000000 EXTI3_IRQHandler
+     /tmp/ccGIYrAe.s:9011   .text.EXTI3_IRQHandler:00000020 $d
+     /tmp/ccGIYrAe.s:9015   .text.EXTI4_IRQHandler:00000000 $t
+     /tmp/ccGIYrAe.s:9023   .text.EXTI4_IRQHandler:00000000 EXTI4_IRQHandler
+     /tmp/ccGIYrAe.s:9053   .text.EXTI4_IRQHandler:00000020 $d
+     /tmp/ccGIYrAe.s:9057   .text.EXTI15_10_IRQHandler:00000000 $t
+     /tmp/ccGIYrAe.s:9065   .text.EXTI15_10_IRQHandler:00000000 EXTI15_10_IRQHandler
+     /tmp/ccGIYrAe.s:9091   .text.EXTI15_10_IRQHandler:0000001c $d
+     /tmp/ccGIYrAe.s:9094   .text.EXTI9_5_IRQHandler:00000000 $t
+     /tmp/ccGIYrAe.s:9102   .text.EXTI9_5_IRQHandler:00000000 EXTI9_5_IRQHandler
+     /tmp/ccGIYrAe.s:9145   .text.EXTI9_5_IRQHandler:00000038 $d
+     /tmp/ccGIYrAe.s:9149   .text.RTC_IRQHandler:00000000 $t
+     /tmp/ccGIYrAe.s:9157   .text.RTC_IRQHandler:00000000 RTC_IRQHandler
+     /tmp/ccGIYrAe.s:9195   .text.RTC_IRQHandler:00000028 $d
+     /tmp/ccGIYrAe.s:9200   .text.RTCAlarm_IRQHandler:00000000 $t
+     /tmp/ccGIYrAe.s:9208   .text.RTCAlarm_IRQHandler:00000000 RTCAlarm_IRQHandler
+     /tmp/ccGIYrAe.s:9242   .text.RTCAlarm_IRQHandler:00000028 $d
+     /tmp/ccGIYrAe.s:9246   .text.DMA1_Channel1_IRQHandler:00000000 $t
+     /tmp/ccGIYrAe.s:9254   .text.DMA1_Channel1_IRQHandler:00000000 DMA1_Channel1_IRQHandler
+     /tmp/ccGIYrAe.s:9296   .text.DMA1_Channel1_IRQHandler:0000002c $d
+     /tmp/ccGIYrAe.s:9301   .text.FSMC_IRQHandler:00000000 $t
+     /tmp/ccGIYrAe.s:9309   .text.FSMC_IRQHandler:00000000 FSMC_IRQHandler
+     /tmp/ccGIYrAe.s:9324   .text.DACDmaInit:00000000 $t
+     /tmp/ccGIYrAe.s:9332   .text.DACDmaInit:00000000 DACDmaInit
+     /tmp/ccGIYrAe.s:9371   .text.DACDmaInit:00000030 $d
+     /tmp/ccGIYrAe.s:9377   .text.TIM4_IRQHandler:00000000 $t
+     /tmp/ccGIYrAe.s:9385   .text.TIM4_IRQHandler:00000000 TIM4_IRQHandler
+     /tmp/ccGIYrAe.s:9405   .text.TIM4_IRQHandler:00000010 $d
                             *COM*:00000004 Tim4
-     /tmp/ccpmJ073.s:9409   .text.adc1_init_injected:00000000 $t
-     /tmp/ccpmJ073.s:9417   .text.adc1_init_injected:00000000 adc1_init_injected
-     /tmp/ccpmJ073.s:9485   .text.adc1_init_injected:00000050 $d
-     /tmp/ccpmJ073.s:9493   .text.adc_get_internals:00000000 $t
-     /tmp/ccpmJ073.s:9501   .text.adc_get_internals:00000000 adc_get_internals
-     /tmp/ccpmJ073.s:9579   .text.adc_get_internals:00000054 $d
-ARM GAS  /tmp/ccpmJ073.s 			page 201
+     /tmp/ccGIYrAe.s:9409   .text.adc1_init_injected:00000000 $t
+     /tmp/ccGIYrAe.s:9417   .text.adc1_init_injected:00000000 adc1_init_injected
+     /tmp/ccGIYrAe.s:9485   .text.adc1_init_injected:00000050 $d
+     /tmp/ccGIYrAe.s:9493   .text.adc_get_internals:00000000 $t
+     /tmp/ccGIYrAe.s:9501   .text.adc_get_internals:00000000 adc_get_internals
+     /tmp/ccGIYrAe.s:9579   .text.adc_get_internals:00000054 $d
+ARM GAS  /tmp/ccGIYrAe.s 			page 201
 
 
-     /tmp/ccpmJ073.s:9586   .text.adc_get_injected:00000000 $t
-     /tmp/ccpmJ073.s:9594   .text.adc_get_injected:00000000 adc_get_injected
-     /tmp/ccpmJ073.s:9661   .text.adc_get_injected:00000048 $d
+     /tmp/ccGIYrAe.s:9586   .text.adc_get_injected:00000000 $t
+     /tmp/ccGIYrAe.s:9594   .text.adc_get_injected:00000000 adc_get_injected
+     /tmp/ccGIYrAe.s:9661   .text.adc_get_injected:00000048 $d
                 .rodata.jdrs.9062:00000000 jdrs.9077
-     /tmp/ccpmJ073.s:9667   .text.NVIC_conf:00000000 $t
-     /tmp/ccpmJ073.s:9675   .text.NVIC_conf:00000000 NVIC_conf
-     /tmp/ccpmJ073.s:9712   .text.NVIC_conf:00000028 $d
-     /tmp/ccpmJ073.s:9718   .text.SetDate:00000000 $t
-     /tmp/ccpmJ073.s:9726   .text.SetDate:00000000 SetDate
-     /tmp/ccpmJ073.s:9934   .text.SetDate:0000019c $d
-     /tmp/ccpmJ073.s:9946   .text.flash_latency:00000000 $t
-     /tmp/ccpmJ073.s:9954   .text.flash_latency:00000000 flash_latency
-     /tmp/ccpmJ073.s:9985   .text.flash_latency:00000024 $d
-     /tmp/ccpmJ073.s:10636  .rodata.jdrs.9062:00000000 jdrs.9062
-     /tmp/ccpmJ073.s:10228  .data.p_TSpm:00000000 p_TSpm
-     /tmp/ccpmJ073.s:10058  .bss.FLAG:00000000 FLAG
-     /tmp/ccpmJ073.s:10527  .rodata._ytab:00000000 _ytab
+     /tmp/ccGIYrAe.s:9667   .text.NVIC_conf:00000000 $t
+     /tmp/ccGIYrAe.s:9675   .text.NVIC_conf:00000000 NVIC_conf
+     /tmp/ccGIYrAe.s:9712   .text.NVIC_conf:00000028 $d
+     /tmp/ccGIYrAe.s:9718   .text.SetDate:00000000 $t
+     /tmp/ccGIYrAe.s:9726   .text.SetDate:00000000 SetDate
+     /tmp/ccGIYrAe.s:9934   .text.SetDate:0000019c $d
+     /tmp/ccGIYrAe.s:9946   .text.flash_latency:00000000 $t
+     /tmp/ccGIYrAe.s:9954   .text.flash_latency:00000000 flash_latency
+     /tmp/ccGIYrAe.s:9985   .text.flash_latency:00000024 $d
+     /tmp/ccGIYrAe.s:10636  .rodata.jdrs.9062:00000000 jdrs.9062
+     /tmp/ccGIYrAe.s:10228  .data.p_TSpm:00000000 p_TSpm
+     /tmp/ccGIYrAe.s:10058  .bss.FLAG:00000000 FLAG
+     /tmp/ccGIYrAe.s:10527  .rodata._ytab:00000000 _ytab
                             *COM*:00000004 Time6
                             *COM*:00000004 Tim6
                             *COM*:00000004 Tim2
-     /tmp/ccpmJ073.s:10015  .rodata:00000000 $d
-     /tmp/ccpmJ073.s:10054  .bss.FLAG:00000000 $d
-     /tmp/ccpmJ073.s:10061  .bss.SX1278_1.8446:00000000 $d
-     /tmp/ccpmJ073.s:10065  .bss.SX1278_1.8446:00000000 SX1278_1.8446
-     /tmp/ccpmJ073.s:10068  .bss.SX1278_1.8472:00000000 $d
-     /tmp/ccpmJ073.s:10072  .bss.SX1278_1.8472:00000000 SX1278_1.8472
-     /tmp/ccpmJ073.s:10075  .bss.SX1278_1.8497:00000000 $d
-     /tmp/ccpmJ073.s:10079  .bss.SX1278_1.8497:00000000 SX1278_1.8497
-     /tmp/ccpmJ073.s:10082  .bss.SX1278_hw1.8445:00000000 $d
-     /tmp/ccpmJ073.s:10086  .bss.SX1278_hw1.8445:00000000 SX1278_hw1.8445
-     /tmp/ccpmJ073.s:10089  .bss.SX1278_hw1.8471:00000000 $d
-     /tmp/ccpmJ073.s:10093  .bss.SX1278_hw1.8471:00000000 SX1278_hw1.8471
-     /tmp/ccpmJ073.s:10096  .bss.SX1278_hw1.8496:00000000 $d
-     /tmp/ccpmJ073.s:10100  .bss.SX1278_hw1.8496:00000000 SX1278_hw1.8496
-     /tmp/ccpmJ073.s:10103  .bss.TSpm:00000000 $d
-     /tmp/ccpmJ073.s:10106  .bss.TSpm:00000000 TSpm
-     /tmp/ccpmJ073.s:10109  .bss.buf_rx.8475:00000000 $d
-     /tmp/ccpmJ073.s:10113  .bss.buf_rx.8475:00000000 buf_rx.8475
-     /tmp/ccpmJ073.s:10116  .bss.buf_tx.8499:00000000 $d
-     /tmp/ccpmJ073.s:10120  .bss.buf_tx.8499:00000000 buf_tx.8499
-     /tmp/ccpmJ073.s:10123  .bss.buffer.8851:00000000 $d
-     /tmp/ccpmJ073.s:10129  .bss.cap.8272:00000000 $d
-     /tmp/ccpmJ073.s:10133  .bss.cap.8272:00000000 cap.8272
-     /tmp/ccpmJ073.s:10139  .bss.cnt.8277:00000000 cnt.8277
-     /tmp/ccpmJ073.s:10140  .bss.cnt.8277:00000000 $d
-     /tmp/ccpmJ073.s:10142  .bss.cur.8268:00000000 $d
-     /tmp/ccpmJ073.s:10146  .bss.cur.8268:00000000 cur.8268
-     /tmp/ccpmJ073.s:10149  .bss.datetime.8674:00000000 $d
-     /tmp/ccpmJ073.s:10153  .bss.datetime.8674:00000000 datetime.8674
-     /tmp/ccpmJ073.s:10159  .bss.dinit.8852:00000000 dinit.8852
-     /tmp/ccpmJ073.s:10160  .bss.dinit.8852:00000000 $d
-     /tmp/ccpmJ073.s:10162  .bss.dma_buf:00000000 $d
-     /tmp/ccpmJ073.s:10166  .bss.dma_buf:00000000 dma_buf
-     /tmp/ccpmJ073.s:10169  .bss.dma_buf.8762:00000000 $d
-     /tmp/ccpmJ073.s:10173  .bss.dma_buf.8762:00000000 dma_buf.8762
-     /tmp/ccpmJ073.s:10176  .bss.pow.8273:00000000 $d
-     /tmp/ccpmJ073.s:10180  .bss.pow.8273:00000000 pow.8273
-ARM GAS  /tmp/ccpmJ073.s 			page 202
+     /tmp/ccGIYrAe.s:10015  .rodata:00000000 $d
+     /tmp/ccGIYrAe.s:10054  .bss.FLAG:00000000 $d
+     /tmp/ccGIYrAe.s:10061  .bss.SX1278_1.8446:00000000 $d
+     /tmp/ccGIYrAe.s:10065  .bss.SX1278_1.8446:00000000 SX1278_1.8446
+     /tmp/ccGIYrAe.s:10068  .bss.SX1278_1.8472:00000000 $d
+     /tmp/ccGIYrAe.s:10072  .bss.SX1278_1.8472:00000000 SX1278_1.8472
+     /tmp/ccGIYrAe.s:10075  .bss.SX1278_1.8497:00000000 $d
+     /tmp/ccGIYrAe.s:10079  .bss.SX1278_1.8497:00000000 SX1278_1.8497
+     /tmp/ccGIYrAe.s:10082  .bss.SX1278_hw1.8445:00000000 $d
+     /tmp/ccGIYrAe.s:10086  .bss.SX1278_hw1.8445:00000000 SX1278_hw1.8445
+     /tmp/ccGIYrAe.s:10089  .bss.SX1278_hw1.8471:00000000 $d
+     /tmp/ccGIYrAe.s:10093  .bss.SX1278_hw1.8471:00000000 SX1278_hw1.8471
+     /tmp/ccGIYrAe.s:10096  .bss.SX1278_hw1.8496:00000000 $d
+     /tmp/ccGIYrAe.s:10100  .bss.SX1278_hw1.8496:00000000 SX1278_hw1.8496
+     /tmp/ccGIYrAe.s:10103  .bss.TSpm:00000000 $d
+     /tmp/ccGIYrAe.s:10106  .bss.TSpm:00000000 TSpm
+     /tmp/ccGIYrAe.s:10109  .bss.buf_rx.8475:00000000 $d
+     /tmp/ccGIYrAe.s:10113  .bss.buf_rx.8475:00000000 buf_rx.8475
+     /tmp/ccGIYrAe.s:10116  .bss.buf_tx.8499:00000000 $d
+     /tmp/ccGIYrAe.s:10120  .bss.buf_tx.8499:00000000 buf_tx.8499
+     /tmp/ccGIYrAe.s:10123  .bss.buffer.8851:00000000 $d
+     /tmp/ccGIYrAe.s:10129  .bss.cap.8272:00000000 $d
+     /tmp/ccGIYrAe.s:10133  .bss.cap.8272:00000000 cap.8272
+     /tmp/ccGIYrAe.s:10139  .bss.cnt.8277:00000000 cnt.8277
+     /tmp/ccGIYrAe.s:10140  .bss.cnt.8277:00000000 $d
+     /tmp/ccGIYrAe.s:10142  .bss.cur.8268:00000000 $d
+     /tmp/ccGIYrAe.s:10146  .bss.cur.8268:00000000 cur.8268
+     /tmp/ccGIYrAe.s:10149  .bss.datetime.8674:00000000 $d
+     /tmp/ccGIYrAe.s:10153  .bss.datetime.8674:00000000 datetime.8674
+     /tmp/ccGIYrAe.s:10159  .bss.dinit.8852:00000000 dinit.8852
+     /tmp/ccGIYrAe.s:10160  .bss.dinit.8852:00000000 $d
+     /tmp/ccGIYrAe.s:10162  .bss.dma_buf:00000000 $d
+     /tmp/ccGIYrAe.s:10166  .bss.dma_buf:00000000 dma_buf
+     /tmp/ccGIYrAe.s:10169  .bss.dma_buf.8762:00000000 $d
+     /tmp/ccGIYrAe.s:10173  .bss.dma_buf.8762:00000000 dma_buf.8762
+     /tmp/ccGIYrAe.s:10176  .bss.pow.8273:00000000 $d
+     /tmp/ccGIYrAe.s:10180  .bss.pow.8273:00000000 pow.8273
+ARM GAS  /tmp/ccGIYrAe.s 			page 202
 
 
-     /tmp/ccpmJ073.s:10183  .bss.str_num.8500:00000000 $d
-     /tmp/ccpmJ073.s:10187  .bss.str_num.8500:00000000 str_num.8500
-     /tmp/ccpmJ073.s:10190  .bss.vacu.8270:00000000 $d
-     /tmp/ccpmJ073.s:10194  .bss.vacu.8270:00000000 vacu.8270
-     /tmp/ccpmJ073.s:10197  .bss.val.8747:00000000 $d
-     /tmp/ccpmJ073.s:10201  .bss.val.8747:00000000 val.8747
-     /tmp/ccpmJ073.s:10204  .bss.vbus.8269:00000000 $d
-     /tmp/ccpmJ073.s:10208  .bss.vbus.8269:00000000 vbus.8269
-     /tmp/ccpmJ073.s:10211  .bss.yb.8743:00000000 $d
-     /tmp/ccpmJ073.s:10215  .bss.yb.8743:00000000 yb.8743
-     /tmp/ccpmJ073.s:10218  .bss.yn.8744:00000000 $d
-     /tmp/ccpmJ073.s:10222  .bss.yn.8744:00000000 yn.8744
-     /tmp/ccpmJ073.s:10225  .data.p_TSpm:00000000 $d
-     /tmp/ccpmJ073.s:10231  .data.tbuf.8749:00000000 $d
-     /tmp/ccpmJ073.s:10235  .data.tbuf.8749:00000000 tbuf.8749
-     /tmp/ccpmJ073.s:10238  .rodata.BMP280_i2c.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10255  .rodata.BMP280_spi.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10259  .rodata.Intro2.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10271  .rodata.LoRaRX.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10275  .rodata.LoRaRX1.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10313  .rodata.MAX44009_i2c.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10317  .rodata.MemCard_Menu.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10441  .rodata.Menu1.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10457  .rodata.SPI_Tool.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10475  .rodata.SPI_Tool_Menu.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10491  .rodata.SetDate.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10512  .rodata.TSL2561_i2c.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10516  .rodata.Zegarek.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10523  .rodata._ytab:00000000 $d
-     /tmp/ccpmJ073.s:10553  .rodata.fun_tool.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10604  .rodata.head.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10611  .rodata.ili9486.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10632  .rodata.jdrs.9062:00000000 $d
-     /tmp/ccpmJ073.s:10642  .rodata.lexmark_lcd.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10655  .rodata.lion_updown.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10670  .rodata.liontrend.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10677  .rodata.minios.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10711  .rodata.qtouch.str1.4:00000000 $d
-     /tmp/ccpmJ073.s:10715  .rodata.ws2812led.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10183  .bss.str_num.8500:00000000 $d
+     /tmp/ccGIYrAe.s:10187  .bss.str_num.8500:00000000 str_num.8500
+     /tmp/ccGIYrAe.s:10190  .bss.vacu.8270:00000000 $d
+     /tmp/ccGIYrAe.s:10194  .bss.vacu.8270:00000000 vacu.8270
+     /tmp/ccGIYrAe.s:10197  .bss.val.8747:00000000 $d
+     /tmp/ccGIYrAe.s:10201  .bss.val.8747:00000000 val.8747
+     /tmp/ccGIYrAe.s:10204  .bss.vbus.8269:00000000 $d
+     /tmp/ccGIYrAe.s:10208  .bss.vbus.8269:00000000 vbus.8269
+     /tmp/ccGIYrAe.s:10211  .bss.yb.8743:00000000 $d
+     /tmp/ccGIYrAe.s:10215  .bss.yb.8743:00000000 yb.8743
+     /tmp/ccGIYrAe.s:10218  .bss.yn.8744:00000000 $d
+     /tmp/ccGIYrAe.s:10222  .bss.yn.8744:00000000 yn.8744
+     /tmp/ccGIYrAe.s:10225  .data.p_TSpm:00000000 $d
+     /tmp/ccGIYrAe.s:10231  .data.tbuf.8749:00000000 $d
+     /tmp/ccGIYrAe.s:10235  .data.tbuf.8749:00000000 tbuf.8749
+     /tmp/ccGIYrAe.s:10238  .rodata.BMP280_i2c.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10255  .rodata.BMP280_spi.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10259  .rodata.Intro2.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10271  .rodata.LoRaRX.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10275  .rodata.LoRaRX1.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10313  .rodata.MAX44009_i2c.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10317  .rodata.MemCard_Menu.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10441  .rodata.Menu1.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10457  .rodata.SPI_Tool.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10475  .rodata.SPI_Tool_Menu.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10491  .rodata.SetDate.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10512  .rodata.TSL2561_i2c.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10516  .rodata.Zegarek.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10523  .rodata._ytab:00000000 $d
+     /tmp/ccGIYrAe.s:10553  .rodata.fun_tool.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10604  .rodata.head.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10611  .rodata.ili9486.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10632  .rodata.jdrs.9062:00000000 $d
+     /tmp/ccGIYrAe.s:10642  .rodata.lexmark_lcd.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10655  .rodata.lion_updown.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10670  .rodata.liontrend.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10677  .rodata.minios.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10711  .rodata.oblicz.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10715  .rodata.qtouch.str1.4:00000000 $d
+     /tmp/ccGIYrAe.s:10719  .rodata.ws2812led.str1.4:00000000 $d
 
 UNDEFINED SYMBOLS
 tr_pen_color
@@ -12105,10 +12112,10 @@ int2uart
 UART_getNum
 UART1_putc
 UART2_putc
+ARM GAS  /tmp/ccGIYrAe.s 			page 203
+
+
 p_Fifo1
-ARM GAS  /tmp/ccpmJ073.s 			page 203
-
-
 sint2uart
 BkpRegInit
 int2uarz
@@ -12165,9 +12172,9 @@ TFT_dy
 rtc_GetTime
 TFT_Fill
 TFT_txt
+ARM GAS  /tmp/ccGIYrAe.s 			page 204
+
+
 TFT_SetWindow
-ARM GAS  /tmp/ccpmJ073.s 			page 204
-
-
 ColCon
 str2int

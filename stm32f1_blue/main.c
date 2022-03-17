@@ -255,7 +255,7 @@ void minios(void){
 			Uart2Init(); // PA2_TX, PA3_RX
 			
 			PutChar = UART1_putc;	tr_pen_color ( TYELLOW );
-			UaPutS("\f UART1 "); UaPutS (uint2str( (F_CPU/1)/(1*USART1->BRR-1),buf));	
+			UaPutS("\f UART1  "); UaPutS (uint2str( (F_CPU/1)/(1*USART1->BRR-1),buf));	
 			UaPutS (" b/s \r\n");
 			
 			PutChar = UART2_putc;	tr_pen_color ( TYELLOW );
