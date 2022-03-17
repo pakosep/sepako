@@ -1,0 +1,504 @@
+ARM GAS  /tmp/ccdQxMik.s 			page 1
+
+
+   1              	# 1 "up_memcpy.S"
+   1              	/************************************************************************************
+   0              	
+   0              	
+   2              	 * nuttx/arch/arm/src/armv7-m/up_memcpy.S
+   3              	 *
+   4              	 * armv7m-optimised memcpy, contributed by Mike Smith.  Apparently in the public
+   5              	 * domain and is re-released here under the modified BSD license:
+   6              	 *
+   7              	 * Obtained via a posting on the Stellaris forum:
+   8              	 *  http://e2e.ti.com/support/microcontrollers/\
+   9              	 *       stellaris_arm_cortex-m3_microcontroller/f/473/t/44360.aspx
+  10              	 *
+  11              	 * Posted by rocksoft on Jul 24, 2008 10:19 AM
+  12              	 *
+  13              	 *   Hi,
+  14              	 *
+  15              	 *   I recently finished a "memcpy" replacement and thought it might be useful for
+  16              	 *   others...
+  17              	 *
+  18              	 *   I've put some instructions and the code here:
+  19              	 *
+  20              	 *   http://www.rock-software.net/downloads/memcpy/
+  21              	 *
+  22              	 *   Hope it works for you as well as it did for me.
+  23              	 *
+  24              	 *   Liam.
+  25              	 *
+  26              	 * Redistribution and use in source and binary forms, with or without
+  27              	 * modification, are permitted provided that the following conditions
+  28              	 * are met:
+  29              	 *
+  30              	 * 1. Redistributions of source code must retain the above copyright
+  31              	 *    notice, this list of conditions and the following disclaimer.
+  32              	 * 2. Redistributions in binary form must reproduce the above copyright
+  33              	 *    notice, this list of conditions and the following disclaimer in
+  34              	 *    the documentation and/or other materials provided with the
+  35              	 *    distribution.
+  36              	 * 3. Neither the name NuttX nor the names of its contributors may be
+  37              	 *    used to endorse or promote products derived from this software
+  38              	 *    without specific prior written permission.
+  39              	 *
+  40              	 * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  41              	 * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  42              	 * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+  43              	 * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+  44              	 * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+  45              	 * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+  46              	 * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+  47              	 * OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+  48              	 * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+  49              	 * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+  50              	 * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  51              	 * POSSIBILITY OF SUCH DAMAGE.
+  52              	 *
+  53              	 ************************************************************************************/
+  54              	
+ARM GAS  /tmp/ccdQxMik.s 			page 2
+
+
+  55              	/************************************************************************************
+  56              	 * Global Symbols
+  57              	 ************************************************************************************/
+  58              	
+  59              		.global		memcpy
+  60              	
+  61              		.syntax		unified
+  62              		.thumb
+  63              		.cpu		cortex-m3
+  64              		.file		"up_memcpy.S"
+  65              	
+  66              	/************************************************************************************
+  67              	 * .text
+  68              	 ************************************************************************************/
+  69              	
+  70              		.text
+  71              	
+  72              	/************************************************************************************
+  73              	 * Private Constant Data
+  74              	 ************************************************************************************/
+  75              	
+  76              	/* We have 16 possible alignment combinations of src and dst, this jump table
+  77              	 * directs the copy operation
+  78              	 *
+  79              	 * Bits:  Src=00, Dst=00 - Long to Long copy
+  80              	 * Bits:  Src=00, Dst=01 - Long to Byte before half word
+  81              	 * Bits:  Src=00, Dst=10 - Long to Half word
+  82              	 * Bits:  Src=00, Dst=11 - Long to Byte before long word
+  83              	 * Bits:  Src=01, Dst=00 - Byte before half word to long
+  84              	 * Bits:  Src=01, Dst=01 - Byte before half word to byte before half word -
+  85              	 *                         Same alignment
+  86              	 * Bits:  Src=01, Dst=10 - Byte before half word to half word
+  87              	 * Bits:  Src=01, Dst=11 - Byte before half word to byte before long word
+  88              	 * Bits:  Src=10, Dst=00 - Half word to long word
+  89              	 * Bits:  Src=10, Dst=01 - Half word to byte before half word
+  90              	 * Bits:  Src=10, Dst=10 - Half word to half word - Same Alignment
+  91              	 * Bits:  Src=10, Dst=11 - Half word to byte before long word
+  92              	 * Bits:  Src=11, Dst=00 - Byte before long word to long word
+  93              	 * Bits:  Src=11, Dst=01 - Byte before long word to byte before half word
+  94              	 * Bits:  Src=11, Dst=11 - Byte before long word to half word
+  95              	 * Bits:  Src=11, Dst=11 - Byte before long word to Byte before long word -
+  96              	 *                         Same alignment
+  97              	 */
+  98              	
+  99              	MEM_DataCopyTable:
+ 100 0000 18       		.byte	(MEM_DataCopy0 - MEM_DataCopyJump) >> 1
+ 101 0001 DF       		.byte	(MEM_DataCopy1 - MEM_DataCopyJump) >> 1
+ 102 0002 88       		.byte	(MEM_DataCopy2 - MEM_DataCopyJump) >> 1
+ 103 0003 DF       		.byte	(MEM_DataCopy3 - MEM_DataCopyJump) >> 1
+ 104 0004 CD       		.byte	(MEM_DataCopy4 - MEM_DataCopyJump) >> 1
+ 105 0005 06       		.byte	(MEM_DataCopy5 - MEM_DataCopyJump) >> 1
+ 106 0006 CD       		.byte	(MEM_DataCopy6 - MEM_DataCopyJump) >> 1
+ 107 0007 76       		.byte	(MEM_DataCopy7 - MEM_DataCopyJump) >> 1
+ 108 0008 7C       		.byte	(MEM_DataCopy8 - MEM_DataCopyJump) >> 1
+ 109 0009 D3       		.byte	(MEM_DataCopy9 - MEM_DataCopyJump) >> 1
+ 110 000a 0C       		.byte	(MEM_DataCopy10 - MEM_DataCopyJump) >> 1
+ 111 000b D3       		.byte	(MEM_DataCopy11 - MEM_DataCopyJump) >> 1
+ARM GAS  /tmp/ccdQxMik.s 			page 3
+
+
+ 112 000c D9       		.byte	(MEM_DataCopy12 - MEM_DataCopyJump) >> 1
+ 113 000d 82       		.byte	(MEM_DataCopy13 - MEM_DataCopyJump) >> 1
+ 114 000e D9       		.byte	(MEM_DataCopy14 - MEM_DataCopyJump) >> 1
+ 115 000f 12       		.byte	(MEM_DataCopy15 - MEM_DataCopyJump) >> 1
+ 116              	
+ 117              		.align 2
+ 118              	
+ 119              	MEM_LongCopyTable:
+ 120 0010 2C       		.byte	(MEM_LongCopyEnd - MEM_LongCopyJump) >> 1	/* 0 bytes left */
+ 121 0011 00       		.byte	0					/* 4 bytes left */
+ 122 0012 05       		.byte	(1 * 10) >> 1		/* 8 bytes left */
+ 123 0013 0A       		.byte	(2 * 10) >> 1		/* 12 bytes left */
+ 124 0014 0F       		.byte	(3 * 10) >> 1		/* 16 bytes left */
+ 125 0015 14       		.byte	(4 * 10) >> 1		/* 20 bytes left */
+ 126 0016 19       		.byte	(5 * 10) >> 1		/* 24 bytes left */
+ 127 0017 1E       		.byte	(6 * 10) >> 1		/* 28 bytes left */
+ 128 0018 23       		.byte	(7 * 10) >> 1		/* 32 bytes left */
+ 129 0019 28       		.byte	(8 * 10) >> 1		/* 36 bytes left */
+ 130              	
+ 131 001a 00BF     		.align 2
+ 132              	
+ 133              	/************************************************************************************
+ 134              	 * Public Functions
+ 135              	 ************************************************************************************/
+ 136              	/************************************************************************************
+ 137              	 * Name: memcpy
+ 138              	 *
+ 139              	 * Description:
+ 140              	 *   Optimised "general" copy routine
+ 141              	 *
+ 142              	 * Input Parameters:
+ 143              	 *   r0 = destination, r1 = source, r2 = length
+ 144              	 *
+ 145              	 * Returned Value:
+ 146              	 *   r0 = destination r1-r3 burned
+ 147              	 *
+ 148              	 ************************************************************************************/
+ 149              	
+ 150 001c AFF30080 		.align 4
+ 151              		.thumb_func
+ 152              	
+ 153              	memcpy:
+ 154 0020 00B5     		push	{r14}
+ 155 0022 01B4     		push    {r0}
+ 156 0024 00F004F8 		bl      _do_memcpy
+ 157 0028 01BC     		pop     {r0}
+ 158 002a 00BD     		pop     {pc}
+ 159              	
+ 160 002c AFF30080 		.align 4
+ 161              	
+ 162              		.thumb_func
+ 163              	_do_memcpy:
+ 164 0030 00B5     		push    {r14}
+ 165              	
+ 166              		/* This allows the inner workings to "assume" a minimum amount of bytes */
+ 167              		/* Quickly check for very short copies */
+ 168              	
+ARM GAS  /tmp/ccdQxMik.s 			page 4
+
+
+ 169 0032 042A     		cmp		r2, #4
+ 170 0034 60DB     		blt.n	MEM_DataCopyBytes
+ 171              	
+ 172 0036 00F0030E 		and		r14, r0, #3		 		/* Get destination alignment bits */
+ 173 003a 61F3830E 		bfi		r14, r1, #2, #2	 		/* Get source alignment bits */
+ 174 003e 7A4B     		ldr		r3, =MEM_DataCopyTable	/* Jump table base */
+ 175 0040 D3E80EF0 		tbb		[r3, r14]		   		/* Perform jump on src/dst alignment bits */
+ 176              	MEM_DataCopyJump:
+ 177              	
+ 178 0044 AFF30080 		.align 4
+ 178      AFF30080 
+ 178      AFF30080 
+ 179              	
+ 180              	/* Bits:  Src=01, Dst=01 - Byte before half word to byte before half word - Same alignment
+ 181              	 * 3 bytes to read for long word aligning
+ 182              	 */
+ 183              	
+ 184              	MEM_DataCopy5:
+ 185 0050 11F8013B 		ldrb	r3, [r1], #0x01
+ 186 0054 00F8013B 		strb	r3, [r0], #0x01
+ 187 0058 A2F10102 		sub		r2, r2, #	 0x01
+ 188              	
+ 189              	/* Bits:  Src=10, Dst=10 - Half word to half word - Same Alignment
+ 190              	 * 2 bytes to read for long word aligning
+ 191              	 */
+ 192              	
+ 193              	MEM_DataCopy10:
+ 194 005c 11F8013B 		ldrb	r3, [r1], #0x01
+ 195 0060 00F8013B 		strb	r3, [r0], #0x01
+ 196 0064 A2F10102 		sub		r2, r2, #0x01
+ 197              	
+ 198              	/* Bits:  Src=11, Dst=11 - Byte before long word to Byte before long word - Same alignment
+ 199              	 * 1 bytes to read for long word aligning
+ 200              	 */
+ 201              	
+ 202              	MEM_DataCopy15:
+ 203 0068 11F8013B 		ldrb	r3, [r1], #0x01
+ 204 006c 00F8013B 		strb	r3, [r0], #0x01
+ 205 0070 A2F10102 		sub		r2, r2, #0x01
+ 206              	
+ 207              	/* Bits:  Src=00, Dst=00 - Long to Long copy */
+ 208              	
+ 209              	MEM_DataCopy0:
+ 210              		/* Save regs that may be used by memcpy */
+ 211              	
+ 212 0074 2DE9F01F 		push	{r4-r12}
+ 213              	
+ 214              		/* Check for short word-aligned copy */
+ 215              	
+ 216 0078 282A     		cmp		r2, #0x28
+ 217 007a 07DB     		blt.n	MEM_DataCopy0_2
+ 218              	
+ 219              		/* Bulk copy loop */
+ 220              	
+ 221              	MEM_DataCopy0_1:
+ 222 007c B1E8F81F 		ldmia	r1!, {r3-r12}
+ 223 0080 A0E8F81F 		stmia	r0!, {r3-r12}
+ARM GAS  /tmp/ccdQxMik.s 			page 5
+
+
+ 224 0084 A2F12802 		sub		r2, r2, #0x28
+ 225 0088 282A     		cmp		r2, #0x28
+ 226 008a F7DA     		bge.n	MEM_DataCopy0_1
+ 227              	
+ 228              		/* Copy remaining long words */
+ 229              	
+ 230              	MEM_DataCopy0_2:
+ 231              		/* Copy remaining long words */
+ 232              	
+ 233 008c DFF89CE1 		ldr		r14, =MEM_LongCopyTable
+ 234 0090 4FEA920B 		lsr		r11, r2, #0x02
+ 235 0094 DEE80BF0 		tbb		[r14, r11]
+ 236              	
+ 237              		/* longword copy branch table anchor */
+ 238              	
+ 239              	MEM_LongCopyJump:
+ 240 0098 51F8043B 		ldr.w	r3, [r1], #0x04		/* 4 bytes remain */
+ 241 009c 40F8043B 		str.w	r3, [r0], #0x04
+ 242 00a0 26E0     		b.n		MEM_LongCopyEnd
+ 243 00a2 B1E81800 		ldmia.w	r1!, {r3-r4}		/* 8 bytes remain */
+ 244 00a6 A0E81800 		stmia.w	r0!, {r3-r4}
+ 245 00aa 21E0     		b.n		MEM_LongCopyEnd
+ 246 00ac B1E83800 		ldmia.w	r1!, {r3-r5}		/* 12 bytes remain */
+ 247 00b0 A0E83800 		stmia.w	r0!, {r3-r5}
+ 248 00b4 1CE0     		b.n		MEM_LongCopyEnd
+ 249 00b6 B1E87800 		ldmia.w	r1!, {r3-r6}		/* 16 bytes remain */
+ 250 00ba A0E87800 		stmia.w	r0!, {r3-r6}
+ 251 00be 17E0     		b.n		MEM_LongCopyEnd
+ 252 00c0 B1E8F800 		ldmia.w	r1!, {r3-r7}		/* 20 bytes remain */
+ 253 00c4 A0E8F800 		stmia.w	r0!, {r3-r7}
+ 254 00c8 12E0     		b.n		MEM_LongCopyEnd
+ 255 00ca B1E8F801 		ldmia.w	r1!, {r3-r8}		/* 24 bytes remain */
+ 256 00ce A0E8F801 		stmia.w	r0!, {r3-r8}
+ 257 00d2 0DE0     		b.n		MEM_LongCopyEnd
+ 258 00d4 B1E8F803 		ldmia.w	r1!, {r3-r9}		/* 28 bytes remain */
+ 259 00d8 A0E8F803 		stmia.w	r0!, {r3-r9}
+ 260 00dc 08E0     		b.n		MEM_LongCopyEnd
+ 261 00de B1E8F807 		ldmia.w	r1!, {r3-r10}		/* 32 bytes remain */
+ 262 00e2 A0E8F807 		stmia.w	r0!, {r3-r10}
+ 263 00e6 03E0     		b.n		MEM_LongCopyEnd
+ 264 00e8 B1E8F80F 		ldmia.w	r1!, {r3-r11}		/* 36 bytes remain */
+ 265 00ec A0E8F80F 		stmia.w	r0!, {r3-r11}
+ 266              	
+ 267              	MEM_LongCopyEnd:
+ 268 00f0 BDE8F01F 		pop		{r4-r12}
+ 269 00f4 02F00302 		and		r2, r2, #0x03		/* All the longs have been copied */
+ 270              	
+ 271              		/* Deal with up to 3 remaining bytes */
+ 272              	
+ 273              	MEM_DataCopyBytes:
+ 274              		/* Deal with up to 3 remaining bytes */
+ 275              	
+ 276 00f8 002A     		cmp		r2, #0x00
+ 277 00fa 08BF     		it		eq
+ 278 00fc 00BD     		popeq	{pc}
+ 279 00fe 11F8013B 		ldrb	r3, [r1], #0x01
+ 280 0102 00F8013B 		strb	r3, [r0], #0x01
+ARM GAS  /tmp/ccdQxMik.s 			page 6
+
+
+ 281 0106 013A     		subs	r2, r2, #0x01
+ 282 0108 08BF     		it		eq
+ 283 010a 00BD     		popeq	{pc}
+ 284 010c 11F8013B 		ldrb	r3, [r1], #0x01
+ 285 0110 00F8013B 		strb	r3, [r0], #0x01
+ 286 0114 013A     		subs	r2, r2, #0x01
+ 287 0116 08BF     		it		eq
+ 288 0118 00BD     		popeq	{pc}
+ 289 011a 11F8013B 		ldrb	r3, [r1], #0x01
+ 290 011e 00F8013B 		strb	r3, [r0], #0x01
+ 291 0122 00BD     		pop		{pc}
+ 292              	
+ 293 0124 AFF30080 	 .align 4
+ 293      AFF30080 
+ 293      AFF30080 
+ 294              	
+ 295              	/* Bits:  Src=01, Dst=11 - Byte before half word to byte before long word
+ 296              	 * 3 bytes to read for long word aligning the source
+ 297              	 */
+ 298              	
+ 299              	MEM_DataCopy7:
+ 300 0130 11F8013B 		ldrb	r3, [r1], #0x01
+ 301 0134 00F8013B 		strb	r3, [r0], #0x01
+ 302 0138 A2F10102 		sub		r2, r2, #0x01
+ 303              	
+ 304              	/* Bits:  Src=10, Dst=00 - Half word to long word
+ 305              	 * 2 bytes to read for long word aligning the source
+ 306              	 */
+ 307              	
+ 308              	MEM_DataCopy8:
+ 309 013c 11F8013B 		ldrb	r3, [r1], #0x01
+ 310 0140 00F8013B 		strb	r3, [r0], #0x01
+ 311 0144 A2F10102 		sub		r2, r2, #0x01
+ 312              	
+ 313              	/* Bits:  Src=11, Dst=01 - Byte before long word to byte before half word
+ 314              	 * 1 byte to read for long word aligning the source
+ 315              	 */
+ 316              	
+ 317              	MEM_DataCopy13:
+ 318 0148 11F8013B 		ldrb	r3, [r1], #0x01
+ 319 014c 00F8013B 		strb	r3, [r0], #0x01
+ 320 0150 A2F10102 		sub		r2, r2, #0x01
+ 321              	
+ 322              	/* Bits:  Src=00, Dst=10 - Long to Half word */
+ 323              	
+ 324              	MEM_DataCopy2:
+ 325 0154 282A     		cmp		r2, #0x28
+ 326 0156 35DB     		blt.n	MEM_DataCopy2_1
+ 327              	
+ 328              		/* Save regs */
+ 329              	
+ 330 0158 2DE9F01F 		push	{r4-r12}
+ 331              	
+ 332              		/* Bulk copy loop */
+ 333              	
+ 334              	MEM_DataCopy2_2:
+ 335 015c B1E8F81F 		ldmia	r1!, {r3-r12}
+ARM GAS  /tmp/ccdQxMik.s 			page 7
+
+
+ 336              	
+ 337 0160 20F8023B 		strh	r3, [r0], #0x02
+ 338              	
+ 339 0164 4FEA1343 		lsr		r3, r3, #0x10
+ 340 0168 64F31F43 		bfi		r3, r4, #0x10, #0x10
+ 341 016c 4FEA1444 		lsr		r4, r4, #0x10
+ 342 0170 65F31F44 		bfi		r4, r5, #0x10, #0x10
+ 343 0174 4FEA1545 		lsr		r5, r5, #0x10
+ 344 0178 66F31F45 		bfi		r5, r6, #0x10, #0x10
+ 345 017c 4FEA1646 		lsr		r6, r6, #0x10
+ 346 0180 67F31F46 		bfi		r6, r7, #0x10, #0x10
+ 347 0184 4FEA1747 		lsr		r7, r7, #0x10
+ 348 0188 68F31F47 		bfi		r7, r8, #0x10, #0x10
+ 349 018c 4FEA1848 		lsr		r8, r8, #0x10
+ 350 0190 69F31F48 		bfi		r8, r9, #0x10, #0x10
+ 351 0194 4FEA1949 		lsr		r9, r9, #0x10
+ 352 0198 6AF31F49 		bfi		r9, r10, #0x10, #0x10
+ 353 019c 4FEA1A4A 		lsr		r10, r10, #0x10
+ 354 01a0 6BF31F4A 		bfi		r10, r11, #0x10, #0x10
+ 355 01a4 4FEA1B4B 		lsr		r11, r11, #0x10
+ 356 01a8 6CF31F4B 		bfi		r11, r12, #0x10, #0x10
+ 357 01ac A0E8F80F 		stmia	r0!, {r3-r11}
+ 358 01b0 4FEA1C4C 		lsr		r12, r12, #0x10
+ 359 01b4 20F802CB 		strh	r12, [r0], #0x02
+ 360              	
+ 361 01b8 A2F12802 		sub		r2, r2, #0x28
+ 362 01bc 282A     		cmp		r2, #0x28
+ 363 01be CDDA     		bge.n	MEM_DataCopy2_2
+ 364 01c0 BDE8F01F 		pop		{r4-r12}
+ 365              	
+ 366              	MEM_DataCopy2_1: /* Read longs and write 2 x half words */
+ 367 01c4 042A     		cmp		r2, #4
+ 368 01c6 97DB     		blt.n	MEM_DataCopyBytes
+ 369 01c8 51F8043B 		ldr		r3, [r1], #0x04
+ 370 01cc 20F8023B 		strh	r3, [r0], #0x02
+ 371 01d0 4FEA1343 		lsr		r3, r3, #0x10
+ 372 01d4 20F8023B 		strh	r3, [r0], #0x02
+ 373 01d8 A2F10402 		sub		r2, r2, #0x04
+ 374 01dc BAE7     		b.n		MEM_DataCopy2
+ 375              	
+ 376              	/* Bits:  Src=01, Dst=00 - Byte before half word to long
+ 377              	 * Bits:  Src=01, Dst=10 - Byte before half word to half word
+ 378              	 * 3 bytes to read for long word aligning the source
+ 379              	 */
+ 380              	
+ 381              	MEM_DataCopy4:
+ 382              	MEM_DataCopy6:
+ 383              		/* Read B and write B */
+ 384              	
+ 385 01de 11F8013B 		ldrb	r3, [r1], #0x01
+ 386 01e2 00F8013B 		strb	r3, [r0], #0x01
+ 387 01e6 A2F10102 		sub		r2, r2, #0x01
+ 388              	
+ 389              	/* Bits:  Src=10, Dst=01 - Half word to byte before half word
+ 390              	 * Bits:  Src=10, Dst=11 - Half word to byte before long word
+ 391              	 * 2 bytes to read for long word aligning the source
+ 392              	 */
+ARM GAS  /tmp/ccdQxMik.s 			page 8
+
+
+ 393              	
+ 394              	MEM_DataCopy9:
+ 395              	MEM_DataCopy11:
+ 396 01ea 11F8013B 		ldrb	r3, [r1], #0x01
+ 397 01ee 00F8013B 		strb	r3, [r0], #0x01
+ 398 01f2 A2F10102 		sub		r2, r2, #0x01
+ 399              	
+ 400              	/* Bits:  Src=11, Dst=00 -chm Byte before long word to long word
+ 401              	 * Bits:  Src=11, Dst=11 - Byte before long word to half word
+ 402              	 * 1 byte to read for long word aligning the source
+ 403              	 */
+ 404              	
+ 405              	MEM_DataCopy12:
+ 406              	MEM_DataCopy14:
+ 407              		/* Read B and write B */
+ 408              	
+ 409 01f6 11F8013B 		ldrb	r3, [r1], #0x01
+ 410 01fa 00F8013B 		strb	r3, [r0], #0x01
+ 411 01fe A2F10102 		sub		r2, r2, #0x01
+ 412              	
+ 413              	/* Bits:  Src=00, Dst=01 - Long to Byte before half word
+ 414              	 * Bits:  Src=00, Dst=11 - Long to Byte before long word
+ 415              	 */
+ 416              	
+ 417              	MEM_DataCopy1: /* Read longs, write B->H->B */
+ 418              	MEM_DataCopy3:
+ 419 0202 042A     		cmp		r2, #4
+ 420 0204 FFF678AF 		blt		MEM_DataCopyBytes
+ 421 0208 51F8043B 		ldr		r3, [r1], #0x04
+ 422 020c 00F8013B 		strb	r3, [r0], #0x01
+ 423 0210 4FEA1323 		lsr		r3, r3, #0x08
+ 424 0214 20F8023B 		strh	r3, [r0], #0x02
+ 425 0218 4FEA1343 		lsr		r3, r3, #0x10
+ 426 021c 00F8013B 		strb	r3, [r0], #0x01
+ 427 0220 A2F10402 		sub		r2, r2, #0x04
+ 428 0224 EDE7     		b.n		MEM_DataCopy3
+ 429              	
+ 430              		.size	memcpy, .-memcpy
+ 431 0226 00000000 		.end
+ 431      00001000 
+ 431      0000
+ARM GAS  /tmp/ccdQxMik.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 up_memcpy.S
+         up_memcpy.S:153    .text:00000020 memcpy
+         up_memcpy.S:99     .text:00000000 MEM_DataCopyTable
+         up_memcpy.S:209    .text:00000074 MEM_DataCopy0
+         up_memcpy.S:176    .text:00000044 MEM_DataCopyJump
+         up_memcpy.S:417    .text:00000202 MEM_DataCopy1
+         up_memcpy.S:324    .text:00000154 MEM_DataCopy2
+         up_memcpy.S:418    .text:00000202 MEM_DataCopy3
+         up_memcpy.S:381    .text:000001de MEM_DataCopy4
+         up_memcpy.S:184    .text:00000050 MEM_DataCopy5
+         up_memcpy.S:382    .text:000001de MEM_DataCopy6
+         up_memcpy.S:299    .text:00000130 MEM_DataCopy7
+         up_memcpy.S:308    .text:0000013c MEM_DataCopy8
+         up_memcpy.S:394    .text:000001ea MEM_DataCopy9
+         up_memcpy.S:193    .text:0000005c MEM_DataCopy10
+         up_memcpy.S:395    .text:000001ea MEM_DataCopy11
+         up_memcpy.S:405    .text:000001f6 MEM_DataCopy12
+         up_memcpy.S:317    .text:00000148 MEM_DataCopy13
+         up_memcpy.S:406    .text:000001f6 MEM_DataCopy14
+         up_memcpy.S:202    .text:00000068 MEM_DataCopy15
+                            .text:00000000 $d
+         up_memcpy.S:119    .text:00000010 MEM_LongCopyTable
+         up_memcpy.S:120    .text:00000010 $d
+         up_memcpy.S:267    .text:000000f0 MEM_LongCopyEnd
+         up_memcpy.S:239    .text:00000098 MEM_LongCopyJump
+         up_memcpy.S:131    .text:0000001a $t
+         up_memcpy.S:163    .text:00000030 _do_memcpy
+         up_memcpy.S:273    .text:000000f8 MEM_DataCopyBytes
+         up_memcpy.S:230    .text:0000008c MEM_DataCopy0_2
+         up_memcpy.S:221    .text:0000007c MEM_DataCopy0_1
+         up_memcpy.S:366    .text:000001c4 MEM_DataCopy2_1
+         up_memcpy.S:334    .text:0000015c MEM_DataCopy2_2
+         up_memcpy.S:431    .text:00000226 $d
+         up_memcpy.S:431    .text:00000228 $d
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,213 @@
+ARM GAS  /tmp/ccouSC5M.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   3              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   4              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   5              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   6              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   7              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+   8              		.eabi_attribute 30, 2	@ Tag_ABI_optimization_goals
+   9              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  10              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  11              		.file	"gpio.c"
+  12              	@ GNU C99 (15:7-2018-q2-6) version 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]
+  13              	@	compiled by GNU C version 8.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl ve
+  14              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  15              	@ options passed:  -I . -imultilib thumb/v7-m -MD out/gpio.d -MF out/gpio.d
+  16              	@ -MP -MQ out/gpio.o -D__USES_INITFINI__ -D RAMCODE -D STM32F10X_HD gpio.c
+  17              	@ -mcpu=cortex-m3 -mthumb -auxbase-strip out/gpio.o -O2 -Wall
+  18              	@ -Wstrict-prototypes -Wextra -Wno-uninitialized
+  19              	@ -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable
+  20              	@ -std=gnu99 -ffunction-sections -fdata-sections -fverbose-asm
+  21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
+  22              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
+  23              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
+  24              	@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
+  25              	@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
+  26              	@ -fchkp-use-static-const-bounds -fchkp-use-wrappers -fcode-hoisting
+  27              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  28              	@ -fcrossjumping -fcse-follow-jumps -fdata-sections -fdefer-pop
+  29              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+  30              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  31              	@ -fexpensive-optimizations -fforward-propagate -ffp-int-builtin-inexact
+  32              	@ -ffunction-cse -ffunction-sections -fgcse -fgcse-lm -fgnu-runtime
+  33              	@ -fgnu-unique -fguess-branch-probability -fhoist-adjacent-loads -fident
+  34              	@ -fif-conversion -fif-conversion2 -findirect-inlining -finline
+  35              	@ -finline-atomics -finline-functions-called-once -finline-small-functions
+  36              	@ -fipa-bit-cp -fipa-cp -fipa-icf -fipa-icf-functions -fipa-icf-variables
+  37              	@ -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
+  38              	@ -fipa-vrp -fira-hoist-pressure -fira-share-save-slots
+  39              	@ -fira-share-spill-slots -fisolate-erroneous-paths-dereference -fivopts
+  40              	@ -fkeep-static-consts -fleading-underscore -flifetime-dse -flra-remat
+  41              	@ -flto-odr-type-merging -fmath-errno -fmerge-constants
+  42              	@ -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
+  43              	@ -foptimize-sibling-calls -foptimize-strlen -fpartial-inlining -fpeephole
+  44              	@ -fpeephole2 -fplt -fprefetch-loop-arrays -freg-struct-return
+  45              	@ -freorder-blocks -freorder-functions -frerun-cse-after-loop
+  46              	@ -fsched-critical-path-heuristic -fsched-dep-count-heuristic
+  47              	@ -fsched-group-heuristic -fsched-interblock -fsched-last-insn-heuristic
+  48              	@ -fsched-pressure -fsched-rank-heuristic -fsched-spec
+  49              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  50              	@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
+  51              	@ -fshow-column -fshrink-wrap -fshrink-wrap-separate -fsigned-zeros
+  52              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fssa-backprop -fssa-phiopt
+  53              	@ -fstdarg-opt -fstore-merging -fstrict-aliasing -fstrict-overflow
+  54              	@ -fstrict-volatile-bitfields -fsync-libcalls -fthread-jumps
+  55              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  56              	@ -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim
+  57              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+ARM GAS  /tmp/ccouSC5M.s 			page 2
+
+
+  58              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  59              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  60              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr
+  61              	@ -ftree-sra -ftree-switch-conversion -ftree-tail-merge -ftree-ter
+  62              	@ -ftree-vrp -funit-at-a-time -fverbose-asm -fzero-initialized-in-bss
+  63              	@ -masm-syntax-unified -mfix-cortex-m3-ldrd -mlittle-endian
+  64              	@ -mpic-data-is-text-relative -msched-prolog -mthumb -munaligned-access
+  65              	@ -mvectorize-with-neon-quad
+  66              	
+  67              		.text
+  68              		.section	.text.gpio_init,"ax",%progbits
+  69              		.align	1
+  70              		.p2align 2,,3
+  71              		.global	gpio_init
+  72              		.syntax unified
+  73              		.thumb
+  74              		.thumb_func
+  75              		.fpu softvfp
+  76              		.type	gpio_init, %function
+  77              	gpio_init:
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80              		@ link register save eliminated.
+  81              	@ gpio.c:59: 	RCC->APB2ENR = RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_IOPCEN |
+  82 0000 7D20     		movs	r0, #125	@ tmp111,
+  83              	@ gpio.c:63: 	GPIOA->CRL = 0x88888888;
+  84 0002 4FF08833 		mov	r3, #-2004318072	@ tmp113,
+  85              	@ gpio.c:65: 	GPIOA->ODR = 0;
+  86 0006 0022     		movs	r2, #0	@ tmp117,
+  87              	@ gpio.c:58: {
+  88 0008 70B4     		push	{r4, r5, r6}	@
+  89              	@ gpio.c:59: 	RCC->APB2ENR = RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_IOPCEN |
+  90 000a 0C49     		ldr	r1, .L4	@ tmp110,
+  91              	@ gpio.c:63: 	GPIOA->CRL = 0x88888888;
+  92 000c 0C4E     		ldr	r6, .L4+4	@ tmp112,
+  93              	@ gpio.c:59: 	RCC->APB2ENR = RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPBEN | RCC_APB2ENR_IOPCEN |
+  94 000e 8861     		str	r0, [r1, #24]	@ tmp111, MEM[(struct RCC_TypeDef *)1073876992B].APB2ENR
+  95              	@ gpio.c:66: 	GPIOB->CRL = 0x88888888;
+  96 0010 0C4D     		ldr	r5, .L4+8	@ tmp118,
+  97              	@ gpio.c:69: 	GPIOC->CRL = 0x88888888;
+  98 0012 0D4C     		ldr	r4, .L4+12	@ tmp124,
+  99              	@ gpio.c:72: 	GPIOD->CRL = 0x88888888;
+ 100 0014 0D48     		ldr	r0, .L4+16	@ tmp130,
+ 101              	@ gpio.c:75: 	GPIOE->CRL = 0x88888888;
+ 102 0016 A1F57841 		sub	r1, r1, #63488	@ tmp136, tmp136,
+ 103              	@ gpio.c:63: 	GPIOA->CRL = 0x88888888;
+ 104 001a 3360     		str	r3, [r6]	@ tmp113, MEM[(struct GPIO_TypeDef *)1073809408B].CRL
+ 105              	@ gpio.c:64: 	GPIOA->CRH = 0x88888888;
+ 106 001c 7360     		str	r3, [r6, #4]	@ tmp113, MEM[(struct GPIO_TypeDef *)1073809408B].CRH
+ 107              	@ gpio.c:65: 	GPIOA->ODR = 0;
+ 108 001e F260     		str	r2, [r6, #12]	@ tmp117, MEM[(struct GPIO_TypeDef *)1073809408B].ODR
+ 109              	@ gpio.c:66: 	GPIOB->CRL = 0x88888888;
+ 110 0020 2B60     		str	r3, [r5]	@ tmp113, MEM[(struct GPIO_TypeDef *)1073810432B].CRL
+ 111              	@ gpio.c:67: 	GPIOB->CRH = 0x88888888;
+ 112 0022 6B60     		str	r3, [r5, #4]	@ tmp113, MEM[(struct GPIO_TypeDef *)1073810432B].CRH
+ 113              	@ gpio.c:68: 	GPIOB->ODR = 0;
+ 114 0024 EA60     		str	r2, [r5, #12]	@ tmp117, MEM[(struct GPIO_TypeDef *)1073810432B].ODR
+ARM GAS  /tmp/ccouSC5M.s 			page 3
+
+
+ 115              	@ gpio.c:69: 	GPIOC->CRL = 0x88888888;
+ 116 0026 2360     		str	r3, [r4]	@ tmp113, MEM[(struct GPIO_TypeDef *)1073811456B].CRL
+ 117              	@ gpio.c:70: 	GPIOC->CRH = 0x88888888;
+ 118 0028 6360     		str	r3, [r4, #4]	@ tmp113, MEM[(struct GPIO_TypeDef *)1073811456B].CRH
+ 119              	@ gpio.c:71: 	GPIOC->ODR = 0;
+ 120 002a E260     		str	r2, [r4, #12]	@ tmp117, MEM[(struct GPIO_TypeDef *)1073811456B].ODR
+ 121              	@ gpio.c:72: 	GPIOD->CRL = 0x88888888;
+ 122 002c 0360     		str	r3, [r0]	@ tmp113, MEM[(struct GPIO_TypeDef *)1073812480B].CRL
+ 123              	@ gpio.c:78: }
+ 124 002e 70BC     		pop	{r4, r5, r6}	@
+ 125              	@ gpio.c:73: 	GPIOD->CRH = 0x88888888;
+ 126 0030 4360     		str	r3, [r0, #4]	@ tmp113, MEM[(struct GPIO_TypeDef *)1073812480B].CRH
+ 127              	@ gpio.c:74: 	GPIOD->ODR = 0;
+ 128 0032 C260     		str	r2, [r0, #12]	@ tmp117, MEM[(struct GPIO_TypeDef *)1073812480B].ODR
+ 129              	@ gpio.c:75: 	GPIOE->CRL = 0x88888888;
+ 130 0034 0B60     		str	r3, [r1]	@ tmp113, MEM[(struct GPIO_TypeDef *)1073813504B].CRL
+ 131              	@ gpio.c:76: 	GPIOE->CRH = 0x88888888;
+ 132 0036 4B60     		str	r3, [r1, #4]	@ tmp113, MEM[(struct GPIO_TypeDef *)1073813504B].CRH
+ 133              	@ gpio.c:77: 	GPIOE->ODR = 0;
+ 134 0038 CA60     		str	r2, [r1, #12]	@ tmp117, MEM[(struct GPIO_TypeDef *)1073813504B].ODR
+ 135              	@ gpio.c:78: }
+ 136 003a 7047     		bx	lr	@
+ 137              	.L5:
+ 138              		.align	2
+ 139              	.L4:
+ 140 003c 00100240 		.word	1073876992
+ 141 0040 00080140 		.word	1073809408
+ 142 0044 000C0140 		.word	1073810432
+ 143 0048 00100140 		.word	1073811456
+ 144 004c 00140140 		.word	1073812480
+ 145              		.size	gpio_init, .-gpio_init
+ 146              		.section	.text.gpio_pin_cfg,"ax",%progbits
+ 147              		.align	1
+ 148              		.p2align 2,,3
+ 149              		.global	gpio_pin_cfg
+ 150              		.syntax unified
+ 151              		.thumb
+ 152              		.thumb_func
+ 153              		.fpu softvfp
+ 154              		.type	gpio_pin_cfg, %function
+ 155              	gpio_pin_cfg:
+ 156              		@ args = 0, pretend = 0, frame = 0
+ 157              		@ frame_needed = 0, uses_anonymous_args = 0
+ 158              		@ link register save eliminated.
+ 159 0000 10B4     		push	{r4}	@
+ 160              	@ gpio.c:112: 	cr_value &= ~(GPIO_CRx_MODE_CNF_mask << (pin * 4));	// clear the MODE and CNF fields
+ 161 0002 0F24     		movs	r4, #15	@ tmp123,
+ 162              	@ gpio.c:105: 	if (pin >= 8)							      // is pin in [8; 15]?
+ 163 0004 0729     		cmp	r1, #7	@ pin,
+ 164              	@ gpio.c:108: 		pin -= 8;							        // crop the pin number
+ 165 0006 86BF     		itte	hi
+ 166 0008 0839     		subhi	r1, r1, #8	@ pin, pin,
+ 167              	@ gpio.c:107: 		cr_ptr++;							        // advance to next struct element CRL -> CRH
+ 168 000a 4368     		ldrhi	r3, [r0, #4]	@ cr_value, MEM[(volatile uint32_t *)port_ptr_8(D) + 4B]
+ 169              	@ gpio.c:103: 	cr_ptr = &port_ptr->CRL;				// configuration of pins [0,7] is in CRL
+ 170 000c 0368     		ldrls	r3, [r0]	@ cr_value, MEM[(volatile uint32_t *)port_ptr_8(D)]
+ 171              	@ gpio.c:112: 	cr_value &= ~(GPIO_CRx_MODE_CNF_mask << (pin * 4));	// clear the MODE and CNF fields
+ARM GAS  /tmp/ccouSC5M.s 			page 4
+
+
+ 172 000e 4FEA8101 		lsl	r1, r1, #2	@ _1, pin,
+ 173 0012 04FA01F4 		lsl	r4, r4, r1	@ tmp122, tmp123, _1
+ 174              	@ gpio.c:113: 	cr_value |= (mode_cnf_value << (pin * 4));	// save new MODE and CNF value for desire
+ 175 0016 02FA01F1 		lsl	r1, r2, r1	@ tmp125, mode_cnf_value, _1
+ 176              	@ gpio.c:112: 	cr_value &= ~(GPIO_CRx_MODE_CNF_mask << (pin * 4));	// clear the MODE and CNF fields
+ 177 001a 23EA0402 		bic	r2, r3, r4	@ cr_value, cr_value, tmp122
+ 178              	@ gpio.c:107: 		cr_ptr++;							        // advance to next struct element CRL -> CRH
+ 179 001e 88BF     		it	hi
+ 180 0020 0430     		addhi	r0, r0, #4	@ cr_ptr, port_ptr,
+ 181              	@ gpio.c:113: 	cr_value |= (mode_cnf_value << (pin * 4));	// save new MODE and CNF value for desire
+ 182 0022 1143     		orrs	r1, r1, r2	@, cr_value, tmp125, cr_value
+ 183              	@ gpio.c:115: 	*cr_ptr = cr_value;						  // save localized value to CRL / CRL
+ 184 0024 0160     		str	r1, [r0]	@ cr_value, *cr_ptr_7
+ 185              	@ gpio.c:116: }
+ 186 0026 10BC     		pop	{r4}	@
+ 187 0028 7047     		bx	lr	@
+ 188              		.size	gpio_pin_cfg, .-gpio_pin_cfg
+ 189 002a 00BF     		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
+ARM GAS  /tmp/ccouSC5M.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gpio.c
+     /tmp/ccouSC5M.s:69     .text.gpio_init:00000000 $t
+     /tmp/ccouSC5M.s:77     .text.gpio_init:00000000 gpio_init
+     /tmp/ccouSC5M.s:140    .text.gpio_init:0000003c $d
+     /tmp/ccouSC5M.s:147    .text.gpio_pin_cfg:00000000 $t
+     /tmp/ccouSC5M.s:155    .text.gpio_pin_cfg:00000000 gpio_pin_cfg
+
+NO UNDEFINED SYMBOLS

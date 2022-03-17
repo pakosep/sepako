@@ -1,0 +1,1077 @@
+ARM GAS  /tmp/cc9qFhFg.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   3              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   4              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   5              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   6              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   7              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+   8              		.eabi_attribute 30, 2	@ Tag_ABI_optimization_goals
+   9              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  10              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  11              		.file	"i2c.c"
+  12              	@ GNU C99 (15:7-2018-q2-6) version 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]
+  13              	@	compiled by GNU C version 8.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl ve
+  14              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  15              	@ options passed:  -I . -imultilib thumb/v7-m -MD out/i2c.d -MF out/i2c.d
+  16              	@ -MP -MQ out/i2c.o -D__USES_INITFINI__ -D RAMCODE -D STM32F10X_HD
+  17              	@ inc/i2c/i2c.c -mcpu=cortex-m3 -mthumb -auxbase-strip out/i2c.o -O2 -Wall
+  18              	@ -Wstrict-prototypes -Wextra -Wno-uninitialized
+  19              	@ -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable
+  20              	@ -std=gnu99 -ffunction-sections -fdata-sections -fverbose-asm
+  21              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
+  22              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
+  23              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
+  24              	@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
+  25              	@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
+  26              	@ -fchkp-use-static-const-bounds -fchkp-use-wrappers -fcode-hoisting
+  27              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  28              	@ -fcrossjumping -fcse-follow-jumps -fdata-sections -fdefer-pop
+  29              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+  30              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  31              	@ -fexpensive-optimizations -fforward-propagate -ffp-int-builtin-inexact
+  32              	@ -ffunction-cse -ffunction-sections -fgcse -fgcse-lm -fgnu-runtime
+  33              	@ -fgnu-unique -fguess-branch-probability -fhoist-adjacent-loads -fident
+  34              	@ -fif-conversion -fif-conversion2 -findirect-inlining -finline
+  35              	@ -finline-atomics -finline-functions-called-once -finline-small-functions
+  36              	@ -fipa-bit-cp -fipa-cp -fipa-icf -fipa-icf-functions -fipa-icf-variables
+  37              	@ -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
+  38              	@ -fipa-vrp -fira-hoist-pressure -fira-share-save-slots
+  39              	@ -fira-share-spill-slots -fisolate-erroneous-paths-dereference -fivopts
+  40              	@ -fkeep-static-consts -fleading-underscore -flifetime-dse -flra-remat
+  41              	@ -flto-odr-type-merging -fmath-errno -fmerge-constants
+  42              	@ -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
+  43              	@ -foptimize-sibling-calls -foptimize-strlen -fpartial-inlining -fpeephole
+  44              	@ -fpeephole2 -fplt -fprefetch-loop-arrays -freg-struct-return
+  45              	@ -freorder-blocks -freorder-functions -frerun-cse-after-loop
+  46              	@ -fsched-critical-path-heuristic -fsched-dep-count-heuristic
+  47              	@ -fsched-group-heuristic -fsched-interblock -fsched-last-insn-heuristic
+  48              	@ -fsched-pressure -fsched-rank-heuristic -fsched-spec
+  49              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  50              	@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
+  51              	@ -fshow-column -fshrink-wrap -fshrink-wrap-separate -fsigned-zeros
+  52              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fssa-backprop -fssa-phiopt
+  53              	@ -fstdarg-opt -fstore-merging -fstrict-aliasing -fstrict-overflow
+  54              	@ -fstrict-volatile-bitfields -fsync-libcalls -fthread-jumps
+  55              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  56              	@ -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim
+  57              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+ARM GAS  /tmp/cc9qFhFg.s 			page 2
+
+
+  58              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  59              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  60              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr
+  61              	@ -ftree-sra -ftree-switch-conversion -ftree-tail-merge -ftree-ter
+  62              	@ -ftree-vrp -funit-at-a-time -fverbose-asm -fzero-initialized-in-bss
+  63              	@ -masm-syntax-unified -mfix-cortex-m3-ldrd -mlittle-endian
+  64              	@ -mpic-data-is-text-relative -msched-prolog -mthumb -munaligned-access
+  65              	@ -mvectorize-with-neon-quad
+  66              	
+  67              		.text
+  68              		.section	.text.i2c1_init,"ax",%progbits
+  69              		.align	1
+  70              		.p2align 2,,3
+  71              		.global	i2c1_init
+  72              		.syntax unified
+  73              		.thumb
+  74              		.thumb_func
+  75              		.fpu softvfp
+  76              		.type	i2c1_init, %function
+  77              	i2c1_init:
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80              		@ link register save eliminated.
+  81 0000 30B4     		push	{r4, r5}	@
+  82              	@ inc/i2c/i2c.c:13: 		I2C1->CR2   = I2C_CR2_FREQ_36MHz;   // config I2C1 module
+  83 0002 2420     		movs	r0, #36	@ tmp137,
+  84              	@ inc/i2c/i2c.c:11: 		I2C1->TRISE = 37;               		// limit slope
+  85 0004 2525     		movs	r5, #37	@ tmp131,
+  86              	@ inc/i2c/i2c.c:12: 		I2C1->CCR   = (1<<15) | (F_CPU/(8*100000));               			// setup speed (
+  87 0006 48F25A04 		movw	r4, #32858	@ tmp134,
+  88              	@ inc/i2c/i2c.c:7: 		GPIOB->CRL    = (GPIOB->CRL & 0x00ffffff) | 0xdd000000;	// PB7=SDA (Alternate 
+  89 000a 0E4A     		ldr	r2, .L4	@ tmp119,
+  90              	@ inc/i2c/i2c.c:8: 		RCC->APB1ENR |= RCC_APB1ENR_I2C1EN;
+  91 000c 0E49     		ldr	r1, .L4+4	@ tmp122,
+  92              	@ inc/i2c/i2c.c:7: 		GPIOB->CRL    = (GPIOB->CRL & 0x00ffffff) | 0xdd000000;	// PB7=SDA (Alternate 
+  93 000e 1368     		ldr	r3, [r2]	@ _1, MEM[(struct GPIO_TypeDef *)1073810432B].CRL
+  94 0010 23F07F43 		bic	r3, r3, #-16777216	@ tmp120, _1,
+  95 0014 43F05D43 		orr	r3, r3, #-587202560	@ _3, tmp120,
+  96 0018 1360     		str	r3, [r2]	@ _3, MEM[(struct GPIO_TypeDef *)1073810432B].CRL
+  97              	@ inc/i2c/i2c.c:8: 		RCC->APB1ENR |= RCC_APB1ENR_I2C1EN;
+  98 001a CA69     		ldr	r2, [r1, #28]	@ _4, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+  99              	@ inc/i2c/i2c.c:10: 		I2C1->CR1  &= ~I2C_CR1_PE;					// I2C1 Pheripherial enable
+ 100 001c 0B4B     		ldr	r3, .L4+8	@ tmp124,
+ 101              	@ inc/i2c/i2c.c:8: 		RCC->APB1ENR |= RCC_APB1ENR_I2C1EN;
+ 102 001e 42F40012 		orr	r2, r2, #2097152	@ _5, _4,
+ 103 0022 CA61     		str	r2, [r1, #28]	@ _5, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ 104              	@ inc/i2c/i2c.c:10: 		I2C1->CR1  &= ~I2C_CR1_PE;					// I2C1 Pheripherial enable
+ 105 0024 1A88     		ldrh	r2, [r3]	@, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 106 0026 22F00102 		bic	r2, r2, #1	@ _7, MEM[(struct I2C_TypeDef *)1073763328B].CR1,
+ 107 002a 1204     		lsls	r2, r2, #16	@ _7, _7,
+ 108 002c 120C     		lsrs	r2, r2, #16	@ _7, _7,
+ 109 002e 1A80     		strh	r2, [r3]	@ movhi	@ _7, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 110              	@ inc/i2c/i2c.c:11: 		I2C1->TRISE = 37;               		// limit slope
+ 111 0030 1D84     		strh	r5, [r3, #32]	@ movhi	@ tmp131, MEM[(struct I2C_TypeDef *)1073763328B].TRISE
+ 112              	@ inc/i2c/i2c.c:12: 		I2C1->CCR   = (1<<15) | (F_CPU/(8*100000));               			// setup speed (
+ 113 0032 9C83     		strh	r4, [r3, #28]	@ movhi	@ tmp134, MEM[(struct I2C_TypeDef *)1073763328B].CCR
+ 114              	@ inc/i2c/i2c.c:13: 		I2C1->CR2   = I2C_CR2_FREQ_36MHz;   // config I2C1 module
+ARM GAS  /tmp/cc9qFhFg.s 			page 3
+
+
+ 115 0034 9880     		strh	r0, [r3, #4]	@ movhi	@ tmp137, MEM[(struct I2C_TypeDef *)1073763328B].CR2
+ 116              	@ inc/i2c/i2c.c:14: 		I2C1->CR1  |= I2C_CR1_PE;						// I2C1 Pheripherial enable
+ 117 0036 1A88     		ldrh	r2, [r3]	@, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 118              	@ inc/i2c/i2c.c:15: 	}
+ 119 0038 30BC     		pop	{r4, r5}	@
+ 120              	@ inc/i2c/i2c.c:14: 		I2C1->CR1  |= I2C_CR1_PE;						// I2C1 Pheripherial enable
+ 121 003a 42F00102 		orr	r2, r2, #1	@ _9, MEM[(struct I2C_TypeDef *)1073763328B].CR1,
+ 122 003e 1A80     		strh	r2, [r3]	@ movhi	@ _9, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 123              	@ inc/i2c/i2c.c:15: 	}
+ 124 0040 7047     		bx	lr	@
+ 125              	.L5:
+ 126 0042 00BF     		.align	2
+ 127              	.L4:
+ 128 0044 000C0140 		.word	1073810432
+ 129 0048 00100240 		.word	1073876992
+ 130 004c 00540040 		.word	1073763328
+ 131              		.size	i2c1_init, .-i2c1_init
+ 132              		.section	.text.i2c1r_init,"ax",%progbits
+ 133              		.align	1
+ 134              		.p2align 2,,3
+ 135              		.global	i2c1r_init
+ 136              		.syntax unified
+ 137              		.thumb
+ 138              		.thumb_func
+ 139              		.fpu softvfp
+ 140              		.type	i2c1r_init, %function
+ 141              	i2c1r_init:
+ 142              		@ args = 0, pretend = 0, frame = 0
+ 143              		@ frame_needed = 0, uses_anonymous_args = 0
+ 144              		@ link register save eliminated.
+ 145 0000 30B4     		push	{r4, r5}	@
+ 146              	@ inc/i2c/i2c.c:26: 		I2C1->CR2   = I2C_CR2_FREQ_36MHz;     // config I2C1 module
+ 147 0002 2420     		movs	r0, #36	@ tmp141,
+ 148              	@ inc/i2c/i2c.c:24: 		I2C1->TRISE = 37;               		// limit slope
+ 149 0004 2525     		movs	r5, #37	@ tmp135,
+ 150              	@ inc/i2c/i2c.c:25: 		I2C1->CCR   = (1<<15) | (F_CPU/(8*100000));               			// setup speed (
+ 151 0006 48F25A04 		movw	r4, #32858	@ tmp138,
+ 152              	@ inc/i2c/i2c.c:19: 		AFIO->MAPR   |= AFIO_MAPR_I2C1_REMAP;		// Remap TIM3 CH2->PB5
+ 153 000a 1149     		ldr	r1, .L8	@ tmp121,
+ 154              	@ inc/i2c/i2c.c:20: 		GPIOB->CRH    = (GPIOB->CRH & 0xffffff00) | 0x000000dd;	// PB9=SDA (Alternate
+ 155 000c 114A     		ldr	r2, .L8+4	@ tmp123,
+ 156              	@ inc/i2c/i2c.c:19: 		AFIO->MAPR   |= AFIO_MAPR_I2C1_REMAP;		// Remap TIM3 CH2->PB5
+ 157 000e 4B68     		ldr	r3, [r1, #4]	@ _1, MEM[(struct AFIO_TypeDef *)1073807360B].MAPR
+ 158 0010 43F00203 		orr	r3, r3, #2	@ _2, _1,
+ 159 0014 4B60     		str	r3, [r1, #4]	@ _2, MEM[(struct AFIO_TypeDef *)1073807360B].MAPR
+ 160              	@ inc/i2c/i2c.c:20: 		GPIOB->CRH    = (GPIOB->CRH & 0xffffff00) | 0x000000dd;	// PB9=SDA (Alternate
+ 161 0016 5368     		ldr	r3, [r2, #4]	@ _3, MEM[(struct GPIO_TypeDef *)1073810432B].CRH
+ 162              	@ inc/i2c/i2c.c:21: 		RCC->APB1ENR |= RCC_APB1ENR_I2C1EN;
+ 163 0018 01F58831 		add	r1, r1, #69632	@ tmp126, tmp126,
+ 164              	@ inc/i2c/i2c.c:20: 		GPIOB->CRH    = (GPIOB->CRH & 0xffffff00) | 0x000000dd;	// PB9=SDA (Alternate
+ 165 001c 23F0FF03 		bic	r3, r3, #255	@ tmp124, _3,
+ 166 0020 43F0DD03 		orr	r3, r3, #221	@ _5, tmp124,
+ 167 0024 5360     		str	r3, [r2, #4]	@ _5, MEM[(struct GPIO_TypeDef *)1073810432B].CRH
+ 168              	@ inc/i2c/i2c.c:21: 		RCC->APB1ENR |= RCC_APB1ENR_I2C1EN;
+ 169 0026 CA69     		ldr	r2, [r1, #28]	@ _6, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ 170              	@ inc/i2c/i2c.c:23: 		I2C1->CR1  &= ~I2C_CR1_PE;						// I2C1 Pheripherial enable
+ 171 0028 0B4B     		ldr	r3, .L8+8	@ tmp128,
+ARM GAS  /tmp/cc9qFhFg.s 			page 4
+
+
+ 172              	@ inc/i2c/i2c.c:21: 		RCC->APB1ENR |= RCC_APB1ENR_I2C1EN;
+ 173 002a 42F40012 		orr	r2, r2, #2097152	@ _7, _6,
+ 174 002e CA61     		str	r2, [r1, #28]	@ _7, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ 175              	@ inc/i2c/i2c.c:23: 		I2C1->CR1  &= ~I2C_CR1_PE;						// I2C1 Pheripherial enable
+ 176 0030 1A88     		ldrh	r2, [r3]	@, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 177 0032 22F00102 		bic	r2, r2, #1	@ _9, MEM[(struct I2C_TypeDef *)1073763328B].CR1,
+ 178 0036 1204     		lsls	r2, r2, #16	@ _9, _9,
+ 179 0038 120C     		lsrs	r2, r2, #16	@ _9, _9,
+ 180 003a 1A80     		strh	r2, [r3]	@ movhi	@ _9, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 181              	@ inc/i2c/i2c.c:24: 		I2C1->TRISE = 37;               		// limit slope
+ 182 003c 1D84     		strh	r5, [r3, #32]	@ movhi	@ tmp135, MEM[(struct I2C_TypeDef *)1073763328B].TRISE
+ 183              	@ inc/i2c/i2c.c:25: 		I2C1->CCR   = (1<<15) | (F_CPU/(8*100000));               			// setup speed (
+ 184 003e 9C83     		strh	r4, [r3, #28]	@ movhi	@ tmp138, MEM[(struct I2C_TypeDef *)1073763328B].CCR
+ 185              	@ inc/i2c/i2c.c:26: 		I2C1->CR2   = I2C_CR2_FREQ_36MHz;     // config I2C1 module
+ 186 0040 9880     		strh	r0, [r3, #4]	@ movhi	@ tmp141, MEM[(struct I2C_TypeDef *)1073763328B].CR2
+ 187              	@ inc/i2c/i2c.c:27: 		I2C1->CR1  |= I2C_CR1_PE;						// I2C1 Pheripherial enable
+ 188 0042 1A88     		ldrh	r2, [r3]	@, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 189              	@ inc/i2c/i2c.c:28: 	}
+ 190 0044 30BC     		pop	{r4, r5}	@
+ 191              	@ inc/i2c/i2c.c:27: 		I2C1->CR1  |= I2C_CR1_PE;						// I2C1 Pheripherial enable
+ 192 0046 42F00102 		orr	r2, r2, #1	@ _11, MEM[(struct I2C_TypeDef *)1073763328B].CR1,
+ 193 004a 1A80     		strh	r2, [r3]	@ movhi	@ _11, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 194              	@ inc/i2c/i2c.c:28: 	}
+ 195 004c 7047     		bx	lr	@
+ 196              	.L9:
+ 197 004e 00BF     		.align	2
+ 198              	.L8:
+ 199 0050 00000140 		.word	1073807360
+ 200 0054 000C0140 		.word	1073810432
+ 201 0058 00540040 		.word	1073763328
+ 202              		.size	i2c1r_init, .-i2c1r_init
+ 203              		.section	.text.i2c1_write,"ax",%progbits
+ 204              		.align	1
+ 205              		.p2align 2,,3
+ 206              		.global	i2c1_write
+ 207              		.syntax unified
+ 208              		.thumb
+ 209              		.thumb_func
+ 210              		.fpu softvfp
+ 211              		.type	i2c1_write, %function
+ 212              	i2c1_write:
+ 213              		@ args = 0, pretend = 0, frame = 0
+ 214              		@ frame_needed = 0, uses_anonymous_args = 0
+ 215              		@ link register save eliminated.
+ 216 0000 30B4     		push	{r4, r5}	@
+ 217              	@ inc/i2c/i2c.c:35: 		I2C1_CR1_START_bb = 1;				// request a start
+ 218 0002 0125     		movs	r5, #1	@ tmp156,
+ 219 0004 144B     		ldr	r3, .L33	@ tmp155,
+ 220              	@ inc/i2c/i2c.c:36: 		while (I2C1_SR1_SB_bb == 0);	// wait for start to finish
+ 221 0006 154C     		ldr	r4, .L33+4	@ tmp157,
+ 222              	@ inc/i2c/i2c.c:35: 		I2C1_CR1_START_bb = 1;				// request a start
+ 223 0008 1D60     		str	r5, [r3]	@ tmp156, MEM[(volatile long unsigned int *)1107984416B]
+ 224              	.L11:
+ 225              	@ inc/i2c/i2c.c:36: 		while (I2C1_SR1_SB_bb == 0);	// wait for start to finish
+ 226 000a 2368     		ldr	r3, [r4]	@ _1, MEM[(volatile long unsigned int *)1107985024B]
+ 227 000c 002B     		cmp	r3, #0	@ _1
+ 228 000e FCD0     		beq	.L11	@
+ARM GAS  /tmp/cc9qFhFg.s 			page 5
+
+
+ 229              	@ inc/i2c/i2c.c:37: 		dummy = I2C1->SR1;						// read of SR1 clears the flag
+ 230 0010 134B     		ldr	r3, .L33+8	@ tmp158,
+ 231              	@ inc/i2c/i2c.c:38: 		I2C1->DR = dev_adr;						// transfer address
+ 232 0012 80B2     		uxth	r0, r0	@ _4, dev_adr
+ 233              	@ inc/i2c/i2c.c:40: 		while (I2C1_SR1_ADDR_bb == 0);// wait for address transfer
+ 234 0014 134C     		ldr	r4, .L33+12	@ tmp163,
+ 235              	@ inc/i2c/i2c.c:37: 		dummy = I2C1->SR1;						// read of SR1 clears the flag
+ 236 0016 9D8A     		ldrh	r5, [r3, #20]	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1
+ 237              	@ inc/i2c/i2c.c:38: 		I2C1->DR = dev_adr;						// transfer address
+ 238 0018 1882     		strh	r0, [r3, #16]	@ movhi	@ _4, MEM[(struct I2C_TypeDef *)1073763328B].DR
+ 239              	.L12:
+ 240              	@ inc/i2c/i2c.c:40: 		while (I2C1_SR1_ADDR_bb == 0);// wait for address transfer
+ 241 001a 2368     		ldr	r3, [r4]	@ _5, MEM[(volatile long unsigned int *)1107985028B]
+ 242 001c 002B     		cmp	r3, #0	@ _5
+ 243 001e FCD0     		beq	.L12	@
+ 244              	@ inc/i2c/i2c.c:41: 		dummy = I2C1->SR1;						// clear the flag
+ 245 0020 0F4C     		ldr	r4, .L33+8	@ tmp164,
+ 246 0022 A38A     		ldrh	r3, [r4, #20]	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1
+ 247              	@ inc/i2c/i2c.c:42: 		dummy = I2C1->SR2;						// clear the flag
+ 248 0024 238B     		ldrh	r3, [r4, #24]	@, MEM[(struct I2C_TypeDef *)1073763328B].SR2
+ 249              	@ inc/i2c/i2c.c:44: 		while (length--)						// transfer whole block
+ 250 0026 4AB1     		cbz	r2, .L13	@ length,
+ 251              	@ inc/i2c/i2c.c:46: 			while (I2C1_SR1_TxE_bb == 0);		// wait for DR empty
+ 252 0028 0F48     		ldr	r0, .L33+16	@ tmp170,
+ 253 002a 0A44     		add	r2, r2, r1	@ _30, data
+ 254              	.L14:
+ 255              	@ inc/i2c/i2c.c:46: 			while (I2C1_SR1_TxE_bb == 0);		// wait for DR empty
+ 256 002c 0368     		ldr	r3, [r0]	@ _9, MEM[(volatile long unsigned int *)1107985052B]
+ 257 002e 002B     		cmp	r3, #0	@ _9
+ 258 0030 FCD0     		beq	.L14	@
+ 259              	@ inc/i2c/i2c.c:47: 			I2C1->DR = *data++;							// trsnsfer one byte, increment pointer
+ 260 0032 11F8013B 		ldrb	r3, [r1], #1	@ zero_extendqisi2	@ _11, MEM[base: data_27, offset: 4294967295B]
+ 261              	@ inc/i2c/i2c.c:44: 		while (length--)						// transfer whole block
+ 262 0036 9142     		cmp	r1, r2	@ data, _30
+ 263              	@ inc/i2c/i2c.c:47: 			I2C1->DR = *data++;							// trsnsfer one byte, increment pointer
+ 264 0038 2382     		strh	r3, [r4, #16]	@ movhi	@ _11, MEM[(struct I2C_TypeDef *)1073763328B].DR
+ 265              	@ inc/i2c/i2c.c:44: 		while (length--)						// transfer whole block
+ 266 003a F7D1     		bne	.L14	@,
+ 267              	.L13:
+ 268              	@ inc/i2c/i2c.c:50: 		while (I2C1_SR1_TxE_bb == 0 || I2C1_SR1_BTF_bb == 1);	// wait for bus not-bus
+ 269 003c 0A4A     		ldr	r2, .L33+16	@ tmp175,
+ 270 003e 0B49     		ldr	r1, .L33+20	@ tmp176,
+ 271              	.L16:
+ 272              	@ inc/i2c/i2c.c:50: 		while (I2C1_SR1_TxE_bb == 0 || I2C1_SR1_BTF_bb == 1);	// wait for bus not-bus
+ 273 0040 1368     		ldr	r3, [r2]	@ _12, MEM[(volatile long unsigned int *)1107985052B]
+ 274 0042 002B     		cmp	r3, #0	@ _12
+ 275 0044 FCD0     		beq	.L16	@
+ 276              	@ inc/i2c/i2c.c:50: 		while (I2C1_SR1_TxE_bb == 0 || I2C1_SR1_BTF_bb == 1);	// wait for bus not-bus
+ 277 0046 0B68     		ldr	r3, [r1]	@ _13, MEM[(volatile long unsigned int *)1107985032B]
+ 278 0048 012B     		cmp	r3, #1	@ _13,
+ 279 004a F9D0     		beq	.L16	@,
+ 280              	@ inc/i2c/i2c.c:52: 	}
+ 281 004c 30BC     		pop	{r4, r5}	@
+ 282              	@ inc/i2c/i2c.c:51: 		I2C1_CR1_STOP_bb = 1;					// request a stop
+ 283 004e 0122     		movs	r2, #1	@ tmp178,
+ 284 0050 074B     		ldr	r3, .L33+24	@ tmp177,
+ 285 0052 1A60     		str	r2, [r3]	@ tmp178, MEM[(volatile long unsigned int *)1107984420B]
+ARM GAS  /tmp/cc9qFhFg.s 			page 6
+
+
+ 286              	@ inc/i2c/i2c.c:52: 	}
+ 287 0054 7047     		bx	lr	@
+ 288              	.L34:
+ 289 0056 00BF     		.align	2
+ 290              	.L33:
+ 291 0058 20800A42 		.word	1107984416
+ 292 005c 80820A42 		.word	1107985024
+ 293 0060 00540040 		.word	1073763328
+ 294 0064 84820A42 		.word	1107985028
+ 295 0068 9C820A42 		.word	1107985052
+ 296 006c 88820A42 		.word	1107985032
+ 297 0070 24800A42 		.word	1107984420
+ 298              		.size	i2c1_write, .-i2c1_write
+ 299              		.section	.text.i2c1_read,"ax",%progbits
+ 300              		.align	1
+ 301              		.p2align 2,,3
+ 302              		.global	i2c1_read
+ 303              		.syntax unified
+ 304              		.thumb
+ 305              		.thumb_func
+ 306              		.fpu softvfp
+ 307              		.type	i2c1_read, %function
+ 308              	i2c1_read:
+ 309              		@ args = 0, pretend = 0, frame = 0
+ 310              		@ frame_needed = 0, uses_anonymous_args = 0
+ 311              		@ link register save eliminated.
+ 312 0000 70B4     		push	{r4, r5, r6}	@
+ 313              	@ inc/i2c/i2c.c:61: 		I2C1->CR1 |= I2C_CR1_START;						// request a start
+ 314 0002 254C     		ldr	r4, .L66	@ tmp207,
+ 315              	@ inc/i2c/i2c.c:62: 		while( !( I2C1->SR1 & I2C_SR1_SB ));	// wait for start to finish (read of SR1
+ 316 0004 2646     		mov	r6, r4	@ tmp212, tmp207
+ 317              	@ inc/i2c/i2c.c:61: 		I2C1->CR1 |= I2C_CR1_START;						// request a start
+ 318 0006 2588     		ldrh	r5, [r4]	@, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 319 0008 45F48075 		orr	r5, r5, #256	@ _4, MEM[(struct I2C_TypeDef *)1073763328B].CR1,
+ 320 000c 2580     		strh	r5, [r4]	@ movhi	@ _4, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 321              	.L36:
+ 322              	@ inc/i2c/i2c.c:62: 		while( !( I2C1->SR1 & I2C_SR1_SB ));	// wait for start to finish (read of SR1
+ 323 000e B48A     		ldrh	r4, [r6, #20]	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1
+ 324 0010 E507     		lsls	r5, r4, #31	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1,
+ 325 0012 FCD5     		bpl	.L36	@,
+ 326              	@ inc/i2c/i2c.c:63: 		I2C1->DR = dev_adr; 										// transfer address
+ 327 0014 84B2     		uxth	r4, r0	@ _8, dev_adr
+ 328              	@ inc/i2c/i2c.c:65: 		while( !( I2C1->SR1 & I2C_SR1_ADDR ));
+ 329 0016 204D     		ldr	r5, .L66	@ tmp220,
+ 330              	@ inc/i2c/i2c.c:63: 		I2C1->DR = dev_adr; 										// transfer address
+ 331 0018 3482     		strh	r4, [r6, #16]	@ movhi	@ _8, MEM[(struct I2C_TypeDef *)1073763328B].DR
+ 332              	.L37:
+ 333              	@ inc/i2c/i2c.c:65: 		while( !( I2C1->SR1 & I2C_SR1_ADDR ));
+ 334 001a AC8A     		ldrh	r4, [r5, #20]	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1
+ 335 001c A407     		lsls	r4, r4, #30	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1,
+ 336 001e FCD5     		bpl	.L37	@,
+ 337              	@ inc/i2c/i2c.c:67: 		dummy = I2C1->SR2;							// clear the flag
+ 338 0020 2C8B     		ldrh	r4, [r5, #24]	@, MEM[(struct I2C_TypeDef *)1073763328B].SR2
+ 339              	@ inc/i2c/i2c.c:69: 		while( !( I2C1->SR1 & I2C_SR1_TXE ));
+ 340 0022 1D4D     		ldr	r5, .L66	@ tmp229,
+ 341              	.L38:
+ 342              	@ inc/i2c/i2c.c:69: 		while( !( I2C1->SR1 & I2C_SR1_TXE ));
+ARM GAS  /tmp/cc9qFhFg.s 			page 7
+
+
+ 343 0024 AC8A     		ldrh	r4, [r5, #20]	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1
+ 344 0026 2606     		lsls	r6, r4, #24	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1,
+ 345 0028 FCD5     		bpl	.L38	@,
+ 346              	@ inc/i2c/i2c.c:71: 		I2C1->DR = reg_adres;
+ 347 002a 89B2     		uxth	r1, r1	@ _15, reg_adres
+ 348              	@ inc/i2c/i2c.c:73: 		while( !( I2C1->SR1 & I2C_SR1_BTF ));
+ 349 002c 1A4C     		ldr	r4, .L66	@ tmp237,
+ 350              	@ inc/i2c/i2c.c:71: 		I2C1->DR = reg_adres;
+ 351 002e 2982     		strh	r1, [r5, #16]	@ movhi	@ _15, MEM[(struct I2C_TypeDef *)1073763328B].DR
+ 352              	.L39:
+ 353              	@ inc/i2c/i2c.c:73: 		while( !( I2C1->SR1 & I2C_SR1_BTF ));
+ 354 0030 A18A     		ldrh	r1, [r4, #20]	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1
+ 355 0032 4D07     		lsls	r5, r1, #29	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1,
+ 356 0034 FCD5     		bpl	.L39	@,
+ 357              	@ inc/i2c/i2c.c:75: 		I2C1->CR1 |= I2C_CR1_START;
+ 358 0036 2188     		ldrh	r1, [r4]	@, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 359              	@ inc/i2c/i2c.c:77: 		while( !( I2C1->SR1 & I2C_SR1_SB ));
+ 360 0038 174D     		ldr	r5, .L66	@ tmp248,
+ 361              	@ inc/i2c/i2c.c:75: 		I2C1->CR1 |= I2C_CR1_START;
+ 362 003a 41F48071 		orr	r1, r1, #256	@ _18, MEM[(struct I2C_TypeDef *)1073763328B].CR1,
+ 363 003e 2180     		strh	r1, [r4]	@ movhi	@ _18, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 364              	.L40:
+ 365              	@ inc/i2c/i2c.c:77: 		while( !( I2C1->SR1 & I2C_SR1_SB ));
+ 366 0040 A98A     		ldrh	r1, [r5, #20]	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1
+ 367 0042 CC07     		lsls	r4, r1, #31	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1,
+ 368 0044 FCD5     		bpl	.L40	@,
+ 369              	@ inc/i2c/i2c.c:79: 		I2C1->DR = dev_adr | 0x01;
+ 370 0046 40F00100 		orr	r0, r0, #1	@ _21, dev_adr,
+ 371              	@ inc/i2c/i2c.c:81: 		while( !( I2C1->SR1 & I2C_SR1_ADDR ));
+ 372 004a 134C     		ldr	r4, .L66	@ tmp259,
+ 373              	@ inc/i2c/i2c.c:79: 		I2C1->DR = dev_adr | 0x01;
+ 374 004c 2882     		strh	r0, [r5, #16]	@ movhi	@ _21, MEM[(struct I2C_TypeDef *)1073763328B].DR
+ 375              	.L41:
+ 376              	@ inc/i2c/i2c.c:81: 		while( !( I2C1->SR1 & I2C_SR1_ADDR ));
+ 377 004e A18A     		ldrh	r1, [r4, #20]	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1
+ 378 0050 8807     		lsls	r0, r1, #30	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1,
+ 379 0052 FCD5     		bpl	.L41	@,
+ 380              	@ inc/i2c/i2c.c:83: 		dummy = I2C1->SR2;
+ 381 0054 218B     		ldrh	r1, [r4, #24]	@, MEM[(struct I2C_TypeDef *)1073763328B].SR2
+ 382              	@ inc/i2c/i2c.c:85: 		I2C1->CR1 |= I2C_CR1_ACK;
+ 383 0056 2188     		ldrh	r1, [r4]	@, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 384 0058 41F48061 		orr	r1, r1, #1024	@ _26, MEM[(struct I2C_TypeDef *)1073763328B].CR1,
+ 385 005c 2180     		strh	r1, [r4]	@ movhi	@ _26, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 386              	@ inc/i2c/i2c.c:87: 		while( len )
+ 387 005e 6BB1     		cbz	r3, .L42	@ len,
+ 388              	@ inc/i2c/i2c.c:89: 			if( len == 1 ) I2C1->CR1 &= ~I2C_CR1_ACK;
+ 389 0060 0D48     		ldr	r0, .L66	@ tmp294,
+ 390 0062 013A     		subs	r2, r2, #1	@ ivtmp.49, dane,
+ 391              	.L45:
+ 392 0064 012B     		cmp	r3, #1	@ len,
+ 393 0066 10D0     		beq	.L65	@,
+ 394              	.L44:
+ 395              	@ inc/i2c/i2c.c:90: 			while( !( I2C1->SR1 & I2C_SR1_RXNE ));
+ 396 0068 818A     		ldrh	r1, [r0, #20]	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1
+ 397 006a 4906     		lsls	r1, r1, #25	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1,
+ 398 006c FCD5     		bpl	.L44	@,
+ 399              	@ inc/i2c/i2c.c:91: 			*( dane++ ) = I2C1->DR;
+ARM GAS  /tmp/cc9qFhFg.s 			page 8
+
+
+ 400 006e 018A     		ldrh	r1, [r0, #16]	@, MEM[(struct I2C_TypeDef *)1073763328B].DR
+ 401              	@ inc/i2c/i2c.c:92: 		 len--;
+ 402 0070 013B     		subs	r3, r3, #1	@ tmp288, len,
+ 403              	@ inc/i2c/i2c.c:87: 		while( len )
+ 404 0072 13F0FF03 		ands	r3, r3, #255	@ len, tmp288,
+ 405              	@ inc/i2c/i2c.c:91: 			*( dane++ ) = I2C1->DR;
+ 406 0076 02F8011F 		strb	r1, [r2, #1]!	@ MEM[(struct I2C_TypeDef *)1073763328B].DR, MEM[base: _57, offset: 0B]
+ 407              	@ inc/i2c/i2c.c:87: 		while( len )
+ 408 007a F3D1     		bne	.L45	@,
+ 409              	.L42:
+ 410              	@ inc/i2c/i2c.c:95: 	}
+ 411 007c 70BC     		pop	{r4, r5, r6}	@
+ 412              	@ inc/i2c/i2c.c:94: 		I2C1->CR1 |= I2C_CR1_STOP;
+ 413 007e 064A     		ldr	r2, .L66	@ tmp289,
+ 414 0080 1388     		ldrh	r3, [r2]	@, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 415 0082 43F40073 		orr	r3, r3, #512	@ _33, MEM[(struct I2C_TypeDef *)1073763328B].CR1,
+ 416 0086 1380     		strh	r3, [r2]	@ movhi	@ _33, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 417              	@ inc/i2c/i2c.c:95: 	}
+ 418 0088 7047     		bx	lr	@
+ 419              	.L65:
+ 420              	@ inc/i2c/i2c.c:89: 			if( len == 1 ) I2C1->CR1 &= ~I2C_CR1_ACK;
+ 421 008a 0188     		ldrh	r1, [r0]	@, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 422 008c 21F48061 		bic	r1, r1, #1024	@ _28, MEM[(struct I2C_TypeDef *)1073763328B].CR1,
+ 423 0090 0904     		lsls	r1, r1, #16	@ _28, _28,
+ 424 0092 090C     		lsrs	r1, r1, #16	@ _28, _28,
+ 425 0094 0180     		strh	r1, [r0]	@ movhi	@ _28, MEM[(struct I2C_TypeDef *)1073763328B].CR1
+ 426 0096 E7E7     		b	.L44	@
+ 427              	.L67:
+ 428              		.align	2
+ 429              	.L66:
+ 430 0098 00540040 		.word	1073763328
+ 431              		.size	i2c1_read, .-i2c1_read
+ 432              		.section	.text.i2c2_init,"ax",%progbits
+ 433              		.align	1
+ 434              		.p2align 2,,3
+ 435              		.global	i2c2_init
+ 436              		.syntax unified
+ 437              		.thumb
+ 438              		.thumb_func
+ 439              		.fpu softvfp
+ 440              		.type	i2c2_init, %function
+ 441              	i2c2_init:
+ 442              		@ args = 0, pretend = 0, frame = 0
+ 443              		@ frame_needed = 0, uses_anonymous_args = 0
+ 444              		@ link register save eliminated.
+ 445 0000 F0B4     		push	{r4, r5, r6, r7}	@
+ 446              	@ inc/i2c/i2c.c:103: 		RCC_APB1ENR_I2C2EN_bb = 1;         	// enable clock for I2C2 module
+ 447 0002 0122     		movs	r2, #1	@ tmp117,
+ 448              	@ inc/i2c/i2c.c:105: 		I2C2_CR1_SWRST_bb = 0;
+ 449 0004 0027     		movs	r7, #0	@ tmp121,
+ 450              	@ inc/i2c/i2c.c:106: 		I2C2->TRISE = 37;               		// limit slope
+ 451 0006 2526     		movs	r6, #37	@ tmp124,
+ 452              	@ inc/i2c/i2c.c:107: 		I2C2->CCR = (1<<15)|(F_CPU/(8*100000));               			// setup speed (100
+ 453 0008 48F25A05 		movw	r5, #32858	@ tmp127,
+ 454              	@ inc/i2c/i2c.c:108: 		I2C2->CCR = 178;               			// setup speed (100kHz)
+ 455 000c B224     		movs	r4, #178	@ tmp130,
+ 456              	@ inc/i2c/i2c.c:109: 		I2C2->CR2 = I2C_CR2_FREQ_36MHz;     // config I2C2 module
+ARM GAS  /tmp/cc9qFhFg.s 			page 9
+
+
+ 457 000e 2420     		movs	r0, #36	@ tmp133,
+ 458              	@ inc/i2c/i2c.c:101: 		GPIOB->CRH = (GPIOB->CRH & 0xffff00ff) | 0x0000ea00;	// PB10=SCL(Push-pull),
+ 459 0010 0A49     		ldr	r1, .L70	@ tmp113,
+ 460 0012 4B68     		ldr	r3, [r1, #4]	@ _1, MEM[(struct GPIO_TypeDef *)1073810432B].CRH
+ 461 0014 23F47F43 		bic	r3, r3, #65280	@ tmp114, _1,
+ 462 0018 43F46A43 		orr	r3, r3, #59904	@ _3, tmp114,
+ 463 001c 4B60     		str	r3, [r1, #4]	@ _3, MEM[(struct GPIO_TypeDef *)1073810432B].CRH
+ 464              	@ inc/i2c/i2c.c:104: 		I2C2_CR1_SWRST_bb = 1;            	// force software reset of I2C peripheral
+ 465 001e 084B     		ldr	r3, .L70+4	@ tmp118,
+ 466              	@ inc/i2c/i2c.c:103: 		RCC_APB1ENR_I2C2EN_bb = 1;         	// enable clock for I2C2 module
+ 467 0020 0849     		ldr	r1, .L70+8	@ tmp116,
+ 468 0022 0A60     		str	r2, [r1]	@ tmp117, MEM[(volatile long unsigned int *)1111622616B]
+ 469              	@ inc/i2c/i2c.c:104: 		I2C2_CR1_SWRST_bb = 1;            	// force software reset of I2C peripheral
+ 470 0024 1A60     		str	r2, [r3]	@ tmp117, MEM[(volatile long unsigned int *)1108017212B]
+ 471              	@ inc/i2c/i2c.c:110: 		I2C2_CR1_PE_bb = 1;               	// enable peripheral
+ 472 0026 0849     		ldr	r1, .L70+12	@ tmp134,
+ 473              	@ inc/i2c/i2c.c:105: 		I2C2_CR1_SWRST_bb = 0;
+ 474 0028 1F60     		str	r7, [r3]	@ tmp121, MEM[(volatile long unsigned int *)1108017212B]
+ 475              	@ inc/i2c/i2c.c:106: 		I2C2->TRISE = 37;               		// limit slope
+ 476 002a 084B     		ldr	r3, .L70+16	@ tmp122,
+ 477 002c 1E84     		strh	r6, [r3, #32]	@ movhi	@ tmp124, MEM[(struct I2C_TypeDef *)1073764352B].TRISE
+ 478              	@ inc/i2c/i2c.c:107: 		I2C2->CCR = (1<<15)|(F_CPU/(8*100000));               			// setup speed (100
+ 479 002e 9D83     		strh	r5, [r3, #28]	@ movhi	@ tmp127, MEM[(struct I2C_TypeDef *)1073764352B].CCR
+ 480              	@ inc/i2c/i2c.c:108: 		I2C2->CCR = 178;               			// setup speed (100kHz)
+ 481 0030 9C83     		strh	r4, [r3, #28]	@ movhi	@ tmp130, MEM[(struct I2C_TypeDef *)1073764352B].CCR
+ 482              	@ inc/i2c/i2c.c:109: 		I2C2->CR2 = I2C_CR2_FREQ_36MHz;     // config I2C2 module
+ 483 0032 9880     		strh	r0, [r3, #4]	@ movhi	@ tmp133, MEM[(struct I2C_TypeDef *)1073764352B].CR2
+ 484              	@ inc/i2c/i2c.c:111: 	}
+ 485 0034 F0BC     		pop	{r4, r5, r6, r7}	@
+ 486              	@ inc/i2c/i2c.c:110: 		I2C2_CR1_PE_bb = 1;               	// enable peripheral
+ 487 0036 0A60     		str	r2, [r1]	@ tmp117, MEM[(volatile long unsigned int *)1108017152B]
+ 488              	@ inc/i2c/i2c.c:111: 	}
+ 489 0038 7047     		bx	lr	@
+ 490              	.L71:
+ 491 003a 00BF     		.align	2
+ 492              	.L70:
+ 493 003c 000C0140 		.word	1073810432
+ 494 0040 3C000B42 		.word	1108017212
+ 495 0044 D8034242 		.word	1111622616
+ 496 0048 00000B42 		.word	1108017152
+ 497 004c 00580040 		.word	1073764352
+ 498              		.size	i2c2_init, .-i2c2_init
+ 499              		.section	.text.i2c2_write,"ax",%progbits
+ 500              		.align	1
+ 501              		.p2align 2,,3
+ 502              		.global	i2c2_write
+ 503              		.syntax unified
+ 504              		.thumb
+ 505              		.thumb_func
+ 506              		.fpu softvfp
+ 507              		.type	i2c2_write, %function
+ 508              	i2c2_write:
+ 509              		@ args = 0, pretend = 0, frame = 0
+ 510              		@ frame_needed = 0, uses_anonymous_args = 0
+ 511              		@ link register save eliminated.
+ 512 0000 30B4     		push	{r4, r5}	@
+ 513              	@ inc/i2c/i2c.c:117: 		I2C2_CR1_START_bb = 1;				// request a start
+ARM GAS  /tmp/cc9qFhFg.s 			page 10
+
+
+ 514 0002 0125     		movs	r5, #1	@ tmp126,
+ 515 0004 144B     		ldr	r3, .L95	@ tmp125,
+ 516              	@ inc/i2c/i2c.c:118: 		while (I2C2_SR1_SB_bb == 0);	// wait for start to finish
+ 517 0006 154C     		ldr	r4, .L95+4	@ tmp127,
+ 518              	@ inc/i2c/i2c.c:117: 		I2C2_CR1_START_bb = 1;				// request a start
+ 519 0008 1D60     		str	r5, [r3]	@ tmp126, MEM[(volatile long unsigned int *)1108017184B]
+ 520              	.L73:
+ 521              	@ inc/i2c/i2c.c:118: 		while (I2C2_SR1_SB_bb == 0);	// wait for start to finish
+ 522 000a 2368     		ldr	r3, [r4]	@ _1, MEM[(volatile long unsigned int *)1108017792B]
+ 523 000c 002B     		cmp	r3, #0	@ _1
+ 524 000e FCD0     		beq	.L73	@
+ 525              	@ inc/i2c/i2c.c:119: 		dummy = I2C2->SR1;						// read of SR1 clears the flag
+ 526 0010 134B     		ldr	r3, .L95+8	@ tmp128,
+ 527              	@ inc/i2c/i2c.c:120: 		I2C2->DR = dev_adr;						// transfer address
+ 528 0012 80B2     		uxth	r0, r0	@ _4, dev_adr
+ 529              	@ inc/i2c/i2c.c:122: 		while (I2C2_SR1_ADDR_bb == 0);// wait for address transfer
+ 530 0014 134C     		ldr	r4, .L95+12	@ tmp133,
+ 531              	@ inc/i2c/i2c.c:119: 		dummy = I2C2->SR1;						// read of SR1 clears the flag
+ 532 0016 9D8A     		ldrh	r5, [r3, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 533              	@ inc/i2c/i2c.c:120: 		I2C2->DR = dev_adr;						// transfer address
+ 534 0018 1882     		strh	r0, [r3, #16]	@ movhi	@ _4, MEM[(struct I2C_TypeDef *)1073764352B].DR
+ 535              	.L74:
+ 536              	@ inc/i2c/i2c.c:122: 		while (I2C2_SR1_ADDR_bb == 0);// wait for address transfer
+ 537 001a 2368     		ldr	r3, [r4]	@ _5, MEM[(volatile long unsigned int *)1108017796B]
+ 538 001c 002B     		cmp	r3, #0	@ _5
+ 539 001e FCD0     		beq	.L74	@
+ 540              	@ inc/i2c/i2c.c:123: 		dummy = I2C2->SR1;						// clear the flag
+ 541 0020 0F4C     		ldr	r4, .L95+8	@ tmp134,
+ 542 0022 A38A     		ldrh	r3, [r4, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 543              	@ inc/i2c/i2c.c:124: 		dummy = I2C2->SR2;						// clear the flag
+ 544 0024 238B     		ldrh	r3, [r4, #24]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR2
+ 545              	@ inc/i2c/i2c.c:126: 		while (length--)						// transfer whole block
+ 546 0026 4AB1     		cbz	r2, .L75	@ length,
+ 547              	@ inc/i2c/i2c.c:128: 			while (I2C2_SR1_TxE_bb == 0);		// wait for DR empty
+ 548 0028 0F48     		ldr	r0, .L95+16	@ tmp140,
+ 549 002a 0A44     		add	r2, r2, r1	@ _30, data
+ 550              	.L76:
+ 551              	@ inc/i2c/i2c.c:128: 			while (I2C2_SR1_TxE_bb == 0);		// wait for DR empty
+ 552 002c 0368     		ldr	r3, [r0]	@ _9, MEM[(volatile long unsigned int *)1108017820B]
+ 553 002e 002B     		cmp	r3, #0	@ _9
+ 554 0030 FCD0     		beq	.L76	@
+ 555              	@ inc/i2c/i2c.c:129: 			I2C2->DR = *data++;							// trsnsfer one byte, increment pointer
+ 556 0032 11F8013B 		ldrb	r3, [r1], #1	@ zero_extendqisi2	@ _11, MEM[base: data_27, offset: 4294967295B]
+ 557              	@ inc/i2c/i2c.c:126: 		while (length--)						// transfer whole block
+ 558 0036 9142     		cmp	r1, r2	@ data, _30
+ 559              	@ inc/i2c/i2c.c:129: 			I2C2->DR = *data++;							// trsnsfer one byte, increment pointer
+ 560 0038 2382     		strh	r3, [r4, #16]	@ movhi	@ _11, MEM[(struct I2C_TypeDef *)1073764352B].DR
+ 561              	@ inc/i2c/i2c.c:126: 		while (length--)						// transfer whole block
+ 562 003a F7D1     		bne	.L76	@,
+ 563              	.L75:
+ 564              	@ inc/i2c/i2c.c:132: 		while (I2C2_SR1_TxE_bb == 0 || I2C2_SR1_BTF_bb == 1);	// wait for bus not-bu
+ 565 003c 0A4A     		ldr	r2, .L95+16	@ tmp145,
+ 566 003e 0B49     		ldr	r1, .L95+20	@ tmp146,
+ 567              	.L78:
+ 568              	@ inc/i2c/i2c.c:132: 		while (I2C2_SR1_TxE_bb == 0 || I2C2_SR1_BTF_bb == 1);	// wait for bus not-bu
+ 569 0040 1368     		ldr	r3, [r2]	@ _12, MEM[(volatile long unsigned int *)1108017820B]
+ 570 0042 002B     		cmp	r3, #0	@ _12
+ARM GAS  /tmp/cc9qFhFg.s 			page 11
+
+
+ 571 0044 FCD0     		beq	.L78	@
+ 572              	@ inc/i2c/i2c.c:132: 		while (I2C2_SR1_TxE_bb == 0 || I2C2_SR1_BTF_bb == 1);	// wait for bus not-bu
+ 573 0046 0B68     		ldr	r3, [r1]	@ _13, MEM[(volatile long unsigned int *)1108017800B]
+ 574 0048 012B     		cmp	r3, #1	@ _13,
+ 575 004a F9D0     		beq	.L78	@,
+ 576              	@ inc/i2c/i2c.c:134: 	}
+ 577 004c 30BC     		pop	{r4, r5}	@
+ 578              	@ inc/i2c/i2c.c:133: 		I2C2_CR1_STOP_bb = 1;					// request a stop
+ 579 004e 0122     		movs	r2, #1	@ tmp148,
+ 580 0050 074B     		ldr	r3, .L95+24	@ tmp147,
+ 581 0052 1A60     		str	r2, [r3]	@ tmp148, MEM[(volatile long unsigned int *)1108017188B]
+ 582              	@ inc/i2c/i2c.c:134: 	}
+ 583 0054 7047     		bx	lr	@
+ 584              	.L96:
+ 585 0056 00BF     		.align	2
+ 586              	.L95:
+ 587 0058 20000B42 		.word	1108017184
+ 588 005c 80020B42 		.word	1108017792
+ 589 0060 00580040 		.word	1073764352
+ 590 0064 84020B42 		.word	1108017796
+ 591 0068 9C020B42 		.word	1108017820
+ 592 006c 88020B42 		.word	1108017800
+ 593 0070 24000B42 		.word	1108017188
+ 594              		.size	i2c2_write, .-i2c2_write
+ 595              		.section	.text.i2c2_read,"ax",%progbits
+ 596              		.align	1
+ 597              		.p2align 2,,3
+ 598              		.global	i2c2_read
+ 599              		.syntax unified
+ 600              		.thumb
+ 601              		.thumb_func
+ 602              		.fpu softvfp
+ 603              		.type	i2c2_read, %function
+ 604              	i2c2_read:
+ 605              		@ args = 0, pretend = 0, frame = 0
+ 606              		@ frame_needed = 0, uses_anonymous_args = 0
+ 607              		@ link register save eliminated.
+ 608 0000 70B4     		push	{r4, r5, r6}	@
+ 609              	@ inc/i2c/i2c.c:143: 		I2C2->CR1 |= I2C_CR1_START;						// request a start
+ 610 0002 254C     		ldr	r4, .L128	@ tmp207,
+ 611              	@ inc/i2c/i2c.c:144: 		while( !( I2C2->SR1 & I2C_SR1_SB ));	// wait for start to finish (read of SR
+ 612 0004 2646     		mov	r6, r4	@ tmp212, tmp207
+ 613              	@ inc/i2c/i2c.c:143: 		I2C2->CR1 |= I2C_CR1_START;						// request a start
+ 614 0006 2588     		ldrh	r5, [r4]	@, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 615 0008 45F48075 		orr	r5, r5, #256	@ _4, MEM[(struct I2C_TypeDef *)1073764352B].CR1,
+ 616 000c 2580     		strh	r5, [r4]	@ movhi	@ _4, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 617              	.L98:
+ 618              	@ inc/i2c/i2c.c:144: 		while( !( I2C2->SR1 & I2C_SR1_SB ));	// wait for start to finish (read of SR
+ 619 000e B48A     		ldrh	r4, [r6, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 620 0010 E507     		lsls	r5, r4, #31	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1,
+ 621 0012 FCD5     		bpl	.L98	@,
+ 622              	@ inc/i2c/i2c.c:145: 		I2C2->DR = dev_adr; 										// transfer address
+ 623 0014 84B2     		uxth	r4, r0	@ _8, dev_adr
+ 624              	@ inc/i2c/i2c.c:147: 		while( !( I2C2->SR1 & I2C_SR1_ADDR ));
+ 625 0016 204D     		ldr	r5, .L128	@ tmp220,
+ 626              	@ inc/i2c/i2c.c:145: 		I2C2->DR = dev_adr; 										// transfer address
+ 627 0018 3482     		strh	r4, [r6, #16]	@ movhi	@ _8, MEM[(struct I2C_TypeDef *)1073764352B].DR
+ARM GAS  /tmp/cc9qFhFg.s 			page 12
+
+
+ 628              	.L99:
+ 629              	@ inc/i2c/i2c.c:147: 		while( !( I2C2->SR1 & I2C_SR1_ADDR ));
+ 630 001a AC8A     		ldrh	r4, [r5, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 631 001c A407     		lsls	r4, r4, #30	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1,
+ 632 001e FCD5     		bpl	.L99	@,
+ 633              	@ inc/i2c/i2c.c:149: 		dummy = I2C2->SR2;							// clear the flag
+ 634 0020 2C8B     		ldrh	r4, [r5, #24]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR2
+ 635              	@ inc/i2c/i2c.c:151: 		while( !( I2C2->SR1 & I2C_SR1_TXE ));
+ 636 0022 1D4D     		ldr	r5, .L128	@ tmp229,
+ 637              	.L100:
+ 638              	@ inc/i2c/i2c.c:151: 		while( !( I2C2->SR1 & I2C_SR1_TXE ));
+ 639 0024 AC8A     		ldrh	r4, [r5, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 640 0026 2606     		lsls	r6, r4, #24	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1,
+ 641 0028 FCD5     		bpl	.L100	@,
+ 642              	@ inc/i2c/i2c.c:153: 		I2C2->DR = reg_adres;
+ 643 002a 89B2     		uxth	r1, r1	@ _15, reg_adres
+ 644              	@ inc/i2c/i2c.c:155: 		while( !( I2C2->SR1 & I2C_SR1_BTF ));
+ 645 002c 1A4C     		ldr	r4, .L128	@ tmp237,
+ 646              	@ inc/i2c/i2c.c:153: 		I2C2->DR = reg_adres;
+ 647 002e 2982     		strh	r1, [r5, #16]	@ movhi	@ _15, MEM[(struct I2C_TypeDef *)1073764352B].DR
+ 648              	.L101:
+ 649              	@ inc/i2c/i2c.c:155: 		while( !( I2C2->SR1 & I2C_SR1_BTF ));
+ 650 0030 A18A     		ldrh	r1, [r4, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 651 0032 4D07     		lsls	r5, r1, #29	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1,
+ 652 0034 FCD5     		bpl	.L101	@,
+ 653              	@ inc/i2c/i2c.c:157: 		I2C2->CR1 |= I2C_CR1_START;
+ 654 0036 2188     		ldrh	r1, [r4]	@, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 655              	@ inc/i2c/i2c.c:159: 		while( !( I2C2->SR1 & I2C_SR1_SB ));
+ 656 0038 174D     		ldr	r5, .L128	@ tmp248,
+ 657              	@ inc/i2c/i2c.c:157: 		I2C2->CR1 |= I2C_CR1_START;
+ 658 003a 41F48071 		orr	r1, r1, #256	@ _18, MEM[(struct I2C_TypeDef *)1073764352B].CR1,
+ 659 003e 2180     		strh	r1, [r4]	@ movhi	@ _18, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 660              	.L102:
+ 661              	@ inc/i2c/i2c.c:159: 		while( !( I2C2->SR1 & I2C_SR1_SB ));
+ 662 0040 A98A     		ldrh	r1, [r5, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 663 0042 CC07     		lsls	r4, r1, #31	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1,
+ 664 0044 FCD5     		bpl	.L102	@,
+ 665              	@ inc/i2c/i2c.c:161: 		I2C2->DR = dev_adr | 0x01;
+ 666 0046 40F00100 		orr	r0, r0, #1	@ _21, dev_adr,
+ 667              	@ inc/i2c/i2c.c:163: 		while( !( I2C2->SR1 & I2C_SR1_ADDR ));
+ 668 004a 134C     		ldr	r4, .L128	@ tmp259,
+ 669              	@ inc/i2c/i2c.c:161: 		I2C2->DR = dev_adr | 0x01;
+ 670 004c 2882     		strh	r0, [r5, #16]	@ movhi	@ _21, MEM[(struct I2C_TypeDef *)1073764352B].DR
+ 671              	.L103:
+ 672              	@ inc/i2c/i2c.c:163: 		while( !( I2C2->SR1 & I2C_SR1_ADDR ));
+ 673 004e A18A     		ldrh	r1, [r4, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 674 0050 8807     		lsls	r0, r1, #30	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1,
+ 675 0052 FCD5     		bpl	.L103	@,
+ 676              	@ inc/i2c/i2c.c:165: 		dummy = I2C2->SR2;
+ 677 0054 218B     		ldrh	r1, [r4, #24]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR2
+ 678              	@ inc/i2c/i2c.c:167: 		I2C2->CR1 |= I2C_CR1_ACK;
+ 679 0056 2188     		ldrh	r1, [r4]	@, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 680 0058 41F48061 		orr	r1, r1, #1024	@ _26, MEM[(struct I2C_TypeDef *)1073764352B].CR1,
+ 681 005c 2180     		strh	r1, [r4]	@ movhi	@ _26, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 682              	@ inc/i2c/i2c.c:169: 		while( len )
+ 683 005e 6BB1     		cbz	r3, .L104	@ len,
+ 684              	@ inc/i2c/i2c.c:171: 			if( len == 1 ) I2C2->CR1 &= ~I2C_CR1_ACK;
+ARM GAS  /tmp/cc9qFhFg.s 			page 13
+
+
+ 685 0060 0D48     		ldr	r0, .L128	@ tmp294,
+ 686 0062 013A     		subs	r2, r2, #1	@ ivtmp.72, dane,
+ 687              	.L107:
+ 688 0064 012B     		cmp	r3, #1	@ len,
+ 689 0066 10D0     		beq	.L127	@,
+ 690              	.L106:
+ 691              	@ inc/i2c/i2c.c:172: 			while( !( I2C2->SR1 & I2C_SR1_RXNE ));
+ 692 0068 818A     		ldrh	r1, [r0, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 693 006a 4906     		lsls	r1, r1, #25	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1,
+ 694 006c FCD5     		bpl	.L106	@,
+ 695              	@ inc/i2c/i2c.c:173: 			*( dane++ ) = I2C2->DR;
+ 696 006e 018A     		ldrh	r1, [r0, #16]	@, MEM[(struct I2C_TypeDef *)1073764352B].DR
+ 697              	@ inc/i2c/i2c.c:174: 		 len--;
+ 698 0070 013B     		subs	r3, r3, #1	@ tmp288, len,
+ 699              	@ inc/i2c/i2c.c:169: 		while( len )
+ 700 0072 13F0FF03 		ands	r3, r3, #255	@ len, tmp288,
+ 701              	@ inc/i2c/i2c.c:173: 			*( dane++ ) = I2C2->DR;
+ 702 0076 02F8011F 		strb	r1, [r2, #1]!	@ MEM[(struct I2C_TypeDef *)1073764352B].DR, MEM[base: _57, offset: 0B]
+ 703              	@ inc/i2c/i2c.c:169: 		while( len )
+ 704 007a F3D1     		bne	.L107	@,
+ 705              	.L104:
+ 706              	@ inc/i2c/i2c.c:177: 	}
+ 707 007c 70BC     		pop	{r4, r5, r6}	@
+ 708              	@ inc/i2c/i2c.c:176: 		I2C2->CR1 |= I2C_CR1_STOP;
+ 709 007e 064A     		ldr	r2, .L128	@ tmp289,
+ 710 0080 1388     		ldrh	r3, [r2]	@, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 711 0082 43F40073 		orr	r3, r3, #512	@ _33, MEM[(struct I2C_TypeDef *)1073764352B].CR1,
+ 712 0086 1380     		strh	r3, [r2]	@ movhi	@ _33, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 713              	@ inc/i2c/i2c.c:177: 	}
+ 714 0088 7047     		bx	lr	@
+ 715              	.L127:
+ 716              	@ inc/i2c/i2c.c:171: 			if( len == 1 ) I2C2->CR1 &= ~I2C_CR1_ACK;
+ 717 008a 0188     		ldrh	r1, [r0]	@, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 718 008c 21F48061 		bic	r1, r1, #1024	@ _28, MEM[(struct I2C_TypeDef *)1073764352B].CR1,
+ 719 0090 0904     		lsls	r1, r1, #16	@ _28, _28,
+ 720 0092 090C     		lsrs	r1, r1, #16	@ _28, _28,
+ 721 0094 0180     		strh	r1, [r0]	@ movhi	@ _28, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 722 0096 E7E7     		b	.L106	@
+ 723              	.L129:
+ 724              		.align	2
+ 725              	.L128:
+ 726 0098 00580040 		.word	1073764352
+ 727              		.size	i2c2_read, .-i2c2_read
+ 728              		.section	.text.i2c2_scan,"ax",%progbits
+ 729              		.align	1
+ 730              		.p2align 2,,3
+ 731              		.global	i2c2_scan
+ 732              		.syntax unified
+ 733              		.thumb
+ 734              		.thumb_func
+ 735              		.fpu softvfp
+ 736              		.type	i2c2_scan, %function
+ 737              	i2c2_scan:
+ 738              		@ args = 0, pretend = 0, frame = 0
+ 739              		@ frame_needed = 0, uses_anonymous_args = 0
+ 740 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}	@
+ 741              	@ inc/i2c/i2c.c:193: 		I2C2->CR2     = 0;
+ARM GAS  /tmp/cc9qFhFg.s 			page 14
+
+
+ 742 0004 4FF0000E 		mov	lr, #0	@ tmp152,
+ 743              	@ inc/i2c/i2c.c:192: 		I2C2->TRISE   = 37;               		// limit slope
+ 744 0008 2525     		movs	r5, #37	@ tmp149,
+ 745              	@ inc/i2c/i2c.c:194: 		I2C2->CCR     = (F_CPU/(4*100000));   // setup speed (100kHz)
+ 746 000a B424     		movs	r4, #180	@ tmp155,
+ 747              	@ inc/i2c/i2c.c:191: 		I2C2->CR1    &= ~I2C_CR1_PE;					// I2C2 Pheripherial enable
+ 748 000c 244B     		ldr	r3, .L147	@ tmp142,
+ 749              	@ inc/i2c/i2c.c:178: void i2c2_scan(u08 * buf_adr, u08 * c_adr){
+ 750 000e 8146     		mov	r9, r0	@ buf_adr, buf_adr
+ 751              	@ inc/i2c/i2c.c:203: 			I2C2_CR1_START_bb = 1;				// request a start
+ 752 0010 0120     		movs	r0, #1	@ MEM[(volatile long unsigned int *)1108017184B],
+ 753              	@ inc/i2c/i2c.c:205: 			dummy = I2C2->SR1;						// read of SR1 clears the flag
+ 754 0012 9C46     		mov	ip, r3	@ tmp166, tmp142
+ 755              	@ inc/i2c/i2c.c:199: 		*c_adr = 0;
+ 756 0014 7746     		mov	r7, lr	@ ivtmp.76, tmp152
+ 757              	@ inc/i2c/i2c.c:186: 		GPIOB->CRH    = (GPIOB->CRH & 0xffff00ff) | 0x0000d900;	// SDA (Alternate Op
+ 758 0016 234E     		ldr	r6, .L147+4	@ tmp137,
+ 759              	@ inc/i2c/i2c.c:203: 			I2C2_CR1_START_bb = 1;				// request a start
+ 760 0018 DFF89880 		ldr	r8, .L147+20	@ tmp163,
+ 761              	@ inc/i2c/i2c.c:186: 		GPIOB->CRH    = (GPIOB->CRH & 0xffff00ff) | 0x0000d900;	// SDA (Alternate Op
+ 762 001c 7268     		ldr	r2, [r6, #4]	@ _1, MEM[(struct GPIO_TypeDef *)1073810432B].CRH
+ 763 001e 22F47F42 		bic	r2, r2, #65280	@ tmp138, _1,
+ 764 0022 42F45942 		orr	r2, r2, #55552	@ _3, tmp138,
+ 765 0026 7260     		str	r2, [r6, #4]	@ _3, MEM[(struct GPIO_TypeDef *)1073810432B].CRH
+ 766              	@ inc/i2c/i2c.c:187: 		RCC->APB1ENR |= RCC_APB1ENR_I2C2EN;
+ 767 0028 06F58236 		add	r6, r6, #66560	@ tmp140, tmp140,
+ 768 002c F269     		ldr	r2, [r6, #28]	@ _4, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ 769 002e 42F48002 		orr	r2, r2, #4194304	@ _5, _4,
+ 770 0032 F261     		str	r2, [r6, #28]	@ _5, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
+ 771              	@ inc/i2c/i2c.c:191: 		I2C2->CR1    &= ~I2C_CR1_PE;					// I2C2 Pheripherial enable
+ 772 0034 1A88     		ldrh	r2, [r3]	@, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 773              	@ inc/i2c/i2c.c:204: 			while (I2C2_SR1_SB_bb == 0);	// wait for start to finish
+ 774 0036 1C4E     		ldr	r6, .L147+8	@ tmp165,
+ 775              	@ inc/i2c/i2c.c:191: 		I2C2->CR1    &= ~I2C_CR1_PE;					// I2C2 Pheripherial enable
+ 776 0038 22F00102 		bic	r2, r2, #1	@ _7, MEM[(struct I2C_TypeDef *)1073764352B].CR1,
+ 777 003c 1204     		lsls	r2, r2, #16	@ _7, _7,
+ 778 003e 120C     		lsrs	r2, r2, #16	@ _7, _7,
+ 779 0040 1A80     		strh	r2, [r3]	@ movhi	@ _7, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 780              	@ inc/i2c/i2c.c:192: 		I2C2->TRISE   = 37;               		// limit slope
+ 781 0042 1D84     		strh	r5, [r3, #32]	@ movhi	@ tmp149, MEM[(struct I2C_TypeDef *)1073764352B].TRISE
+ 782              	@ inc/i2c/i2c.c:193: 		I2C2->CR2     = 0;
+ 783 0044 A3F804E0 		strh	lr, [r3, #4]	@ movhi	@ tmp152, MEM[(struct I2C_TypeDef *)1073764352B].CR2
+ 784              	@ inc/i2c/i2c.c:194: 		I2C2->CCR     = (F_CPU/(4*100000));   // setup speed (100kHz)
+ 785 0048 9C83     		strh	r4, [r3, #28]	@ movhi	@ tmp155, MEM[(struct I2C_TypeDef *)1073764352B].CCR
+ 786              	@ inc/i2c/i2c.c:195: 		I2C2->CR1    |= I2C_CR1_PE;						// I2C2 Pheripherial enable
+ 787 004a 1A88     		ldrh	r2, [r3]	@, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 788              	@ inc/i2c/i2c.c:208: 			while (I2C2_SR1_ADDR_bb == 0){// wait for address transfer
+ 789 004c 174C     		ldr	r4, .L147+12	@ tmp174,
+ 790              	@ inc/i2c/i2c.c:195: 		I2C2->CR1    |= I2C_CR1_PE;						// I2C2 Pheripherial enable
+ 791 004e 0243     		orrs	r2, r2, r0	@, _9, MEM[(struct I2C_TypeDef *)1073764352B].CR1,
+ 792              	@ inc/i2c/i2c.c:209: 				if(I2C2_SR1_AF_bb){
+ 793 0050 174D     		ldr	r5, .L147+16	@ tmp187,
+ 794              	@ inc/i2c/i2c.c:195: 		I2C2->CR1    |= I2C_CR1_PE;						// I2C2 Pheripherial enable
+ 795 0052 1A80     		strh	r2, [r3]	@ movhi	@ _9, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 796              	@ inc/i2c/i2c.c:199: 		*c_adr = 0;
+ 797 0054 81F800E0 		strb	lr, [r1]	@ tmp152, *c_adr_34(D)
+ 798              	.L136:
+ARM GAS  /tmp/cc9qFhFg.s 			page 15
+
+
+ 799              	@ inc/i2c/i2c.c:203: 			I2C2_CR1_START_bb = 1;				// request a start
+ 800 0058 C8F80000 		str	r0, [r8]	@ MEM[(volatile long unsigned int *)1108017184B], MEM[(volatile long unsigned int *)1
+ 801 005c 5FFA87FE 		uxtb	lr, r7	@ adr, ivtmp.76
+ 802              	.L131:
+ 803              	@ inc/i2c/i2c.c:204: 			while (I2C2_SR1_SB_bb == 0);	// wait for start to finish
+ 804 0060 3368     		ldr	r3, [r6]	@ _10, MEM[(volatile long unsigned int *)1108017792B]
+ 805 0062 002B     		cmp	r3, #0	@ _10
+ 806 0064 FCD0     		beq	.L131	@
+ 807              	@ inc/i2c/i2c.c:206: 			I2C2->DR = adr;								// transfer address
+ 808 0066 BBB2     		uxth	r3, r7	@ _12, ivtmp.76
+ 809              	@ inc/i2c/i2c.c:205: 			dummy = I2C2->SR1;						// read of SR1 clears the flag
+ 810 0068 BCF81420 		ldrh	r2, [ip, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 811              	@ inc/i2c/i2c.c:206: 			I2C2->DR = adr;								// transfer address
+ 812 006c ACF81030 		strh	r3, [ip, #16]	@ movhi	@ _12, MEM[(struct I2C_TypeDef *)1073764352B].DR
+ 813              	@ inc/i2c/i2c.c:208: 			while (I2C2_SR1_ADDR_bb == 0){// wait for address transfer
+ 814 0070 01E0     		b	.L132	@
+ 815              	.L134:
+ 816              	@ inc/i2c/i2c.c:209: 				if(I2C2_SR1_AF_bb){
+ 817 0072 2A68     		ldr	r2, [r5]	@ _13, MEM[(volatile long unsigned int *)1108017832B]
+ 818 0074 92B9     		cbnz	r2, .L146	@ _13,
+ 819              	.L132:
+ 820              	@ inc/i2c/i2c.c:208: 			while (I2C2_SR1_ADDR_bb == 0){// wait for address transfer
+ 821 0076 2368     		ldr	r3, [r4]	@ _14, MEM[(volatile long unsigned int *)1108017796B]
+ 822 0078 002B     		cmp	r3, #0	@ _14
+ 823 007a FAD0     		beq	.L134	@
+ 824              	.L133:
+ 825              	@ inc/i2c/i2c.c:215: 			if(I2C2_SR1_ADDR_bb) {
+ 826 007c 2368     		ldr	r3, [r4]	@ _15, MEM[(volatile long unsigned int *)1108017796B]
+ 827 007e 23B1     		cbz	r3, .L135	@ _15,
+ 828              	@ inc/i2c/i2c.c:216: 				*buf_adr=adr;
+ 829 0080 09F801EB 		strb	lr, [r9], #1	@ adr, *buf_adr_50
+ 830              	@ inc/i2c/i2c.c:217: 				*c_adr += 1;
+ 831 0084 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2	@ *c_adr_34(D), *c_adr_34(D)
+ 832 0086 0133     		adds	r3, r3, #1	@ tmp179, *c_adr_34(D),
+ 833 0088 0B70     		strb	r3, [r1]	@ tmp179, *c_adr_34(D)
+ 834              	.L135:
+ 835 008a 0137     		adds	r7, r7, #1	@ ivtmp.76, ivtmp.76,
+ 836              	@ inc/i2c/i2c.c:201: 		for(u08 adr=0x0;adr<0xff;adr++){
+ 837 008c FF2F     		cmp	r7, #255	@ ivtmp.76,
+ 838              	@ inc/i2c/i2c.c:222: 			dummy = I2C2->SR1;						// must be - clear the flag
+ 839 008e BCF81430 		ldrh	r3, [ip, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 840              	@ inc/i2c/i2c.c:223: 			dummy = I2C2->SR2;						// must be - clear the flag
+ 841 0092 BCF81830 		ldrh	r3, [ip, #24]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR2
+ 842              	@ inc/i2c/i2c.c:201: 		for(u08 adr=0x0;adr<0xff;adr++){
+ 843 0096 DFD1     		bne	.L136	@,
+ 844              	@ inc/i2c/i2c.c:227: 	}
+ 845 0098 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}	@
+ 846              	.L146:
+ 847              	@ inc/i2c/i2c.c:210: 					 I2C2_SR1_AF_bb	= 0;			// must be
+ 848 009c 2B60     		str	r3, [r5]	@ _14, MEM[(volatile long unsigned int *)1108017832B]
+ 849              	@ inc/i2c/i2c.c:211: 					break;
+ 850 009e EDE7     		b	.L133	@
+ 851              	.L148:
+ 852              		.align	2
+ 853              	.L147:
+ 854 00a0 00580040 		.word	1073764352
+ 855 00a4 000C0140 		.word	1073810432
+ARM GAS  /tmp/cc9qFhFg.s 			page 16
+
+
+ 856 00a8 80020B42 		.word	1108017792
+ 857 00ac 84020B42 		.word	1108017796
+ 858 00b0 A8020B42 		.word	1108017832
+ 859 00b4 20000B42 		.word	1108017184
+ 860              		.size	i2c2_scan, .-i2c2_scan
+ 861              		.section	.text.I2C2_READ_REG,"ax",%progbits
+ 862              		.align	1
+ 863              		.p2align 2,,3
+ 864              		.global	I2C2_READ_REG
+ 865              		.syntax unified
+ 866              		.thumb
+ 867              		.thumb_func
+ 868              		.fpu softvfp
+ 869              		.type	I2C2_READ_REG, %function
+ 870              	I2C2_READ_REG:
+ 871              		@ args = 0, pretend = 0, frame = 0
+ 872              		@ frame_needed = 0, uses_anonymous_args = 0
+ 873              		@ link register save eliminated.
+ 874 0000 70B4     		push	{r4, r5, r6}	@
+ 875              	@ inc/i2c/i2c.c:231: 	I2C2->CR1 |= I2C_CR1_START;
+ 876 0002 224C     		ldr	r4, .L180	@ tmp203,
+ 877              	@ inc/i2c/i2c.c:232: 	while( !( I2C2->SR1 & I2C_SR1_SB ));
+ 878 0004 2546     		mov	r5, r4	@ tmp208, tmp203
+ 879              	@ inc/i2c/i2c.c:231: 	I2C2->CR1 |= I2C_CR1_START;
+ 880 0006 2688     		ldrh	r6, [r4]	@, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 881 0008 46F48076 		orr	r6, r6, #256	@ _4, MEM[(struct I2C_TypeDef *)1073764352B].CR1,
+ 882 000c 2680     		strh	r6, [r4]	@ movhi	@ _4, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 883              	.L150:
+ 884              	@ inc/i2c/i2c.c:232: 	while( !( I2C2->SR1 & I2C_SR1_SB ));
+ 885 000e AC8A     		ldrh	r4, [r5, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 886 0010 E607     		lsls	r6, r4, #31	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1,
+ 887 0012 FCD5     		bpl	.L150	@,
+ 888              	@ inc/i2c/i2c.c:233: 	I2C2->DR = adres;
+ 889 0014 84B2     		uxth	r4, r0	@ _8, adres
+ 890              	@ inc/i2c/i2c.c:234: 	while( !( I2C2->SR1 & I2C_SR1_ADDR ));
+ 891 0016 1D4E     		ldr	r6, .L180	@ tmp216,
+ 892              	@ inc/i2c/i2c.c:233: 	I2C2->DR = adres;
+ 893 0018 2C82     		strh	r4, [r5, #16]	@ movhi	@ _8, MEM[(struct I2C_TypeDef *)1073764352B].DR
+ 894              	.L151:
+ 895              	@ inc/i2c/i2c.c:234: 	while( !( I2C2->SR1 & I2C_SR1_ADDR ));
+ 896 001a B48A     		ldrh	r4, [r6, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 897 001c A407     		lsls	r4, r4, #30	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1,
+ 898 001e FCD5     		bpl	.L151	@,
+ 899              	@ inc/i2c/i2c.c:236: 	while( !( I2C2->SR1 & I2C_SR1_TXE ));
+ 900 0020 1A4D     		ldr	r5, .L180	@ tmp222,
+ 901              	.L152:
+ 902              	@ inc/i2c/i2c.c:236: 	while( !( I2C2->SR1 & I2C_SR1_TXE ));
+ 903 0022 AC8A     		ldrh	r4, [r5, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 904 0024 2606     		lsls	r6, r4, #24	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1,
+ 905 0026 FCD5     		bpl	.L152	@,
+ 906              	@ inc/i2c/i2c.c:237: 	I2C2->DR = reg_adres;
+ 907 0028 89B2     		uxth	r1, r1	@ _14, reg_adres
+ 908              	@ inc/i2c/i2c.c:238: 	while( !( I2C2->SR1 & I2C_SR1_BTF ));
+ 909 002a 184C     		ldr	r4, .L180	@ tmp230,
+ 910              	@ inc/i2c/i2c.c:237: 	I2C2->DR = reg_adres;
+ 911 002c 2982     		strh	r1, [r5, #16]	@ movhi	@ _14, MEM[(struct I2C_TypeDef *)1073764352B].DR
+ 912              	.L153:
+ARM GAS  /tmp/cc9qFhFg.s 			page 17
+
+
+ 913              	@ inc/i2c/i2c.c:238: 	while( !( I2C2->SR1 & I2C_SR1_BTF ));
+ 914 002e A18A     		ldrh	r1, [r4, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 915 0030 4D07     		lsls	r5, r1, #29	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1,
+ 916 0032 FCD5     		bpl	.L153	@,
+ 917              	@ inc/i2c/i2c.c:239: 	I2C2->CR1 |= I2C_CR1_START;
+ 918 0034 2188     		ldrh	r1, [r4]	@, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 919              	@ inc/i2c/i2c.c:240: 	while( !( I2C2->SR1 & I2C_SR1_SB ));
+ 920 0036 154D     		ldr	r5, .L180	@ tmp241,
+ 921              	@ inc/i2c/i2c.c:239: 	I2C2->CR1 |= I2C_CR1_START;
+ 922 0038 41F48071 		orr	r1, r1, #256	@ _17, MEM[(struct I2C_TypeDef *)1073764352B].CR1,
+ 923 003c 2180     		strh	r1, [r4]	@ movhi	@ _17, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 924              	.L154:
+ 925              	@ inc/i2c/i2c.c:240: 	while( !( I2C2->SR1 & I2C_SR1_SB ));
+ 926 003e A98A     		ldrh	r1, [r5, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 927 0040 CC07     		lsls	r4, r1, #31	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1,
+ 928 0042 FCD5     		bpl	.L154	@,
+ 929              	@ inc/i2c/i2c.c:241: 	I2C2->DR = adres | 0x01;
+ 930 0044 40F00100 		orr	r0, r0, #1	@ _20, adres,
+ 931              	@ inc/i2c/i2c.c:242: 	while( !( I2C2->SR1 & I2C_SR1_ADDR ));
+ 932 0048 104C     		ldr	r4, .L180	@ tmp252,
+ 933              	@ inc/i2c/i2c.c:241: 	I2C2->DR = adres | 0x01;
+ 934 004a 2882     		strh	r0, [r5, #16]	@ movhi	@ _20, MEM[(struct I2C_TypeDef *)1073764352B].DR
+ 935              	.L155:
+ 936              	@ inc/i2c/i2c.c:242: 	while( !( I2C2->SR1 & I2C_SR1_ADDR ));
+ 937 004c A18A     		ldrh	r1, [r4, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 938 004e 8807     		lsls	r0, r1, #30	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1,
+ 939 0050 FCD5     		bpl	.L155	@,
+ 940              	@ inc/i2c/i2c.c:245: 	while( len )
+ 941 0052 6BB1     		cbz	r3, .L156	@ len,
+ 942              	@ inc/i2c/i2c.c:248: 			I2C2->CR1 &= ~I2C_CR1_ACK;
+ 943 0054 0D48     		ldr	r0, .L180	@ tmp279,
+ 944 0056 013A     		subs	r2, r2, #1	@ ivtmp.91, dane,
+ 945              	.L159:
+ 946              	@ inc/i2c/i2c.c:247: 		if( len == 1 )
+ 947 0058 012B     		cmp	r3, #1	@ len,
+ 948 005a 10D0     		beq	.L179	@,
+ 949              	.L158:
+ 950              	@ inc/i2c/i2c.c:249: 		while( !( I2C2->SR1 & I2C_SR1_RXNE ));
+ 951 005c 818A     		ldrh	r1, [r0, #20]	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1
+ 952 005e 4906     		lsls	r1, r1, #25	@, MEM[(struct I2C_TypeDef *)1073764352B].SR1,
+ 953 0060 FCD5     		bpl	.L158	@,
+ 954              	@ inc/i2c/i2c.c:250: 		*( dane++ ) = I2C2->DR;
+ 955 0062 018A     		ldrh	r1, [r0, #16]	@, MEM[(struct I2C_TypeDef *)1073764352B].DR
+ 956              	@ inc/i2c/i2c.c:251: 		len--;
+ 957 0064 013B     		subs	r3, r3, #1	@ tmp273, len,
+ 958              	@ inc/i2c/i2c.c:245: 	while( len )
+ 959 0066 13F0FF03 		ands	r3, r3, #255	@ len, tmp273,
+ 960              	@ inc/i2c/i2c.c:250: 		*( dane++ ) = I2C2->DR;
+ 961 006a 02F8011F 		strb	r1, [r2, #1]!	@ MEM[(struct I2C_TypeDef *)1073764352B].DR, MEM[base: _32, offset: 0B]
+ 962              	@ inc/i2c/i2c.c:245: 	while( len )
+ 963 006e F3D1     		bne	.L159	@,
+ 964              	.L156:
+ 965              	@ inc/i2c/i2c.c:254: }
+ 966 0070 70BC     		pop	{r4, r5, r6}	@
+ 967              	@ inc/i2c/i2c.c:253: 	I2C2->CR1 |= I2C_CR1_STOP;
+ 968 0072 064A     		ldr	r2, .L180	@ tmp274,
+ 969 0074 1388     		ldrh	r3, [r2]	@, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ARM GAS  /tmp/cc9qFhFg.s 			page 18
+
+
+ 970 0076 43F40073 		orr	r3, r3, #512	@ _28, MEM[(struct I2C_TypeDef *)1073764352B].CR1,
+ 971 007a 1380     		strh	r3, [r2]	@ movhi	@ _28, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 972              	@ inc/i2c/i2c.c:254: }
+ 973 007c 7047     		bx	lr	@
+ 974              	.L179:
+ 975              	@ inc/i2c/i2c.c:248: 			I2C2->CR1 &= ~I2C_CR1_ACK;
+ 976 007e 0188     		ldrh	r1, [r0]	@, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 977 0080 21F48061 		bic	r1, r1, #1024	@ _23, MEM[(struct I2C_TypeDef *)1073764352B].CR1,
+ 978 0084 0904     		lsls	r1, r1, #16	@ _23, _23,
+ 979 0086 090C     		lsrs	r1, r1, #16	@ _23, _23,
+ 980 0088 0180     		strh	r1, [r0]	@ movhi	@ _23, MEM[(struct I2C_TypeDef *)1073764352B].CR1
+ 981 008a E7E7     		b	.L158	@
+ 982              	.L181:
+ 983              		.align	2
+ 984              	.L180:
+ 985 008c 00580040 		.word	1073764352
+ 986              		.size	I2C2_READ_REG, .-I2C2_READ_REG
+ 987              		.comm	ptm,36,4
+ 988              		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
+ARM GAS  /tmp/cc9qFhFg.s 			page 19
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 i2c.c
+     /tmp/cc9qFhFg.s:69     .text.i2c1_init:00000000 $t
+     /tmp/cc9qFhFg.s:77     .text.i2c1_init:00000000 i2c1_init
+     /tmp/cc9qFhFg.s:128    .text.i2c1_init:00000044 $d
+     /tmp/cc9qFhFg.s:133    .text.i2c1r_init:00000000 $t
+     /tmp/cc9qFhFg.s:141    .text.i2c1r_init:00000000 i2c1r_init
+     /tmp/cc9qFhFg.s:199    .text.i2c1r_init:00000050 $d
+     /tmp/cc9qFhFg.s:204    .text.i2c1_write:00000000 $t
+     /tmp/cc9qFhFg.s:212    .text.i2c1_write:00000000 i2c1_write
+     /tmp/cc9qFhFg.s:291    .text.i2c1_write:00000058 $d
+     /tmp/cc9qFhFg.s:300    .text.i2c1_read:00000000 $t
+     /tmp/cc9qFhFg.s:308    .text.i2c1_read:00000000 i2c1_read
+     /tmp/cc9qFhFg.s:430    .text.i2c1_read:00000098 $d
+     /tmp/cc9qFhFg.s:433    .text.i2c2_init:00000000 $t
+     /tmp/cc9qFhFg.s:441    .text.i2c2_init:00000000 i2c2_init
+     /tmp/cc9qFhFg.s:493    .text.i2c2_init:0000003c $d
+     /tmp/cc9qFhFg.s:500    .text.i2c2_write:00000000 $t
+     /tmp/cc9qFhFg.s:508    .text.i2c2_write:00000000 i2c2_write
+     /tmp/cc9qFhFg.s:587    .text.i2c2_write:00000058 $d
+     /tmp/cc9qFhFg.s:596    .text.i2c2_read:00000000 $t
+     /tmp/cc9qFhFg.s:604    .text.i2c2_read:00000000 i2c2_read
+     /tmp/cc9qFhFg.s:726    .text.i2c2_read:00000098 $d
+     /tmp/cc9qFhFg.s:729    .text.i2c2_scan:00000000 $t
+     /tmp/cc9qFhFg.s:737    .text.i2c2_scan:00000000 i2c2_scan
+     /tmp/cc9qFhFg.s:854    .text.i2c2_scan:000000a0 $d
+     /tmp/cc9qFhFg.s:862    .text.I2C2_READ_REG:00000000 $t
+     /tmp/cc9qFhFg.s:870    .text.I2C2_READ_REG:00000000 I2C2_READ_REG
+     /tmp/cc9qFhFg.s:985    .text.I2C2_READ_REG:0000008c $d
+                            *COM*:00000024 ptm
+
+NO UNDEFINED SYMBOLS

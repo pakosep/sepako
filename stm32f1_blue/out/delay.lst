@@ -1,0 +1,243 @@
+ARM GAS  /tmp/ccZUBXzH.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
+   3              		.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
+   4              		.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+   5              		.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
+   6              		.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
+   7              		.eabi_attribute 26, 1	@ Tag_ABI_enum_size
+   8              		.eabi_attribute 30, 2	@ Tag_ABI_optimization_goals
+   9              		.eabi_attribute 34, 1	@ Tag_CPU_unaligned_access
+  10              		.eabi_attribute 18, 4	@ Tag_ABI_PCS_wchar_t
+  11              		.file	"delay.c"
+  12              	@ GNU C99 (15:7-2018-q2-6) version 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]
+  13              	@	compiled by GNU C version 8.2.0, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl ve
+  14              	@ GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+  15              	@ options passed:  -I . -imultilib thumb/v7-m -MD out/delay.d
+  16              	@ -MF out/delay.d -MP -MQ out/delay.o -D__USES_INITFINI__ -D RAMCODE
+  17              	@ -D STM32F10X_HD inc/tool/delay.c -mcpu=cortex-m3 -mthumb
+  18              	@ -auxbase-strip out/delay.o -O2 -Wall -Wstrict-prototypes -Wextra
+  19              	@ -Wno-uninitialized -Wno-unused-but-set-variable -Wno-unused-parameter
+  20              	@ -Wno-unused-variable -std=gnu99 -ffunction-sections -fdata-sections
+  21              	@ -fverbose-asm
+  22              	@ options enabled:  -faggressive-loop-optimizations -falign-jumps
+  23              	@ -falign-labels -falign-loops -fauto-inc-dec -fbranch-count-reg
+  24              	@ -fcaller-saves -fchkp-check-incomplete-type -fchkp-check-read
+  25              	@ -fchkp-check-write -fchkp-instrument-calls -fchkp-narrow-bounds
+  26              	@ -fchkp-optimize -fchkp-store-bounds -fchkp-use-static-bounds
+  27              	@ -fchkp-use-static-const-bounds -fchkp-use-wrappers -fcode-hoisting
+  28              	@ -fcombine-stack-adjustments -fcommon -fcompare-elim -fcprop-registers
+  29              	@ -fcrossjumping -fcse-follow-jumps -fdata-sections -fdefer-pop
+  30              	@ -fdelete-null-pointer-checks -fdevirtualize -fdevirtualize-speculatively
+  31              	@ -fdwarf2-cfi-asm -fearly-inlining -feliminate-unused-debug-types
+  32              	@ -fexpensive-optimizations -fforward-propagate -ffp-int-builtin-inexact
+  33              	@ -ffunction-cse -ffunction-sections -fgcse -fgcse-lm -fgnu-runtime
+  34              	@ -fgnu-unique -fguess-branch-probability -fhoist-adjacent-loads -fident
+  35              	@ -fif-conversion -fif-conversion2 -findirect-inlining -finline
+  36              	@ -finline-atomics -finline-functions-called-once -finline-small-functions
+  37              	@ -fipa-bit-cp -fipa-cp -fipa-icf -fipa-icf-functions -fipa-icf-variables
+  38              	@ -fipa-profile -fipa-pure-const -fipa-ra -fipa-reference -fipa-sra
+  39              	@ -fipa-vrp -fira-hoist-pressure -fira-share-save-slots
+  40              	@ -fira-share-spill-slots -fisolate-erroneous-paths-dereference -fivopts
+  41              	@ -fkeep-static-consts -fleading-underscore -flifetime-dse -flra-remat
+  42              	@ -flto-odr-type-merging -fmath-errno -fmerge-constants
+  43              	@ -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
+  44              	@ -foptimize-sibling-calls -foptimize-strlen -fpartial-inlining -fpeephole
+  45              	@ -fpeephole2 -fplt -fprefetch-loop-arrays -freg-struct-return
+  46              	@ -freorder-blocks -freorder-functions -frerun-cse-after-loop
+  47              	@ -fsched-critical-path-heuristic -fsched-dep-count-heuristic
+  48              	@ -fsched-group-heuristic -fsched-interblock -fsched-last-insn-heuristic
+  49              	@ -fsched-pressure -fsched-rank-heuristic -fsched-spec
+  50              	@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns
+  51              	@ -fschedule-insns2 -fsection-anchors -fsemantic-interposition
+  52              	@ -fshow-column -fshrink-wrap -fshrink-wrap-separate -fsigned-zeros
+  53              	@ -fsplit-ivs-in-unroller -fsplit-wide-types -fssa-backprop -fssa-phiopt
+  54              	@ -fstdarg-opt -fstore-merging -fstrict-aliasing -fstrict-overflow
+  55              	@ -fstrict-volatile-bitfields -fsync-libcalls -fthread-jumps
+  56              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+  57              	@ -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim
+ARM GAS  /tmp/ccZUBXzH.s 			page 2
+
+
+  58              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
+  59              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
+  60              	@ -ftree-loop-optimize -ftree-parallelize-loops= -ftree-phiprop -ftree-pre
+  61              	@ -ftree-pta -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr
+  62              	@ -ftree-sra -ftree-switch-conversion -ftree-tail-merge -ftree-ter
+  63              	@ -ftree-vrp -funit-at-a-time -fverbose-asm -fzero-initialized-in-bss
+  64              	@ -masm-syntax-unified -mfix-cortex-m3-ldrd -mlittle-endian
+  65              	@ -mpic-data-is-text-relative -msched-prolog -mthumb -munaligned-access
+  66              	@ -mvectorize-with-neon-quad
+  67              	
+  68              		.text
+  69              		.section	.text.Delay1us,"ax",%progbits
+  70              		.align	1
+  71              		.p2align 2,,3
+  72              		.global	Delay1us
+  73              		.syntax unified
+  74              		.thumb
+  75              		.thumb_func
+  76              		.fpu softvfp
+  77              		.type	Delay1us, %function
+  78              	Delay1us:
+  79              		@ args = 0, pretend = 0, frame = 8
+  80              		@ frame_needed = 0, uses_anonymous_args = 0
+  81              		@ link register save eliminated.
+  82              	@ inc/tool/delay.c:56: 		while(Dly--) 
+  83 0000 4FF6FF72 		movw	r2, #65535	@ tmp119,
+  84 0004 0138     		subs	r0, r0, #1	@ tmp118, arg,
+  85 0006 80B2     		uxth	r0, r0	@ arg, tmp118
+  86 0008 9042     		cmp	r0, r2	@ arg, tmp119
+  87              	@ inc/tool/delay.c:58: 			for(volatile int i = LOOP_DLY_1US; i; i--); 
+  88 000a 4FF00101 		mov	r1, #1	@ tmp120,
+  89              	@ inc/tool/delay.c:56: 		while(Dly--) 
+  90 000e 0FD0     		beq	.L14	@,
+  91              	@ inc/tool/delay.c:54: void Delay1us(uint16_t arg) 	{ 
+  92 0010 82B0     		sub	sp, sp, #8	@,,
+  93              	.L5:
+  94              	@ inc/tool/delay.c:58: 			for(volatile int i = LOOP_DLY_1US; i; i--); 
+  95 0012 0191     		str	r1, [sp, #4]	@ tmp120, i
+  96 0014 019B     		ldr	r3, [sp, #4]	@ i.1_13, i
+  97 0016 2BB1     		cbz	r3, .L2	@ i.1_13,
+  98              	.L4:
+  99              	@ inc/tool/delay.c:58: 			for(volatile int i = LOOP_DLY_1US; i; i--); 
+ 100 0018 019B     		ldr	r3, [sp, #4]	@ i.0_1, i
+ 101 001a 013B     		subs	r3, r3, #1	@ _2, i.0_1,
+ 102 001c 0193     		str	r3, [sp, #4]	@ _2, i
+ 103 001e 019B     		ldr	r3, [sp, #4]	@ i.1_3, i
+ 104 0020 002B     		cmp	r3, #0	@ i.1_3
+ 105 0022 F9D1     		bne	.L4	@
+ 106              	.L2:
+ 107              	@ inc/tool/delay.c:56: 		while(Dly--) 
+ 108 0024 0138     		subs	r0, r0, #1	@ tmp118, arg,
+ 109 0026 80B2     		uxth	r0, r0	@ arg, tmp118
+ 110 0028 9042     		cmp	r0, r2	@ arg, tmp119
+ 111 002a F2D1     		bne	.L5	@,
+ 112              	@ inc/tool/delay.c:68: 	} 
+ 113 002c 02B0     		add	sp, sp, #8	@,,
+ 114              		@ sp needed	@
+ARM GAS  /tmp/ccZUBXzH.s 			page 3
+
+
+ 115 002e 7047     		bx	lr	@
+ 116              	.L14:
+ 117 0030 7047     		bx	lr	@
+ 118              		.size	Delay1us, .-Delay1us
+ 119 0032 00BF     		.section	.text.Delay_us_,"ax",%progbits
+ 120              		.align	1
+ 121              		.p2align 2,,3
+ 122              		.global	Delay_us_
+ 123              		.syntax unified
+ 124              		.thumb
+ 125              		.thumb_func
+ 126              		.fpu softvfp
+ 127              		.type	Delay_us_, %function
+ 128              	Delay_us_:
+ 129              		@ args = 0, pretend = 0, frame = 8
+ 130              		@ frame_needed = 0, uses_anonymous_args = 0
+ 131              		@ link register save eliminated.
+ 132              	@ inc/tool/delay.c:58: 			for(volatile int i = LOOP_DLY_1US; i; i--); 
+ 133 0000 0122     		movs	r2, #1	@ tmp116,
+ 134              	@ inc/tool/delay.c:73: 		while(arg--) Delay1us(1);
+ 135 0002 70B1     		cbz	r0, .L27	@ arg,
+ 136              	@ inc/tool/delay.c:70: void Delay_us_(uint32_t arg) 	{ 
+ 137 0004 82B0     		sub	sp, sp, #8	@,,
+ 138              	.L24:
+ 139              	@ inc/tool/delay.c:58: 			for(volatile int i = LOOP_DLY_1US; i; i--); 
+ 140 0006 0192     		str	r2, [sp, #4]	@ tmp116, i
+ 141 0008 019B     		ldr	r3, [sp, #4]	@ i.1_12, i
+ 142 000a 2BB1     		cbz	r3, .L19	@ i.1_12,
+ 143              	.L17:
+ 144 000c 019B     		ldr	r3, [sp, #4]	@ i.0_21, i
+ 145 000e 013B     		subs	r3, r3, #1	@ _22, i.0_21,
+ 146 0010 0193     		str	r3, [sp, #4]	@ _22, i
+ 147 0012 019B     		ldr	r3, [sp, #4]	@ i.1_20, i
+ 148 0014 002B     		cmp	r3, #0	@ i.1_20
+ 149 0016 F9D1     		bne	.L17	@
+ 150              	.L19:
+ 151              	@ inc/tool/delay.c:73: 		while(arg--) Delay1us(1);
+ 152 0018 0138     		subs	r0, r0, #1	@ arg, arg,
+ 153 001a 0028     		cmp	r0, #0	@ arg
+ 154 001c F3D1     		bne	.L24	@
+ 155              	@ inc/tool/delay.c:74: 	}
+ 156 001e 02B0     		add	sp, sp, #8	@,,
+ 157              		@ sp needed	@
+ 158 0020 7047     		bx	lr	@
+ 159              	.L27:
+ 160 0022 7047     		bx	lr	@
+ 161              		.size	Delay_us_, .-Delay_us_
+ 162              		.section	.text.Delay_ms_,"ax",%progbits
+ 163              		.align	1
+ 164              		.p2align 2,,3
+ 165              		.global	Delay_ms_
+ 166              		.syntax unified
+ 167              		.thumb
+ 168              		.thumb_func
+ 169              		.fpu softvfp
+ 170              		.type	Delay_ms_, %function
+ 171              	Delay_ms_:
+ARM GAS  /tmp/ccZUBXzH.s 			page 4
+
+
+ 172              		@ args = 0, pretend = 0, frame = 0
+ 173              		@ frame_needed = 0, uses_anonymous_args = 0
+ 174              		@ link register save eliminated.
+ 175 0000 70B4     		push	{r4, r5, r6}	@
+ 176              	@ inc/tool/delay.c:77: 		while(arg--) Delay_us(1000);
+ 177 0002 4FF6FF76 		movw	r6, #65535	@ tmp124,
+ 178 0006 0138     		subs	r0, r0, #1	@ tmp123, arg,
+ 179 0008 80B2     		uxth	r0, r0	@ arg, tmp123
+ 180 000a B042     		cmp	r0, r6	@ arg, tmp124
+ 181              	@ inc/tool/delay.h:104: 		delay_us = SysTick->VAL; 
+ 182 000c 084C     		ldr	r4, .L35	@ tmp126,
+ 183 000e 0949     		ldr	r1, .L35+4	@ tmp127,
+ 184              	@ inc/tool/delay.h:105: 		while( STCLK_US*us > (delay_us - SysTick->VAL) );
+ 185 0010 42F22735 		movw	r5, #8999	@ tmp128,
+ 186              	@ inc/tool/delay.c:77: 		while(arg--) Delay_us(1000);
+ 187 0014 0AD0     		beq	.L34	@,
+ 188              	.L31:
+ 189              	@ inc/tool/delay.h:104: 		delay_us = SysTick->VAL; 
+ 190 0016 A368     		ldr	r3, [r4, #8]	@ _6, MEM[(struct SysTick_Type *)3758153744B].VAL
+ 191 0018 0B60     		str	r3, [r1]	@ _6, delay_us
+ 192              	.L30:
+ 193              	@ inc/tool/delay.h:105: 		while( STCLK_US*us > (delay_us - SysTick->VAL) );
+ 194 001a 0B68     		ldr	r3, [r1]	@ delay_us.5_7, delay_us
+ 195 001c A268     		ldr	r2, [r4, #8]	@ _8, MEM[(struct SysTick_Type *)3758153744B].VAL
+ 196 001e 9B1A     		subs	r3, r3, r2	@ tmp121, delay_us.5_7, _8
+ 197 0020 AB42     		cmp	r3, r5	@ tmp121, tmp128
+ 198 0022 FAD9     		bls	.L30	@,
+ 199              	@ inc/tool/delay.c:77: 		while(arg--) Delay_us(1000);
+ 200 0024 0138     		subs	r0, r0, #1	@ tmp123, arg,
+ 201 0026 80B2     		uxth	r0, r0	@ arg, tmp123
+ 202 0028 B042     		cmp	r0, r6	@ arg, tmp124
+ 203 002a F4D1     		bne	.L31	@,
+ 204              	.L34:
+ 205              	@ inc/tool/delay.c:78: 	}
+ 206 002c 70BC     		pop	{r4, r5, r6}	@
+ 207 002e 7047     		bx	lr	@
+ 208              	.L36:
+ 209              		.align	2
+ 210              	.L35:
+ 211 0030 10E000E0 		.word	-536813552
+ 212 0034 00000000 		.word	delay_us
+ 213              		.size	Delay_ms_, .-Delay_ms_
+ 214              		.comm	ptm,36,4
+ 215              		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
+ARM GAS  /tmp/ccZUBXzH.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 delay.c
+     /tmp/ccZUBXzH.s:70     .text.Delay1us:00000000 $t
+     /tmp/ccZUBXzH.s:78     .text.Delay1us:00000000 Delay1us
+     /tmp/ccZUBXzH.s:120    .text.Delay_us_:00000000 $t
+     /tmp/ccZUBXzH.s:128    .text.Delay_us_:00000000 Delay_us_
+     /tmp/ccZUBXzH.s:163    .text.Delay_ms_:00000000 $t
+     /tmp/ccZUBXzH.s:171    .text.Delay_ms_:00000000 Delay_ms_
+     /tmp/ccZUBXzH.s:211    .text.Delay_ms_:00000030 $d
+                            *COM*:00000024 ptm
+
+UNDEFINED SYMBOLS
+delay_us
