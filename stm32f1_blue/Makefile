@@ -30,7 +30,7 @@ COPY = cp -f
 #=============================================================================#
 # project configuration
 #=============================================================================#
-ifeq ($(RAM), 1)
+ifeq ($(RAM), 1)  
 	PROJECT = ram
 	LD_SCRIPT = stm32f103vc_ram.ld
 else
@@ -87,7 +87,7 @@ SRCS_DIRS += inc/rtc
 #SRCS_DIRS += inc/flash
 #SRCS_DIRS += inc/sdspi
 #SRCS_DIRS += inc/sdio
-#SRCS_DIRS += inc/dht
+SRCS_DIRS += inc/dht
 #SRCS_DIRS += inc/enc28j60
 SRCS_DIRS += inc/i2c
 #SRCS_DIRS += inc/lcd

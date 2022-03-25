@@ -171,7 +171,6 @@ void SPI_Tool_Menu(void);
 void SPI_Tool(void);
 void lion_updown(void);
 void oblicz(void);
-void minios(void);
 
 #endif
 /*== INIT ===================================================================*/
@@ -227,7 +226,7 @@ static u08 dma_buf[24];
 
 int main(void){
 		
-		SysInit();
+		SysInit();           
 		 #define LED  PC13_o
 		 GPIOC->CRH = (GPIOC->CRH & 0xff0fffff) | 0x00100000;	// LED Blue  PC13		
 		/*
@@ -238,112 +237,10 @@ int main(void){
 		BKPSRAMADDR0 				= &wart[5][5];
 		//wart[licz1][licz2]= *(BKPSRAMADDR0 + licz3);
 		*/
-		//lion_updown();
+		lion_updown();
 		//oblicz();
-		minios();
 	}
 /*== MAIN ===================================================================*/
-void minios(void){
-	
-		char swh,buf[12];
-		u16 vr1,vr2,cnt,cnt2=0,vbus;
-		s16 cur;
-		_Bool tf;
-	
-		GPIOB->CRL = (GPIOB->CRL & 0x0fffffff) | 0x10000000;	// PB7
-		Uart1Init(); // TTY4 Green->PA10_RX, White->PA9_TX 
-			Uart2Init(); // PA2_TX, PA3_RX
-			
-			PutChar = UART1_putc;	tr_pen_color ( TYELLOW );
-			UaPutS("\f UART1  "); UaPutS (uint2str( (F_CPU/1)/(1*USART1->BRR-1),buf));	
-			UaPutS (" b/s \r\n");
-			
-			PutChar = UART2_putc;	tr_pen_color ( TYELLOW );
-			UaPutS("\f UART2 "); UaPutS (uint2str( (F_CPU/1)/(1*USART1->BRR-1),buf));	
-			UaPutS(" b/s \r\n");
-			cnt=0;
-			
-			u32 tim,tim4;
-			u08 i2reg[2]; //i2reg[0]=MSB i2reg[1]=LSB
-			u08 i2weg[3];
-			
-			i2c1r_init();
-			
-			i2weg[0]=0;     // Register
-			i2weg[1]=0x1f;  // MSB Data
-			i2weg[2]=0x77;  // LSB Data
-			//i2c1_write(INA219_ADDR,i2weg,3);
-			UaPutS("debug_0");
-		
-			i2weg[0]=5;    	// Register
-			i2weg[1]=0x1; 	// MSB Data
-			i2weg[2]=0x95; 	// LSB Data
-			i2c1_write(INA219_ADDR,i2weg,3);
-			
-			i2c1_read (INA219_ADDR,0,i2reg,2);
-			tr_locate( 1,3);
-			UaPutS("Config="); unt2uart(i2reg[0] + (i2reg[0]<<8) ,5); 
-			tr_locate( 1,2);
-			
-		while(1){
-			
-			if(STCLK_MS*500 < (trg0 - SysTick->VAL)){
-				trg0 = SysTick->VAL;
-				//LED ^= 1;	
-				
-				PutChar = UART2_putc;
-				unt2uart(cnt++,5); UaPutS(" "); unt2uart(cnt2,6); UaPutS("\r");
-				PutChar = UART1_putc;
-				unt2uart(cnt  ,5); UaPutS("\r");
-				
-				i2c1_read( INA219_ADDR,2,i2reg,2);
-				vbus = ((i2reg[1] | (i2reg[0]<<8))>>3)*4;
-				tr_locate(1,3);
-				UaPutS("vbus=");
-				//unt2uart(vbus,5);
-				int2uart (vbus ,4,3);
-				
-				i2c1_read(INA219_ADDR,4,i2reg,2);
-				cur = ((i2reg[1]) | (i2reg[0]<<8));
-				UaPutS(" cur=");
-				int2uart (cur,4,3);
-				
-				tr_locate(1,2);
-				LED ^= 1;	
-			}
-			
-			
-			
-			if(PB11_i==1) {
-				cnt2++;
-			}
-			
-			if(p_Fifo1->rct){
-				UART_getChar((char*)&swh);
-				//PutChar = UART1_putc;
-				//UaPutS("zeruj");
-				switch (swh){
-					case 'a':
-					UaPutS("\r\n");
-					UaPutS("\t\ta Podaj liczbe  ");
-					vr1 = UART_getNum();
-					UaPutS(" num=");	
-					unt2uart(vr1,4);
-					tr_locate( 1, 2 );
-					//var1 = UART_getNum();
-					//var2 = UART_getHex();
-					break;
-					case 'b':
-					//UaPutS("");
-					PB7_o ^= 1;
-					break;
-					default:
-					break;
-				}
-			}
-		}
-	}
-	
 void liontrend(s16 v[],s16 c[]){
 	
 		v[6] = (100*(v[0]-v[1]))/(v[2]-v[3]); //a=(y2-y1)/(x2-x1)
@@ -395,6 +292,7 @@ void oblicz(void){
 		
 		while(1);
 }
+
 void lion_updown(void){
 		BkpRegInit();
 		Uart1Init(); // TTY4 Green->PA10_RX, White->PA9_TX 
@@ -407,7 +305,7 @@ void lion_updown(void){
 		
 		PutChar = UART1_putc;	tr_pen_color ( TYELLOW );
 		UaPutS("\f UART1 "); UaPutS (uint2str( (F_CPU/1)/(1*USART1->BRR-1),buf));	
-		UaPutS (" b/s \r\n");
+		UaPutS (" b/s \r\n"); 
 		//PutChar = UART2_putc;	tr_pen_color ( TYELLOW );
 		//UaPutS("\f UART2 "); UaPutS (uint2str( (F_CPU/1)/(2*USART2->BRR-1),buf));
 		//UaPutS (" b/s \r\n");
@@ -415,28 +313,53 @@ void lion_updown(void){
 		// UaPutS("\f UART3 "); UaPutS (uint2str( (F_CPU/1)/(2*USART3->BRR-1),buf));	UaPutS (" b/s \r\n");
 		//SPI_Tool();
 		//SPI_Tool_Menu();
-		
+		/*
+		#define BKPSRAM_BASE 0x40024000
+		 // Write to Backup SRAM with 32-Bit Data 
+   for (i = 0x0; i < 0x100; i += 4) {
+       *(__IO uint32_t *) (BKPSRAM_BASE + i) = i;
+    }
+
+   // Check the written Data 
+   for (i = 0x0; i < 0x100; i += 4) {
+          if ((*(__IO uint32_t *) (BKPSRAM_BASE + i)) != i){
+              errorindex++;
+          }
+    }
+		*/
 		u32 tim,tim4;
-		u08 i2reg[2]; //i2reg[0]=MSB i2reg[1]=LSB
-		u08 i2weg[3];
+		u08 i2reg[2], i2weg[3]; //i2reg[0]=MSB i2reg[1]=LSB
+		const u08 i2cnf[3]={0,0x1e,0x67},i2trig_bus[3]={0,0x1e,0x67};
 		
-		static s16 cur,vbus,vacu;
-		static u32 Vavg,cap;
+		static u16  cnt,vr1,vr2;
+		static u32 Vavg,cah,cwh,Cah,Cwh,Rwa[2],cnt2;
+		static s32 vr3,vr4;
 		
-		static s16 pow,cal,ene,shunt;
-		static u08 cnt,idt;
-		bool stop=0,beep=1;
+		static s16 pow,cal,ene,shunt,cur,dcur,vbus,dv,rw,ve;
+		static u08 idt,sta,coile;
+		enum STAN{lad,roz,czk,pom,kon,rok};
+		/* lad - ladowanie
+		 * roz - rozladowanie
+		 * czk - oczekiwanie
+		 * pom - pomiar napiecia ladowania
+		 * kon - konserwacja (ladowanie do przechowywania)
+		 * rok - konserwacja rozladowanie 
+		 */
+		_Bool beep=1;
+		char swh,str[3];
+		enum STAN stat;
+		char tstat[6][8]={" Laduj"," Rozlad"," Czekaj"," Pomiar"," LadKon"," RozKon"};
 		
 		i2c1r_init();
-		// Rshunt = 0.10156 ohm
-		i2weg[0]=0;    // Register
-		i2weg[1]=0x1f; // MSB Data
-		i2weg[2]=0x77; // LSB Data
-		i2c1_write(INA219_ADDR,i2weg,3);
+		// Rshunt = 0.10156 ohm													 BADC	BADC MODE
+		//i2cnf[0]=0;    // Config Register 0x1f77 = 00011 1110 1110 111
+		//i2cnf[1]=0x1e; // MSB Data								 00011 1100 1100 111 = 0x1e67 8.5 ms
+		//i2cnf[2]=0x63; // LSB Data								 00011 1101 1101 011 = 0x1eeb 17.02 ms
+		i2c1_write(INA219_ADDR,(u08 *)i2cnf,3);
 		
-		i2weg[0]=5;    // Register
-		i2weg[1]=0x1; // MSB Data
-		i2weg[2]=0x95; // LSB Data
+		i2weg[0]=5;    // Calibration Register 0x1e63 continus
+		i2weg[1]=0x0f; // MSB Data
+		i2weg[2]=0xdb; // LSB Data
 		i2c1_write(INA219_ADDR,i2weg,3);
 		
 		i2c1_read (INA219_ADDR,0,i2reg,2);
@@ -446,136 +369,276 @@ void lion_updown(void){
 		
 		GPIOB->CRH = (GPIOB->CRH & 0xf000ffff) | 0x05550000;
 		//Delay_ms(100);
-		PB12_o = 0;		// rozladowanie
-		PB13_o = 0;   // ladowanie
-		PB14_o = 1;   // dzwonek
 		
-		//BKP->DR1 = 0;
-		//BKP->DR2 = 0;
-		cap = (BKP->DR2<<16) + BKP->DR1;
-		u32 *cap2 = (u32*)&BKP->DR1; 
-		volatile uint32_t *pBKP = (volatile uint32_t *)(&BKP->DR1);
-		 
-		/*
-		#define BKPSRAM_BASE 0x40024000
-		 // Write to Backup SRAM with 32-Bit Data 
-   for (i = 0x0; i < 0x100; i += 4) {
-       *(__IO uint32_t *) (BKPSRAM_BASE + i) = i;
-   }
-
-   // Check the written Data 
-   for (i = 0x0; i < 0x100; i += 4) {
-          if ((*(__IO uint32_t *) (BKPSRAM_BASE + i)) != i){
-              errorindex++;
-          }
-   }
-		*/
+		#define ROZ PB12_o
+		#define LAD PB13_o
+		#define BEP PB14_o
+		cah = (BKP->DR2<<16) + BKP->DR1;
+		cwh = (BKP->DR4<<16) + BKP->DR3;
 		
-		PB13_o = 0;		PB12_o = 1;		beep=0; PB14_o = 1; // AP
+		LAD = 0; ROZ = 0;	BEP = 1; 
+		beep=0; 
+		stat = czk;
 		trg1  = SysTick->VAL;	
+		trg0  = SysTick->VAL;
+		
+		//cap=1560*3600;
 		while(1){
 			if(STCLK_MS*1000 < (trg0 - SysTick->VAL)){
 				trg0  = SysTick->VAL;
+				//Delay_ms(50);
 				
-				//i2c1_read(INA219_ADDR,1,i2reg,2);
-				//shunt =i2reg[1] | (i2reg[0]<<8); //  & 0b0111111111111111;
+				i2c1_read(INA219_ADDR,1,i2reg,2);
+				shunt =i2reg[1] | (i2reg[0]<<8) ;//  & 0b0111111111111111;
+				
 				i2c1_read( INA219_ADDR,2,i2reg,2);
-				vbus = ((i2reg[1] | (i2reg[0]<<8))>>3)*515/128 ;
+				vbus = ((i2reg[1] | (i2reg[0]<<8))>>3)*4 ; //512/128
 				//i2c1_read( INA219_ADDR,3,i2reg,2);
 				//pow =  i2reg[1] | (i2reg[0]<<8);
-				
 				i2c1_read( INA219_ADDR,4,i2reg,2);
-				cur = ((i2reg[1]) | (i2reg[0]<<8)) ;
-				vacu = vbus + cur*108/1000;
-				pow = vacu*cur/1000;
-				cap += abs(cur);
-				BKP->DR1 = cap & 0x00ff;
-				BKP->DR2 = cap>>16;
+				dcur = (i2reg[0]<<8) | i2reg[1] ;
 				
-				//i2c1_read( INA219_ADDR,5,i2reg,2);
-				//cal = ((i2reg[1]) | (i2reg[0]<<8));
-				PutChar = UART1_putc;
-				unt2uart (cnt++,3);
-				int2uart (vacu ,4,3);				UaPutS("V");
-				int2uart (cur  ,5,0);				UaPutS("mA");
-				int2uart (pow  ,4,3);				UaPutS("W");
-				int2uart (cap/36  ,6,2);	UaPutS("mAh");
-				UaPutS("\r ");
-				
-				PutChar = UART2_putc; //przypisanie callback 
-				int2uarz (vacu ,4,3); 			UaPutC(',');
-				int2uarz (cur  ,4,3); 			UaPutC(',');
-				int2uarz (pow  ,4,3); 			UaPutC(',');
-				int2uarz (cap/36 ,6,5);
-				//UaPutS("\r ");
-				cnt++;
-				//LED ^= 1;	
-			}
-			
-			if( (STCLK_MS*5000 < (trg1 - SysTick->VAL)) ){	
-				trg1  = SysTick->VAL;	
-				if(vacu > 2000 && vacu < 2750){
-					PB12_o = 0;
-					PB13_o = 0;
-					beep=1;
+				if( (cnt+1)%300==0 && stat == roz){  // pomiar rezystancji wewnetrznej
+					cnt2++;
+					ROZ = 0;
+					Delay_ms(500);
+					i2c1_write(INA219_ADDR,(u08 *)i2trig_bus,3);		//star conversion
+					Delay_ms(20);
+					i2c1_read( INA219_ADDR,2,i2reg,2);
+					ve = (((i2reg[0]<<8) | i2reg[1])>>3)*515/128 ;
+					//sta = i2reg[1] & 0b00000111;
+					ROZ = 1;
+					Delay_ms(1);
+					rw = abs(1000*(ve-vbus)/cur);
+					Rwa[0] += rw;
+					Rwa[1] = Rwa[0]/cnt2;
+					//ve = ve-vbus;
 				}
 				
-				if(vacu > 4190 && cur < 100){
-					PB13_o = 0;
-					PB12_o = 1;
-					cap = 0;
-					BKP->DR1 = 0;
-					BKP->DR2 = 0;
+				i2c1_write(INA219_ADDR,(u08 *)i2cnf,3);		//star conversion
+				
+				cur = dcur/10;
+				//vacu = vbus + cur*120/1000;
+				pow = abs(vbus*cur)/1000;
+				cah += abs(cur);
+				BKP->DR1 = cah & 0x00ff;	BKP->DR2 = cah>>16;
+				cwh += abs(pow);
+				BKP->DR3 = cwh & 0x00ff;	BKP->DR4 = cwh>>16;
+				Cah = cah/36;
+				Cwh = cwh/36;
+				//i2c1_read( INA219_ADDR,5,i2reg,2);
+				//cal = ((i2reg[1]) | (i2reg[0]<<8));
+					
+					PutChar = UART1_putc;
+					unt2uart ((cnt/60)%60,2);UaPutS(".");unt2uart (cnt%60,2);
+					UaPutS((char*)tstat[stat]);
+					
+					int2uart (vbus  ,4,3);	UaPutS("V");
+					int2uart (dcur  ,5,1);	UaPutS("mA");
+					int2uart (Cah   ,6,2);	UaPutS("mAh");
+					int2uart (pow   ,4,3);	UaPutS("W"); // (pow  ,4,3);
+					int2uart (Cwh   ,7,2);	UaPutS("mWh");
+					int2uart (Rwa[1],4,3);	UaPutS("ohm");
+					//int2uart (sta ,2,0);					
+					UaPutS("\r ");
+					
+					/*
+					if(stat == lad || stat == roz || stat == kon || stat == rok){
+						PutChar = UART2_putc; //przypisanie callback 
+						int2uarz (vbus  ,4,3); 	  UaPutC(',');
+						int2uarz (cur   ,4,3); 	  UaPutC(',');
+						int2uarz (Cah   ,6,2+3);	UaPutC(',');
+						int2uarz (pow   ,4,3); 	  UaPutC(',');
+						int2uarz (Cwh   ,7,2+3);	UaPutC(',');
+						int2uarz (rw 		,4,3);	
+						//UaPutS("\r ");
+						PutChar = UART1_putc;
+					} */
+					
+
+					if(stat == lad || stat == roz || stat == kon || stat == rok) coile = 5;
+					else coile = 30;
+					if( (cnt)%coile==0 ){  // pomiar rezystancji wewnetrznej
+						PutChar = UART2_putc; //przypisanie callback 
+						int2uarz (vbus  ,4,0); 	UaPutC(',');
+						int2uarz (cur   ,4,0); 	UaPutC(',');
+						int2uarz (Cah   ,6,0);	UaPutC(',');
+						int2uarz (pow   ,4,0); 	UaPutC(',');
+						int2uarz (Cwh   ,7,0);	UaPutC(',');
+						int2uarz (rw 		,4,0);	
+						//UaPutS("\r");
+						PutChar = UART1_putc;
+					}
+					
+					cnt++;
+					//LED ^= 1;	
+			}
+			
+			if( (STCLK_MS*2000 < (trg1 - SysTick->VAL)) ){	
+				trg1  = SysTick->VAL;	
+				
+				if(abs(cur) < 1000 && vbus > 4200 && stat == lad){ // start rozladowanie
+					LAD = 0;
+					ROZ = 1;
+					cah = 0;
+					cwh = 0;
+					stat = roz;
+					rw = 0;
 				} 
+				
+				if(vbus < 2600 && vbus > 2000 && stat==roz) { // koniec rozladowania
+					LAD = 0;
+					ROZ = 0;
+					beep= 1;
+					stat = czk;
+				}
+				
+				if( abs(cur) < 50 && vbus < 4200 && stat == lad ){ // zanikanie ladowania
+					LAD = 0;
+					ROZ = 1;
+					Delay_ms(50);
+					ROZ = 0;
+					LAD = 1;
+				}  
+				
+					if(vbus < 2800 && vbus > 2000 && stat==rok) { // koniec rozladowania konserwujacego przed ladowaniem konserw
+          ROZ = 0;
+					LAD = 1;
+					stat = kon;
+					cah = 0;
+					cwh = 0;
+				}
+				
+					if( (Cah > vr1*70 || vbus > 4200) && stat == kon ){ // koniec ladowania konserwujacego 0.7*100
+					LAD = 0;
+					ROZ = 0;
+					beep= 1;
+					stat = czk;
+				}  
 			}
 			
 			if( (STCLK_MS*500   < (trg2 - SysTick->VAL))) {
 				trg2  = SysTick->VAL;	
-				LED ^= 1;	
-				if(beep){	PB14_o ^= 1; }
+				if(beep){	BEP ^= 1; }
 			}
 			
-			char swh;
-			u16 var1,var2;
-			
+			if( (STCLK_MS*100   < (trg3 - SysTick->VAL))) {
+				trg3  = SysTick->VAL;	
+				LED ^= 1;	
+			}
+			char znaki[12];
 			if(p_Fifo1->rct){
 				UART_getChar( (char*)&swh);
 				//PutChar = UART1_putc;
 				//UaPutS("zeruj");
 				switch (swh)	{
+					case 't':
+						UaPutS(TRCLS);
+						//UaPutS("\r  \r");
+						tr_locate(4,1);
+  					UaPutS("0        1         2         3         4         5");
+						tr_locate(5,1);
+  					UaPutS("123456789 123456789 123456789 123456789 123456789 1234567890");
+						tr_locate(10,20);
+						UaPutS("Podaj wrtosc= ");
+						tr_locate(10,37);
+						UaPutS(TRCLS);
+						vr4 = UART_getDec((s32*)&vr3) ;
+
+						tr_locate(11,20);
+					  UaPutS(TRCLS"Wartosc ileZnak= ");  
+ 						UaPutS("\033[11;36H");
+ 						sint2uart (vr3);
+					  sint2uart (vr4-1); 
+ 						tr_locate(12,20);
+						UaPutS("Zerowanie t/n=");
+ 						tr_locate(12,37);
+						UaPutS(TRCLS);
+						UART_getStr(znaki);
+						//var1 = UART_getNum();
+						//tr_locate(2,2);
+ 						tr_locate(2,2); 						
+					break;
+					case 'm':	//modyfikacja zmiennych
+						UaPutS(TRCLS);
+						//UaPutS("\r  \r");
+						UaPutS(" Podaj wrtosc= ");
+						vr4 = UART_getDec((s32*)&vr3) ;
+					  tr_locate(3,2);
+					  UaPutS(TRCLS"ileZnak,Wartosc=");
+ 						sint2uart (vr4);
+ 						sint2uart (vr3);
+						tr_locate(2,1);
+						//var1 = UART_getNum();
+					break;
+					case 'k': // Ladowanie do przechowywania (konserwacja)
+						UaPutS(TRCLS);
+						//UaPutS("\r  \r");
+						beep= 0;
+						BEP = 1;
+						UaPutS(" Laduj do 70% x [mAh]=");
+						sint2uart(vr1);
+						UaPutS(" ");
+						vr4 = UART_getDec(&vr3) ;
+						if(vr4>1) vr1 = vr3;
+						UaPutS(TRCLS" Rozladuj [t/n]=");
+						UART_getStr(str) ;
+						sint2uart (vr2);
+						
+					  tr_locate(3,1);
+					  UaPutS(TRCLS"Laduj do [mAh]=");
+ 						sint2uart (vr1*7/10);
+						tr_locate(2,1);
+						if(str[0]=='t') { stat = rok; LAD = 0;	ROZ = 1; }
+						else 			 { stat = kon; ROZ = 0;	LAD = 1; }
+						//var1 = UART_getNum();
+					break;
 					case 'z':
-					//UaPutS("Zeruj Licznik pojemnosci");
-					cap = 0;
-					BKP->DR1 = 0;
-					BKP->DR2 = 0;
-					//var1 = UART_getNum();
-					//UaPutS("\r\n Read Reg1=0x");	
-					//var1 = UART_getNum();
-					//var2 = UART_getHex();
+						//UaPutS("Zeruj Licznik pojemnosci");
+						cah = 0;
+						cwh = 0;
+						cnt = 0;
+						Rwa[0] = 0;
+						Rwa[1] = 0;
+						//var1 = UART_getNum();
+						//UaPutS("\r\n Read Reg1=0x");	
+						//var1 = UART_getNum();
+						//var2 = UART_getHex();
 					break;
-					case 'a':
-					PB12_o = 0;
-					PB13_o = 1;
-					beep=0; PB14_o = 1;
+					case 'a':	// Ladowanie - AP
+						ROZ = 0;
+						LAD = 1;
+						BEP = 1;
+						beep = 0; 
+						stat = lad;
+						rw = 0;
 					break;
-					case 'd':
-					PB13_o = 0;
-					PB12_o = 1;
-					beep=0; PB14_o = 1;
+					case 'd':	// Rozladowanie - DOWN
+						LAD = 0;
+						ROZ = 1;
+						BEP = 1;
+						beep=0; 
+						stat = roz;
+						rw = 0;
 					break;
-					case 'q':
-					PB13_o = 0;
-					PB12_o = 0;
-					PB14_o = 1;
+					case 'q':	// oczekiwanie
+						LAD = 0;
+						ROZ = 0;
+						BEP = 1;
+						stat = czk;
+						rw = 0;
 					break;
-					case 'b':
-					//PB14_o ^= 1;
-					beep  ^= 1;
-					PB14_o = 1;
+					case 'b':	// wylaczenia beepera
+						//BEP ^= 1;
+						beep   = 0;
+						BEP = 1;
 					break;
-					case 'v':
-					//PB14_o ^= 1;
-					//pomv=1;
+					case 'v': // pomiar napiecia zrodla zasilania
+						//BEP ^= 1;
+						LAD = 1;
+						ROZ = 0;
+						stat = pom;
+						rw = 0;
 					break;
 					default:
 					break;
@@ -592,7 +655,6 @@ void uht(void){
 		am23.typ = AM2302;
 		
  		#define COSTXT "UART_SPEED"
-		
 		
 		while(0){
 
@@ -712,10 +774,10 @@ void rtc_calibrate(void){
 				//hex2uart(ContReg,2);
 				//int2str(ContReg,tbuf,5,0);		oled_num24(0,0,tbuf);
 				
-				while(!PB5_i)
-				while(PB5_i) 	TIM_start();
-				while(!PB5_i)
-				while(PB5_i)	TIM_stop(&tim4);
+				while(!iPB5)
+				while(iPB5) 	TIM_start();
+				while(!iPB5)
+				while(iPB5)	TIM_stop(&tim4);
 				//num2uart (tim4,8,1);	
 				TIM_start();
 				Delay_us(123);

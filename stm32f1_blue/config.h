@@ -43,10 +43,12 @@
 #define TIM_SEC	(F_CPU/(8))
 
 #define TIM3_ARR	0xffff
+
 #define TC 							  6
 //#define NVIC_VectTab_RAM 	0x20000000
 #define 	NVIC_VectTab_RAM    ((uint32_t)0x20000000)
 #define 	NVIC_VectTab_FLASH  ((uint32_t)0x08000000)
+
 #define Offset 						0x0
 
 /*
@@ -249,9 +251,7 @@ typedef struct ANODE {
 #define PB13_o								bitband_t m_BITBAND_PERIPH(&GPIOB->ODR, 13)
 #define PB14_o								bitband_t m_BITBAND_PERIPH(&GPIOB->ODR, 14)
 #define PB15_o								bitband_t m_BITBAND_PERIPH(&GPIOB->ODR, 15)
-#define PB5_i									bitband_t m_BITBAND_PERIPH(&GPIOB->IDR, 5)
-
-#define PB11_i								bitband_t m_BITBAND_PERIPH(&GPIOB->IDR, 11)
+#define iPB5									bitband_t m_BITBAND_PERIPH(&GPIOB->IDR, 5)
 
 #define Sys_Tick_CTRL_EN			bitband_t m_BITBAND_PERIPH(&SysTick->CTRL,0)
 
@@ -289,8 +289,11 @@ typedef TCDATA* TCLISTP;
  JTDO  PB3
  JTDI  PA15
  JTRST PB4
+ 
+ 
  JTCK  PA14 SWD
  JTMS  PA13 SWD
+ 
 */
 
 /******************************************************************************
