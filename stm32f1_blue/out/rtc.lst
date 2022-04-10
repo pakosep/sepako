@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cczOleRw.s 			page 1
+ARM GAS  /tmp/ccYHW4yw.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
   55              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
   56              	@ -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim
   57              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
-ARM GAS  /tmp/cczOleRw.s 			page 2
+ARM GAS  /tmp/ccYHW4yw.s 			page 2
 
 
   58              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  112              		@ frame_needed = 0, uses_anonymous_args = 0
  113              	@ inc/rtc/rtc.c:66: 		if (y > 2106 || !rtx->mon || !rtx->mdy) return 1;
  114 0000 40F63A02 		movw	r2, #2106	@ tmp153,
-ARM GAS  /tmp/cczOleRw.s 			page 3
+ARM GAS  /tmp/ccYHW4yw.s 			page 3
 
 
  115              	@ inc/rtc/rtc.c:65: 		y = rtx->yer - 1970;
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  169              	@ inc/rtc/rtc.c:81: 	}
  170 0056 1046     		mov	r0, r2	@, <retval>
  171 0058 F0BD     		pop	{r4, r5, r6, r7, pc}	@
-ARM GAS  /tmp/cczOleRw.s 			page 4
+ARM GAS  /tmp/ccYHW4yw.s 			page 4
 
 
  172              	.L16:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  226              	@ inc/rtc/rtc.c:70: 		for (i = 0; i < 12 && i + 1 < rtx->mon; i++) {
  227 00a4 2246     		mov	r2, r4	@ i, _11
  228 00a6 C9E7     		b	.L7	@
-ARM GAS  /tmp/cczOleRw.s 			page 5
+ARM GAS  /tmp/ccYHW4yw.s 			page 5
 
 
  229              	.L9:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  283 001a 41F00101 		orr	r1, r1, #1	@ _4, _3,
  284 001e 1962     		str	r1, [r3, #32]	@ _4, MEM[(struct RCC_TypeDef *)1073876992B].BDCR
  285              	.L32:
-ARM GAS  /tmp/cczOleRw.s 			page 6
+ARM GAS  /tmp/ccYHW4yw.s 			page 6
 
 
  286              	@ inc/rtc/rtc.c:26: 		while( ~RCC->BDCR & RCC_BDCR_LSERDY );
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  340 0068 8A81     		strh	r2, [r1, #12]	@ movhi	@ tmp155, MEM[(struct RTC_TypeDef *)1073752064B].PRLL
  341              	@ inc/rtc/rtc.c:49: 		RTC->CNTL = uxt&0xffff;		//Set time low		set counter/point time
  342 006a 9DB2     		uxth	r5, r3	@ _12, uxt.0_11
-ARM GAS  /tmp/cczOleRw.s 			page 7
+ARM GAS  /tmp/ccYHW4yw.s 			page 7
 
 
  343              	@ inc/rtc/rtc.c:52: 		while(!bRTC_CRL_RTOFF); 	//wait to synchro
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  397 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}	@
  398              	@ inc/rtc/rtc.c:93: 		rtx->yer = (uint16_t)(1970 + utc / 1461 * 4); utc %= 1461;
  399 0004 40F2B55E 		movw	lr, #1461	@ tmp234,
-ARM GAS  /tmp/cczOleRw.s 			page 8
+ARM GAS  /tmp/ccYHW4yw.s 			page 8
 
 
  400              	@ inc/rtc/rtc.c:90: 		rtx->hor = (uint8_t) (utc % 24); utc /= 24;
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  454 005e 02EB5002 		add	r2, r2, r0, lsr #1	@ tmp210, tmp206, tmp208,
  455              	@ inc/rtc/rtc.c:90: 		rtx->hor = (uint8_t) (utc % 24); utc /= 24;
  456 0062 4FEA1E1E 		lsr	lr, lr, #4	@ tmp183, tmp184,
-ARM GAS  /tmp/cczOleRw.s 			page 9
+ARM GAS  /tmp/ccYHW4yw.s 			page 9
 
 
  457              	@ inc/rtc/rtc.c:91: 		rtx->wdy = (uint8_t) ((utc + 4) % 7);
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  511              	@ inc/rtc/rtc.c:98: 		for (i = 0; i < 12; i++) {
  512 00b4 0C28     		cmp	r0, #12	@ ivtmp.27,
  513              	@ inc/rtc/rtc.c:102: 			utc -= d;
-ARM GAS  /tmp/cczOleRw.s 			page 10
+ARM GAS  /tmp/ccYHW4yw.s 			page 10
 
 
  514 00b6 A3EB0203 		sub	r3, r3, r2	@ utc, utc, pretmp_53
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  568 010e C9E7     		b	.L51	@
  569              	.L59:
  570              	@ inc/rtc/rtc.c:100: 			if (i == 1 && n == 2) d++;
-ARM GAS  /tmp/cczOleRw.s 			page 11
+ARM GAS  /tmp/ccYHW4yw.s 			page 11
 
 
  571 0110 0135     		adds	r5, r5, #1	@ d, d,
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  625 0028 52D0     		beq	.L63	@
  626 002a 5348     		ldr	r0, .L98+8	@ tmp322,
  627              	@ inc/rtc/rtc.c:118: 			utc /= 60;			rtx->min = (uint8_t) (utc % 60); 
-ARM GAS  /tmp/cczOleRw.s 			page 12
+ARM GAS  /tmp/ccYHW4yw.s 			page 12
 
 
  628 002c A3FB0453 		umull	r5, r3, r3, r4	@ tmp355, tmp304, tmp170, _7
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  682              	@ inc/rtc/rtc.c:128: 					n = ((utc >= 1096) ? utc - 1 : utc) / 365;
  683 0096 39D3     		bcc	.L71	@,
  684              	@ inc/rtc/rtc.c:129: 					rtx->yer += n;
-ARM GAS  /tmp/cczOleRw.s 			page 13
+ARM GAS  /tmp/ccYHW4yw.s 			page 13
 
 
  685 0098 4FF48960 		mov	r0, #1096	@ _9,
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  739              	@ inc/rtc/rtc.c:121: 				utc /= 60; rtx->hor = (uint8_t) (utc % 24); 
  740 00e6 244C     		ldr	r4, .L98+8	@ tmp218,
  741 00e8 244B     		ldr	r3, .L98+12	@ tmp220,
-ARM GAS  /tmp/cczOleRw.s 			page 14
+ARM GAS  /tmp/ccYHW4yw.s 			page 14
 
 
  742 00ea A4FB0254 		umull	r5, r4, r4, r2	@ tmp348, tmp217, tmp218, utc
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  796              	.L94:
  797              	@ inc/rtc/rtc.c:134: 						if (i == 1 && n == 2) d++;
  798 015c 022F     		cmp	r7, #2	@ iftmp.6_50,
-ARM GAS  /tmp/cczOleRw.s 			page 15
+ARM GAS  /tmp/ccYHW4yw.s 			page 15
 
 
  799 015e 00D1     		bne	.L75	@,
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  853              	@ inc/rtc/rtc.c:162: 			bRTC_CRL_CNF = 1;				//Start edit mode
  854 0016 0123     		movs	r3, #1	@ tmp122,
  855              	@ inc/rtc/rtc.c:166: 			bRTC_CRL_CNF = 0;				//End edit mode
-ARM GAS  /tmp/cczOleRw.s 			page 16
+ARM GAS  /tmp/ccYHW4yw.s 			page 16
 
 
  856 0018 0024     		movs	r4, #0	@ tmp129,
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  910 0002 0128     		cmp	r0, #1	@ sleep,
  911              	@ inc/rtc/rtc.c:179: 		RCC->APB1ENR |= RCC_APB1ENR_BKPEN | RCC_APB1ENR_PWREN; 
  912 0004 D369     		ldr	r3, [r2, #28]	@ _1, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
-ARM GAS  /tmp/cczOleRw.s 			page 17
+ARM GAS  /tmp/ccYHW4yw.s 			page 17
 
 
  913 0006 43F0C053 		orr	r3, r3, #402653184	@ _2, _1,
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  967              	.L118:
  968 005e 00BF     		.align	2
  969              	.L117:
-ARM GAS  /tmp/cczOleRw.s 			page 18
+ARM GAS  /tmp/ccYHW4yw.s 			page 18
 
 
  970 0060 00100240 		.word	1073876992
@@ -1047,36 +1047,36 @@ ARM GAS  /tmp/cczOleRw.s 			page 1
  993 000a 1E       		.byte	30
  994 000b 1F       		.byte	31
  995              		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
-ARM GAS  /tmp/cczOleRw.s 			page 19
+ARM GAS  /tmp/ccYHW4yw.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 rtc.c
-     /tmp/cczOleRw.s:69     .text.BkpRegInit:00000000 $t
-     /tmp/cczOleRw.s:77     .text.BkpRegInit:00000000 BkpRegInit
-     /tmp/cczOleRw.s:98     .text.BkpRegInit:00000014 $d
-     /tmp/cczOleRw.s:102    .text.rtc_time2unix:00000000 $t
-     /tmp/cczOleRw.s:110    .text.rtc_time2unix:00000000 rtc_time2unix
-     /tmp/cczOleRw.s:248    .text.rtc_time2unix:000000bc $d
-     /tmp/cczOleRw.s:252    .text.RtcInit:00000000 $t
-     /tmp/cczOleRw.s:260    .text.RtcInit:00000000 RtcInit
-     /tmp/cczOleRw.s:377    .text.RtcInit:0000008c $d
-     /tmp/cczOleRw.s:386    .text.rtc_unix2time:00000000 $t
-     /tmp/cczOleRw.s:394    .text.rtc_unix2time:00000000 rtc_unix2time
-     /tmp/cczOleRw.s:580    .text.rtc_unix2time:00000118 $d
-     /tmp/cczOleRw.s:591    .text.rtc_GetTime:00000000 $t
-     /tmp/cczOleRw.s:599    .text.rtc_GetTime:00000000 rtc_GetTime
-     /tmp/cczOleRw.s:816    .text.rtc_GetTime:00000170 $d
-     /tmp/cczOleRw.s:828    .text.rtc_SetTime:00000000 $t
-     /tmp/cczOleRw.s:836    .text.rtc_SetTime:00000000 rtc_SetTime
-     /tmp/cczOleRw.s:890    .text.rtc_SetTime:00000038 $d
-     /tmp/cczOleRw.s:895    .text.SleepMode:00000000 $t
-     /tmp/cczOleRw.s:903    .text.SleepMode:00000000 SleepMode
-     /tmp/cczOleRw.s:970    .text.SleepMode:00000060 $d
-     /tmp/cczOleRw.s:982    .rodata.samurai:00000000 samurai
+     /tmp/ccYHW4yw.s:69     .text.BkpRegInit:00000000 $t
+     /tmp/ccYHW4yw.s:77     .text.BkpRegInit:00000000 BkpRegInit
+     /tmp/ccYHW4yw.s:98     .text.BkpRegInit:00000014 $d
+     /tmp/ccYHW4yw.s:102    .text.rtc_time2unix:00000000 $t
+     /tmp/ccYHW4yw.s:110    .text.rtc_time2unix:00000000 rtc_time2unix
+     /tmp/ccYHW4yw.s:248    .text.rtc_time2unix:000000bc $d
+     /tmp/ccYHW4yw.s:252    .text.RtcInit:00000000 $t
+     /tmp/ccYHW4yw.s:260    .text.RtcInit:00000000 RtcInit
+     /tmp/ccYHW4yw.s:377    .text.RtcInit:0000008c $d
+     /tmp/ccYHW4yw.s:386    .text.rtc_unix2time:00000000 $t
+     /tmp/ccYHW4yw.s:394    .text.rtc_unix2time:00000000 rtc_unix2time
+     /tmp/ccYHW4yw.s:580    .text.rtc_unix2time:00000118 $d
+     /tmp/ccYHW4yw.s:591    .text.rtc_GetTime:00000000 $t
+     /tmp/ccYHW4yw.s:599    .text.rtc_GetTime:00000000 rtc_GetTime
+     /tmp/ccYHW4yw.s:816    .text.rtc_GetTime:00000170 $d
+     /tmp/ccYHW4yw.s:828    .text.rtc_SetTime:00000000 $t
+     /tmp/ccYHW4yw.s:836    .text.rtc_SetTime:00000000 rtc_SetTime
+     /tmp/ccYHW4yw.s:890    .text.rtc_SetTime:00000038 $d
+     /tmp/ccYHW4yw.s:895    .text.SleepMode:00000000 $t
+     /tmp/ccYHW4yw.s:903    .text.SleepMode:00000000 SleepMode
+     /tmp/ccYHW4yw.s:970    .text.SleepMode:00000060 $d
+     /tmp/ccYHW4yw.s:982    .rodata.samurai:00000000 samurai
                             *COM*:00000004 PutChar
                             *COM*:00000024 ptm
-     /tmp/cczOleRw.s:978    .rodata.samurai:00000000 $d
+     /tmp/ccYHW4yw.s:978    .rodata.samurai:00000000 $d
 
 UNDEFINED SYMBOLS
 Rtc

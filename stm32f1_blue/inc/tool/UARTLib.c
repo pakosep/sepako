@@ -107,7 +107,6 @@ void UART_getChar2( char *Char )				{
 			__enable_irq();
 		}		
 	}
-	
 //============================================================================
 char *UART_getStr(char *Str){
 		u16 i; char d=0;
@@ -146,6 +145,28 @@ u32 UART_getNum (void){
 		} while(d!=0x0d);
 		*(--wstr) = 0;
 		return str2int(str);	
+	}
+
+u08 UART_getDec (s32 *num){ 
+		u16 i; char d=0,n=0;
+		char str[12], *wstr=str;
+		i = Fifo1.rri;
+		//str = (char*)Fifo2.rbuf+i;
+		do{
+			while (Fifo1.rct)		
+			{
+				d = Fifo1.rbuf[Fifo1.rri];  // odebrany znak
+				*wstr++ = d; 
+				Fifo1.rri = ++i % UART1_RXB;
+				__disable_irq();
+				Fifo1.rct--;
+				__enable_irq();
+				n++;
+			}
+		} while(d != 0x0d);
+		*(--wstr) = 0;
+		*num = str2int(str);
+		return n;	
 	}
 //============================================================================
 u32 UART_getHex (void){
@@ -258,7 +279,7 @@ char *int2str (s32 val, char *str,  u08 fw, u08 k) {// without first zeros
 		}
 		return str;
   }
-//
+//============================================================================
 char *int2str_z (s32 val, char *str,  u08 fw, u08 k) {// with first zeros 
     u08 i = 0;
 		u32 dpow = 1;
@@ -274,7 +295,7 @@ char *int2str_z (s32 val, char *str,  u08 fw, u08 k) {// with first zeros
 			do 
 			{ 																	// generate digits in reverse order 			
 				if(i<(k+1)) zero='0'; 
-				else zero = '0';									// krotki znak spacji
+				else zero = ' ';									// krotki znak spacji
 				str[i++]=val>0?val%10+'0':zero;		// get next digit '\x1f'
 				
 				if(i==k) {
@@ -344,6 +365,7 @@ char *hex2str(u32 hex, char *xstr,u08 fw){ 					//Convert HEX number to string
 		return xstr;
 	}
 //============================================================================
+//============================================================================
 int  str2heX(char * str){														//Convert HEX string to number
   int i, len, val_p;
   //  char c;
@@ -364,8 +386,10 @@ int  str2heX(char * str){														//Convert HEX string to number
   return val_p;
 }
 //============================================================================
-int  str2int(char * str){
-		int i, len, val_p, pot=1,mn=1;
+s32 str2int(char * str){
+		int i,len,mn=1;
+		s32 pot=1;
+		s32 val_p;
 		//  char c;
 		reverse(str);
 		val_p = 0;
@@ -373,7 +397,7 @@ int  str2int(char * str){
 		for(i = 0; i < len; i++)
 		{
 			if(str[i]>='0'&&str[i]<='9')    {
-		 (val_p)+=((str[i]-'0')*pot);
+		 (val_p) += ((str[i]-'0')*pot);
 		 pot *= 10;
 			}
 			else if(str[i]=='-')  {
@@ -386,7 +410,7 @@ int  str2int(char * str){
 				return 0;	
 			}
 		}
-		return val_p*mn;
+		return (s32)val_p*mn;
 	}
 //============================================================================
 u32  str2hex(char *Buf) {														//Convert HEX string to number
@@ -476,7 +500,7 @@ void USART2_IRQHandler(void)		{
 				Fifo2.rbuf[i] = d;
 				Fifo2.rwi = ++i % UART2_RXB;
 			}
-			USART2->DR = d;		//echo
+			USART2->DR = d;		//echo 
     }
 		
 	}

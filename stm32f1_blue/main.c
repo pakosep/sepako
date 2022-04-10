@@ -297,13 +297,13 @@ void lion_updown(void){
 		BkpRegInit();
 		Uart1Init(); // TTY4 Green->PA10_RX, White->PA9_TX 
 		Uart2Init(); // PA2_TX , PA3_RX
-		//Uart3Init(); // 
+		Uart3Init(); // 
 		//head();
 		
 		//char * txt1="ala ma kota";
 		char buf[12];
 		
-		PutChar = UART1_putc;	tr_pen_color ( TYELLOW );
+		PutChar = UART2_putc;	tr_pen_color ( TYELLOW );
 		UaPutS("\f UART1 "); UaPutS (uint2str( (F_CPU/1)/(1*USART1->BRR-1),buf));	
 		UaPutS (" b/s \r\n"); 
 		//PutChar = UART2_putc;	tr_pen_color ( TYELLOW );
@@ -429,7 +429,7 @@ void lion_updown(void){
 				//i2c1_read( INA219_ADDR,5,i2reg,2);
 				//cal = ((i2reg[1]) | (i2reg[0]<<8));
 					
-					PutChar = UART1_putc;
+					PutChar = UART2_putc;
 					unt2uart ((cnt/60)%60,2);UaPutS(".");unt2uart (cnt%60,2);
 					UaPutS((char*)tstat[stat]);
 					
@@ -456,18 +456,18 @@ void lion_updown(void){
 					} */
 					
 
-					if(stat == lad || stat == roz || stat == kon || stat == rok) coile = 5;
-					else coile = 30;
+					if(stat == lad || stat == roz || stat == kon || stat == rok) coile = 2;
+					else coile = 2;
 					if( (cnt)%coile==0 ){  // pomiar rezystancji wewnetrznej
-						PutChar = UART2_putc; //przypisanie callback 
-						int2uarz (vbus  ,4,0); 	UaPutC(',');
-						int2uarz (cur   ,4,0); 	UaPutC(',');
-						int2uarz (Cah   ,6,0);	UaPutC(',');
-						int2uarz (pow   ,4,0); 	UaPutC(',');
-						int2uarz (Cwh   ,7,0);	UaPutC(',');
-						int2uarz (rw 		,4,0);	
-						//UaPutS("\r");
-						PutChar = UART1_putc;
+						PutChar = UART1_putc; //przypisanie callback 
+						int2uarz (vbus  ,4,0); UaPutC(',');
+						int2uarz (cur   ,4,0); UaPutC(',');
+						int2uarz (Cah   ,6,0); UaPutC(',');
+						int2uarz (pow   ,4,0); UaPutC(',');
+						int2uarz (Cwh   ,7,0); UaPutC(',');
+						//int2uarz (rw 		,4,0);	
+						//UaPutS("\n\r");
+						PutChar = UART2_putc;
 					}
 					
 					cnt++;

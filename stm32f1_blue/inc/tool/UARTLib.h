@@ -51,9 +51,6 @@ void int2uarz (s32 val ,u08 digit, u08 k);
 void num2uart (u32 val ,u08 digit, u08 k);	
 void hex2uart (u32 val ,u08 digit);
 
-void unt2uart (u32 val ,u08 digit);
-void unt2uart (u32 val ,u08 digit);
-
 char *sint2str(s32 val,char *s);
 char *uint2str(u32 val,char *s);
 char *unt2str (u32 val,char *s,u08 digit);
@@ -61,11 +58,12 @@ char *int2str (s32 val,char *s,u08 digit,u08 dot);
 char *num2str (u32 num,char *s,u08 digit,u08 dot);
 char *hex2str (u32 hex,char *s,u08 digit);
 
-int  str2int(char *);
+s32  str2int(char *);
 int  str2heX(char *);
 u32  str2hex(char *);
 
 u32   UART_getNum(void);
+u08 	UART_getDec(s32 *num);
 u32   UART_getHex(void);
 void  UART_getChar(char *);
 char *UART_getStr (char *);

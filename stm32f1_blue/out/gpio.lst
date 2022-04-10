@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccQsryGX.s 			page 1
+ARM GAS  /tmp/ccBYilvd.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccQsryGX.s 			page 1
   55              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
   56              	@ -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim
   57              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
-ARM GAS  /tmp/ccQsryGX.s 			page 2
+ARM GAS  /tmp/ccBYilvd.s 			page 2
 
 
   58              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccQsryGX.s 			page 1
  112 0022 6B60     		str	r3, [r5, #4]	@ tmp113, MEM[(struct GPIO_TypeDef *)1073810432B].CRH
  113              	@ gpio.c:68: 	GPIOB->ODR = 0;
  114 0024 EA60     		str	r2, [r5, #12]	@ tmp117, MEM[(struct GPIO_TypeDef *)1073810432B].ODR
-ARM GAS  /tmp/ccQsryGX.s 			page 3
+ARM GAS  /tmp/ccBYilvd.s 			page 3
 
 
  115              	@ gpio.c:69: 	GPIOC->CRL = 0x88888888;
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccQsryGX.s 			page 1
  169              	@ gpio.c:103: 	cr_ptr = &port_ptr->CRL;				// configuration of pins [0,7] is in CRL
  170 000c 0368     		ldrls	r3, [r0]	@ cr_value, MEM[(volatile uint32_t *)port_ptr_8(D)]
  171              	@ gpio.c:112: 	cr_value &= ~(GPIO_CRx_MODE_CNF_mask << (pin * 4));	// clear the MODE and CNF fields
-ARM GAS  /tmp/ccQsryGX.s 			page 4
+ARM GAS  /tmp/ccBYilvd.s 			page 4
 
 
  172 000e 4FEA8101 		lsl	r1, r1, #2	@ _1, pin,
@@ -199,15 +199,15 @@ ARM GAS  /tmp/ccQsryGX.s 			page 1
  187 0028 7047     		bx	lr	@
  188              		.size	gpio_pin_cfg, .-gpio_pin_cfg
  189 002a 00BF     		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
-ARM GAS  /tmp/ccQsryGX.s 			page 5
+ARM GAS  /tmp/ccBYilvd.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gpio.c
-     /tmp/ccQsryGX.s:69     .text.gpio_init:00000000 $t
-     /tmp/ccQsryGX.s:77     .text.gpio_init:00000000 gpio_init
-     /tmp/ccQsryGX.s:140    .text.gpio_init:0000003c $d
-     /tmp/ccQsryGX.s:147    .text.gpio_pin_cfg:00000000 $t
-     /tmp/ccQsryGX.s:155    .text.gpio_pin_cfg:00000000 gpio_pin_cfg
+     /tmp/ccBYilvd.s:69     .text.gpio_init:00000000 $t
+     /tmp/ccBYilvd.s:77     .text.gpio_init:00000000 gpio_init
+     /tmp/ccBYilvd.s:140    .text.gpio_init:0000003c $d
+     /tmp/ccBYilvd.s:147    .text.gpio_pin_cfg:00000000 $t
+     /tmp/ccBYilvd.s:155    .text.gpio_pin_cfg:00000000 gpio_pin_cfg
 
 NO UNDEFINED SYMBOLS

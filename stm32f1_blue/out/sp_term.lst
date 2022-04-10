@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc4yroDU.s 			page 1
+ARM GAS  /tmp/ccEi8tOb.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc4yroDU.s 			page 1
   55              	@ -fstrict-volatile-bitfields -fsync-libcalls -fthread-jumps
   56              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
   57              	@ -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim
-ARM GAS  /tmp/cc4yroDU.s 			page 2
+ARM GAS  /tmp/ccEi8tOb.s 			page 2
 
 
   58              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
@@ -85,13 +85,13 @@ ARM GAS  /tmp/cc4yroDU.s 			page 1
   79              		@ args = 0, pretend = 0, frame = 0
   80              		@ frame_needed = 0, uses_anonymous_args = 0
   81              		@ link register save eliminated.
-  82              	@ inc/tool/sp_term.c:23: 		if(hide) UaPutK( UCUR_HIDE );
+  82              	@ inc/tool/sp_term.c:25: 		if(hide) UaPutK( UCUR_HIDE );
   83 0000 10B9     		cbnz	r0, .L4	@ hide,
-  84              	@ inc/tool/sp_term.c:24: 		else UaPutK( UCUR_SHOW );
+  84              	@ inc/tool/sp_term.c:26: 		else UaPutK( UCUR_SHOW );
   85 0002 0348     		ldr	r0, .L5	@,
   86 0004 FFF7FEBF 		b	UaPutK	@
   87              	.L4:
-  88              	@ inc/tool/sp_term.c:23: 		if(hide) UaPutK( UCUR_HIDE );
+  88              	@ inc/tool/sp_term.c:25: 		if(hide) UaPutK( UCUR_HIDE );
   89 0008 0248     		ldr	r0, .L5+4	@,
   90 000a FFF7FEBF 		b	UaPutK	@
   91              	.L6:
@@ -113,15 +113,15 @@ ARM GAS  /tmp/cc4yroDU.s 			page 1
  107              		@ args = 0, pretend = 0, frame = 0
  108              		@ frame_needed = 0, uses_anonymous_args = 0
  109 0000 08B5     		push	{r3, lr}	@
- 110              	@ inc/tool/sp_term.c:31: 		UaPutK( UCLS );
+ 110              	@ inc/tool/sp_term.c:33: 		UaPutK( UCLS );
  111 0002 0448     		ldr	r0, .L9	@,
  112 0004 FFF7FEFF 		bl	UaPutK	@
- 113              	@ inc/tool/sp_term.c:34: 	}
+ 113              	@ inc/tool/sp_term.c:36: 	}
  114 0008 BDE80840 		pop	{r3, lr}	@
-ARM GAS  /tmp/cc4yroDU.s 			page 3
+ARM GAS  /tmp/ccEi8tOb.s 			page 3
 
 
- 115              	@ inc/tool/sp_term.c:32: 		UaPutK( UHOME );
+ 115              	@ inc/tool/sp_term.c:34: 		UaPutK( UHOME );
  116 000c 0248     		ldr	r0, .L9+4	@,
  117 000e FFF7FEBF 		b	UaPutK	@
  118              	.L10:
@@ -142,23 +142,23 @@ ARM GAS  /tmp/cc4yroDU.s 			page 1
  133              	fill_line:
  134              		@ args = 0, pretend = 0, frame = 0
  135              		@ frame_needed = 0, uses_anonymous_args = 0
- 136              	@ inc/tool/sp_term.c:37: 		for(uint8_t i=0; i<cnt; i++) UaPutC( ascii );
+ 136              	@ inc/tool/sp_term.c:39: 		for(uint8_t i=0; i<cnt; i++) UaPutC( ascii );
  137 0000 59B1     		cbz	r1, .L19	@ cnt,
- 138              	@ inc/tool/sp_term.c:36: void fill_line( char ascii, uint8_t cnt ) {
+ 138              	@ inc/tool/sp_term.c:38: void fill_line( char ascii, uint8_t cnt ) {
  139 0002 70B5     		push	{r4, r5, r6, lr}	@
  140 0004 0D46     		mov	r5, r1	@ cnt, cnt
  141 0006 0646     		mov	r6, r0	@ ascii, ascii
- 142              	@ inc/tool/sp_term.c:37: 		for(uint8_t i=0; i<cnt; i++) UaPutC( ascii );
+ 142              	@ inc/tool/sp_term.c:39: 		for(uint8_t i=0; i<cnt; i++) UaPutC( ascii );
  143 0008 0024     		movs	r4, #0	@ i,
  144              	.L13:
- 145              	@ inc/tool/sp_term.c:37: 		for(uint8_t i=0; i<cnt; i++) UaPutC( ascii );
+ 145              	@ inc/tool/sp_term.c:39: 		for(uint8_t i=0; i<cnt; i++) UaPutC( ascii );
  146 000a 0134     		adds	r4, r4, #1	@ tmp113, i,
  147 000c 3046     		mov	r0, r6	@, ascii
  148 000e E4B2     		uxtb	r4, r4	@ i, tmp113
  149 0010 FFF7FEFF 		bl	UaPutC	@
  150 0014 A542     		cmp	r5, r4	@ cnt, i
  151 0016 F8D1     		bne	.L13	@,
- 152              	@ inc/tool/sp_term.c:38: 	}
+ 152              	@ inc/tool/sp_term.c:40: 	}
  153 0018 70BD     		pop	{r4, r5, r6, pc}	@
  154              	.L19:
  155 001a 7047     		bx	lr	@
@@ -176,46 +176,46 @@ ARM GAS  /tmp/cc4yroDU.s 			page 1
  167              		@ args = 0, pretend = 0, frame = 0
  168              		@ frame_needed = 0, uses_anonymous_args = 0
  169 0000 70B5     		push	{r4, r5, r6, lr}	@
- 170              	@ inc/tool/sp_term.c:40: void tr_attr( uint8_t atr, uint8_t fg, uint8_t bg ) {
+ 170              	@ inc/tool/sp_term.c:42: void tr_attr( uint8_t atr, uint8_t fg, uint8_t bg ) {
  171 0002 0646     		mov	r6, r0	@ atr, atr
-ARM GAS  /tmp/cc4yroDU.s 			page 4
+ARM GAS  /tmp/ccEi8tOb.s 			page 4
 
 
  172 0004 0D46     		mov	r5, r1	@ fg, fg
  173 0006 1446     		mov	r4, r2	@ bg, bg
- 174              	@ inc/tool/sp_term.c:41: 		UaPutC( 0x1b );		// <ESC>[0;32;44m
+ 174              	@ inc/tool/sp_term.c:43: 		UaPutC( 0x1b );		// <ESC>[0;32;44m
  175 0008 1B20     		movs	r0, #27	@,
  176 000a FFF7FEFF 		bl	UaPutC	@
- 177              	@ inc/tool/sp_term.c:42: 		UaPutC( '[' );
+ 177              	@ inc/tool/sp_term.c:44: 		UaPutC( '[' );
  178 000e 5B20     		movs	r0, #91	@,
  179 0010 FFF7FEFF 		bl	UaPutC	@
- 180              	@ inc/tool/sp_term.c:43: 		UaPutC( atr+'0' );
+ 180              	@ inc/tool/sp_term.c:45: 		UaPutC( atr+'0' );
  181 0014 06F13000 		add	r0, r6, #48	@ tmp116, atr,
  182 0018 C0B2     		uxtb	r0, r0	@, tmp116
  183 001a FFF7FEFF 		bl	UaPutC	@
- 184              	@ inc/tool/sp_term.c:44: 		UaPutC( ';' );
+ 184              	@ inc/tool/sp_term.c:46: 		UaPutC( ';' );
  185 001e 3B20     		movs	r0, #59	@,
  186 0020 FFF7FEFF 		bl	UaPutC	@
- 187              	@ inc/tool/sp_term.c:45: 		UaPutC( '3' );
+ 187              	@ inc/tool/sp_term.c:47: 		UaPutC( '3' );
  188 0024 3320     		movs	r0, #51	@,
  189 0026 FFF7FEFF 		bl	UaPutC	@
- 190              	@ inc/tool/sp_term.c:46: 		UaPutC( fg+'0' );
+ 190              	@ inc/tool/sp_term.c:48: 		UaPutC( fg+'0' );
  191 002a 05F13000 		add	r0, r5, #48	@ tmp118, fg,
  192 002e C0B2     		uxtb	r0, r0	@, tmp118
  193 0030 FFF7FEFF 		bl	UaPutC	@
- 194              	@ inc/tool/sp_term.c:47: 		UaPutC( ';' );
+ 194              	@ inc/tool/sp_term.c:49: 		UaPutC( ';' );
  195 0034 3B20     		movs	r0, #59	@,
  196 0036 FFF7FEFF 		bl	UaPutC	@
- 197              	@ inc/tool/sp_term.c:48: 		UaPutC( '4' );
+ 197              	@ inc/tool/sp_term.c:50: 		UaPutC( '4' );
  198 003a 3420     		movs	r0, #52	@,
  199 003c FFF7FEFF 		bl	UaPutC	@
- 200              	@ inc/tool/sp_term.c:49: 		UaPutC( bg+'0' );
+ 200              	@ inc/tool/sp_term.c:51: 		UaPutC( bg+'0' );
  201 0040 04F13000 		add	r0, r4, #48	@ tmp120, bg,
  202 0044 C0B2     		uxtb	r0, r0	@, tmp120
  203 0046 FFF7FEFF 		bl	UaPutC	@
- 204              	@ inc/tool/sp_term.c:51: 	}
+ 204              	@ inc/tool/sp_term.c:53: 	}
  205 004a BDE87040 		pop	{r4, r5, r6, lr}	@
- 206              	@ inc/tool/sp_term.c:50: 		UaPutC( 'm' );
+ 206              	@ inc/tool/sp_term.c:52: 		UaPutC( 'm' );
  207 004e 6D20     		movs	r0, #109	@,
  208 0050 FFF7FEBF 		b	UaPutC	@
  209              		.size	tr_attr, .-tr_attr
@@ -232,27 +232,27 @@ ARM GAS  /tmp/cc4yroDU.s 			page 1
  220              		@ args = 0, pretend = 0, frame = 0
  221              		@ frame_needed = 0, uses_anonymous_args = 0
  222 0000 10B5     		push	{r4, lr}	@
- 223              	@ inc/tool/sp_term.c:53: void tr_pen_color( uint8_t cl ) {
+ 223              	@ inc/tool/sp_term.c:55: void tr_pen_color( uint8_t cl ) {
  224 0002 0446     		mov	r4, r0	@ cl, cl
- 225              	@ inc/tool/sp_term.c:54: 		UaPutC( 0x1b );		// <ESC>[34m
+ 225              	@ inc/tool/sp_term.c:56: 		UaPutC( 0x1b );		// <ESC>[34m
  226 0004 1B20     		movs	r0, #27	@,
  227 0006 FFF7FEFF 		bl	UaPutC	@
- 228              	@ inc/tool/sp_term.c:55: 		UaPutC( '[' );
-ARM GAS  /tmp/cc4yroDU.s 			page 5
+ 228              	@ inc/tool/sp_term.c:57: 		UaPutC( '[' );
+ARM GAS  /tmp/ccEi8tOb.s 			page 5
 
 
  229 000a 5B20     		movs	r0, #91	@,
  230 000c FFF7FEFF 		bl	UaPutC	@
- 231              	@ inc/tool/sp_term.c:56: 		UaPutC( '3' );
+ 231              	@ inc/tool/sp_term.c:58: 		UaPutC( '3' );
  232 0010 3320     		movs	r0, #51	@,
  233 0012 FFF7FEFF 		bl	UaPutC	@
- 234              	@ inc/tool/sp_term.c:57: 		UaPutC( cl+'0' );
+ 234              	@ inc/tool/sp_term.c:59: 		UaPutC( cl+'0' );
  235 0016 04F13000 		add	r0, r4, #48	@ tmp112, cl,
  236 001a C0B2     		uxtb	r0, r0	@, tmp112
  237 001c FFF7FEFF 		bl	UaPutC	@
- 238              	@ inc/tool/sp_term.c:59: 	}
+ 238              	@ inc/tool/sp_term.c:61: 	}
  239 0020 BDE81040 		pop	{r4, lr}	@
- 240              	@ inc/tool/sp_term.c:58: 		UaPutC( 'm' );
+ 240              	@ inc/tool/sp_term.c:60: 		UaPutC( 'm' );
  241 0024 6D20     		movs	r0, #109	@,
  242 0026 FFF7FEBF 		b	UaPutC	@
  243              		.size	tr_pen_color, .-tr_pen_color
@@ -269,24 +269,24 @@ ARM GAS  /tmp/cc4yroDU.s 			page 1
  254              		@ args = 0, pretend = 0, frame = 0
  255              		@ frame_needed = 0, uses_anonymous_args = 0
  256 0000 10B5     		push	{r4, lr}	@
- 257              	@ inc/tool/sp_term.c:61: void tr_brush_color( uint8_t cl ) {
+ 257              	@ inc/tool/sp_term.c:63: void tr_brush_color( uint8_t cl ) {
  258 0002 0446     		mov	r4, r0	@ cl, cl
- 259              	@ inc/tool/sp_term.c:62: 		UaPutC( 0x1b );		// <ESC>[44m
+ 259              	@ inc/tool/sp_term.c:64: 		UaPutC( 0x1b );		// <ESC>[44m
  260 0004 1B20     		movs	r0, #27	@,
  261 0006 FFF7FEFF 		bl	UaPutC	@
- 262              	@ inc/tool/sp_term.c:63: 		UaPutC( '[' );
+ 262              	@ inc/tool/sp_term.c:65: 		UaPutC( '[' );
  263 000a 5B20     		movs	r0, #91	@,
  264 000c FFF7FEFF 		bl	UaPutC	@
- 265              	@ inc/tool/sp_term.c:64: 		UaPutC( '4' );
+ 265              	@ inc/tool/sp_term.c:66: 		UaPutC( '4' );
  266 0010 3420     		movs	r0, #52	@,
  267 0012 FFF7FEFF 		bl	UaPutC	@
- 268              	@ inc/tool/sp_term.c:65: 		UaPutC( cl+'0' );
+ 268              	@ inc/tool/sp_term.c:67: 		UaPutC( cl+'0' );
  269 0016 04F13000 		add	r0, r4, #48	@ tmp112, cl,
  270 001a C0B2     		uxtb	r0, r0	@, tmp112
  271 001c FFF7FEFF 		bl	UaPutC	@
- 272              	@ inc/tool/sp_term.c:67: 	}
+ 272              	@ inc/tool/sp_term.c:69: 	}
  273 0020 BDE81040 		pop	{r4, lr}	@
- 274              	@ inc/tool/sp_term.c:66: 		UaPutC( 'm' );
+ 274              	@ inc/tool/sp_term.c:68: 		UaPutC( 'm' );
  275 0024 6D20     		movs	r0, #109	@,
  276 0026 FFF7FEBF 		b	UaPutC	@
  277              		.size	tr_brush_color, .-tr_brush_color
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc4yroDU.s 			page 1
  283              		.thumb
  284              		.thumb_func
  285              		.fpu softvfp
-ARM GAS  /tmp/cc4yroDU.s 			page 6
+ARM GAS  /tmp/ccEi8tOb.s 			page 6
 
 
  286              		.type	tr_locate, %function
@@ -306,235 +306,221 @@ ARM GAS  /tmp/cc4yroDU.s 			page 1
  288              		@ args = 0, pretend = 0, frame = 0
  289              		@ frame_needed = 0, uses_anonymous_args = 0
  290 0000 38B5     		push	{r3, r4, r5, lr}	@
- 291              	@ inc/tool/sp_term.c:69: void tr_locate( uint8_t x, uint8_t y ) {
- 292 0002 0D46     		mov	r5, r1	@ y, y
- 293 0004 0446     		mov	r4, r0	@ x, x
- 294              	@ inc/tool/sp_term.c:71: 		UaPutC( 0x1b );	// <ESC>[y;xH <ESC>[{ROW};{COLUMN}f
- 295 0006 1B20     		movs	r0, #27	@,
- 296 0008 FFF7FEFF 		bl	UaPutC	@
- 297              	@ inc/tool/sp_term.c:72: 		UaPutC('[');
- 298 000c 5B20     		movs	r0, #91	@,
- 299 000e FFF7FEFF 		bl	UaPutC	@
- 300              	@ inc/tool/sp_term.c:73: 		UaPutC(y+48);
- 301 0012 05F13000 		add	r0, r5, #48	@ tmp114, y,
- 302 0016 C0B2     		uxtb	r0, r0	@, tmp114
- 303 0018 FFF7FEFF 		bl	UaPutC	@
- 304              	@ inc/tool/sp_term.c:74: 		UaPutC(';');
- 305 001c 3B20     		movs	r0, #59	@,
- 306 001e FFF7FEFF 		bl	UaPutC	@
- 307              	@ inc/tool/sp_term.c:75: 		UaPutC(x+48);
- 308 0022 04F13000 		add	r0, r4, #48	@ tmp116, x,
- 309 0026 C0B2     		uxtb	r0, r0	@, tmp116
- 310 0028 FFF7FEFF 		bl	UaPutC	@
- 311              	@ inc/tool/sp_term.c:78: 	}
- 312 002c BDE83840 		pop	{r3, r4, r5, lr}	@
- 313              	@ inc/tool/sp_term.c:77: 		UaPutC('f'  );
- 314 0030 6620     		movs	r0, #102	@,
- 315 0032 FFF7FEBF 		b	UaPutC	@
- 316              		.size	tr_locate, .-tr_locate
- 317 0036 00BF     		.section	.text.tr_loc,"ax",%progbits
- 318              		.align	1
- 319              		.p2align 2,,3
- 320              		.global	tr_loc
- 321              		.syntax unified
- 322              		.thumb
- 323              		.thumb_func
- 324              		.fpu softvfp
- 325              		.type	tr_loc, %function
- 326              	tr_loc:
- 327              		@ args = 0, pretend = 0, frame = 0
- 328              		@ frame_needed = 0, uses_anonymous_args = 0
- 329              		@ link register save eliminated.
- 330 0000 FFF7FEBF 		b	tr_locate	@
- 331              		.size	tr_loc, .-tr_loc
- 332              		.section	.text.tr_erasescr,"ax",%progbits
- 333              		.align	1
- 334              		.p2align 2,,3
- 335              		.global	tr_erasescr
- 336              		.syntax unified
- 337              		.thumb
- 338              		.thumb_func
- 339              		.fpu softvfp
- 340              		.type	tr_erasescr, %function
- 341              	tr_erasescr:
- 342              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/cc4yroDU.s 			page 7
+ 291              	@ inc/tool/sp_term.c:71: void tr_locate( uint8_t y, uint8_t x ) {
+ 292 0002 0546     		mov	r5, r0	@ y, y
+ 293 0004 0C46     		mov	r4, r1	@ x, x
+ 294              	@ inc/tool/sp_term.c:76: 		UaPutS("\x1b[");
+ 295 0006 0848     		ldr	r0, .L30	@,
+ 296 0008 FFF7FEFF 		bl	UaPutS	@
+ 297              	@ inc/tool/sp_term.c:77: 		uint2uart(y);
+ 298 000c 2846     		mov	r0, r5	@, y
+ 299 000e FFF7FEFF 		bl	uint2uart	@
+ 300              	@ inc/tool/sp_term.c:79: 		UaPutC(';');
+ 301 0012 3B20     		movs	r0, #59	@,
+ 302 0014 FFF7FEFF 		bl	UaPutC	@
+ 303              	@ inc/tool/sp_term.c:81: 		uint2uart(x);
+ 304 0018 2046     		mov	r0, r4	@, x
+ 305 001a FFF7FEFF 		bl	uint2uart	@
+ 306              	@ inc/tool/sp_term.c:85: 	}
+ 307 001e BDE83840 		pop	{r3, r4, r5, lr}	@
+ 308              	@ inc/tool/sp_term.c:82: 		UaPutC('H');
+ 309 0022 4820     		movs	r0, #72	@,
+ 310 0024 FFF7FEBF 		b	UaPutC	@
+ 311              	.L31:
+ 312              		.align	2
+ 313              	.L30:
+ 314 0028 00000000 		.word	.LC0
+ 315              		.size	tr_locate, .-tr_locate
+ 316              		.section	.text.tr_erasescr,"ax",%progbits
+ 317              		.align	1
+ 318              		.p2align 2,,3
+ 319              		.global	tr_erasescr
+ 320              		.syntax unified
+ 321              		.thumb
+ 322              		.thumb_func
+ 323              		.fpu softvfp
+ 324              		.type	tr_erasescr, %function
+ 325              	tr_erasescr:
+ 326              		@ args = 0, pretend = 0, frame = 0
+ 327              		@ frame_needed = 0, uses_anonymous_args = 0
+ 328 0000 08B5     		push	{r3, lr}	@
+ 329              	@ inc/tool/sp_term.c:88: 		UaPutC( 0x1b );		// <ESC>[2J
+ 330 0002 1B20     		movs	r0, #27	@,
+ 331 0004 FFF7FEFF 		bl	UaPutC	@
+ 332              	@ inc/tool/sp_term.c:89: 		UaPutC( '[' );
+ 333 0008 5B20     		movs	r0, #91	@,
+ 334 000a FFF7FEFF 		bl	UaPutC	@
+ 335              	@ inc/tool/sp_term.c:90: 		UaPutC( '1' );
+ 336 000e 3120     		movs	r0, #49	@,
+ 337 0010 FFF7FEFF 		bl	UaPutC	@
+ 338              	@ inc/tool/sp_term.c:92: 	}
+ 339 0014 BDE80840 		pop	{r3, lr}	@
+ 340              	@ inc/tool/sp_term.c:91: 		UaPutC( 'J' );
+ 341 0018 4A20     		movs	r0, #74	@,
+ 342 001a FFF7FEBF 		b	UaPutC	@
+ARM GAS  /tmp/ccEi8tOb.s 			page 7
 
 
- 343              		@ frame_needed = 0, uses_anonymous_args = 0
- 344              	@ inc/tool/sp_term.c:91: void tr_erasescr( void ) {
- 345 0000 08B5     		push	{r3, lr}	@
- 346              	@ inc/tool/sp_term.c:92: 		UaPutC( 0x1b );		// <ESC>[2J
- 347 0002 1B20     		movs	r0, #27	@,
- 348 0004 FFF7FEFF 		bl	UaPutC	@
- 349              	@ inc/tool/sp_term.c:93: 		UaPutC( '[' );
- 350 0008 5B20     		movs	r0, #91	@,
- 351 000a FFF7FEFF 		bl	UaPutC	@
- 352              	@ inc/tool/sp_term.c:94: 		UaPutC( '1' );
- 353 000e 3120     		movs	r0, #49	@,
- 354 0010 FFF7FEFF 		bl	UaPutC	@
- 355              	@ inc/tool/sp_term.c:96: 	}
- 356 0014 BDE80840 		pop	{r3, lr}	@
- 357              	@ inc/tool/sp_term.c:95: 		UaPutC( 'J' );
- 358 0018 4A20     		movs	r0, #74	@,
- 359 001a FFF7FEBF 		b	UaPutC	@
- 360              		.size	tr_erasescr, .-tr_erasescr
- 361 001e 00BF     		.section	.text.tr_cur_back,"ax",%progbits
- 362              		.align	1
- 363              		.p2align 2,,3
- 364              		.global	tr_cur_back
- 365              		.syntax unified
- 366              		.thumb
- 367              		.thumb_func
- 368              		.fpu softvfp
- 369              		.type	tr_cur_back, %function
- 370              	tr_cur_back:
- 371              		@ args = 0, pretend = 0, frame = 0
- 372              		@ frame_needed = 0, uses_anonymous_args = 0
- 373 0000 10B5     		push	{r4, lr}	@
- 374              	@ inc/tool/sp_term.c:98: void tr_cur_back( uint8_t c ) {
- 375 0002 0446     		mov	r4, r0	@ c, c
- 376              	@ inc/tool/sp_term.c:99: 		UaPutC( 0x1b );	// <ESC>[{ROW};{COLUMN}f
- 377 0004 1B20     		movs	r0, #27	@,
- 378 0006 FFF7FEFF 		bl	UaPutC	@
- 379              	@ inc/tool/sp_term.c:100: 		UaPutC('['  );
- 380 000a 5B20     		movs	r0, #91	@,
- 381 000c FFF7FEFF 		bl	UaPutC	@
- 382              	@ inc/tool/sp_term.c:101: 		UaPutC(c+'0');
- 383 0010 04F13000 		add	r0, r4, #48	@ tmp112, c,
- 384 0014 C0B2     		uxtb	r0, r0	@, tmp112
- 385 0016 FFF7FEFF 		bl	UaPutC	@
- 386              	@ inc/tool/sp_term.c:103: 	}
- 387 001a BDE81040 		pop	{r4, lr}	@
- 388              	@ inc/tool/sp_term.c:102: 		UaPutC('D'  );
- 389 001e 4420     		movs	r0, #68	@,
- 390 0020 FFF7FEBF 		b	UaPutC	@
- 391              		.size	tr_cur_back, .-tr_cur_back
- 392              		.section	.text.tr_cur_forward,"ax",%progbits
- 393              		.align	1
- 394              		.p2align 2,,3
- 395              		.global	tr_cur_forward
- 396              		.syntax unified
- 397              		.thumb
- 398              		.thumb_func
- 399              		.fpu softvfp
-ARM GAS  /tmp/cc4yroDU.s 			page 8
+ 343              		.size	tr_erasescr, .-tr_erasescr
+ 344 001e 00BF     		.section	.text.tr_cur_back,"ax",%progbits
+ 345              		.align	1
+ 346              		.p2align 2,,3
+ 347              		.global	tr_cur_back
+ 348              		.syntax unified
+ 349              		.thumb
+ 350              		.thumb_func
+ 351              		.fpu softvfp
+ 352              		.type	tr_cur_back, %function
+ 353              	tr_cur_back:
+ 354              		@ args = 0, pretend = 0, frame = 0
+ 355              		@ frame_needed = 0, uses_anonymous_args = 0
+ 356 0000 10B5     		push	{r4, lr}	@
+ 357              	@ inc/tool/sp_term.c:94: void tr_cur_back( uint8_t c ) {
+ 358 0002 0446     		mov	r4, r0	@ c, c
+ 359              	@ inc/tool/sp_term.c:95: 		UaPutC( 0x1b );	// <ESC>[{ROW};{COLUMN}f
+ 360 0004 1B20     		movs	r0, #27	@,
+ 361 0006 FFF7FEFF 		bl	UaPutC	@
+ 362              	@ inc/tool/sp_term.c:96: 		UaPutC('['  );
+ 363 000a 5B20     		movs	r0, #91	@,
+ 364 000c FFF7FEFF 		bl	UaPutC	@
+ 365              	@ inc/tool/sp_term.c:97: 		UaPutC(c+'0');
+ 366 0010 04F13000 		add	r0, r4, #48	@ tmp112, c,
+ 367 0014 C0B2     		uxtb	r0, r0	@, tmp112
+ 368 0016 FFF7FEFF 		bl	UaPutC	@
+ 369              	@ inc/tool/sp_term.c:99: 	}
+ 370 001a BDE81040 		pop	{r4, lr}	@
+ 371              	@ inc/tool/sp_term.c:98: 		UaPutC('D'  );
+ 372 001e 4420     		movs	r0, #68	@,
+ 373 0020 FFF7FEBF 		b	UaPutC	@
+ 374              		.size	tr_cur_back, .-tr_cur_back
+ 375              		.section	.text.tr_cur_forward,"ax",%progbits
+ 376              		.align	1
+ 377              		.p2align 2,,3
+ 378              		.global	tr_cur_forward
+ 379              		.syntax unified
+ 380              		.thumb
+ 381              		.thumb_func
+ 382              		.fpu softvfp
+ 383              		.type	tr_cur_forward, %function
+ 384              	tr_cur_forward:
+ 385              		@ args = 0, pretend = 0, frame = 0
+ 386              		@ frame_needed = 0, uses_anonymous_args = 0
+ 387 0000 10B5     		push	{r4, lr}	@
+ 388              	@ inc/tool/sp_term.c:101: void tr_cur_forward( uint8_t c ) {
+ 389 0002 0446     		mov	r4, r0	@ c, c
+ 390              	@ inc/tool/sp_term.c:102: 		UaPutC( 0x1b );	// <ESC>[{ROW};{COLUMN}f
+ 391 0004 1B20     		movs	r0, #27	@,
+ 392 0006 FFF7FEFF 		bl	UaPutC	@
+ 393              	@ inc/tool/sp_term.c:103: 		UaPutC('['  );
+ 394 000a 5B20     		movs	r0, #91	@,
+ 395 000c FFF7FEFF 		bl	UaPutC	@
+ 396              	@ inc/tool/sp_term.c:104: 		UaPutC(c+'0');
+ 397 0010 04F13000 		add	r0, r4, #48	@ tmp112, c,
+ 398 0014 C0B2     		uxtb	r0, r0	@, tmp112
+ 399 0016 FFF7FEFF 		bl	UaPutC	@
+ARM GAS  /tmp/ccEi8tOb.s 			page 8
 
 
- 400              		.type	tr_cur_forward, %function
- 401              	tr_cur_forward:
- 402              		@ args = 0, pretend = 0, frame = 0
- 403              		@ frame_needed = 0, uses_anonymous_args = 0
- 404 0000 10B5     		push	{r4, lr}	@
- 405              	@ inc/tool/sp_term.c:105: void tr_cur_forward( uint8_t c ) {
- 406 0002 0446     		mov	r4, r0	@ c, c
- 407              	@ inc/tool/sp_term.c:106: 		UaPutC( 0x1b );	// <ESC>[{ROW};{COLUMN}f
- 408 0004 1B20     		movs	r0, #27	@,
- 409 0006 FFF7FEFF 		bl	UaPutC	@
- 410              	@ inc/tool/sp_term.c:107: 		UaPutC('['  );
- 411 000a 5B20     		movs	r0, #91	@,
- 412 000c FFF7FEFF 		bl	UaPutC	@
- 413              	@ inc/tool/sp_term.c:108: 		UaPutC(c+'0');
- 414 0010 04F13000 		add	r0, r4, #48	@ tmp112, c,
- 415 0014 C0B2     		uxtb	r0, r0	@, tmp112
- 416 0016 FFF7FEFF 		bl	UaPutC	@
- 417              	@ inc/tool/sp_term.c:110: 	}
- 418 001a BDE81040 		pop	{r4, lr}	@
- 419              	@ inc/tool/sp_term.c:109: 		UaPutC('C'  );
- 420 001e 4320     		movs	r0, #67	@,
- 421 0020 FFF7FEBF 		b	UaPutC	@
- 422              		.size	tr_cur_forward, .-tr_cur_forward
- 423              		.global	U_ATTR_OFF
- 424              		.global	UCUR_SHOW
- 425              		.global	UCUR_HIDE
- 426              		.global	UHOME
- 427              		.global	UCLS
- 428              		.comm	PutChar,4,4
- 429              		.comm	ptm,36,4
- 430              		.section	.rodata.UCLS,"a",%progbits
- 431              		.align	2
- 432              		.set	.LANCHOR2,. + 0
- 433              		.type	UCLS, %object
- 434              		.size	UCLS, 5
- 435              	UCLS:
- 436 0000 1B5B324A 		.ascii	"\033[2J\000"
- 436      00
- 437              		.section	.rodata.UCUR_HIDE,"a",%progbits
- 438              		.align	2
- 439              		.set	.LANCHOR0,. + 0
- 440              		.type	UCUR_HIDE, %object
- 441              		.size	UCUR_HIDE, 7
- 442              	UCUR_HIDE:
- 443 0000 1B5B3F32 		.ascii	"\033[?25l\000"
- 443      356C00
- 444              		.section	.rodata.UCUR_SHOW,"a",%progbits
- 445              		.align	2
- 446              		.set	.LANCHOR1,. + 0
- 447              		.type	UCUR_SHOW, %object
- 448              		.size	UCUR_SHOW, 7
- 449              	UCUR_SHOW:
- 450 0000 1B5B3F32 		.ascii	"\033[?25h\000"
- 450      356800
- 451              		.section	.rodata.UHOME,"a",%progbits
- 452              		.align	2
- 453              		.set	.LANCHOR3,. + 0
-ARM GAS  /tmp/cc4yroDU.s 			page 9
-
-
- 454              		.type	UHOME, %object
- 455              		.size	UHOME, 5
- 456              	UHOME:
- 457 0000 1B5B3B48 		.ascii	"\033[;H\000"
- 457      00
- 458              		.section	.rodata.U_ATTR_OFF,"a",%progbits
- 459              		.align	2
- 460              		.type	U_ATTR_OFF, %object
- 461              		.size	U_ATTR_OFF, 4
- 462              	U_ATTR_OFF:
- 463 0000 1B5B6D00 		.ascii	"\033[m\000"
- 464              		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
-ARM GAS  /tmp/cc4yroDU.s 			page 10
+ 400              	@ inc/tool/sp_term.c:106: 	}
+ 401 001a BDE81040 		pop	{r4, lr}	@
+ 402              	@ inc/tool/sp_term.c:105: 		UaPutC('C'  );
+ 403 001e 4320     		movs	r0, #67	@,
+ 404 0020 FFF7FEBF 		b	UaPutC	@
+ 405              		.size	tr_cur_forward, .-tr_cur_forward
+ 406              		.global	U_ATTR_OFF
+ 407              		.global	UCUR_SHOW
+ 408              		.global	UCUR_HIDE
+ 409              		.global	UHOME
+ 410              		.global	UCLS
+ 411              		.comm	PutChar,4,4
+ 412              		.comm	ptm,36,4
+ 413              		.section	.rodata.UCLS,"a",%progbits
+ 414              		.align	2
+ 415              		.set	.LANCHOR2,. + 0
+ 416              		.type	UCLS, %object
+ 417              		.size	UCLS, 5
+ 418              	UCLS:
+ 419 0000 1B5B324A 		.ascii	"\033[2J\000"
+ 419      00
+ 420              		.section	.rodata.UCUR_HIDE,"a",%progbits
+ 421              		.align	2
+ 422              		.set	.LANCHOR0,. + 0
+ 423              		.type	UCUR_HIDE, %object
+ 424              		.size	UCUR_HIDE, 7
+ 425              	UCUR_HIDE:
+ 426 0000 1B5B3F32 		.ascii	"\033[?25l\000"
+ 426      356C00
+ 427              		.section	.rodata.UCUR_SHOW,"a",%progbits
+ 428              		.align	2
+ 429              		.set	.LANCHOR1,. + 0
+ 430              		.type	UCUR_SHOW, %object
+ 431              		.size	UCUR_SHOW, 7
+ 432              	UCUR_SHOW:
+ 433 0000 1B5B3F32 		.ascii	"\033[?25h\000"
+ 433      356800
+ 434              		.section	.rodata.UHOME,"a",%progbits
+ 435              		.align	2
+ 436              		.set	.LANCHOR3,. + 0
+ 437              		.type	UHOME, %object
+ 438              		.size	UHOME, 5
+ 439              	UHOME:
+ 440 0000 1B5B3B48 		.ascii	"\033[;H\000"
+ 440      00
+ 441              		.section	.rodata.U_ATTR_OFF,"a",%progbits
+ 442              		.align	2
+ 443              		.type	U_ATTR_OFF, %object
+ 444              		.size	U_ATTR_OFF, 4
+ 445              	U_ATTR_OFF:
+ 446 0000 1B5B6D00 		.ascii	"\033[m\000"
+ 447              		.section	.rodata.tr_locate.str1.4,"aMS",%progbits,1
+ 448              		.align	2
+ 449              	.LC0:
+ 450 0000 1B5B00   		.ascii	"\033[\000"
+ 451              		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
+ARM GAS  /tmp/ccEi8tOb.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 sp_term.c
-     /tmp/cc4yroDU.s:70     .text.tr_cursor_hide:00000000 $t
-     /tmp/cc4yroDU.s:78     .text.tr_cursor_hide:00000000 tr_cursor_hide
-     /tmp/cc4yroDU.s:94     .text.tr_cursor_hide:00000010 $d
-     /tmp/cc4yroDU.s:98     .text.tr_cls:00000000 $t
-     /tmp/cc4yroDU.s:106    .text.tr_cls:00000000 tr_cls
-     /tmp/cc4yroDU.s:121    .text.tr_cls:00000014 $d
-     /tmp/cc4yroDU.s:125    .text.fill_line:00000000 $t
-     /tmp/cc4yroDU.s:133    .text.fill_line:00000000 fill_line
-     /tmp/cc4yroDU.s:158    .text.tr_attr:00000000 $t
-     /tmp/cc4yroDU.s:166    .text.tr_attr:00000000 tr_attr
-     /tmp/cc4yroDU.s:211    .text.tr_pen_color:00000000 $t
-     /tmp/cc4yroDU.s:219    .text.tr_pen_color:00000000 tr_pen_color
-     /tmp/cc4yroDU.s:245    .text.tr_brush_color:00000000 $t
-     /tmp/cc4yroDU.s:253    .text.tr_brush_color:00000000 tr_brush_color
-     /tmp/cc4yroDU.s:279    .text.tr_locate:00000000 $t
-     /tmp/cc4yroDU.s:287    .text.tr_locate:00000000 tr_locate
-     /tmp/cc4yroDU.s:318    .text.tr_loc:00000000 $t
-     /tmp/cc4yroDU.s:326    .text.tr_loc:00000000 tr_loc
-     /tmp/cc4yroDU.s:333    .text.tr_erasescr:00000000 $t
-     /tmp/cc4yroDU.s:341    .text.tr_erasescr:00000000 tr_erasescr
-     /tmp/cc4yroDU.s:362    .text.tr_cur_back:00000000 $t
-     /tmp/cc4yroDU.s:370    .text.tr_cur_back:00000000 tr_cur_back
-     /tmp/cc4yroDU.s:393    .text.tr_cur_forward:00000000 $t
-     /tmp/cc4yroDU.s:401    .text.tr_cur_forward:00000000 tr_cur_forward
-     /tmp/cc4yroDU.s:462    .rodata.U_ATTR_OFF:00000000 U_ATTR_OFF
-     /tmp/cc4yroDU.s:449    .rodata.UCUR_SHOW:00000000 UCUR_SHOW
-     /tmp/cc4yroDU.s:442    .rodata.UCUR_HIDE:00000000 UCUR_HIDE
-     /tmp/cc4yroDU.s:456    .rodata.UHOME:00000000 UHOME
-     /tmp/cc4yroDU.s:435    .rodata.UCLS:00000000 UCLS
+     /tmp/ccEi8tOb.s:70     .text.tr_cursor_hide:00000000 $t
+     /tmp/ccEi8tOb.s:78     .text.tr_cursor_hide:00000000 tr_cursor_hide
+     /tmp/ccEi8tOb.s:94     .text.tr_cursor_hide:00000010 $d
+     /tmp/ccEi8tOb.s:98     .text.tr_cls:00000000 $t
+     /tmp/ccEi8tOb.s:106    .text.tr_cls:00000000 tr_cls
+     /tmp/ccEi8tOb.s:121    .text.tr_cls:00000014 $d
+     /tmp/ccEi8tOb.s:125    .text.fill_line:00000000 $t
+     /tmp/ccEi8tOb.s:133    .text.fill_line:00000000 fill_line
+     /tmp/ccEi8tOb.s:158    .text.tr_attr:00000000 $t
+     /tmp/ccEi8tOb.s:166    .text.tr_attr:00000000 tr_attr
+     /tmp/ccEi8tOb.s:211    .text.tr_pen_color:00000000 $t
+     /tmp/ccEi8tOb.s:219    .text.tr_pen_color:00000000 tr_pen_color
+     /tmp/ccEi8tOb.s:245    .text.tr_brush_color:00000000 $t
+     /tmp/ccEi8tOb.s:253    .text.tr_brush_color:00000000 tr_brush_color
+     /tmp/ccEi8tOb.s:279    .text.tr_locate:00000000 $t
+     /tmp/ccEi8tOb.s:287    .text.tr_locate:00000000 tr_locate
+     /tmp/ccEi8tOb.s:314    .text.tr_locate:00000028 $d
+     /tmp/ccEi8tOb.s:317    .text.tr_erasescr:00000000 $t
+     /tmp/ccEi8tOb.s:325    .text.tr_erasescr:00000000 tr_erasescr
+     /tmp/ccEi8tOb.s:345    .text.tr_cur_back:00000000 $t
+     /tmp/ccEi8tOb.s:353    .text.tr_cur_back:00000000 tr_cur_back
+     /tmp/ccEi8tOb.s:376    .text.tr_cur_forward:00000000 $t
+     /tmp/ccEi8tOb.s:384    .text.tr_cur_forward:00000000 tr_cur_forward
+     /tmp/ccEi8tOb.s:445    .rodata.U_ATTR_OFF:00000000 U_ATTR_OFF
+     /tmp/ccEi8tOb.s:432    .rodata.UCUR_SHOW:00000000 UCUR_SHOW
+     /tmp/ccEi8tOb.s:425    .rodata.UCUR_HIDE:00000000 UCUR_HIDE
+     /tmp/ccEi8tOb.s:439    .rodata.UHOME:00000000 UHOME
+     /tmp/ccEi8tOb.s:418    .rodata.UCLS:00000000 UCLS
                             *COM*:00000004 PutChar
                             *COM*:00000024 ptm
-     /tmp/cc4yroDU.s:431    .rodata.UCLS:00000000 $d
-     /tmp/cc4yroDU.s:438    .rodata.UCUR_HIDE:00000000 $d
-     /tmp/cc4yroDU.s:445    .rodata.UCUR_SHOW:00000000 $d
-     /tmp/cc4yroDU.s:452    .rodata.UHOME:00000000 $d
-     /tmp/cc4yroDU.s:459    .rodata.U_ATTR_OFF:00000000 $d
+     /tmp/ccEi8tOb.s:414    .rodata.UCLS:00000000 $d
+     /tmp/ccEi8tOb.s:421    .rodata.UCUR_HIDE:00000000 $d
+     /tmp/ccEi8tOb.s:428    .rodata.UCUR_SHOW:00000000 $d
+     /tmp/ccEi8tOb.s:435    .rodata.UHOME:00000000 $d
+     /tmp/ccEi8tOb.s:442    .rodata.U_ATTR_OFF:00000000 $d
+     /tmp/ccEi8tOb.s:448    .rodata.tr_locate.str1.4:00000000 $d
 
 UNDEFINED SYMBOLS
 UaPutK
 UaPutC
+UaPutS
+uint2uart

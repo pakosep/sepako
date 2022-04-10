@@ -12,7 +12,9 @@
 
 // aby miec polskie ogonki w PUTTY ----> ustaw WINDOW / Translation / Win1250
 // http://www.termsys.demon.co.uk/vtansi.htm
+//	ESC[K		  Erase to end of line
 
+//const char RCLS[]  			= { "\x1b""[K" };
 const char UCLS[]  			= { "\x1b""[2J" };
 const char UHOME[] 			= { "\x1b""[;H" };
 const char UCUR_HIDE[]  = { "\x1b""[?25l" };
@@ -66,26 +68,20 @@ void tr_brush_color( uint8_t cl ) {
 		UaPutC( 'm' );
 	}
 
-void tr_locate( uint8_t x, uint8_t y ) {
+void tr_locate( uint8_t y, uint8_t x ) {
 		
-		UaPutC( 0x1b );	// <ESC>[y;xH <ESC>[{ROW};{COLUMN}f
-		UaPutC('[');
-		UaPutC(y+48);
+		//UaPutS("\033[y;xH");
+		//UaPutC(0x1b);	// <ESC>[y;xH <ESC>[{ROW};{COLUMN}f
+		//UaPutC('[');
+		UaPutS("\x1b[");
+		uint2uart(y);
+		//UaPutC(y+48);
 		UaPutC(';');
-		UaPutC(x+48);
-		//UaPutC('H');
-		UaPutC('f'  );
-	}
-
-void tr_loc( uint8_t x, uint8_t y ) {
+		//UaPutC(x+48);
+		uint2uart(x);
+		UaPutC('H');
+		//UaPutC('f');
 		
-		UaPutC(0x1b);	// <ESC>[y;xH <ESC>[{ROW};{COLUMN}f
-		UaPutC('[');
-		UaPutC(y+48);
-		UaPutC(';');
-		UaPutC(x+48);
-		//UaPutC('H');
-		UaPutC('f');
 	}
 
 void tr_erasescr( void ) {
@@ -119,10 +115,10 @@ void tr_cur_forward( uint8_t c ) {
 	ESC[y;xf	Cursor position y,x (less frequently used)
 	ESC[y;xR	Cursor position report y,x
 	ESC[6n		Device status report (cursor pos)(n is constant 'n')
-	ESC[s		Save cursor position
-	ESC[u		Restore cursor position
+	ESC[s		  Save cursor position
+	ESC[u		  Restore cursor position
 	ESC[2J		Erase display
-	ESC[K		Erase to end of line
+	ESC[K		  Erase to end of line
 	ESC[nL		Inserts n blank lines at cursor line.	(NANSI)
 	ESC[nM		Deletes n lines including cursor line.	(NANSI)
 	ESC[n@		Inserts n blank chars at cursor.	(NANSI)
