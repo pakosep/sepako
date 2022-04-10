@@ -35,7 +35,7 @@ void UART3_putc(char p){
 	}
 
 void UaPutC(char p){
-			PutChar(p);
+		PutChar(p);
 	}
 
 //============================================================================

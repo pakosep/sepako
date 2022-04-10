@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccEi8tOb.s 			page 1
+ARM GAS  /tmp/ccF3nk0m.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccEi8tOb.s 			page 1
   55              	@ -fstrict-volatile-bitfields -fsync-libcalls -fthread-jumps
   56              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
   57              	@ -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim
-ARM GAS  /tmp/ccEi8tOb.s 			page 2
+ARM GAS  /tmp/ccF3nk0m.s 			page 2
 
 
   58              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccEi8tOb.s 			page 1
  112 0004 FFF7FEFF 		bl	UaPutK	@
  113              	@ inc/tool/sp_term.c:36: 	}
  114 0008 BDE80840 		pop	{r3, lr}	@
-ARM GAS  /tmp/ccEi8tOb.s 			page 3
+ARM GAS  /tmp/ccF3nk0m.s 			page 3
 
 
  115              	@ inc/tool/sp_term.c:34: 		UaPutK( UHOME );
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccEi8tOb.s 			page 1
  169 0000 70B5     		push	{r4, r5, r6, lr}	@
  170              	@ inc/tool/sp_term.c:42: void tr_attr( uint8_t atr, uint8_t fg, uint8_t bg ) {
  171 0002 0646     		mov	r6, r0	@ atr, atr
-ARM GAS  /tmp/ccEi8tOb.s 			page 4
+ARM GAS  /tmp/ccF3nk0m.s 			page 4
 
 
  172 0004 0D46     		mov	r5, r1	@ fg, fg
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccEi8tOb.s 			page 1
  226 0004 1B20     		movs	r0, #27	@,
  227 0006 FFF7FEFF 		bl	UaPutC	@
  228              	@ inc/tool/sp_term.c:57: 		UaPutC( '[' );
-ARM GAS  /tmp/ccEi8tOb.s 			page 5
+ARM GAS  /tmp/ccF3nk0m.s 			page 5
 
 
  229 000a 5B20     		movs	r0, #91	@,
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccEi8tOb.s 			page 1
  283              		.thumb
  284              		.thumb_func
  285              		.fpu softvfp
-ARM GAS  /tmp/ccEi8tOb.s 			page 6
+ARM GAS  /tmp/ccF3nk0m.s 			page 6
 
 
  286              		.type	tr_locate, %function
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccEi8tOb.s 			page 1
  340              	@ inc/tool/sp_term.c:91: 		UaPutC( 'J' );
  341 0018 4A20     		movs	r0, #74	@,
  342 001a FFF7FEBF 		b	UaPutC	@
-ARM GAS  /tmp/ccEi8tOb.s 			page 7
+ARM GAS  /tmp/ccF3nk0m.s 			page 7
 
 
  343              		.size	tr_erasescr, .-tr_erasescr
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccEi8tOb.s 			page 1
  397 0010 04F13000 		add	r0, r4, #48	@ tmp112, c,
  398 0014 C0B2     		uxtb	r0, r0	@, tmp112
  399 0016 FFF7FEFF 		bl	UaPutC	@
-ARM GAS  /tmp/ccEi8tOb.s 			page 8
+ARM GAS  /tmp/ccF3nk0m.s 			page 8
 
 
  400              	@ inc/tool/sp_term.c:106: 	}
@@ -477,47 +477,47 @@ ARM GAS  /tmp/ccEi8tOb.s 			page 1
  449              	.LC0:
  450 0000 1B5B00   		.ascii	"\033[\000"
  451              		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
-ARM GAS  /tmp/ccEi8tOb.s 			page 9
+ARM GAS  /tmp/ccF3nk0m.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 sp_term.c
-     /tmp/ccEi8tOb.s:70     .text.tr_cursor_hide:00000000 $t
-     /tmp/ccEi8tOb.s:78     .text.tr_cursor_hide:00000000 tr_cursor_hide
-     /tmp/ccEi8tOb.s:94     .text.tr_cursor_hide:00000010 $d
-     /tmp/ccEi8tOb.s:98     .text.tr_cls:00000000 $t
-     /tmp/ccEi8tOb.s:106    .text.tr_cls:00000000 tr_cls
-     /tmp/ccEi8tOb.s:121    .text.tr_cls:00000014 $d
-     /tmp/ccEi8tOb.s:125    .text.fill_line:00000000 $t
-     /tmp/ccEi8tOb.s:133    .text.fill_line:00000000 fill_line
-     /tmp/ccEi8tOb.s:158    .text.tr_attr:00000000 $t
-     /tmp/ccEi8tOb.s:166    .text.tr_attr:00000000 tr_attr
-     /tmp/ccEi8tOb.s:211    .text.tr_pen_color:00000000 $t
-     /tmp/ccEi8tOb.s:219    .text.tr_pen_color:00000000 tr_pen_color
-     /tmp/ccEi8tOb.s:245    .text.tr_brush_color:00000000 $t
-     /tmp/ccEi8tOb.s:253    .text.tr_brush_color:00000000 tr_brush_color
-     /tmp/ccEi8tOb.s:279    .text.tr_locate:00000000 $t
-     /tmp/ccEi8tOb.s:287    .text.tr_locate:00000000 tr_locate
-     /tmp/ccEi8tOb.s:314    .text.tr_locate:00000028 $d
-     /tmp/ccEi8tOb.s:317    .text.tr_erasescr:00000000 $t
-     /tmp/ccEi8tOb.s:325    .text.tr_erasescr:00000000 tr_erasescr
-     /tmp/ccEi8tOb.s:345    .text.tr_cur_back:00000000 $t
-     /tmp/ccEi8tOb.s:353    .text.tr_cur_back:00000000 tr_cur_back
-     /tmp/ccEi8tOb.s:376    .text.tr_cur_forward:00000000 $t
-     /tmp/ccEi8tOb.s:384    .text.tr_cur_forward:00000000 tr_cur_forward
-     /tmp/ccEi8tOb.s:445    .rodata.U_ATTR_OFF:00000000 U_ATTR_OFF
-     /tmp/ccEi8tOb.s:432    .rodata.UCUR_SHOW:00000000 UCUR_SHOW
-     /tmp/ccEi8tOb.s:425    .rodata.UCUR_HIDE:00000000 UCUR_HIDE
-     /tmp/ccEi8tOb.s:439    .rodata.UHOME:00000000 UHOME
-     /tmp/ccEi8tOb.s:418    .rodata.UCLS:00000000 UCLS
+     /tmp/ccF3nk0m.s:70     .text.tr_cursor_hide:00000000 $t
+     /tmp/ccF3nk0m.s:78     .text.tr_cursor_hide:00000000 tr_cursor_hide
+     /tmp/ccF3nk0m.s:94     .text.tr_cursor_hide:00000010 $d
+     /tmp/ccF3nk0m.s:98     .text.tr_cls:00000000 $t
+     /tmp/ccF3nk0m.s:106    .text.tr_cls:00000000 tr_cls
+     /tmp/ccF3nk0m.s:121    .text.tr_cls:00000014 $d
+     /tmp/ccF3nk0m.s:125    .text.fill_line:00000000 $t
+     /tmp/ccF3nk0m.s:133    .text.fill_line:00000000 fill_line
+     /tmp/ccF3nk0m.s:158    .text.tr_attr:00000000 $t
+     /tmp/ccF3nk0m.s:166    .text.tr_attr:00000000 tr_attr
+     /tmp/ccF3nk0m.s:211    .text.tr_pen_color:00000000 $t
+     /tmp/ccF3nk0m.s:219    .text.tr_pen_color:00000000 tr_pen_color
+     /tmp/ccF3nk0m.s:245    .text.tr_brush_color:00000000 $t
+     /tmp/ccF3nk0m.s:253    .text.tr_brush_color:00000000 tr_brush_color
+     /tmp/ccF3nk0m.s:279    .text.tr_locate:00000000 $t
+     /tmp/ccF3nk0m.s:287    .text.tr_locate:00000000 tr_locate
+     /tmp/ccF3nk0m.s:314    .text.tr_locate:00000028 $d
+     /tmp/ccF3nk0m.s:317    .text.tr_erasescr:00000000 $t
+     /tmp/ccF3nk0m.s:325    .text.tr_erasescr:00000000 tr_erasescr
+     /tmp/ccF3nk0m.s:345    .text.tr_cur_back:00000000 $t
+     /tmp/ccF3nk0m.s:353    .text.tr_cur_back:00000000 tr_cur_back
+     /tmp/ccF3nk0m.s:376    .text.tr_cur_forward:00000000 $t
+     /tmp/ccF3nk0m.s:384    .text.tr_cur_forward:00000000 tr_cur_forward
+     /tmp/ccF3nk0m.s:445    .rodata.U_ATTR_OFF:00000000 U_ATTR_OFF
+     /tmp/ccF3nk0m.s:432    .rodata.UCUR_SHOW:00000000 UCUR_SHOW
+     /tmp/ccF3nk0m.s:425    .rodata.UCUR_HIDE:00000000 UCUR_HIDE
+     /tmp/ccF3nk0m.s:439    .rodata.UHOME:00000000 UHOME
+     /tmp/ccF3nk0m.s:418    .rodata.UCLS:00000000 UCLS
                             *COM*:00000004 PutChar
                             *COM*:00000024 ptm
-     /tmp/ccEi8tOb.s:414    .rodata.UCLS:00000000 $d
-     /tmp/ccEi8tOb.s:421    .rodata.UCUR_HIDE:00000000 $d
-     /tmp/ccEi8tOb.s:428    .rodata.UCUR_SHOW:00000000 $d
-     /tmp/ccEi8tOb.s:435    .rodata.UHOME:00000000 $d
-     /tmp/ccEi8tOb.s:442    .rodata.U_ATTR_OFF:00000000 $d
-     /tmp/ccEi8tOb.s:448    .rodata.tr_locate.str1.4:00000000 $d
+     /tmp/ccF3nk0m.s:414    .rodata.UCLS:00000000 $d
+     /tmp/ccF3nk0m.s:421    .rodata.UCUR_HIDE:00000000 $d
+     /tmp/ccF3nk0m.s:428    .rodata.UCUR_SHOW:00000000 $d
+     /tmp/ccF3nk0m.s:435    .rodata.UHOME:00000000 $d
+     /tmp/ccF3nk0m.s:442    .rodata.U_ATTR_OFF:00000000 $d
+     /tmp/ccF3nk0m.s:448    .rodata.tr_locate.str1.4:00000000 $d
 
 UNDEFINED SYMBOLS
 UaPutK

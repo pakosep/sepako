@@ -468,6 +468,7 @@ void lion_updown(void){
 						//int2uarz (rw 		,4,0);	
 						//UaPutS("\n\r");
 						PutChar = UART2_putc;
+						//UaPutC = UART2_putc;
 					}
 					
 					cnt++;

@@ -31,16 +31,10 @@ char *PSTR	(char *str);
 char *strrev(char *str);
 void reverse(char s[]);
 
-void UART1_putc(char );
-void UART2_putc(char );
-void UART3_putc(char );
-
 void UaPutC(char  p);
 void UaPutS(char *s);
 void UaPutK(const char *s);
 
-void UaPutC2(char p);
-void UaPutC3(char p);
 void UART_getChar2( char *Char );
 
 void sint2uart(s32 val);										
