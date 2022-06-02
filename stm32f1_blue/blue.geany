@@ -28,13 +28,15 @@ long_line_behaviour=0
 long_line_column=100
 
 [files]
-current_page=5
-FILE_NAME_0=10393;C;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fsrc%2Fgit%2Fpakosep%2Fstm32%2Fstm32f1_blue%2Fmain.c;0;2
+current_page=6
+FILE_NAME_0=14476;C;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fsrc%2Fgit%2Fpakosep%2Fstm32%2Fstm32f1_blue%2Fmain.c;0;2
 FILE_NAME_1=0;Make;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fsrc%2Fgit%2Fpakosep%2Fstm32%2Fstm32f1_blue%2FMakefile;0;2
 FILE_NAME_2=570;C;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fsrc%2Fgit%2Fpakosep%2Fstm32%2Fstm32f1_blue%2Finc%2Ftool%2Fsp_term.c;0;2
 FILE_NAME_3=0;C++;0;EISO-8859-1;1;1;0;%2Fhome%2Fpi%2Fsrc%2Fgit%2Fpakosep%2Fstm32%2Fstm32f1_blue%2Finc%2Ftool%2Fsp_term.h;0;2
-FILE_NAME_4=11669;C;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fsrc%2Fgit%2Fpakosep%2Fstm32%2Fstm32f1_blue%2Finc%2Ftool%2FUARTLib.c;0;2
-FILE_NAME_5=5842;C;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fwykresy%2Fdemo1%2Fclient%2Fget_from_ser.c;0;2
+FILE_NAME_4=6297;C;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fdata%2Fdemo1%2Fclient%2Fget_from_ser.c;0;2
+FILE_NAME_5=471;C++;0;EISO-8859-1;1;1;0;%2Fhome%2Fpi%2Fsrc%2Fgit%2Fpakosep%2Fstm32%2Fstm32f1_blue%2Fconfig.h;0;2
+FILE_NAME_6=1079;C;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fsrc%2Fgit%2Fpakosep%2Fstm32%2Fstm32f1_blue%2Finc%2Ftool%2FUARTLib.c;0;2
+FILE_NAME_7=1249;C++;0;EUTF-8;1;1;0;%2Fhome%2Fpi%2Fsrc%2Fgit%2Fpakosep%2Fstm32%2Fstm32f1_blue%2Finc%2Ftool%2FUARTLib.h;0;2
 
 [VTE]
 last_dir=/home/pi

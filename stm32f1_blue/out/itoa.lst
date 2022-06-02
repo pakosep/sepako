@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc4JdRoe.s 			page 1
+ARM GAS  /tmp/cccEl8Ni.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc4JdRoe.s 			page 1
   55              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
   56              	@ -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim
   57              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
-ARM GAS  /tmp/cc4JdRoe.s 			page 2
+ARM GAS  /tmp/cccEl8Ni.s 			page 2
 
 
   58              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc4JdRoe.s 			page 1
  112 002e 002D     		cmp	r5, #0	@ value
  113 0030 F2D1     		bne	.L9	@
  114              	@ inc/tool/itoa.c:83: 			if (sign<0)										// was the value negative?
-ARM GAS  /tmp/cc4JdRoe.s 			page 3
+ARM GAS  /tmp/cccEl8Ni.s 			page 3
 
 
  115 0032 0028     		cmp	r0, #0	@ sign,
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc4JdRoe.s 			page 1
  169              		.type	digits.4158, %object
  170              		.size	digits.4158, 17
  171              	digits.4158:
-ARM GAS  /tmp/cc4JdRoe.s 			page 4
+ARM GAS  /tmp/cccEl8Ni.s 			page 4
 
 
  172 0000 30313233 		.ascii	"0123456789abcdef\000"
@@ -187,15 +187,15 @@ ARM GAS  /tmp/cc4JdRoe.s 			page 1
  172      63646566 
  172      00
  173              		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
-ARM GAS  /tmp/cc4JdRoe.s 			page 5
+ARM GAS  /tmp/cccEl8Ni.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 itoa.c
-     /tmp/cc4JdRoe.s:69     .text.itoa:00000000 $t
-     /tmp/cc4JdRoe.s:77     .text.itoa:00000000 itoa
-     /tmp/cc4JdRoe.s:164    .text.itoa:00000074 $d
-     /tmp/cc4JdRoe.s:167    .rodata.digits.4158:00000000 $d
-     /tmp/cc4JdRoe.s:171    .rodata.digits.4158:00000000 digits.4158
+     /tmp/cccEl8Ni.s:69     .text.itoa:00000000 $t
+     /tmp/cccEl8Ni.s:77     .text.itoa:00000000 itoa
+     /tmp/cccEl8Ni.s:164    .text.itoa:00000074 $d
+     /tmp/cccEl8Ni.s:167    .rodata.digits.4158:00000000 $d
+     /tmp/cccEl8Ni.s:171    .rodata.digits.4158:00000000 digits.4158
 
 NO UNDEFINED SYMBOLS

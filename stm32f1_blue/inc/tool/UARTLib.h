@@ -67,6 +67,10 @@ void uart_putint( u32, u08);
 void Text1(u08 addr);
 void StrFF(u16 addr);
 
+void UART1_putc(char p);
+void UART2_putc(char p);
+void UART3_putc(char p);
+
 #ifdef __cplusplus
 
 }

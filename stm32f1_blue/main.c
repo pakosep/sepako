@@ -304,7 +304,7 @@ void lion_updown(void){
 		char buf[12];
 		
 		PutChar = UART2_putc;	tr_pen_color ( TYELLOW );
-		UaPutS("\f UART1 "); UaPutS (uint2str( (F_CPU/1)/(1*USART1->BRR-1),buf));	
+		UaPutS("\f UART2 "); UaPutS (uint2str( (F_CPU/1)/(1*USART1->BRR-1),buf));	
 		UaPutS (" b/s \r\n"); 
 		//PutChar = UART2_putc;	tr_pen_color ( TYELLOW );
 		//UaPutS("\f UART2 "); UaPutS (uint2str( (F_CPU/1)/(2*USART2->BRR-1),buf));
@@ -337,18 +337,19 @@ void lion_updown(void){
 		
 		static s16 pow,cal,ene,shunt,cur,dcur,vbus,dv,rw,ve;
 		static u08 idt,sta,coile;
-		enum STAN{lad,roz,czk,pom,kon,rok};
+		enum STAN{lad,roz,czk,pom,kon,rok,dal};
 		/* lad - ladowanie
 		 * roz - rozladowanie
 		 * czk - oczekiwanie
 		 * pom - pomiar napiecia ladowania
 		 * kon - konserwacja (ladowanie do przechowywania)
 		 * rok - konserwacja rozladowanie 
+		 * dal - tylko ladowanie
 		 */
 		_Bool beep=1;
 		char swh,str[3];
 		enum STAN stat;
-		char tstat[6][8]={" Laduj"," Rozlad"," Czekaj"," Pomiar"," LadKon"," RozKon"};
+		char tstat[7][8]={" PojLad"," PojRoz"," Czekaj"," Napiec"," KonLad"," KonRoz"," Laduj"};
 		
 		i2c1r_init();
 		// Rshunt = 0.10156 ohm													 BADC	BADC MODE
@@ -514,8 +515,15 @@ void lion_updown(void){
 					LAD = 0;
 					ROZ = 0;
 					beep= 1;
-					stat = czk;
+					stat = czk;	
 				}  
+				
+				if(abs(cur) < 100 && vbus > 4200 && stat == dal){ // koniec ladownia
+					LAD = 0;
+					ROZ = 0;
+					//beep= 1;
+					stat = czk;
+				} 
 			}
 			
 			if( (STCLK_MS*500   < (trg2 - SysTick->VAL))) {
@@ -606,7 +614,7 @@ void lion_updown(void){
 						//var1 = UART_getNum();
 						//var2 = UART_getHex();
 					break;
-					case 'a':	// Ladowanie - AP
+					case 'a':	// Ladowanie - i rozladowanie z pomiarem pojemnosci
 						ROZ = 0;
 						LAD = 1;
 						BEP = 1;
@@ -614,7 +622,7 @@ void lion_updown(void){
 						stat = lad;
 						rw = 0;
 					break;
-					case 'd':	// Rozladowanie - DOWN
+					case 'd':	// Rozladowanie - z pomiarem pojemnosci
 						LAD = 0;
 						ROZ = 1;
 						BEP = 1;
@@ -640,6 +648,11 @@ void lion_updown(void){
 						ROZ = 0;
 						stat = pom;
 						rw = 0;
+					break;
+						case 'l': // pomiar napiecia zrodla zasilania
+						LAD = 1;
+						ROZ = 0;
+						stat = dal;
 					break;
 					default:
 					break;

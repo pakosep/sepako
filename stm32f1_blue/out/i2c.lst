@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccOb7lTb.s 			page 1
+ARM GAS  /tmp/ccnvkIti.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
   55              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
   56              	@ -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim
   57              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
-ARM GAS  /tmp/ccOb7lTb.s 			page 2
+ARM GAS  /tmp/ccnvkIti.s 			page 2
 
 
   58              	@ -ftree-loop-if-convert -ftree-loop-im -ftree-loop-ivcanon
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  112              	@ inc/i2c/i2c.c:12: 		I2C1->CCR   = (1<<15) | (F_CPU/(8*100000));               			// setup speed (
  113 0032 9C83     		strh	r4, [r3, #28]	@ movhi	@ tmp134, MEM[(struct I2C_TypeDef *)1073763328B].CCR
  114              	@ inc/i2c/i2c.c:13: 		I2C1->CR2   = I2C_CR2_FREQ_36MHz;   // config I2C1 module
-ARM GAS  /tmp/ccOb7lTb.s 			page 3
+ARM GAS  /tmp/ccnvkIti.s 			page 3
 
 
  115 0034 9880     		strh	r0, [r3, #4]	@ movhi	@ tmp137, MEM[(struct I2C_TypeDef *)1073763328B].CR2
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  169 0026 CA69     		ldr	r2, [r1, #28]	@ _6, MEM[(struct RCC_TypeDef *)1073876992B].APB1ENR
  170              	@ inc/i2c/i2c.c:23: 		I2C1->CR1  &= ~I2C_CR1_PE;						// I2C1 Pheripherial enable
  171 0028 0B4B     		ldr	r3, .L8+8	@ tmp128,
-ARM GAS  /tmp/ccOb7lTb.s 			page 4
+ARM GAS  /tmp/ccnvkIti.s 			page 4
 
 
  172              	@ inc/i2c/i2c.c:21: 		RCC->APB1ENR |= RCC_APB1ENR_I2C1EN;
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  226 000a 2368     		ldr	r3, [r4]	@ _1, MEM[(volatile long unsigned int *)1107985024B]
  227 000c 002B     		cmp	r3, #0	@ _1
  228 000e FCD0     		beq	.L11	@
-ARM GAS  /tmp/ccOb7lTb.s 			page 5
+ARM GAS  /tmp/ccnvkIti.s 			page 5
 
 
  229              	@ inc/i2c/i2c.c:37: 		dummy = I2C1->SR1;						// read of SR1 clears the flag
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  283 004e 0122     		movs	r2, #1	@ tmp178,
  284 0050 074B     		ldr	r3, .L33+24	@ tmp177,
  285 0052 1A60     		str	r2, [r3]	@ tmp178, MEM[(volatile long unsigned int *)1107984420B]
-ARM GAS  /tmp/ccOb7lTb.s 			page 6
+ARM GAS  /tmp/ccnvkIti.s 			page 6
 
 
  286              	@ inc/i2c/i2c.c:52: 	}
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  340 0022 1D4D     		ldr	r5, .L66	@ tmp229,
  341              	.L38:
  342              	@ inc/i2c/i2c.c:69: 		while( !( I2C1->SR1 & I2C_SR1_TXE ));
-ARM GAS  /tmp/ccOb7lTb.s 			page 7
+ARM GAS  /tmp/ccnvkIti.s 			page 7
 
 
  343 0024 AC8A     		ldrh	r4, [r5, #20]	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  397 006a 4906     		lsls	r1, r1, #25	@, MEM[(struct I2C_TypeDef *)1073763328B].SR1,
  398 006c FCD5     		bpl	.L44	@,
  399              	@ inc/i2c/i2c.c:91: 			*( dane++ ) = I2C1->DR;
-ARM GAS  /tmp/ccOb7lTb.s 			page 8
+ARM GAS  /tmp/ccnvkIti.s 			page 8
 
 
  400 006e 018A     		ldrh	r1, [r0, #16]	@, MEM[(struct I2C_TypeDef *)1073763328B].DR
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  454              	@ inc/i2c/i2c.c:108: 		I2C2->CCR = 178;               			// setup speed (100kHz)
  455 000c B224     		movs	r4, #178	@ tmp130,
  456              	@ inc/i2c/i2c.c:109: 		I2C2->CR2 = I2C_CR2_FREQ_36MHz;     // config I2C2 module
-ARM GAS  /tmp/ccOb7lTb.s 			page 9
+ARM GAS  /tmp/ccnvkIti.s 			page 9
 
 
  457 000e 2420     		movs	r0, #36	@ tmp133,
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  511              		@ link register save eliminated.
  512 0000 30B4     		push	{r4, r5}	@
  513              	@ inc/i2c/i2c.c:117: 		I2C2_CR1_START_bb = 1;				// request a start
-ARM GAS  /tmp/ccOb7lTb.s 			page 10
+ARM GAS  /tmp/ccnvkIti.s 			page 10
 
 
  514 0002 0125     		movs	r5, #1	@ tmp126,
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  568              	@ inc/i2c/i2c.c:132: 		while (I2C2_SR1_TxE_bb == 0 || I2C2_SR1_BTF_bb == 1);	// wait for bus not-bu
  569 0040 1368     		ldr	r3, [r2]	@ _12, MEM[(volatile long unsigned int *)1108017820B]
  570 0042 002B     		cmp	r3, #0	@ _12
-ARM GAS  /tmp/ccOb7lTb.s 			page 11
+ARM GAS  /tmp/ccnvkIti.s 			page 11
 
 
  571 0044 FCD0     		beq	.L78	@
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  625 0016 204D     		ldr	r5, .L128	@ tmp220,
  626              	@ inc/i2c/i2c.c:145: 		I2C2->DR = dev_adr; 										// transfer address
  627 0018 3482     		strh	r4, [r6, #16]	@ movhi	@ _8, MEM[(struct I2C_TypeDef *)1073764352B].DR
-ARM GAS  /tmp/ccOb7lTb.s 			page 12
+ARM GAS  /tmp/ccnvkIti.s 			page 12
 
 
  628              	.L99:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  682              	@ inc/i2c/i2c.c:169: 		while( len )
  683 005e 6BB1     		cbz	r3, .L104	@ len,
  684              	@ inc/i2c/i2c.c:171: 			if( len == 1 ) I2C2->CR1 &= ~I2C_CR1_ACK;
-ARM GAS  /tmp/ccOb7lTb.s 			page 13
+ARM GAS  /tmp/ccnvkIti.s 			page 13
 
 
  685 0060 0D48     		ldr	r0, .L128	@ tmp294,
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  739              		@ frame_needed = 0, uses_anonymous_args = 0
  740 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}	@
  741              	@ inc/i2c/i2c.c:193: 		I2C2->CR2     = 0;
-ARM GAS  /tmp/ccOb7lTb.s 			page 14
+ARM GAS  /tmp/ccnvkIti.s 			page 14
 
 
  742 0004 4FF0000E 		mov	lr, #0	@ tmp152,
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  796              	@ inc/i2c/i2c.c:199: 		*c_adr = 0;
  797 0054 81F800E0 		strb	lr, [r1]	@ tmp152, *c_adr_34(D)
  798              	.L136:
-ARM GAS  /tmp/ccOb7lTb.s 			page 15
+ARM GAS  /tmp/ccnvkIti.s 			page 15
 
 
  799              	@ inc/i2c/i2c.c:203: 			I2C2_CR1_START_bb = 1;				// request a start
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  853              	.L147:
  854 00a0 00580040 		.word	1073764352
  855 00a4 000C0140 		.word	1073810432
-ARM GAS  /tmp/ccOb7lTb.s 			page 16
+ARM GAS  /tmp/ccnvkIti.s 			page 16
 
 
  856 00a8 80020B42 		.word	1108017792
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  910              	@ inc/i2c/i2c.c:237: 	I2C2->DR = reg_adres;
  911 002c 2982     		strh	r1, [r5, #16]	@ movhi	@ _14, MEM[(struct I2C_TypeDef *)1073764352B].DR
  912              	.L153:
-ARM GAS  /tmp/ccOb7lTb.s 			page 17
+ARM GAS  /tmp/ccnvkIti.s 			page 17
 
 
  913              	@ inc/i2c/i2c.c:238: 	while( !( I2C2->SR1 & I2C_SR1_BTF ));
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  967              	@ inc/i2c/i2c.c:253: 	I2C2->CR1 |= I2C_CR1_STOP;
  968 0072 064A     		ldr	r2, .L180	@ tmp274,
  969 0074 1388     		ldrh	r3, [r2]	@, MEM[(struct I2C_TypeDef *)1073764352B].CR1
-ARM GAS  /tmp/ccOb7lTb.s 			page 18
+ARM GAS  /tmp/ccnvkIti.s 			page 18
 
 
  970 0076 43F40073 		orr	r3, r3, #512	@ _28, MEM[(struct I2C_TypeDef *)1073764352B].CR1,
@@ -1040,38 +1040,38 @@ ARM GAS  /tmp/ccOb7lTb.s 			page 1
  986              		.size	I2C2_READ_REG, .-I2C2_READ_REG
  987              		.comm	ptm,36,4
  988              		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
-ARM GAS  /tmp/ccOb7lTb.s 			page 19
+ARM GAS  /tmp/ccnvkIti.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 i2c.c
-     /tmp/ccOb7lTb.s:69     .text.i2c1_init:00000000 $t
-     /tmp/ccOb7lTb.s:77     .text.i2c1_init:00000000 i2c1_init
-     /tmp/ccOb7lTb.s:128    .text.i2c1_init:00000044 $d
-     /tmp/ccOb7lTb.s:133    .text.i2c1r_init:00000000 $t
-     /tmp/ccOb7lTb.s:141    .text.i2c1r_init:00000000 i2c1r_init
-     /tmp/ccOb7lTb.s:199    .text.i2c1r_init:00000050 $d
-     /tmp/ccOb7lTb.s:204    .text.i2c1_write:00000000 $t
-     /tmp/ccOb7lTb.s:212    .text.i2c1_write:00000000 i2c1_write
-     /tmp/ccOb7lTb.s:291    .text.i2c1_write:00000058 $d
-     /tmp/ccOb7lTb.s:300    .text.i2c1_read:00000000 $t
-     /tmp/ccOb7lTb.s:308    .text.i2c1_read:00000000 i2c1_read
-     /tmp/ccOb7lTb.s:430    .text.i2c1_read:00000098 $d
-     /tmp/ccOb7lTb.s:433    .text.i2c2_init:00000000 $t
-     /tmp/ccOb7lTb.s:441    .text.i2c2_init:00000000 i2c2_init
-     /tmp/ccOb7lTb.s:493    .text.i2c2_init:0000003c $d
-     /tmp/ccOb7lTb.s:500    .text.i2c2_write:00000000 $t
-     /tmp/ccOb7lTb.s:508    .text.i2c2_write:00000000 i2c2_write
-     /tmp/ccOb7lTb.s:587    .text.i2c2_write:00000058 $d
-     /tmp/ccOb7lTb.s:596    .text.i2c2_read:00000000 $t
-     /tmp/ccOb7lTb.s:604    .text.i2c2_read:00000000 i2c2_read
-     /tmp/ccOb7lTb.s:726    .text.i2c2_read:00000098 $d
-     /tmp/ccOb7lTb.s:729    .text.i2c2_scan:00000000 $t
-     /tmp/ccOb7lTb.s:737    .text.i2c2_scan:00000000 i2c2_scan
-     /tmp/ccOb7lTb.s:854    .text.i2c2_scan:000000a0 $d
-     /tmp/ccOb7lTb.s:862    .text.I2C2_READ_REG:00000000 $t
-     /tmp/ccOb7lTb.s:870    .text.I2C2_READ_REG:00000000 I2C2_READ_REG
-     /tmp/ccOb7lTb.s:985    .text.I2C2_READ_REG:0000008c $d
+     /tmp/ccnvkIti.s:69     .text.i2c1_init:00000000 $t
+     /tmp/ccnvkIti.s:77     .text.i2c1_init:00000000 i2c1_init
+     /tmp/ccnvkIti.s:128    .text.i2c1_init:00000044 $d
+     /tmp/ccnvkIti.s:133    .text.i2c1r_init:00000000 $t
+     /tmp/ccnvkIti.s:141    .text.i2c1r_init:00000000 i2c1r_init
+     /tmp/ccnvkIti.s:199    .text.i2c1r_init:00000050 $d
+     /tmp/ccnvkIti.s:204    .text.i2c1_write:00000000 $t
+     /tmp/ccnvkIti.s:212    .text.i2c1_write:00000000 i2c1_write
+     /tmp/ccnvkIti.s:291    .text.i2c1_write:00000058 $d
+     /tmp/ccnvkIti.s:300    .text.i2c1_read:00000000 $t
+     /tmp/ccnvkIti.s:308    .text.i2c1_read:00000000 i2c1_read
+     /tmp/ccnvkIti.s:430    .text.i2c1_read:00000098 $d
+     /tmp/ccnvkIti.s:433    .text.i2c2_init:00000000 $t
+     /tmp/ccnvkIti.s:441    .text.i2c2_init:00000000 i2c2_init
+     /tmp/ccnvkIti.s:493    .text.i2c2_init:0000003c $d
+     /tmp/ccnvkIti.s:500    .text.i2c2_write:00000000 $t
+     /tmp/ccnvkIti.s:508    .text.i2c2_write:00000000 i2c2_write
+     /tmp/ccnvkIti.s:587    .text.i2c2_write:00000058 $d
+     /tmp/ccnvkIti.s:596    .text.i2c2_read:00000000 $t
+     /tmp/ccnvkIti.s:604    .text.i2c2_read:00000000 i2c2_read
+     /tmp/ccnvkIti.s:726    .text.i2c2_read:00000098 $d
+     /tmp/ccnvkIti.s:729    .text.i2c2_scan:00000000 $t
+     /tmp/ccnvkIti.s:737    .text.i2c2_scan:00000000 i2c2_scan
+     /tmp/ccnvkIti.s:854    .text.i2c2_scan:000000a0 $d
+     /tmp/ccnvkIti.s:862    .text.I2C2_READ_REG:00000000 $t
+     /tmp/ccnvkIti.s:870    .text.I2C2_READ_REG:00000000 I2C2_READ_REG
+     /tmp/ccnvkIti.s:985    .text.I2C2_READ_REG:0000008c $d
                             *COM*:00000024 ptm
 
 NO UNDEFINED SYMBOLS

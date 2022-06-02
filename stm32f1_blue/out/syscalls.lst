@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cceuEc20.s 			page 1
+ARM GAS  /tmp/ccWKHP8U.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cceuEc20.s 			page 1
   55              	@ -fstrict-volatile-bitfields -fsync-libcalls -fthread-jumps
   56              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
   57              	@ -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim
-ARM GAS  /tmp/cceuEc20.s 			page 2
+ARM GAS  /tmp/ccWKHP8U.s 			page 2
 
 
   58              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cceuEc20.s 			page 1
  112              		.size	_execve_r, .-_execve_r
  113              		.section	.text._exit,"ax",%progbits
  114              		.align	1
-ARM GAS  /tmp/cceuEc20.s 			page 3
+ARM GAS  /tmp/ccWKHP8U.s 			page 3
 
 
  115              		.p2align 2,,3
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cceuEc20.s 			page 1
  169              		@ link register save eliminated.
  170              	@ syscalls.c:212: 	st->st_mode = S_IFCHR;
  171 0000 4FF40053 		mov	r3, #8192	@ tmp114,
-ARM GAS  /tmp/cceuEc20.s 			page 4
+ARM GAS  /tmp/ccWKHP8U.s 			page 4
 
 
  172              	@ syscalls.c:214: }
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cceuEc20.s 			page 1
  226              	@ syscalls.c:273: 	errno = EINVAL;
  227 0000 1622     		movs	r2, #22	@ tmp115,
  228 0002 024B     		ldr	r3, .L15	@ tmp114,
-ARM GAS  /tmp/cceuEc20.s 			page 5
+ARM GAS  /tmp/ccWKHP8U.s 			page 5
 
 
  229              	@ syscalls.c:275: }
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cceuEc20.s 			page 1
  283              		.size	_lseek_r, .-_lseek_r
  284              		.section	.text._open_r,"ax",%progbits
  285              		.align	1
-ARM GAS  /tmp/cceuEc20.s 			page 6
+ARM GAS  /tmp/ccWKHP8U.s 			page 6
 
 
  286              		.p2align 2,,3
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cceuEc20.s 			page 1
  340 000a 01D8     		bhi	.L26	@,
  341              	@ syscalls.c:406: 	current_heap_end += size;				// increase data space
  342 000c 1960     		str	r1, [r3]	@ _2, current_heap_end
-ARM GAS  /tmp/cceuEc20.s 			page 7
+ARM GAS  /tmp/ccWKHP8U.s 			page 7
 
 
  343              	@ syscalls.c:409: }
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cceuEc20.s 			page 1
  397              	@ syscalls.c:453: }
  398 0000 4FF0FF30 		mov	r0, #-1	@,
  399 0004 7047     		bx	lr	@
-ARM GAS  /tmp/cceuEc20.s 			page 8
+ARM GAS  /tmp/ccWKHP8U.s 			page 8
 
 
  400              		.size	_times_r, .-_times_r
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cceuEc20.s 			page 1
  454              		.size	_wait_r, .-_wait_r
  455              		.section	.text._write_r,"ax",%progbits
  456              		.align	1
-ARM GAS  /tmp/cceuEc20.s 			page 9
+ARM GAS  /tmp/ccWKHP8U.s 			page 9
 
 
  457              		.p2align 2,,3
@@ -517,60 +517,60 @@ ARM GAS  /tmp/cceuEc20.s 			page 1
  490              	environ:
  491 0000 00000000 		.word	environ_initial
  492              		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
-ARM GAS  /tmp/cceuEc20.s 			page 10
+ARM GAS  /tmp/ccWKHP8U.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 syscalls.c
-     /tmp/cceuEc20.s:70     .text._close_r:00000000 $t
-     /tmp/cceuEc20.s:78     .text._close_r:00000000 _close_r
-     /tmp/cceuEc20.s:87     .text._execve_r:00000000 $t
-     /tmp/cceuEc20.s:95     .text._execve_r:00000000 _execve_r
-     /tmp/cceuEc20.s:111    .text._execve_r:0000000c $d
-     /tmp/cceuEc20.s:114    .text._exit:00000000 $t
-     /tmp/cceuEc20.s:122    .text._exit:00000000 _exit
-     /tmp/cceuEc20.s:131    .text._fork_r:00000000 $t
-     /tmp/cceuEc20.s:139    .text._fork_r:00000000 _fork_r
-     /tmp/cceuEc20.s:155    .text._fork_r:0000000c $d
-     /tmp/cceuEc20.s:158    .text._fstat_r:00000000 $t
-     /tmp/cceuEc20.s:166    .text._fstat_r:00000000 _fstat_r
-     /tmp/cceuEc20.s:180    .text._getpid_r:00000000 $t
-     /tmp/cceuEc20.s:188    .text._getpid_r:00000000 _getpid_r
-     /tmp/cceuEc20.s:197    .text._isatty_r:00000000 $t
-     /tmp/cceuEc20.s:205    .text._isatty_r:00000000 _isatty_r
-     /tmp/cceuEc20.s:214    .text._kill_r:00000000 $t
-     /tmp/cceuEc20.s:222    .text._kill_r:00000000 _kill_r
-     /tmp/cceuEc20.s:238    .text._kill_r:0000000c $d
-     /tmp/cceuEc20.s:241    .text._link_r:00000000 $t
-     /tmp/cceuEc20.s:249    .text._link_r:00000000 _link_r
-     /tmp/cceuEc20.s:265    .text._link_r:0000000c $d
-     /tmp/cceuEc20.s:268    .text._lseek_r:00000000 $t
-     /tmp/cceuEc20.s:276    .text._lseek_r:00000000 _lseek_r
-     /tmp/cceuEc20.s:285    .text._open_r:00000000 $t
-     /tmp/cceuEc20.s:293    .text._open_r:00000000 _open_r
-     /tmp/cceuEc20.s:302    .text._read_r:00000000 $t
-     /tmp/cceuEc20.s:310    .text._read_r:00000000 _read_r
-     /tmp/cceuEc20.s:319    .text._sbrk_r:00000000 $t
-     /tmp/cceuEc20.s:327    .text._sbrk_r:00000000 _sbrk_r
-     /tmp/cceuEc20.s:358    .text._sbrk_r:0000001c $d
-     /tmp/cceuEc20.s:363    .text._stat_r:00000000 $t
-     /tmp/cceuEc20.s:371    .text._stat_r:00000000 _stat_r
-     /tmp/cceuEc20.s:385    .text._times_r:00000000 $t
-     /tmp/cceuEc20.s:393    .text._times_r:00000000 _times_r
-     /tmp/cceuEc20.s:402    .text._unlink_r:00000000 $t
-     /tmp/cceuEc20.s:410    .text._unlink_r:00000000 _unlink_r
-     /tmp/cceuEc20.s:426    .text._unlink_r:0000000c $d
-     /tmp/cceuEc20.s:429    .text._wait_r:00000000 $t
-     /tmp/cceuEc20.s:437    .text._wait_r:00000000 _wait_r
-     /tmp/cceuEc20.s:453    .text._wait_r:0000000c $d
-     /tmp/cceuEc20.s:456    .text._write_r:00000000 $t
-     /tmp/cceuEc20.s:464    .text._write_r:00000000 _write_r
-     /tmp/cceuEc20.s:490    .data.environ:00000000 environ
-     /tmp/cceuEc20.s:477    .bss.environ_initial:00000000 environ_initial
-     /tmp/cceuEc20.s:474    .bss.environ_initial:00000000 $d
-     /tmp/cceuEc20.s:480    .data.current_heap_end.4627:00000000 $d
-     /tmp/cceuEc20.s:484    .data.current_heap_end.4627:00000000 current_heap_end.4627
-     /tmp/cceuEc20.s:487    .data.environ:00000000 $d
+     /tmp/ccWKHP8U.s:70     .text._close_r:00000000 $t
+     /tmp/ccWKHP8U.s:78     .text._close_r:00000000 _close_r
+     /tmp/ccWKHP8U.s:87     .text._execve_r:00000000 $t
+     /tmp/ccWKHP8U.s:95     .text._execve_r:00000000 _execve_r
+     /tmp/ccWKHP8U.s:111    .text._execve_r:0000000c $d
+     /tmp/ccWKHP8U.s:114    .text._exit:00000000 $t
+     /tmp/ccWKHP8U.s:122    .text._exit:00000000 _exit
+     /tmp/ccWKHP8U.s:131    .text._fork_r:00000000 $t
+     /tmp/ccWKHP8U.s:139    .text._fork_r:00000000 _fork_r
+     /tmp/ccWKHP8U.s:155    .text._fork_r:0000000c $d
+     /tmp/ccWKHP8U.s:158    .text._fstat_r:00000000 $t
+     /tmp/ccWKHP8U.s:166    .text._fstat_r:00000000 _fstat_r
+     /tmp/ccWKHP8U.s:180    .text._getpid_r:00000000 $t
+     /tmp/ccWKHP8U.s:188    .text._getpid_r:00000000 _getpid_r
+     /tmp/ccWKHP8U.s:197    .text._isatty_r:00000000 $t
+     /tmp/ccWKHP8U.s:205    .text._isatty_r:00000000 _isatty_r
+     /tmp/ccWKHP8U.s:214    .text._kill_r:00000000 $t
+     /tmp/ccWKHP8U.s:222    .text._kill_r:00000000 _kill_r
+     /tmp/ccWKHP8U.s:238    .text._kill_r:0000000c $d
+     /tmp/ccWKHP8U.s:241    .text._link_r:00000000 $t
+     /tmp/ccWKHP8U.s:249    .text._link_r:00000000 _link_r
+     /tmp/ccWKHP8U.s:265    .text._link_r:0000000c $d
+     /tmp/ccWKHP8U.s:268    .text._lseek_r:00000000 $t
+     /tmp/ccWKHP8U.s:276    .text._lseek_r:00000000 _lseek_r
+     /tmp/ccWKHP8U.s:285    .text._open_r:00000000 $t
+     /tmp/ccWKHP8U.s:293    .text._open_r:00000000 _open_r
+     /tmp/ccWKHP8U.s:302    .text._read_r:00000000 $t
+     /tmp/ccWKHP8U.s:310    .text._read_r:00000000 _read_r
+     /tmp/ccWKHP8U.s:319    .text._sbrk_r:00000000 $t
+     /tmp/ccWKHP8U.s:327    .text._sbrk_r:00000000 _sbrk_r
+     /tmp/ccWKHP8U.s:358    .text._sbrk_r:0000001c $d
+     /tmp/ccWKHP8U.s:363    .text._stat_r:00000000 $t
+     /tmp/ccWKHP8U.s:371    .text._stat_r:00000000 _stat_r
+     /tmp/ccWKHP8U.s:385    .text._times_r:00000000 $t
+     /tmp/ccWKHP8U.s:393    .text._times_r:00000000 _times_r
+     /tmp/ccWKHP8U.s:402    .text._unlink_r:00000000 $t
+     /tmp/ccWKHP8U.s:410    .text._unlink_r:00000000 _unlink_r
+     /tmp/ccWKHP8U.s:426    .text._unlink_r:0000000c $d
+     /tmp/ccWKHP8U.s:429    .text._wait_r:00000000 $t
+     /tmp/ccWKHP8U.s:437    .text._wait_r:00000000 _wait_r
+     /tmp/ccWKHP8U.s:453    .text._wait_r:0000000c $d
+     /tmp/ccWKHP8U.s:456    .text._write_r:00000000 $t
+     /tmp/ccWKHP8U.s:464    .text._write_r:00000000 _write_r
+     /tmp/ccWKHP8U.s:490    .data.environ:00000000 environ
+     /tmp/ccWKHP8U.s:477    .bss.environ_initial:00000000 environ_initial
+     /tmp/ccWKHP8U.s:474    .bss.environ_initial:00000000 $d
+     /tmp/ccWKHP8U.s:480    .data.current_heap_end.4627:00000000 $d
+     /tmp/ccWKHP8U.s:484    .data.current_heap_end.4627:00000000 current_heap_end.4627
+     /tmp/ccWKHP8U.s:487    .data.environ:00000000 $d
 
 UNDEFINED SYMBOLS
 errno
