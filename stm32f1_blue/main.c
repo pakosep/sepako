@@ -303,8 +303,8 @@ void lion_updown(void){
 		//char * txt1="ala ma kota";
 		char buf[12];
 		
-		PutChar = UART2_putc;	tr_pen_color ( TYELLOW );
-		UaPutS("\f UART2 "); UaPutS (uint2str( (F_CPU/1)/(1*USART1->BRR-1),buf));	
+		PutChar = UART1_putc;	tr_pen_color ( TYELLOW );
+		UaPutS("\f UART1 "); UaPutS (uint2str( (F_CPU/1)/(1*USART1->BRR-1),buf));	
 		UaPutS (" b/s \r\n"); 
 		//PutChar = UART2_putc;	tr_pen_color ( TYELLOW );
 		//UaPutS("\f UART2 "); UaPutS (uint2str( (F_CPU/1)/(2*USART2->BRR-1),buf));
@@ -430,7 +430,7 @@ void lion_updown(void){
 				//i2c1_read( INA219_ADDR,5,i2reg,2);
 				//cal = ((i2reg[1]) | (i2reg[0]<<8));
 					
-					PutChar = UART2_putc;
+					PutChar = UART1_putc;
 					unt2uart ((cnt/60)%60,2);UaPutS(".");unt2uart (cnt%60,2);
 					UaPutS((char*)tstat[stat]);
 					
@@ -460,7 +460,7 @@ void lion_updown(void){
 					if(stat == lad || stat == roz || stat == kon || stat == rok) coile = 2;
 					else coile = 2;
 					if( (cnt)%coile==0 ){  // pomiar rezystancji wewnetrznej
-						PutChar = UART1_putc; //przypisanie callback 
+						PutChar = UART2_putc; //przypisanie callback 
 						int2uarz (vbus  ,4,0); UaPutC(',');
 						int2uarz (cur   ,4,0); UaPutC(',');
 						int2uarz (Cah   ,6,0); UaPutC(',');
@@ -468,7 +468,7 @@ void lion_updown(void){
 						int2uarz (Cwh   ,7,0); UaPutC(',');
 						//int2uarz (rw 		,4,0);	
 						//UaPutS("\n\r");
-						PutChar = UART2_putc;
+						PutChar = UART1_putc;
 						//UaPutC = UART2_putc;
 					}
 					
@@ -479,7 +479,7 @@ void lion_updown(void){
 			if( (STCLK_MS*2000 < (trg1 - SysTick->VAL)) ){	
 				trg1  = SysTick->VAL;	
 				
-				if(abs(cur) < 1000 && vbus > 4200 && stat == lad){ // start rozladowanie
+				if(abs(cur) < 1000 && vbus > 4220 && stat == lad){ // start rozladowanie
 					LAD = 0;
 					ROZ = 1;
 					cah = 0;
@@ -518,7 +518,7 @@ void lion_updown(void){
 					stat = czk;	
 				}  
 				
-				if(abs(cur) < 100 && vbus > 4200 && stat == dal){ // koniec ladownia
+				if(abs(cur) < 100 && vbus > 4300 && stat == dal){ // koniec ladownia zwyklego
 					LAD = 0;
 					ROZ = 0;
 					//beep= 1;
