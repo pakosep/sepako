@@ -166,7 +166,7 @@ u08 UART_getDec (s32 *num){
 		} while(d != 0x0d);
 		*(--wstr) = 0;
 		*num = str2int(str);
-		return n;	
+		return n-1;	// zwraca ilosc odebranych znakow
 	}
 //============================================================================
 u32 UART_getHex (void){

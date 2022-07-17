@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccy8utXt.s 			page 1
+ARM GAS  /tmp/ccV0nYAu.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
   55              	@ -fstrict-volatile-bitfields -fsync-libcalls -fthread-jumps
   56              	@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
   57              	@ -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop -ftree-cselim
-ARM GAS  /tmp/ccy8utXt.s 			page 2
+ARM GAS  /tmp/ccV0nYAu.s 			page 2
 
 
   58              	@ -ftree-dce -ftree-dominator-opts -ftree-dse -ftree-forwprop -ftree-fre
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  112              		.size	strrev.part.0, .-strrev.part.0
  113 0036 00BF     		.section	.text.Text1,"ax",%progbits
  114              		.align	1
-ARM GAS  /tmp/ccy8utXt.s 			page 3
+ARM GAS  /tmp/ccV0nYAu.s 			page 3
 
 
  115              		.p2align 2,,3
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  169 000e 30B1     		cbz	r0, .L17	@ _8,
  170 0010 034D     		ldr	r5, .L25	@ tmp121,
  171              	.L19:
-ARM GAS  /tmp/ccy8utXt.s 			page 4
+ARM GAS  /tmp/ccV0nYAu.s 			page 4
 
 
  172              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  226              	UART2_putc:
  227              		@ args = 0, pretend = 0, frame = 0
  228              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccy8utXt.s 			page 5
+ARM GAS  /tmp/ccV0nYAu.s 			page 5
 
 
  229              		@ link register save eliminated.
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  283              		.thumb_func
  284              		.fpu softvfp
  285              		.type	UaPutC, %function
-ARM GAS  /tmp/ccy8utXt.s 			page 6
+ARM GAS  /tmp/ccV0nYAu.s 			page 6
 
 
  286              	UaPutC:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  340 0004 FFF7FEFF 		bl	strlen	@
  341 0008 431E     		subs	r3, r0, #1	@ j, _1,
  342 000a 002B     		cmp	r3, #0	@ j,
-ARM GAS  /tmp/ccy8utXt.s 			page 7
+ARM GAS  /tmp/ccV0nYAu.s 			page 7
 
 
  343 000c 0DDD     		ble	.L57	@,
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  397 0016 38BD     		pop	{r3, r4, r5, pc}	@
  398              	.L71:
  399              		.align	2
-ARM GAS  /tmp/ccy8utXt.s 			page 8
+ARM GAS  /tmp/ccV0nYAu.s 			page 8
 
 
  400              	.L70:
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  454              		.syntax unified
  455              	@ 1205 "./inc/core_cm3.h" 1
  456 001c 72B6     		cpsid i
-ARM GAS  /tmp/ccy8utXt.s 			page 9
+ARM GAS  /tmp/ccV0nYAu.s 			page 9
 
 
  457              	@ 0 "" 2
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  511              	@ inc/tool/UARTLib.c:103: 			*Char = Fifo2.rbuf[i];
  512 0018 0170     		strb	r1, [r0]	@ tmp130, *Char_12(D)
  513              	@ inc/tool/UARTLib.c:104: 			Fifo2.rri = ++i % UART2_RXB;
-ARM GAS  /tmp/ccy8utXt.s 			page 10
+ARM GAS  /tmp/ccV0nYAu.s 			page 10
 
 
  514 001a 1380     		strh	r3, [r2]	@ movhi	@ _5, Fifo2.rri
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  568 000c 9BB2     		uxth	r3, r3	@ _8, Fifo1.rct
  569 000e 002B     		cmp	r3, #0	@ _8
  570 0010 FAD0     		beq	.L91	@
-ARM GAS  /tmp/ccy8utXt.s 			page 11
+ARM GAS  /tmp/ccV0nYAu.s 			page 11
 
 
  571              	.L90:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  625              	@ inc/tool/UARTLib.c:128: 	}
  626 004c 30BC     		pop	{r4, r5}	@
  627 004e 7047     		bx	lr	@
-ARM GAS  /tmp/ccy8utXt.s 			page 12
+ARM GAS  /tmp/ccV0nYAu.s 			page 12
 
 
  628              	.L94:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  682              		.size	uint2str, .-uint2str
  683              		.section	.text.sint2str,"ax",%progbits
  684              		.align	1
-ARM GAS  /tmp/ccy8utXt.s 			page 13
+ARM GAS  /tmp/ccV0nYAu.s 			page 13
 
 
  685              		.p2align 2,,3
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  739              	@ inc/tool/UARTLib.c:217:   }
  740 0048 3046     		mov	r0, r6	@, str
  741 004a F8BD     		pop	{r3, r4, r5, r6, r7, pc}	@
-ARM GAS  /tmp/ccy8utXt.s 			page 14
+ARM GAS  /tmp/ccV0nYAu.s 			page 14
 
 
  742              	.L108:
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  796              	.L114:
  797 0040 591C     		adds	r1, r3, #1	@ tmp157, i,
  798              	@ inc/tool/UARTLib.c:231: 				fw--;
-ARM GAS  /tmp/ccy8utXt.s 			page 15
+ARM GAS  /tmp/ccV0nYAu.s 			page 15
 
 
  799 0042 561E     		subs	r6, r2, #1	@ tmp172, fw,
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  853 0084 2B46     		mov	r3, r5	@ ivtmp.189, str
  854              	@ inc/tool/UARTLib.c:238: 			for(i=0;i<fw;i++)	str[i+1]='x';	
  855 0086 7820     		movs	r0, #120	@ tmp182,
-ARM GAS  /tmp/ccy8utXt.s 			page 16
+ARM GAS  /tmp/ccV0nYAu.s 			page 16
 
 
  856              	.L119:
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  910              	@ inc/tool/UARTLib.c:244: char *int2str (s32 val, char *str,  u08 fw, u08 k) {// without first zero
  911 0016 0024     		movs	r4, #0	@ ivtmp.208,
  912 0018 0121     		movs	r1, #1	@ dpow,
-ARM GAS  /tmp/ccy8utXt.s 			page 17
+ARM GAS  /tmp/ccV0nYAu.s 			page 17
 
 
  913              	.L149:
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  967 0064 9D42     		cmp	r5, r3	@ i, k
  968 0066 8CBF     		ite	hi	@
  969 0068 2024     		movhi	r4, #32	@, zero,
-ARM GAS  /tmp/ccy8utXt.s 			page 18
+ARM GAS  /tmp/ccV0nYAu.s 			page 18
 
 
  970 006a 3024     		movls	r4, #48	@, zero,
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1024              	.L157:
  1025              	@ inc/tool/UARTLib.c:270: 			str[i] = '\0';
  1026 00c8 0022     		movs	r2, #0	@ tmp212,
-ARM GAS  /tmp/ccy8utXt.s 			page 19
+ARM GAS  /tmp/ccV0nYAu.s 			page 19
 
 
  1027              	@ inc/tool/UARTLib.c:271: 			reverse(str);
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1081              	@ inc/tool/UARTLib.c:289: 		if (val < 0) { val = -val; sign=1;} 
  1082 0000 0028     		cmp	r0, #0	@ val
  1083              	@ inc/tool/UARTLib.c:283: char *int2str_z (s32 val, char *str,  u08 fw, u08 k) {// with first zeros
-ARM GAS  /tmp/ccy8utXt.s 			page 20
+ARM GAS  /tmp/ccV0nYAu.s 			page 20
 
 
  1084 0002 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}	@
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1138              	@ inc/tool/UARTLib.c:293: 		if ( (u32)val < dpow && fw >= k ){
  1139 0054 0028     		cmp	r0, #0	@ val
  1140 0056 49D1     		bne	.L183	@
-ARM GAS  /tmp/ccy8utXt.s 			page 21
+ARM GAS  /tmp/ccV0nYAu.s 			page 21
 
 
  1141              	.L197:
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1195              	@ inc/tool/UARTLib.c:283: char *int2str_z (s32 val, char *str,  u08 fw, u08 k) {// with first zeros
  1196 00ae 4546     		mov	r5, r8	@ i, i
  1197 00b0 D8E7     		b	.L187	@
-ARM GAS  /tmp/ccy8utXt.s 			page 22
+ARM GAS  /tmp/ccV0nYAu.s 			page 22
 
 
  1198              	.L212:
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1252 0100 67666666 		.word	1717986919
  1253 0104 00000000 		.word	.LANCHOR3
  1254              		.size	int2str_z, .-int2str_z
-ARM GAS  /tmp/ccy8utXt.s 			page 23
+ARM GAS  /tmp/ccV0nYAu.s 			page 23
 
 
  1255              		.section	.text.num2str,"ax",%progbits
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1309 0042 A342     		cmp	r3, r4	@ k, i
  1310 0044 03D1     		bne	.L224	@,
  1311 0046 2E21     		movs	r1, #46	@ tmp181,
-ARM GAS  /tmp/ccy8utXt.s 			page 24
+ARM GAS  /tmp/ccV0nYAu.s 			page 24
 
 
  1312 0048 5C1C     		adds	r4, r3, #1	@ tmp180, k,
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1366              	@ inc/tool/UARTLib.c:345: 			str[i+1]='\0';
  1367 0094 0023     		movs	r3, #0	@ tmp188,
  1368 0096 B354     		strb	r3, [r6, r2]	@ tmp188, *_8
-ARM GAS  /tmp/ccy8utXt.s 			page 25
+ARM GAS  /tmp/ccV0nYAu.s 			page 25
 
 
  1369              	@ inc/tool/UARTLib.c:348:   }
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1423 0028 FBD1     		bne	.L258	@,
  1424 002a 0A44     		add	r2, r2, r1	@ _54, xstr
  1425              	.L253:
-ARM GAS  /tmp/ccy8utXt.s 			page 26
+ARM GAS  /tmp/ccV0nYAu.s 			page 26
 
 
  1426              	@ inc/tool/UARTLib.c:364: 		else {u08 i; for(i=0;i<fw;i++)	xstr[i]='x';	xstr[i]=0; }
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1480 007c 03B0     		add	sp, sp, #12	@,,
  1481              		@ sp needed	@
  1482 007e F0BD     		pop	{r4, r5, r6, r7, pc}	@
-ARM GAS  /tmp/ccy8utXt.s 			page 27
+ARM GAS  /tmp/ccV0nYAu.s 			page 27
 
 
  1483              	.L265:
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1537              	@ inc/tool/UARTLib.c:376:     if(str[i]>='0'&&str[i]<='9')    {
  1538 0038 EFD9     		bls	.L278	@,
  1539              	@ inc/tool/UARTLib.c:379:     else if(str[i]>='a'&&str[i]<='f')    {
-ARM GAS  /tmp/ccy8utXt.s 			page 28
+ARM GAS  /tmp/ccV0nYAu.s 			page 28
 
 
  1540 003a 052F     		cmp	r7, #5	@ tmp141,
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1594              	.L294:
  1595              	@ inc/tool/UARTLib.c:400: 		 (val_p) += ((str[i]-'0')*pot);
  1596 001e 02FB04CC 		mla	ip, r2, r4, ip	@ val_p, pot, tmp129, val_p
-ARM GAS  /tmp/ccy8utXt.s 			page 29
+ARM GAS  /tmp/ccV0nYAu.s 			page 29
 
 
  1597              	@ inc/tool/UARTLib.c:401: 		 pot *= 10;
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1651              	@ inc/tool/UARTLib.c:131: 		u16 i; u08 d=0;
  1652 0000 0021     		movs	r1, #0	@ d,
  1653              	@ inc/tool/UARTLib.c:130: u32 UART_getNum (void){ 
-ARM GAS  /tmp/ccy8utXt.s 			page 30
+ARM GAS  /tmp/ccV0nYAu.s 			page 30
 
 
  1654 0002 70B5     		push	{r4, r5, r6, lr}	@
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1708              	@ 0 "" 2
  1709              	@ inc/tool/UARTLib.c:142: 				Fifo1.rct--;
  1710              		.thumb
-ARM GAS  /tmp/ccy8utXt.s 			page 31
+ARM GAS  /tmp/ccV0nYAu.s 			page 31
 
 
  1711              		.syntax unified
@@ -1835,10 +1835,10 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1742              		@ frame_needed = 0, uses_anonymous_args = 0
  1743 0000 F0B5     		push	{r4, r5, r6, r7, lr}	@
  1744              	@ inc/tool/UARTLib.c:151: 		u16 i; char d=0,n=0;
- 1745 0002 0024     		movs	r4, #0	@ <retval>,
- 1746 0004 2146     		mov	r1, r4	@ d, <retval>
+ 1745 0002 0024     		movs	r4, #0	@ n,
+ 1746 0004 2146     		mov	r1, r4	@ d, n
  1747              	@ inc/tool/UARTLib.c:153: 		i = Fifo1.rri;
- 1748 0006 154A     		ldr	r2, .L307	@ tmp152,
+ 1748 0006 164A     		ldr	r2, .L307	@ tmp155,
  1749              	@ inc/tool/UARTLib.c:150: u08 UART_getDec (s32 *num){ 
  1750 0008 85B0     		sub	sp, sp, #20	@,,
  1751              	@ inc/tool/UARTLib.c:153: 		i = Fifo1.rri;
@@ -1846,926 +1846,929 @@ ARM GAS  /tmp/ccy8utXt.s 			page 1
  1753              	@ inc/tool/UARTLib.c:150: u08 UART_getDec (s32 *num){ 
  1754 000c 0646     		mov	r6, r0	@ num, num
  1755              	@ inc/tool/UARTLib.c:152: 		char str[12], *wstr=str;
- 1756 000e 01AD     		add	r5, sp, #4	@ tmp153,,
+ 1756 000e 01AD     		add	r5, sp, #4	@ tmp156,,
  1757              	@ inc/tool/UARTLib.c:153: 		i = Fifo1.rri;
  1758 0010 98B2     		uxth	r0, r3	@ i, Fifo1.rri
  1759              	.L303:
  1760              	@ inc/tool/UARTLib.c:156: 			while (Fifo1.rct)		
  1761 0012 9388     		ldrh	r3, [r2, #4]	@, Fifo1.rct
  1762              	@ inc/tool/UARTLib.c:160: 				Fifo1.rri = ++i % UART1_RXB;
- 1763 0014 00F1010C 		add	ip, r0, #1	@ tmp133, i,
+ 1763 0014 00F1010C 		add	ip, r0, #1	@ tmp134, i,
  1764              	@ inc/tool/UARTLib.c:156: 			while (Fifo1.rct)		
- 1765 0018 9BB2     		uxth	r3, r3	@ _8, Fifo1.rct
+ 1765 0018 9BB2     		uxth	r3, r3	@ _9, Fifo1.rct
  1766              	@ inc/tool/UARTLib.c:159: 				*wstr++ = d; 
  1767 001a 6F1C     		adds	r7, r5, #1	@ wstr, wstr,
-ARM GAS  /tmp/ccy8utXt.s 			page 32
+ARM GAS  /tmp/ccV0nYAu.s 			page 32
 
 
  1768              	@ inc/tool/UARTLib.c:156: 			while (Fifo1.rct)		
- 1769 001c 53B9     		cbnz	r3, .L304	@ _8,
+ 1769 001c 5BB9     		cbnz	r3, .L304	@ _9,
  1770              	@ inc/tool/UARTLib.c:166: 		} while(d != 0x0d);
  1771 001e 0D29     		cmp	r1, #13	@ d,
  1772 0020 F7D1     		bne	.L303	@,
  1773              	@ inc/tool/UARTLib.c:167: 		*(--wstr) = 0;
- 1774 0022 05F8013C 		strb	r3, [r5, #-1]	@ _8, MEM[(char *)wstr_13 + 4294967295B]
+ 1774 0022 05F8013C 		strb	r3, [r5, #-1]	@ _9, MEM[(char *)wstr_14 + 4294967295B]
  1775              	@ inc/tool/UARTLib.c:168: 		*num = str2int(str);
- 1776 0026 01A8     		add	r0, sp, #4	@ tmp154,,
+ 1776 0026 01A8     		add	r0, sp, #4	@ tmp157,,
  1777 0028 FFF7FEFF 		bl	str2int	@
- 1778 002c 3060     		str	r0, [r6]	@, *num_23(D)
- 1779              	@ inc/tool/UARTLib.c:170: 	}
- 1780 002e 2046     		mov	r0, r4	@, <retval>
- 1781 0030 05B0     		add	sp, sp, #20	@,,
- 1782              		@ sp needed	@
- 1783 0032 F0BD     		pop	{r4, r5, r6, r7, pc}	@
- 1784              	.L304:
- 1785              	@ inc/tool/UARTLib.c:158: 				d = Fifo1.rbuf[Fifo1.rri];  // odebrany znak
- 1786 0034 1388     		ldrh	r3, [r2]	@, Fifo1.rri
- 1787              	@ inc/tool/UARTLib.c:160: 				Fifo1.rri = ++i % UART1_RXB;
- 1788 0036 1FFA8CF0 		uxth	r0, ip	@ i, tmp133
- 1789              	@ inc/tool/UARTLib.c:158: 				d = Fifo1.rbuf[Fifo1.rri];  // odebrany znak
- 1790 003a 1344     		add	r3, r3, r2	@ tmp128, tmp152
- 1791 003c 9979     		ldrb	r1, [r3, #6]	@ zero_extendqisi2	@ tmp131, Fifo1.rbuf
- 1792              	@ inc/tool/UARTLib.c:160: 				Fifo1.rri = ++i % UART1_RXB;
- 1793 003e 00F00F03 		and	r3, r0, #15	@ _4, i,
- 1794              	@ inc/tool/UARTLib.c:158: 				d = Fifo1.rbuf[Fifo1.rri];  // odebrany znak
- 1795 0042 C9B2     		uxtb	r1, r1	@ d, tmp131
- 1796              	@ inc/tool/UARTLib.c:159: 				*wstr++ = d; 
- 1797 0044 2970     		strb	r1, [r5]	@ d, *wstr_13
- 1798              	@ inc/tool/UARTLib.c:160: 				Fifo1.rri = ++i % UART1_RXB;
- 1799 0046 1380     		strh	r3, [r2]	@ movhi	@ _4, Fifo1.rri
- 1800              	@ ./inc/core_cm3.h:1205: static __INLINE void __disable_irq(void)              { __ASM volatile ("c
- 1801              		.syntax unified
- 1802              	@ 1205 "./inc/core_cm3.h" 1
- 1803 0048 72B6     		cpsid i
- 1804              	@ 0 "" 2
- 1805              	@ inc/tool/UARTLib.c:162: 				Fifo1.rct--;
- 1806              		.thumb
- 1807              		.syntax unified
- 1808 004a 9388     		ldrh	r3, [r2, #4]	@, Fifo1.rct
- 1809 004c 013B     		subs	r3, r3, #1	@ tmp140, Fifo1.rct,
- 1810 004e 9BB2     		uxth	r3, r3	@ _6, tmp140
- 1811 0050 9380     		strh	r3, [r2, #4]	@ movhi	@ _6, Fifo1.rct
- 1812              	@ ./inc/core_cm3.h:1204: static __INLINE void __enable_irq(void)               { __ASM volatile ("c
- 1813              		.syntax unified
- 1814              	@ 1204 "./inc/core_cm3.h" 1
- 1815 0052 62B6     		cpsie i
- 1816              	@ 0 "" 2
- 1817              	@ inc/tool/UARTLib.c:164: 				n++;
- 1818              		.thumb
- 1819              		.syntax unified
- 1820 0054 0134     		adds	r4, r4, #1	@ tmp143, <retval>,
- 1821              	@ inc/tool/UARTLib.c:159: 				*wstr++ = d; 
- 1822 0056 3D46     		mov	r5, r7	@ wstr, wstr
- 1823              	@ inc/tool/UARTLib.c:164: 				n++;
- 1824 0058 E4B2     		uxtb	r4, r4	@ <retval>, tmp143
-ARM GAS  /tmp/ccy8utXt.s 			page 33
+ 1778              	@ inc/tool/UARTLib.c:169: 		return n-1;	// zwraca ilosc odebranych znakow
+ 1779 002c 013C     		subs	r4, r4, #1	@ tmp152, n,
+ 1780              	@ inc/tool/UARTLib.c:168: 		*num = str2int(str);
+ 1781 002e 3060     		str	r0, [r6]	@, *num_24(D)
+ 1782              	@ inc/tool/UARTLib.c:170: 	}
+ 1783 0030 E0B2     		uxtb	r0, r4	@, tmp152
+ 1784 0032 05B0     		add	sp, sp, #20	@,,
+ 1785              		@ sp needed	@
+ 1786 0034 F0BD     		pop	{r4, r5, r6, r7, pc}	@
+ 1787              	.L304:
+ 1788              	@ inc/tool/UARTLib.c:158: 				d = Fifo1.rbuf[Fifo1.rri];  // odebrany znak
+ 1789 0036 1388     		ldrh	r3, [r2]	@, Fifo1.rri
+ 1790              	@ inc/tool/UARTLib.c:160: 				Fifo1.rri = ++i % UART1_RXB;
+ 1791 0038 1FFA8CF0 		uxth	r0, ip	@ i, tmp134
+ 1792              	@ inc/tool/UARTLib.c:158: 				d = Fifo1.rbuf[Fifo1.rri];  // odebrany znak
+ 1793 003c 1344     		add	r3, r3, r2	@ tmp129, tmp155
+ 1794 003e 9979     		ldrb	r1, [r3, #6]	@ zero_extendqisi2	@ tmp132, Fifo1.rbuf
+ 1795              	@ inc/tool/UARTLib.c:160: 				Fifo1.rri = ++i % UART1_RXB;
+ 1796 0040 00F00F03 		and	r3, r0, #15	@ _4, i,
+ 1797              	@ inc/tool/UARTLib.c:158: 				d = Fifo1.rbuf[Fifo1.rri];  // odebrany znak
+ 1798 0044 C9B2     		uxtb	r1, r1	@ d, tmp132
+ 1799              	@ inc/tool/UARTLib.c:159: 				*wstr++ = d; 
+ 1800 0046 2970     		strb	r1, [r5]	@ d, *wstr_14
+ 1801              	@ inc/tool/UARTLib.c:160: 				Fifo1.rri = ++i % UART1_RXB;
+ 1802 0048 1380     		strh	r3, [r2]	@ movhi	@ _4, Fifo1.rri
+ 1803              	@ ./inc/core_cm3.h:1205: static __INLINE void __disable_irq(void)              { __ASM volatile ("c
+ 1804              		.syntax unified
+ 1805              	@ 1205 "./inc/core_cm3.h" 1
+ 1806 004a 72B6     		cpsid i
+ 1807              	@ 0 "" 2
+ 1808              	@ inc/tool/UARTLib.c:162: 				Fifo1.rct--;
+ 1809              		.thumb
+ 1810              		.syntax unified
+ 1811 004c 9388     		ldrh	r3, [r2, #4]	@, Fifo1.rct
+ 1812 004e 013B     		subs	r3, r3, #1	@ tmp141, Fifo1.rct,
+ 1813 0050 9BB2     		uxth	r3, r3	@ _7, tmp141
+ 1814 0052 9380     		strh	r3, [r2, #4]	@ movhi	@ _7, Fifo1.rct
+ 1815              	@ ./inc/core_cm3.h:1204: static __INLINE void __enable_irq(void)               { __ASM volatile ("c
+ 1816              		.syntax unified
+ 1817              	@ 1204 "./inc/core_cm3.h" 1
+ 1818 0054 62B6     		cpsie i
+ 1819              	@ 0 "" 2
+ 1820              	@ inc/tool/UARTLib.c:164: 				n++;
+ 1821              		.thumb
+ 1822              		.syntax unified
+ 1823 0056 0134     		adds	r4, r4, #1	@ tmp144, n,
+ 1824              	@ inc/tool/UARTLib.c:159: 				*wstr++ = d; 
+ARM GAS  /tmp/ccV0nYAu.s 			page 33
 
 
- 1825 005a DAE7     		b	.L303	@
- 1826              	.L308:
- 1827              		.align	2
- 1828              	.L307:
- 1829 005c 00000000 		.word	.LANCHOR0
- 1830              		.size	UART_getDec, .-UART_getDec
- 1831              		.section	.text.str2hex,"ax",%progbits
- 1832              		.align	1
- 1833              		.p2align 2,,3
- 1834              		.global	str2hex
- 1835              		.syntax unified
- 1836              		.thumb
- 1837              		.thumb_func
- 1838              		.fpu softvfp
- 1839              		.type	str2hex, %function
- 1840              	str2hex:
- 1841              		@ args = 0, pretend = 0, frame = 0
- 1842              		@ frame_needed = 0, uses_anonymous_args = 0
- 1843 0000 38B5     		push	{r3, r4, r5, lr}	@
- 1844              	@ inc/tool/UARTLib.c:416: u32  str2hex(char *Buf) {														//Convert HEX string to number
- 1845 0002 0546     		mov	r5, r0	@ Buf, Buf
- 1846              	@ inc/tool/UARTLib.c:420: 		reverse(str);													// reverse string
- 1847 0004 FFF7FEFF 		bl	reverse	@
- 1848              	@ inc/tool/UARTLib.c:421: 		while (*str)
- 1849 0008 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2	@ _13, *Buf_18(D)
- 1850 000a ABB1     		cbz	r3, .L314	@ _13,
- 1851 000c 2C46     		mov	r4, r5	@ str, Buf
- 1852              	@ inc/tool/UARTLib.c:417: 		u32 temp=0;
- 1853 000e 0020     		movs	r0, #0	@ <retval>,
- 1854              	.L313:
- 1855 0010 621B     		subs	r2, r4, r5	@ tmp145, str, Buf
- 1856              	@ inc/tool/UARTLib.c:423: 			if(*str<58)
- 1857 0012 392B     		cmp	r3, #57	@ _13,
- 1858 0014 D2B2     		uxtb	r2, r2	@ tmp146, tmp145
- 1859              	@ inc/tool/UARTLib.c:424: 			temp |= (u32)(*str-48)<<4*mn;
- 1860 0016 A3F13001 		sub	r1, r3, #48	@ tmp147, _13,
- 1861 001a 4FEA8202 		lsl	r2, r2, #2	@ _34, tmp146,
- 1862              	@ inc/tool/UARTLib.c:426: 			temp |= (u32)(*str-87)<<4*mn;
- 1863 001e 82BF     		ittt	hi
- 1864 0020 573B     		subhi	r3, r3, #87	@ tmp149, _13,
- 1865 0022 9340     		lslhi	r3, r3, r2	@ tmp150, tmp149, _34
- 1866 0024 1843     		orrhi	r0, r0, r3	@ <retval>, <retval>, tmp150
- 1867              	@ inc/tool/UARTLib.c:421: 		while (*str)
- 1868 0026 14F8013F 		ldrb	r3, [r4, #1]!	@ zero_extendqisi2	@ _13, MEM[base: str_25, offset: 0B]
- 1869              	@ inc/tool/UARTLib.c:424: 			temp |= (u32)(*str-48)<<4*mn;
- 1870 002a 01FA02F1 		lsl	r1, r1, r2	@ tmp148, tmp147, _34
- 1871 002e 98BF     		it	ls
- 1872 0030 0843     		orrls	r0, r0, r1	@ <retval>, <retval>, tmp148
- 1873              	@ inc/tool/UARTLib.c:421: 		while (*str)
- 1874 0032 002B     		cmp	r3, #0	@ _13
- 1875 0034 ECD1     		bne	.L313	@
- 1876              	@ inc/tool/UARTLib.c:431: 	}
- 1877 0036 38BD     		pop	{r3, r4, r5, pc}	@
- 1878              	.L314:
- 1879              	@ inc/tool/UARTLib.c:417: 		u32 temp=0;
- 1880 0038 1846     		mov	r0, r3	@ <retval>, _13
- 1881              	@ inc/tool/UARTLib.c:431: 	}
-ARM GAS  /tmp/ccy8utXt.s 			page 34
+ 1825 0058 3D46     		mov	r5, r7	@ wstr, wstr
+ 1826              	@ inc/tool/UARTLib.c:164: 				n++;
+ 1827 005a E4B2     		uxtb	r4, r4	@ n, tmp144
+ 1828 005c D9E7     		b	.L303	@
+ 1829              	.L308:
+ 1830 005e 00BF     		.align	2
+ 1831              	.L307:
+ 1832 0060 00000000 		.word	.LANCHOR0
+ 1833              		.size	UART_getDec, .-UART_getDec
+ 1834              		.section	.text.str2hex,"ax",%progbits
+ 1835              		.align	1
+ 1836              		.p2align 2,,3
+ 1837              		.global	str2hex
+ 1838              		.syntax unified
+ 1839              		.thumb
+ 1840              		.thumb_func
+ 1841              		.fpu softvfp
+ 1842              		.type	str2hex, %function
+ 1843              	str2hex:
+ 1844              		@ args = 0, pretend = 0, frame = 0
+ 1845              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1846 0000 38B5     		push	{r3, r4, r5, lr}	@
+ 1847              	@ inc/tool/UARTLib.c:416: u32  str2hex(char *Buf) {														//Convert HEX string to number
+ 1848 0002 0546     		mov	r5, r0	@ Buf, Buf
+ 1849              	@ inc/tool/UARTLib.c:420: 		reverse(str);													// reverse string
+ 1850 0004 FFF7FEFF 		bl	reverse	@
+ 1851              	@ inc/tool/UARTLib.c:421: 		while (*str)
+ 1852 0008 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2	@ _13, *Buf_18(D)
+ 1853 000a ABB1     		cbz	r3, .L314	@ _13,
+ 1854 000c 2C46     		mov	r4, r5	@ str, Buf
+ 1855              	@ inc/tool/UARTLib.c:417: 		u32 temp=0;
+ 1856 000e 0020     		movs	r0, #0	@ <retval>,
+ 1857              	.L313:
+ 1858 0010 621B     		subs	r2, r4, r5	@ tmp145, str, Buf
+ 1859              	@ inc/tool/UARTLib.c:423: 			if(*str<58)
+ 1860 0012 392B     		cmp	r3, #57	@ _13,
+ 1861 0014 D2B2     		uxtb	r2, r2	@ tmp146, tmp145
+ 1862              	@ inc/tool/UARTLib.c:424: 			temp |= (u32)(*str-48)<<4*mn;
+ 1863 0016 A3F13001 		sub	r1, r3, #48	@ tmp147, _13,
+ 1864 001a 4FEA8202 		lsl	r2, r2, #2	@ _34, tmp146,
+ 1865              	@ inc/tool/UARTLib.c:426: 			temp |= (u32)(*str-87)<<4*mn;
+ 1866 001e 82BF     		ittt	hi
+ 1867 0020 573B     		subhi	r3, r3, #87	@ tmp149, _13,
+ 1868 0022 9340     		lslhi	r3, r3, r2	@ tmp150, tmp149, _34
+ 1869 0024 1843     		orrhi	r0, r0, r3	@ <retval>, <retval>, tmp150
+ 1870              	@ inc/tool/UARTLib.c:421: 		while (*str)
+ 1871 0026 14F8013F 		ldrb	r3, [r4, #1]!	@ zero_extendqisi2	@ _13, MEM[base: str_25, offset: 0B]
+ 1872              	@ inc/tool/UARTLib.c:424: 			temp |= (u32)(*str-48)<<4*mn;
+ 1873 002a 01FA02F1 		lsl	r1, r1, r2	@ tmp148, tmp147, _34
+ 1874 002e 98BF     		it	ls
+ 1875 0030 0843     		orrls	r0, r0, r1	@ <retval>, <retval>, tmp148
+ 1876              	@ inc/tool/UARTLib.c:421: 		while (*str)
+ 1877 0032 002B     		cmp	r3, #0	@ _13
+ 1878 0034 ECD1     		bne	.L313	@
+ 1879              	@ inc/tool/UARTLib.c:431: 	}
+ 1880 0036 38BD     		pop	{r3, r4, r5, pc}	@
+ 1881              	.L314:
+ARM GAS  /tmp/ccV0nYAu.s 			page 34
 
 
- 1882 003a 38BD     		pop	{r3, r4, r5, pc}	@
- 1883              		.size	str2hex, .-str2hex
- 1884              		.section	.text.UART_getHex,"ax",%progbits
- 1885              		.align	1
- 1886              		.p2align 2,,3
- 1887              		.global	UART_getHex
- 1888              		.syntax unified
- 1889              		.thumb
- 1890              		.thumb_func
- 1891              		.fpu softvfp
- 1892              		.type	UART_getHex, %function
- 1893              	UART_getHex:
- 1894              		@ args = 0, pretend = 0, frame = 16
- 1895              		@ frame_needed = 0, uses_anonymous_args = 0
- 1896              	@ inc/tool/UARTLib.c:173: 		u16 i; u08 d=0;
- 1897 0000 0021     		movs	r1, #0	@ d,
- 1898              	@ inc/tool/UARTLib.c:172: u32 UART_getHex (void){
- 1899 0002 70B5     		push	{r4, r5, r6, lr}	@
- 1900              	@ inc/tool/UARTLib.c:175: 		i = Fifo1.rri;
- 1901 0004 114A     		ldr	r2, .L322	@ tmp149,
- 1902              	@ inc/tool/UARTLib.c:172: u32 UART_getHex (void){
- 1903 0006 84B0     		sub	sp, sp, #16	@,,
- 1904              	@ inc/tool/UARTLib.c:175: 		i = Fifo1.rri;
- 1905 0008 1088     		ldrh	r0, [r2]	@, Fifo1.rri
- 1906              	@ inc/tool/UARTLib.c:174: 		char str[9], *wstr=str;
- 1907 000a 01AC     		add	r4, sp, #4	@ tmp150,,
- 1908              	@ inc/tool/UARTLib.c:175: 		i = Fifo1.rri;
- 1909 000c 80B2     		uxth	r0, r0	@ i, Fifo1.rri
- 1910              	.L318:
- 1911              	@ inc/tool/UARTLib.c:178: 			while (Fifo1.rct)
- 1912 000e 9388     		ldrh	r3, [r2, #4]	@, Fifo1.rct
- 1913              	@ inc/tool/UARTLib.c:182: 				Fifo1.rri = ++i % UART1_RXB;
- 1914 0010 461C     		adds	r6, r0, #1	@ tmp131, i,
- 1915              	@ inc/tool/UARTLib.c:178: 			while (Fifo1.rct)
- 1916 0012 9BB2     		uxth	r3, r3	@ _8, Fifo1.rct
- 1917              	@ inc/tool/UARTLib.c:181: 				*(wstr++) = d;
- 1918 0014 651C     		adds	r5, r4, #1	@ wstr, wstr,
- 1919              	@ inc/tool/UARTLib.c:178: 			while (Fifo1.rct)
- 1920 0016 43B9     		cbnz	r3, .L319	@ _8,
- 1921              	@ inc/tool/UARTLib.c:187: 		} while(d!=0x0d);
- 1922 0018 0D29     		cmp	r1, #13	@ d,
- 1923 001a F8D1     		bne	.L318	@,
- 1924              	@ inc/tool/UARTLib.c:188: 		*(--wstr) = 0;
- 1925 001c 04F8013C 		strb	r3, [r4, #-1]	@ _8, MEM[(char *)wstr_11 + 4294967295B]
- 1926              	@ inc/tool/UARTLib.c:189: 		return str2hex(str);	
- 1927 0020 01A8     		add	r0, sp, #4	@ tmp151,,
- 1928 0022 FFF7FEFF 		bl	str2hex	@
- 1929              	@ inc/tool/UARTLib.c:190: 	}
- 1930 0026 04B0     		add	sp, sp, #16	@,,
- 1931              		@ sp needed	@
- 1932 0028 70BD     		pop	{r4, r5, r6, pc}	@
- 1933              	.L319:
- 1934              	@ inc/tool/UARTLib.c:180: 				d = Fifo1.rbuf[Fifo1.rri];
- 1935 002a 1388     		ldrh	r3, [r2]	@, Fifo1.rri
- 1936              	@ inc/tool/UARTLib.c:182: 				Fifo1.rri = ++i % UART1_RXB;
- 1937 002c B0B2     		uxth	r0, r6	@ i, tmp131
- 1938              	@ inc/tool/UARTLib.c:180: 				d = Fifo1.rbuf[Fifo1.rri];
-ARM GAS  /tmp/ccy8utXt.s 			page 35
+ 1882              	@ inc/tool/UARTLib.c:417: 		u32 temp=0;
+ 1883 0038 1846     		mov	r0, r3	@ <retval>, _13
+ 1884              	@ inc/tool/UARTLib.c:431: 	}
+ 1885 003a 38BD     		pop	{r3, r4, r5, pc}	@
+ 1886              		.size	str2hex, .-str2hex
+ 1887              		.section	.text.UART_getHex,"ax",%progbits
+ 1888              		.align	1
+ 1889              		.p2align 2,,3
+ 1890              		.global	UART_getHex
+ 1891              		.syntax unified
+ 1892              		.thumb
+ 1893              		.thumb_func
+ 1894              		.fpu softvfp
+ 1895              		.type	UART_getHex, %function
+ 1896              	UART_getHex:
+ 1897              		@ args = 0, pretend = 0, frame = 16
+ 1898              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1899              	@ inc/tool/UARTLib.c:173: 		u16 i; u08 d=0;
+ 1900 0000 0021     		movs	r1, #0	@ d,
+ 1901              	@ inc/tool/UARTLib.c:172: u32 UART_getHex (void){
+ 1902 0002 70B5     		push	{r4, r5, r6, lr}	@
+ 1903              	@ inc/tool/UARTLib.c:175: 		i = Fifo1.rri;
+ 1904 0004 114A     		ldr	r2, .L322	@ tmp149,
+ 1905              	@ inc/tool/UARTLib.c:172: u32 UART_getHex (void){
+ 1906 0006 84B0     		sub	sp, sp, #16	@,,
+ 1907              	@ inc/tool/UARTLib.c:175: 		i = Fifo1.rri;
+ 1908 0008 1088     		ldrh	r0, [r2]	@, Fifo1.rri
+ 1909              	@ inc/tool/UARTLib.c:174: 		char str[9], *wstr=str;
+ 1910 000a 01AC     		add	r4, sp, #4	@ tmp150,,
+ 1911              	@ inc/tool/UARTLib.c:175: 		i = Fifo1.rri;
+ 1912 000c 80B2     		uxth	r0, r0	@ i, Fifo1.rri
+ 1913              	.L318:
+ 1914              	@ inc/tool/UARTLib.c:178: 			while (Fifo1.rct)
+ 1915 000e 9388     		ldrh	r3, [r2, #4]	@, Fifo1.rct
+ 1916              	@ inc/tool/UARTLib.c:182: 				Fifo1.rri = ++i % UART1_RXB;
+ 1917 0010 461C     		adds	r6, r0, #1	@ tmp131, i,
+ 1918              	@ inc/tool/UARTLib.c:178: 			while (Fifo1.rct)
+ 1919 0012 9BB2     		uxth	r3, r3	@ _8, Fifo1.rct
+ 1920              	@ inc/tool/UARTLib.c:181: 				*(wstr++) = d;
+ 1921 0014 651C     		adds	r5, r4, #1	@ wstr, wstr,
+ 1922              	@ inc/tool/UARTLib.c:178: 			while (Fifo1.rct)
+ 1923 0016 43B9     		cbnz	r3, .L319	@ _8,
+ 1924              	@ inc/tool/UARTLib.c:187: 		} while(d!=0x0d);
+ 1925 0018 0D29     		cmp	r1, #13	@ d,
+ 1926 001a F8D1     		bne	.L318	@,
+ 1927              	@ inc/tool/UARTLib.c:188: 		*(--wstr) = 0;
+ 1928 001c 04F8013C 		strb	r3, [r4, #-1]	@ _8, MEM[(char *)wstr_11 + 4294967295B]
+ 1929              	@ inc/tool/UARTLib.c:189: 		return str2hex(str);	
+ 1930 0020 01A8     		add	r0, sp, #4	@ tmp151,,
+ 1931 0022 FFF7FEFF 		bl	str2hex	@
+ 1932              	@ inc/tool/UARTLib.c:190: 	}
+ 1933 0026 04B0     		add	sp, sp, #16	@,,
+ 1934              		@ sp needed	@
+ 1935 0028 70BD     		pop	{r4, r5, r6, pc}	@
+ 1936              	.L319:
+ 1937              	@ inc/tool/UARTLib.c:180: 				d = Fifo1.rbuf[Fifo1.rri];
+ 1938 002a 1388     		ldrh	r3, [r2]	@, Fifo1.rri
+ARM GAS  /tmp/ccV0nYAu.s 			page 35
 
 
- 1939 002e 1344     		add	r3, r3, r2	@ tmp126, tmp149
- 1940 0030 9979     		ldrb	r1, [r3, #6]	@ zero_extendqisi2	@ tmp129, Fifo1.rbuf
- 1941              	@ inc/tool/UARTLib.c:182: 				Fifo1.rri = ++i % UART1_RXB;
- 1942 0032 00F00F03 		and	r3, r0, #15	@ _4, i,
- 1943              	@ inc/tool/UARTLib.c:180: 				d = Fifo1.rbuf[Fifo1.rri];
- 1944 0036 C9B2     		uxtb	r1, r1	@ d, tmp129
- 1945              	@ inc/tool/UARTLib.c:181: 				*(wstr++) = d;
- 1946 0038 2170     		strb	r1, [r4]	@ d, *wstr_11
- 1947              	@ inc/tool/UARTLib.c:182: 				Fifo1.rri = ++i % UART1_RXB;
- 1948 003a 1380     		strh	r3, [r2]	@ movhi	@ _4, Fifo1.rri
- 1949              	@ ./inc/core_cm3.h:1205: static __INLINE void __disable_irq(void)              { __ASM volatile ("c
- 1950              		.syntax unified
- 1951              	@ 1205 "./inc/core_cm3.h" 1
- 1952 003c 72B6     		cpsid i
- 1953              	@ 0 "" 2
- 1954              	@ inc/tool/UARTLib.c:184: 				Fifo1.rct--;
- 1955              		.thumb
- 1956              		.syntax unified
- 1957 003e 9388     		ldrh	r3, [r2, #4]	@, Fifo1.rct
- 1958 0040 013B     		subs	r3, r3, #1	@ tmp138, Fifo1.rct,
- 1959 0042 9BB2     		uxth	r3, r3	@ _7, tmp138
- 1960 0044 9380     		strh	r3, [r2, #4]	@ movhi	@ _7, Fifo1.rct
- 1961              	@ ./inc/core_cm3.h:1204: static __INLINE void __enable_irq(void)               { __ASM volatile ("c
- 1962              		.syntax unified
- 1963              	@ 1204 "./inc/core_cm3.h" 1
- 1964 0046 62B6     		cpsie i
- 1965              	@ 0 "" 2
- 1966              	@ inc/tool/UARTLib.c:181: 				*(wstr++) = d;
- 1967              		.thumb
- 1968              		.syntax unified
- 1969 0048 2C46     		mov	r4, r5	@ wstr, wstr
- 1970 004a E0E7     		b	.L318	@
- 1971              	.L323:
- 1972              		.align	2
- 1973              	.L322:
- 1974 004c 00000000 		.word	.LANCHOR0
- 1975              		.size	UART_getHex, .-UART_getHex
- 1976              		.section	.text.PSTR,"ax",%progbits
- 1977              		.align	1
- 1978              		.p2align 2,,3
- 1979              		.global	PSTR
- 1980              		.syntax unified
- 1981              		.thumb
- 1982              		.thumb_func
- 1983              		.fpu softvfp
- 1984              		.type	PSTR, %function
- 1985              	PSTR:
- 1986              		@ args = 0, pretend = 0, frame = 0
- 1987              		@ frame_needed = 0, uses_anonymous_args = 0
- 1988              		@ link register save eliminated.
- 1989              	@ inc/tool/UARTLib.c:434: char *PSTR(char *xstr)					{	return xstr;	}
- 1990 0000 7047     		bx	lr	@
- 1991              		.size	PSTR, .-PSTR
- 1992 0002 00BF     		.section	.text.sint2uart,"ax",%progbits
- 1993              		.align	1
- 1994              		.p2align 2,,3
- 1995              		.global	sint2uart
-ARM GAS  /tmp/ccy8utXt.s 			page 36
+ 1939              	@ inc/tool/UARTLib.c:182: 				Fifo1.rri = ++i % UART1_RXB;
+ 1940 002c B0B2     		uxth	r0, r6	@ i, tmp131
+ 1941              	@ inc/tool/UARTLib.c:180: 				d = Fifo1.rbuf[Fifo1.rri];
+ 1942 002e 1344     		add	r3, r3, r2	@ tmp126, tmp149
+ 1943 0030 9979     		ldrb	r1, [r3, #6]	@ zero_extendqisi2	@ tmp129, Fifo1.rbuf
+ 1944              	@ inc/tool/UARTLib.c:182: 				Fifo1.rri = ++i % UART1_RXB;
+ 1945 0032 00F00F03 		and	r3, r0, #15	@ _4, i,
+ 1946              	@ inc/tool/UARTLib.c:180: 				d = Fifo1.rbuf[Fifo1.rri];
+ 1947 0036 C9B2     		uxtb	r1, r1	@ d, tmp129
+ 1948              	@ inc/tool/UARTLib.c:181: 				*(wstr++) = d;
+ 1949 0038 2170     		strb	r1, [r4]	@ d, *wstr_11
+ 1950              	@ inc/tool/UARTLib.c:182: 				Fifo1.rri = ++i % UART1_RXB;
+ 1951 003a 1380     		strh	r3, [r2]	@ movhi	@ _4, Fifo1.rri
+ 1952              	@ ./inc/core_cm3.h:1205: static __INLINE void __disable_irq(void)              { __ASM volatile ("c
+ 1953              		.syntax unified
+ 1954              	@ 1205 "./inc/core_cm3.h" 1
+ 1955 003c 72B6     		cpsid i
+ 1956              	@ 0 "" 2
+ 1957              	@ inc/tool/UARTLib.c:184: 				Fifo1.rct--;
+ 1958              		.thumb
+ 1959              		.syntax unified
+ 1960 003e 9388     		ldrh	r3, [r2, #4]	@, Fifo1.rct
+ 1961 0040 013B     		subs	r3, r3, #1	@ tmp138, Fifo1.rct,
+ 1962 0042 9BB2     		uxth	r3, r3	@ _7, tmp138
+ 1963 0044 9380     		strh	r3, [r2, #4]	@ movhi	@ _7, Fifo1.rct
+ 1964              	@ ./inc/core_cm3.h:1204: static __INLINE void __enable_irq(void)               { __ASM volatile ("c
+ 1965              		.syntax unified
+ 1966              	@ 1204 "./inc/core_cm3.h" 1
+ 1967 0046 62B6     		cpsie i
+ 1968              	@ 0 "" 2
+ 1969              	@ inc/tool/UARTLib.c:181: 				*(wstr++) = d;
+ 1970              		.thumb
+ 1971              		.syntax unified
+ 1972 0048 2C46     		mov	r4, r5	@ wstr, wstr
+ 1973 004a E0E7     		b	.L318	@
+ 1974              	.L323:
+ 1975              		.align	2
+ 1976              	.L322:
+ 1977 004c 00000000 		.word	.LANCHOR0
+ 1978              		.size	UART_getHex, .-UART_getHex
+ 1979              		.section	.text.PSTR,"ax",%progbits
+ 1980              		.align	1
+ 1981              		.p2align 2,,3
+ 1982              		.global	PSTR
+ 1983              		.syntax unified
+ 1984              		.thumb
+ 1985              		.thumb_func
+ 1986              		.fpu softvfp
+ 1987              		.type	PSTR, %function
+ 1988              	PSTR:
+ 1989              		@ args = 0, pretend = 0, frame = 0
+ 1990              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1991              		@ link register save eliminated.
+ 1992              	@ inc/tool/UARTLib.c:434: char *PSTR(char *xstr)					{	return xstr;	}
+ 1993 0000 7047     		bx	lr	@
+ 1994              		.size	PSTR, .-PSTR
+ 1995 0002 00BF     		.section	.text.sint2uart,"ax",%progbits
+ARM GAS  /tmp/ccV0nYAu.s 			page 36
 
 
- 1996              		.syntax unified
- 1997              		.thumb
- 1998              		.thumb_func
- 1999              		.fpu softvfp
- 2000              		.type	sint2uart, %function
- 2001              	sint2uart:
- 2002              		@ args = 0, pretend = 0, frame = 16
- 2003              		@ frame_needed = 0, uses_anonymous_args = 0
- 2004 0000 30B5     		push	{r4, r5, lr}	@
- 2005 0002 85B0     		sub	sp, sp, #20	@,,
- 2006              	@ inc/tool/UARTLib.c:438: 	 UaPutS(sint2str (n, buf));
- 2007 0004 01A9     		add	r1, sp, #4	@,,
- 2008 0006 FFF7FEFF 		bl	sint2str	@
- 2009 000a 0446     		mov	r4, r0	@ s,
- 2010              	@ inc/tool/UARTLib.c:69: 		while (*s)		
- 2011 000c 0078     		ldrb	r0, [r0]	@ zero_extendqisi2	@ _7, *_1
- 2012 000e 30B1     		cbz	r0, .L325	@ _7,
- 2013 0010 044D     		ldr	r5, .L333	@ tmp117,
- 2014              	.L327:
- 2015              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
- 2016 0012 2B68     		ldr	r3, [r5]	@ PutChar, PutChar
- 2017 0014 9847     		blx	r3	@ PutChar
- 2018              	@ inc/tool/UARTLib.c:69: 		while (*s)		
- 2019 0016 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ _7, MEM[base: s_9, offset: 0B]
- 2020 001a 0028     		cmp	r0, #0	@ _7
- 2021 001c F9D1     		bne	.L327	@
- 2022              	.L325:
- 2023              	@ inc/tool/UARTLib.c:439:   }
- 2024 001e 05B0     		add	sp, sp, #20	@,,
- 2025              		@ sp needed	@
- 2026 0020 30BD     		pop	{r4, r5, pc}	@
- 2027              	.L334:
- 2028 0022 00BF     		.align	2
- 2029              	.L333:
- 2030 0024 00000000 		.word	PutChar
- 2031              		.size	sint2uart, .-sint2uart
- 2032              		.section	.text.uint2uart,"ax",%progbits
- 2033              		.align	1
- 2034              		.p2align 2,,3
- 2035              		.global	uint2uart
- 2036              		.syntax unified
- 2037              		.thumb
- 2038              		.thumb_func
- 2039              		.fpu softvfp
- 2040              		.type	uint2uart, %function
- 2041              	uint2uart:
- 2042              		@ args = 0, pretend = 0, frame = 16
- 2043              		@ frame_needed = 0, uses_anonymous_args = 0
- 2044 0000 30B5     		push	{r4, r5, lr}	@
- 2045 0002 85B0     		sub	sp, sp, #20	@,,
- 2046              	@ inc/tool/UARTLib.c:443: 	 UaPutS(uint2str (n, buf));
- 2047 0004 01A9     		add	r1, sp, #4	@,,
- 2048 0006 FFF7FEFF 		bl	uint2str	@
- 2049 000a 0446     		mov	r4, r0	@ s,
- 2050              	@ inc/tool/UARTLib.c:69: 		while (*s)		
- 2051 000c 0078     		ldrb	r0, [r0]	@ zero_extendqisi2	@ _7, *_1
- 2052 000e 30B1     		cbz	r0, .L335	@ _7,
-ARM GAS  /tmp/ccy8utXt.s 			page 37
+ 1996              		.align	1
+ 1997              		.p2align 2,,3
+ 1998              		.global	sint2uart
+ 1999              		.syntax unified
+ 2000              		.thumb
+ 2001              		.thumb_func
+ 2002              		.fpu softvfp
+ 2003              		.type	sint2uart, %function
+ 2004              	sint2uart:
+ 2005              		@ args = 0, pretend = 0, frame = 16
+ 2006              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2007 0000 30B5     		push	{r4, r5, lr}	@
+ 2008 0002 85B0     		sub	sp, sp, #20	@,,
+ 2009              	@ inc/tool/UARTLib.c:438: 	 UaPutS(sint2str (n, buf));
+ 2010 0004 01A9     		add	r1, sp, #4	@,,
+ 2011 0006 FFF7FEFF 		bl	sint2str	@
+ 2012 000a 0446     		mov	r4, r0	@ s,
+ 2013              	@ inc/tool/UARTLib.c:69: 		while (*s)		
+ 2014 000c 0078     		ldrb	r0, [r0]	@ zero_extendqisi2	@ _7, *_1
+ 2015 000e 30B1     		cbz	r0, .L325	@ _7,
+ 2016 0010 044D     		ldr	r5, .L333	@ tmp117,
+ 2017              	.L327:
+ 2018              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
+ 2019 0012 2B68     		ldr	r3, [r5]	@ PutChar, PutChar
+ 2020 0014 9847     		blx	r3	@ PutChar
+ 2021              	@ inc/tool/UARTLib.c:69: 		while (*s)		
+ 2022 0016 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ _7, MEM[base: s_9, offset: 0B]
+ 2023 001a 0028     		cmp	r0, #0	@ _7
+ 2024 001c F9D1     		bne	.L327	@
+ 2025              	.L325:
+ 2026              	@ inc/tool/UARTLib.c:439:   }
+ 2027 001e 05B0     		add	sp, sp, #20	@,,
+ 2028              		@ sp needed	@
+ 2029 0020 30BD     		pop	{r4, r5, pc}	@
+ 2030              	.L334:
+ 2031 0022 00BF     		.align	2
+ 2032              	.L333:
+ 2033 0024 00000000 		.word	PutChar
+ 2034              		.size	sint2uart, .-sint2uart
+ 2035              		.section	.text.uint2uart,"ax",%progbits
+ 2036              		.align	1
+ 2037              		.p2align 2,,3
+ 2038              		.global	uint2uart
+ 2039              		.syntax unified
+ 2040              		.thumb
+ 2041              		.thumb_func
+ 2042              		.fpu softvfp
+ 2043              		.type	uint2uart, %function
+ 2044              	uint2uart:
+ 2045              		@ args = 0, pretend = 0, frame = 16
+ 2046              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2047 0000 30B5     		push	{r4, r5, lr}	@
+ 2048 0002 85B0     		sub	sp, sp, #20	@,,
+ 2049              	@ inc/tool/UARTLib.c:443: 	 UaPutS(uint2str (n, buf));
+ 2050 0004 01A9     		add	r1, sp, #4	@,,
+ 2051 0006 FFF7FEFF 		bl	uint2str	@
+ 2052 000a 0446     		mov	r4, r0	@ s,
+ARM GAS  /tmp/ccV0nYAu.s 			page 37
 
 
- 2053 0010 044D     		ldr	r5, .L343	@ tmp117,
- 2054              	.L337:
- 2055              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
- 2056 0012 2B68     		ldr	r3, [r5]	@ PutChar, PutChar
- 2057 0014 9847     		blx	r3	@ PutChar
- 2058              	@ inc/tool/UARTLib.c:69: 		while (*s)		
- 2059 0016 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ _7, MEM[base: s_9, offset: 0B]
- 2060 001a 0028     		cmp	r0, #0	@ _7
- 2061 001c F9D1     		bne	.L337	@
- 2062              	.L335:
- 2063              	@ inc/tool/UARTLib.c:444:   }
- 2064 001e 05B0     		add	sp, sp, #20	@,,
- 2065              		@ sp needed	@
- 2066 0020 30BD     		pop	{r4, r5, pc}	@
- 2067              	.L344:
- 2068 0022 00BF     		.align	2
- 2069              	.L343:
- 2070 0024 00000000 		.word	PutChar
- 2071              		.size	uint2uart, .-uint2uart
- 2072              		.section	.text.unt2uart,"ax",%progbits
- 2073              		.align	1
- 2074              		.p2align 2,,3
- 2075              		.global	unt2uart
- 2076              		.syntax unified
- 2077              		.thumb
- 2078              		.thumb_func
- 2079              		.fpu softvfp
- 2080              		.type	unt2uart, %function
- 2081              	unt2uart:
- 2082              		@ args = 0, pretend = 0, frame = 16
- 2083              		@ frame_needed = 0, uses_anonymous_args = 0
- 2084 0000 30B5     		push	{r4, r5, lr}	@
- 2085 0002 85B0     		sub	sp, sp, #20	@,,
- 2086              	@ inc/tool/UARTLib.c:448: 	 UaPutS(unt2str (n, buf, dig));
- 2087 0004 0A46     		mov	r2, r1	@, dig
- 2088 0006 01A9     		add	r1, sp, #4	@,,
- 2089 0008 FFF7FEFF 		bl	unt2str	@
- 2090 000c 0446     		mov	r4, r0	@ s,
- 2091              	@ inc/tool/UARTLib.c:69: 		while (*s)		
- 2092 000e 0078     		ldrb	r0, [r0]	@ zero_extendqisi2	@ _8, *_1
- 2093 0010 30B1     		cbz	r0, .L345	@ _8,
- 2094 0012 044D     		ldr	r5, .L353	@ tmp118,
- 2095              	.L347:
- 2096              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
- 2097 0014 2B68     		ldr	r3, [r5]	@ PutChar, PutChar
- 2098 0016 9847     		blx	r3	@ PutChar
- 2099              	@ inc/tool/UARTLib.c:69: 		while (*s)		
- 2100 0018 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ _8, MEM[base: s_10, offset: 0B]
- 2101 001c 0028     		cmp	r0, #0	@ _8
- 2102 001e F9D1     		bne	.L347	@
- 2103              	.L345:
- 2104              	@ inc/tool/UARTLib.c:449:   }
- 2105 0020 05B0     		add	sp, sp, #20	@,,
- 2106              		@ sp needed	@
- 2107 0022 30BD     		pop	{r4, r5, pc}	@
- 2108              	.L354:
- 2109              		.align	2
-ARM GAS  /tmp/ccy8utXt.s 			page 38
+ 2053              	@ inc/tool/UARTLib.c:69: 		while (*s)		
+ 2054 000c 0078     		ldrb	r0, [r0]	@ zero_extendqisi2	@ _7, *_1
+ 2055 000e 30B1     		cbz	r0, .L335	@ _7,
+ 2056 0010 044D     		ldr	r5, .L343	@ tmp117,
+ 2057              	.L337:
+ 2058              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
+ 2059 0012 2B68     		ldr	r3, [r5]	@ PutChar, PutChar
+ 2060 0014 9847     		blx	r3	@ PutChar
+ 2061              	@ inc/tool/UARTLib.c:69: 		while (*s)		
+ 2062 0016 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ _7, MEM[base: s_9, offset: 0B]
+ 2063 001a 0028     		cmp	r0, #0	@ _7
+ 2064 001c F9D1     		bne	.L337	@
+ 2065              	.L335:
+ 2066              	@ inc/tool/UARTLib.c:444:   }
+ 2067 001e 05B0     		add	sp, sp, #20	@,,
+ 2068              		@ sp needed	@
+ 2069 0020 30BD     		pop	{r4, r5, pc}	@
+ 2070              	.L344:
+ 2071 0022 00BF     		.align	2
+ 2072              	.L343:
+ 2073 0024 00000000 		.word	PutChar
+ 2074              		.size	uint2uart, .-uint2uart
+ 2075              		.section	.text.unt2uart,"ax",%progbits
+ 2076              		.align	1
+ 2077              		.p2align 2,,3
+ 2078              		.global	unt2uart
+ 2079              		.syntax unified
+ 2080              		.thumb
+ 2081              		.thumb_func
+ 2082              		.fpu softvfp
+ 2083              		.type	unt2uart, %function
+ 2084              	unt2uart:
+ 2085              		@ args = 0, pretend = 0, frame = 16
+ 2086              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2087 0000 30B5     		push	{r4, r5, lr}	@
+ 2088 0002 85B0     		sub	sp, sp, #20	@,,
+ 2089              	@ inc/tool/UARTLib.c:448: 	 UaPutS(unt2str (n, buf, dig));
+ 2090 0004 0A46     		mov	r2, r1	@, dig
+ 2091 0006 01A9     		add	r1, sp, #4	@,,
+ 2092 0008 FFF7FEFF 		bl	unt2str	@
+ 2093 000c 0446     		mov	r4, r0	@ s,
+ 2094              	@ inc/tool/UARTLib.c:69: 		while (*s)		
+ 2095 000e 0078     		ldrb	r0, [r0]	@ zero_extendqisi2	@ _8, *_1
+ 2096 0010 30B1     		cbz	r0, .L345	@ _8,
+ 2097 0012 044D     		ldr	r5, .L353	@ tmp118,
+ 2098              	.L347:
+ 2099              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
+ 2100 0014 2B68     		ldr	r3, [r5]	@ PutChar, PutChar
+ 2101 0016 9847     		blx	r3	@ PutChar
+ 2102              	@ inc/tool/UARTLib.c:69: 		while (*s)		
+ 2103 0018 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ _8, MEM[base: s_10, offset: 0B]
+ 2104 001c 0028     		cmp	r0, #0	@ _8
+ 2105 001e F9D1     		bne	.L347	@
+ 2106              	.L345:
+ 2107              	@ inc/tool/UARTLib.c:449:   }
+ 2108 0020 05B0     		add	sp, sp, #20	@,,
+ 2109              		@ sp needed	@
+ARM GAS  /tmp/ccV0nYAu.s 			page 38
 
 
- 2110              	.L353:
- 2111 0024 00000000 		.word	PutChar
- 2112              		.size	unt2uart, .-unt2uart
- 2113              		.section	.text.int2uart,"ax",%progbits
- 2114              		.align	1
- 2115              		.p2align 2,,3
- 2116              		.global	int2uart
- 2117              		.syntax unified
- 2118              		.thumb
- 2119              		.thumb_func
- 2120              		.fpu softvfp
- 2121              		.type	int2uart, %function
- 2122              	int2uart:
- 2123              		@ args = 0, pretend = 0, frame = 16
- 2124              		@ frame_needed = 0, uses_anonymous_args = 0
- 2125 0000 30B5     		push	{r4, r5, lr}	@
- 2126 0002 85B0     		sub	sp, sp, #20	@,,
- 2127              	@ inc/tool/UARTLib.c:453:     UaPutS(int2str (val, buf, fw, k));
- 2128 0004 1346     		mov	r3, r2	@, k
- 2129 0006 0A46     		mov	r2, r1	@, fw
- 2130 0008 01A9     		add	r1, sp, #4	@,,
- 2131 000a FFF7FEFF 		bl	int2str	@
- 2132 000e 0446     		mov	r4, r0	@ s,
- 2133              	@ inc/tool/UARTLib.c:69: 		while (*s)		
- 2134 0010 0078     		ldrb	r0, [r0]	@ zero_extendqisi2	@ _9, *_1
- 2135 0012 30B1     		cbz	r0, .L355	@ _9,
- 2136 0014 044D     		ldr	r5, .L363	@ tmp119,
- 2137              	.L357:
- 2138              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
- 2139 0016 2B68     		ldr	r3, [r5]	@ PutChar, PutChar
- 2140 0018 9847     		blx	r3	@ PutChar
- 2141              	@ inc/tool/UARTLib.c:69: 		while (*s)		
- 2142 001a 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ _9, MEM[base: s_11, offset: 0B]
- 2143 001e 0028     		cmp	r0, #0	@ _9
- 2144 0020 F9D1     		bne	.L357	@
- 2145              	.L355:
- 2146              	@ inc/tool/UARTLib.c:454: 	}
- 2147 0022 05B0     		add	sp, sp, #20	@,,
- 2148              		@ sp needed	@
- 2149 0024 30BD     		pop	{r4, r5, pc}	@
- 2150              	.L364:
- 2151 0026 00BF     		.align	2
- 2152              	.L363:
- 2153 0028 00000000 		.word	PutChar
- 2154              		.size	int2uart, .-int2uart
- 2155              		.section	.text.int2uarz,"ax",%progbits
- 2156              		.align	1
- 2157              		.p2align 2,,3
- 2158              		.global	int2uarz
- 2159              		.syntax unified
- 2160              		.thumb
- 2161              		.thumb_func
- 2162              		.fpu softvfp
- 2163              		.type	int2uarz, %function
- 2164              	int2uarz:
- 2165              		@ args = 0, pretend = 0, frame = 16
- 2166              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccy8utXt.s 			page 39
+ 2110 0022 30BD     		pop	{r4, r5, pc}	@
+ 2111              	.L354:
+ 2112              		.align	2
+ 2113              	.L353:
+ 2114 0024 00000000 		.word	PutChar
+ 2115              		.size	unt2uart, .-unt2uart
+ 2116              		.section	.text.int2uart,"ax",%progbits
+ 2117              		.align	1
+ 2118              		.p2align 2,,3
+ 2119              		.global	int2uart
+ 2120              		.syntax unified
+ 2121              		.thumb
+ 2122              		.thumb_func
+ 2123              		.fpu softvfp
+ 2124              		.type	int2uart, %function
+ 2125              	int2uart:
+ 2126              		@ args = 0, pretend = 0, frame = 16
+ 2127              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2128 0000 30B5     		push	{r4, r5, lr}	@
+ 2129 0002 85B0     		sub	sp, sp, #20	@,,
+ 2130              	@ inc/tool/UARTLib.c:453:     UaPutS(int2str (val, buf, fw, k));
+ 2131 0004 1346     		mov	r3, r2	@, k
+ 2132 0006 0A46     		mov	r2, r1	@, fw
+ 2133 0008 01A9     		add	r1, sp, #4	@,,
+ 2134 000a FFF7FEFF 		bl	int2str	@
+ 2135 000e 0446     		mov	r4, r0	@ s,
+ 2136              	@ inc/tool/UARTLib.c:69: 		while (*s)		
+ 2137 0010 0078     		ldrb	r0, [r0]	@ zero_extendqisi2	@ _9, *_1
+ 2138 0012 30B1     		cbz	r0, .L355	@ _9,
+ 2139 0014 044D     		ldr	r5, .L363	@ tmp119,
+ 2140              	.L357:
+ 2141              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
+ 2142 0016 2B68     		ldr	r3, [r5]	@ PutChar, PutChar
+ 2143 0018 9847     		blx	r3	@ PutChar
+ 2144              	@ inc/tool/UARTLib.c:69: 		while (*s)		
+ 2145 001a 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ _9, MEM[base: s_11, offset: 0B]
+ 2146 001e 0028     		cmp	r0, #0	@ _9
+ 2147 0020 F9D1     		bne	.L357	@
+ 2148              	.L355:
+ 2149              	@ inc/tool/UARTLib.c:454: 	}
+ 2150 0022 05B0     		add	sp, sp, #20	@,,
+ 2151              		@ sp needed	@
+ 2152 0024 30BD     		pop	{r4, r5, pc}	@
+ 2153              	.L364:
+ 2154 0026 00BF     		.align	2
+ 2155              	.L363:
+ 2156 0028 00000000 		.word	PutChar
+ 2157              		.size	int2uart, .-int2uart
+ 2158              		.section	.text.int2uarz,"ax",%progbits
+ 2159              		.align	1
+ 2160              		.p2align 2,,3
+ 2161              		.global	int2uarz
+ 2162              		.syntax unified
+ 2163              		.thumb
+ 2164              		.thumb_func
+ 2165              		.fpu softvfp
+ 2166              		.type	int2uarz, %function
+ARM GAS  /tmp/ccV0nYAu.s 			page 39
 
 
- 2167 0000 30B5     		push	{r4, r5, lr}	@
- 2168 0002 85B0     		sub	sp, sp, #20	@,,
- 2169              	@ inc/tool/UARTLib.c:458:     UaPutS(int2str_z (val, buf, fw, k));
- 2170 0004 1346     		mov	r3, r2	@, k
- 2171 0006 0A46     		mov	r2, r1	@, fw
- 2172 0008 01A9     		add	r1, sp, #4	@,,
- 2173 000a FFF7FEFF 		bl	int2str_z	@
- 2174 000e 0446     		mov	r4, r0	@ s,
- 2175              	@ inc/tool/UARTLib.c:69: 		while (*s)		
- 2176 0010 0078     		ldrb	r0, [r0]	@ zero_extendqisi2	@ _9, *_1
- 2177 0012 30B1     		cbz	r0, .L365	@ _9,
- 2178 0014 044D     		ldr	r5, .L373	@ tmp119,
- 2179              	.L367:
- 2180              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
- 2181 0016 2B68     		ldr	r3, [r5]	@ PutChar, PutChar
- 2182 0018 9847     		blx	r3	@ PutChar
- 2183              	@ inc/tool/UARTLib.c:69: 		while (*s)		
- 2184 001a 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ _9, MEM[base: s_11, offset: 0B]
- 2185 001e 0028     		cmp	r0, #0	@ _9
- 2186 0020 F9D1     		bne	.L367	@
- 2187              	.L365:
- 2188              	@ inc/tool/UARTLib.c:459: 	}
- 2189 0022 05B0     		add	sp, sp, #20	@,,
- 2190              		@ sp needed	@
- 2191 0024 30BD     		pop	{r4, r5, pc}	@
- 2192              	.L374:
- 2193 0026 00BF     		.align	2
- 2194              	.L373:
- 2195 0028 00000000 		.word	PutChar
- 2196              		.size	int2uarz, .-int2uarz
- 2197              		.section	.text.num2uart,"ax",%progbits
- 2198              		.align	1
- 2199              		.p2align 2,,3
- 2200              		.global	num2uart
- 2201              		.syntax unified
- 2202              		.thumb
- 2203              		.thumb_func
- 2204              		.fpu softvfp
- 2205              		.type	num2uart, %function
- 2206              	num2uart:
- 2207              		@ args = 0, pretend = 0, frame = 16
- 2208              		@ frame_needed = 0, uses_anonymous_args = 0
- 2209 0000 30B5     		push	{r4, r5, lr}	@
- 2210 0002 85B0     		sub	sp, sp, #20	@,,
- 2211              	@ inc/tool/UARTLib.c:463:     UaPutS(num2str (val, buf, fw, k));
- 2212 0004 1346     		mov	r3, r2	@, k
- 2213 0006 0A46     		mov	r2, r1	@, fw
- 2214 0008 01A9     		add	r1, sp, #4	@,,
- 2215 000a FFF7FEFF 		bl	num2str	@
- 2216 000e 0446     		mov	r4, r0	@ s,
- 2217              	@ inc/tool/UARTLib.c:69: 		while (*s)		
- 2218 0010 0078     		ldrb	r0, [r0]	@ zero_extendqisi2	@ _9, *_1
- 2219 0012 30B1     		cbz	r0, .L375	@ _9,
- 2220 0014 044D     		ldr	r5, .L383	@ tmp119,
- 2221              	.L377:
- 2222              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
- 2223 0016 2B68     		ldr	r3, [r5]	@ PutChar, PutChar
-ARM GAS  /tmp/ccy8utXt.s 			page 40
+ 2167              	int2uarz:
+ 2168              		@ args = 0, pretend = 0, frame = 16
+ 2169              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2170 0000 30B5     		push	{r4, r5, lr}	@
+ 2171 0002 85B0     		sub	sp, sp, #20	@,,
+ 2172              	@ inc/tool/UARTLib.c:458:     UaPutS(int2str_z (val, buf, fw, k));
+ 2173 0004 1346     		mov	r3, r2	@, k
+ 2174 0006 0A46     		mov	r2, r1	@, fw
+ 2175 0008 01A9     		add	r1, sp, #4	@,,
+ 2176 000a FFF7FEFF 		bl	int2str_z	@
+ 2177 000e 0446     		mov	r4, r0	@ s,
+ 2178              	@ inc/tool/UARTLib.c:69: 		while (*s)		
+ 2179 0010 0078     		ldrb	r0, [r0]	@ zero_extendqisi2	@ _9, *_1
+ 2180 0012 30B1     		cbz	r0, .L365	@ _9,
+ 2181 0014 044D     		ldr	r5, .L373	@ tmp119,
+ 2182              	.L367:
+ 2183              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
+ 2184 0016 2B68     		ldr	r3, [r5]	@ PutChar, PutChar
+ 2185 0018 9847     		blx	r3	@ PutChar
+ 2186              	@ inc/tool/UARTLib.c:69: 		while (*s)		
+ 2187 001a 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ _9, MEM[base: s_11, offset: 0B]
+ 2188 001e 0028     		cmp	r0, #0	@ _9
+ 2189 0020 F9D1     		bne	.L367	@
+ 2190              	.L365:
+ 2191              	@ inc/tool/UARTLib.c:459: 	}
+ 2192 0022 05B0     		add	sp, sp, #20	@,,
+ 2193              		@ sp needed	@
+ 2194 0024 30BD     		pop	{r4, r5, pc}	@
+ 2195              	.L374:
+ 2196 0026 00BF     		.align	2
+ 2197              	.L373:
+ 2198 0028 00000000 		.word	PutChar
+ 2199              		.size	int2uarz, .-int2uarz
+ 2200              		.section	.text.num2uart,"ax",%progbits
+ 2201              		.align	1
+ 2202              		.p2align 2,,3
+ 2203              		.global	num2uart
+ 2204              		.syntax unified
+ 2205              		.thumb
+ 2206              		.thumb_func
+ 2207              		.fpu softvfp
+ 2208              		.type	num2uart, %function
+ 2209              	num2uart:
+ 2210              		@ args = 0, pretend = 0, frame = 16
+ 2211              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2212 0000 30B5     		push	{r4, r5, lr}	@
+ 2213 0002 85B0     		sub	sp, sp, #20	@,,
+ 2214              	@ inc/tool/UARTLib.c:463:     UaPutS(num2str (val, buf, fw, k));
+ 2215 0004 1346     		mov	r3, r2	@, k
+ 2216 0006 0A46     		mov	r2, r1	@, fw
+ 2217 0008 01A9     		add	r1, sp, #4	@,,
+ 2218 000a FFF7FEFF 		bl	num2str	@
+ 2219 000e 0446     		mov	r4, r0	@ s,
+ 2220              	@ inc/tool/UARTLib.c:69: 		while (*s)		
+ 2221 0010 0078     		ldrb	r0, [r0]	@ zero_extendqisi2	@ _9, *_1
+ 2222 0012 30B1     		cbz	r0, .L375	@ _9,
+ 2223 0014 044D     		ldr	r5, .L383	@ tmp119,
+ARM GAS  /tmp/ccV0nYAu.s 			page 40
 
 
- 2224 0018 9847     		blx	r3	@ PutChar
- 2225              	@ inc/tool/UARTLib.c:69: 		while (*s)		
- 2226 001a 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ _9, MEM[base: s_11, offset: 0B]
- 2227 001e 0028     		cmp	r0, #0	@ _9
- 2228 0020 F9D1     		bne	.L377	@
- 2229              	.L375:
- 2230              	@ inc/tool/UARTLib.c:464: 	}
- 2231 0022 05B0     		add	sp, sp, #20	@,,
- 2232              		@ sp needed	@
- 2233 0024 30BD     		pop	{r4, r5, pc}	@
- 2234              	.L384:
- 2235 0026 00BF     		.align	2
- 2236              	.L383:
- 2237 0028 00000000 		.word	PutChar
- 2238              		.size	num2uart, .-num2uart
- 2239              		.section	.text.hex2uart,"ax",%progbits
- 2240              		.align	1
- 2241              		.p2align 2,,3
- 2242              		.global	hex2uart
- 2243              		.syntax unified
- 2244              		.thumb
- 2245              		.thumb_func
- 2246              		.fpu softvfp
- 2247              		.type	hex2uart, %function
- 2248              	hex2uart:
- 2249              		@ args = 0, pretend = 0, frame = 16
- 2250              		@ frame_needed = 0, uses_anonymous_args = 0
- 2251 0000 30B5     		push	{r4, r5, lr}	@
- 2252 0002 85B0     		sub	sp, sp, #20	@,,
- 2253              	@ inc/tool/UARTLib.c:468: 		UaPutS(hex2str(hex, buf,fw) );
- 2254 0004 0A46     		mov	r2, r1	@, fw
- 2255 0006 01A9     		add	r1, sp, #4	@,,
- 2256 0008 FFF7FEFF 		bl	hex2str	@
- 2257 000c 0446     		mov	r4, r0	@ s,
- 2258              	@ inc/tool/UARTLib.c:69: 		while (*s)		
- 2259 000e 0078     		ldrb	r0, [r0]	@ zero_extendqisi2	@ _8, *_1
- 2260 0010 30B1     		cbz	r0, .L385	@ _8,
- 2261 0012 044D     		ldr	r5, .L393	@ tmp118,
- 2262              	.L387:
- 2263              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
- 2264 0014 2B68     		ldr	r3, [r5]	@ PutChar, PutChar
- 2265 0016 9847     		blx	r3	@ PutChar
- 2266              	@ inc/tool/UARTLib.c:69: 		while (*s)		
- 2267 0018 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ _8, MEM[base: s_10, offset: 0B]
- 2268 001c 0028     		cmp	r0, #0	@ _8
- 2269 001e F9D1     		bne	.L387	@
- 2270              	.L385:
- 2271              	@ inc/tool/UARTLib.c:469: 	}
- 2272 0020 05B0     		add	sp, sp, #20	@,,
- 2273              		@ sp needed	@
- 2274 0022 30BD     		pop	{r4, r5, pc}	@
- 2275              	.L394:
- 2276              		.align	2
- 2277              	.L393:
- 2278 0024 00000000 		.word	PutChar
- 2279              		.size	hex2uart, .-hex2uart
- 2280              		.section	.text.USART1_IRQHandler,"ax",%progbits
-ARM GAS  /tmp/ccy8utXt.s 			page 41
+ 2224              	.L377:
+ 2225              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
+ 2226 0016 2B68     		ldr	r3, [r5]	@ PutChar, PutChar
+ 2227 0018 9847     		blx	r3	@ PutChar
+ 2228              	@ inc/tool/UARTLib.c:69: 		while (*s)		
+ 2229 001a 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ _9, MEM[base: s_11, offset: 0B]
+ 2230 001e 0028     		cmp	r0, #0	@ _9
+ 2231 0020 F9D1     		bne	.L377	@
+ 2232              	.L375:
+ 2233              	@ inc/tool/UARTLib.c:464: 	}
+ 2234 0022 05B0     		add	sp, sp, #20	@,,
+ 2235              		@ sp needed	@
+ 2236 0024 30BD     		pop	{r4, r5, pc}	@
+ 2237              	.L384:
+ 2238 0026 00BF     		.align	2
+ 2239              	.L383:
+ 2240 0028 00000000 		.word	PutChar
+ 2241              		.size	num2uart, .-num2uart
+ 2242              		.section	.text.hex2uart,"ax",%progbits
+ 2243              		.align	1
+ 2244              		.p2align 2,,3
+ 2245              		.global	hex2uart
+ 2246              		.syntax unified
+ 2247              		.thumb
+ 2248              		.thumb_func
+ 2249              		.fpu softvfp
+ 2250              		.type	hex2uart, %function
+ 2251              	hex2uart:
+ 2252              		@ args = 0, pretend = 0, frame = 16
+ 2253              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2254 0000 30B5     		push	{r4, r5, lr}	@
+ 2255 0002 85B0     		sub	sp, sp, #20	@,,
+ 2256              	@ inc/tool/UARTLib.c:468: 		UaPutS(hex2str(hex, buf,fw) );
+ 2257 0004 0A46     		mov	r2, r1	@, fw
+ 2258 0006 01A9     		add	r1, sp, #4	@,,
+ 2259 0008 FFF7FEFF 		bl	hex2str	@
+ 2260 000c 0446     		mov	r4, r0	@ s,
+ 2261              	@ inc/tool/UARTLib.c:69: 		while (*s)		
+ 2262 000e 0078     		ldrb	r0, [r0]	@ zero_extendqisi2	@ _8, *_1
+ 2263 0010 30B1     		cbz	r0, .L385	@ _8,
+ 2264 0012 044D     		ldr	r5, .L393	@ tmp118,
+ 2265              	.L387:
+ 2266              	@ inc/tool/UARTLib.c:38: 		PutChar(p);
+ 2267 0014 2B68     		ldr	r3, [r5]	@ PutChar, PutChar
+ 2268 0016 9847     		blx	r3	@ PutChar
+ 2269              	@ inc/tool/UARTLib.c:69: 		while (*s)		
+ 2270 0018 14F8010F 		ldrb	r0, [r4, #1]!	@ zero_extendqisi2	@ _8, MEM[base: s_10, offset: 0B]
+ 2271 001c 0028     		cmp	r0, #0	@ _8
+ 2272 001e F9D1     		bne	.L387	@
+ 2273              	.L385:
+ 2274              	@ inc/tool/UARTLib.c:469: 	}
+ 2275 0020 05B0     		add	sp, sp, #20	@,,
+ 2276              		@ sp needed	@
+ 2277 0022 30BD     		pop	{r4, r5, pc}	@
+ 2278              	.L394:
+ 2279              		.align	2
+ 2280              	.L393:
+ARM GAS  /tmp/ccV0nYAu.s 			page 41
 
 
- 2281              		.align	1
- 2282              		.p2align 2,,3
- 2283              		.global	USART1_IRQHandler
- 2284              		.syntax unified
- 2285              		.thumb
- 2286              		.thumb_func
- 2287              		.fpu softvfp
- 2288              		.type	USART1_IRQHandler, %function
- 2289              	USART1_IRQHandler:
- 2290              		@ args = 0, pretend = 0, frame = 0
- 2291              		@ frame_needed = 0, uses_anonymous_args = 0
- 2292              		@ link register save eliminated.
- 2293              	@ inc/tool/UARTLib.c:475: 		if (USART1->SR & USART_SR_RXNE) {     // indicate interrupt from RX
- 2294 0000 0E4B     		ldr	r3, .L403	@ tmp125,
- 2295 0002 1A88     		ldrh	r2, [r3]	@, MEM[(struct USART_TypeDef *)1073821696B].SR
- 2296 0004 9206     		lsls	r2, r2, #26	@, MEM[(struct USART_TypeDef *)1073821696B].SR,
- 2297 0006 0AD5     		bpl	.L395	@,
- 2298              	@ inc/tool/UARTLib.c:478: 			i = Fifo1.rct;
- 2299 0008 0D49     		ldr	r1, .L403+4	@ tmp133,
- 2300              	@ inc/tool/UARTLib.c:477: 			d = USART1->DR;			
- 2301 000a 9B88     		ldrh	r3, [r3, #4]	@, MEM[(struct USART_TypeDef *)1073821696B].DR
- 2302              	@ inc/tool/UARTLib.c:478: 			i = Fifo1.rct;
- 2303 000c 8A88     		ldrh	r2, [r1, #4]	@, Fifo1.rct
- 2304              	@ inc/tool/UARTLib.c:477: 			d = USART1->DR;			
- 2305 000e 9BB2     		uxth	r3, r3	@ _4, MEM[(struct USART_TypeDef *)1073821696B].DR
- 2306              	@ inc/tool/UARTLib.c:478: 			i = Fifo1.rct;
- 2307 0010 D2B2     		uxtb	r2, r2	@ i, Fifo1.rct
- 2308              	@ inc/tool/UARTLib.c:479: 			if (i < UART1_RXB) {	
- 2309 0012 0F2A     		cmp	r2, #15	@ i,
- 2310 0014 04D9     		bls	.L402	@,
- 2311 0016 DBB2     		uxtb	r3, r3	@ _4, _4
- 2312              	.L397:
- 2313              	@ inc/tool/UARTLib.c:485: 			USART1->DR = d;		//echo
- 2314 0018 084A     		ldr	r2, .L403	@ tmp155,
- 2315 001a 9BB2     		uxth	r3, r3	@ _10, _4
- 2316 001c 9380     		strh	r3, [r2, #4]	@ movhi	@ _10, MEM[(struct USART_TypeDef *)1073821696B].DR
- 2317              	.L395:
- 2318              	@ inc/tool/UARTLib.c:487: 	}
- 2319 001e 7047     		bx	lr	@
- 2320              	.L402:
- 2321              	@ inc/tool/UARTLib.c:480: 				Fifo1.rct = ++i;
- 2322 0020 0132     		adds	r2, r2, #1	@ tmp136, i,
- 2323 0022 D2B2     		uxtb	r2, r2	@ _6, tmp136
- 2324 0024 8A80     		strh	r2, [r1, #4]	@ movhi	@ _6, Fifo1.rct
- 2325              	@ inc/tool/UARTLib.c:481: 				i = Fifo1.rwi;
- 2326 0026 4A88     		ldrh	r2, [r1, #2]	@, Fifo1.rwi
- 2327              	@ inc/tool/UARTLib.c:477: 			d = USART1->DR;			
- 2328 0028 DBB2     		uxtb	r3, r3	@ _4, _4
- 2329              	@ inc/tool/UARTLib.c:481: 				i = Fifo1.rwi;
- 2330 002a D2B2     		uxtb	r2, r2	@ i, Fifo1.rwi
- 2331              	@ inc/tool/UARTLib.c:483: 				Fifo1.rwi = ++i % UART1_RXB;
- 2332 002c 501C     		adds	r0, r2, #1	@ tmp147, i,
- 2333 002e 00F00F00 		and	r0, r0, #15	@ _9, tmp147,
- 2334              	@ inc/tool/UARTLib.c:482: 				Fifo1.rbuf[i] = d;
- 2335 0032 0A44     		add	r2, r2, r1	@ tmp145, tmp133
- 2336 0034 9371     		strb	r3, [r2, #6]	@ _4, Fifo1.rbuf
- 2337              	@ inc/tool/UARTLib.c:483: 				Fifo1.rwi = ++i % UART1_RXB;
-ARM GAS  /tmp/ccy8utXt.s 			page 42
+ 2281 0024 00000000 		.word	PutChar
+ 2282              		.size	hex2uart, .-hex2uart
+ 2283              		.section	.text.USART1_IRQHandler,"ax",%progbits
+ 2284              		.align	1
+ 2285              		.p2align 2,,3
+ 2286              		.global	USART1_IRQHandler
+ 2287              		.syntax unified
+ 2288              		.thumb
+ 2289              		.thumb_func
+ 2290              		.fpu softvfp
+ 2291              		.type	USART1_IRQHandler, %function
+ 2292              	USART1_IRQHandler:
+ 2293              		@ args = 0, pretend = 0, frame = 0
+ 2294              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2295              		@ link register save eliminated.
+ 2296              	@ inc/tool/UARTLib.c:475: 		if (USART1->SR & USART_SR_RXNE) {     // indicate interrupt from RX
+ 2297 0000 0E4B     		ldr	r3, .L403	@ tmp125,
+ 2298 0002 1A88     		ldrh	r2, [r3]	@, MEM[(struct USART_TypeDef *)1073821696B].SR
+ 2299 0004 9206     		lsls	r2, r2, #26	@, MEM[(struct USART_TypeDef *)1073821696B].SR,
+ 2300 0006 0AD5     		bpl	.L395	@,
+ 2301              	@ inc/tool/UARTLib.c:478: 			i = Fifo1.rct;
+ 2302 0008 0D49     		ldr	r1, .L403+4	@ tmp133,
+ 2303              	@ inc/tool/UARTLib.c:477: 			d = USART1->DR;			
+ 2304 000a 9B88     		ldrh	r3, [r3, #4]	@, MEM[(struct USART_TypeDef *)1073821696B].DR
+ 2305              	@ inc/tool/UARTLib.c:478: 			i = Fifo1.rct;
+ 2306 000c 8A88     		ldrh	r2, [r1, #4]	@, Fifo1.rct
+ 2307              	@ inc/tool/UARTLib.c:477: 			d = USART1->DR;			
+ 2308 000e 9BB2     		uxth	r3, r3	@ _4, MEM[(struct USART_TypeDef *)1073821696B].DR
+ 2309              	@ inc/tool/UARTLib.c:478: 			i = Fifo1.rct;
+ 2310 0010 D2B2     		uxtb	r2, r2	@ i, Fifo1.rct
+ 2311              	@ inc/tool/UARTLib.c:479: 			if (i < UART1_RXB) {	
+ 2312 0012 0F2A     		cmp	r2, #15	@ i,
+ 2313 0014 04D9     		bls	.L402	@,
+ 2314 0016 DBB2     		uxtb	r3, r3	@ _4, _4
+ 2315              	.L397:
+ 2316              	@ inc/tool/UARTLib.c:485: 			USART1->DR = d;		//echo
+ 2317 0018 084A     		ldr	r2, .L403	@ tmp155,
+ 2318 001a 9BB2     		uxth	r3, r3	@ _10, _4
+ 2319 001c 9380     		strh	r3, [r2, #4]	@ movhi	@ _10, MEM[(struct USART_TypeDef *)1073821696B].DR
+ 2320              	.L395:
+ 2321              	@ inc/tool/UARTLib.c:487: 	}
+ 2322 001e 7047     		bx	lr	@
+ 2323              	.L402:
+ 2324              	@ inc/tool/UARTLib.c:480: 				Fifo1.rct = ++i;
+ 2325 0020 0132     		adds	r2, r2, #1	@ tmp136, i,
+ 2326 0022 D2B2     		uxtb	r2, r2	@ _6, tmp136
+ 2327 0024 8A80     		strh	r2, [r1, #4]	@ movhi	@ _6, Fifo1.rct
+ 2328              	@ inc/tool/UARTLib.c:481: 				i = Fifo1.rwi;
+ 2329 0026 4A88     		ldrh	r2, [r1, #2]	@, Fifo1.rwi
+ 2330              	@ inc/tool/UARTLib.c:477: 			d = USART1->DR;			
+ 2331 0028 DBB2     		uxtb	r3, r3	@ _4, _4
+ 2332              	@ inc/tool/UARTLib.c:481: 				i = Fifo1.rwi;
+ 2333 002a D2B2     		uxtb	r2, r2	@ i, Fifo1.rwi
+ 2334              	@ inc/tool/UARTLib.c:483: 				Fifo1.rwi = ++i % UART1_RXB;
+ 2335 002c 501C     		adds	r0, r2, #1	@ tmp147, i,
+ 2336 002e 00F00F00 		and	r0, r0, #15	@ _9, tmp147,
+ 2337              	@ inc/tool/UARTLib.c:482: 				Fifo1.rbuf[i] = d;
+ARM GAS  /tmp/ccV0nYAu.s 			page 42
 
 
- 2338 0036 4880     		strh	r0, [r1, #2]	@ movhi	@ _9, Fifo1.rwi
- 2339 0038 EEE7     		b	.L397	@
- 2340              	.L404:
- 2341 003a 00BF     		.align	2
- 2342              	.L403:
- 2343 003c 00380140 		.word	1073821696
- 2344 0040 00000000 		.word	.LANCHOR0
- 2345              		.size	USART1_IRQHandler, .-USART1_IRQHandler
- 2346              		.section	.text.USART2_IRQHandler,"ax",%progbits
- 2347              		.align	1
- 2348              		.p2align 2,,3
- 2349              		.global	USART2_IRQHandler
- 2350              		.syntax unified
- 2351              		.thumb
- 2352              		.thumb_func
- 2353              		.fpu softvfp
- 2354              		.type	USART2_IRQHandler, %function
- 2355              	USART2_IRQHandler:
- 2356              		@ args = 0, pretend = 0, frame = 0
- 2357              		@ frame_needed = 0, uses_anonymous_args = 0
- 2358              		@ link register save eliminated.
- 2359              	@ inc/tool/UARTLib.c:493: 		if (USART2->SR & USART_SR_RXNE) {     // indicate interrupt from RX
- 2360 0000 0E4B     		ldr	r3, .L413	@ tmp122,
- 2361 0002 1A88     		ldrh	r2, [r3]	@, MEM[(struct USART_TypeDef *)1073759232B].SR
- 2362 0004 9206     		lsls	r2, r2, #26	@, MEM[(struct USART_TypeDef *)1073759232B].SR,
- 2363 0006 0AD5     		bpl	.L405	@,
- 2364              	@ inc/tool/UARTLib.c:496: 			i = Fifo2.rct;
- 2365 0008 0D49     		ldr	r1, .L413+4	@ tmp130,
- 2366              	@ inc/tool/UARTLib.c:495: 			d = USART2->DR;						/* Get received byte */
- 2367 000a 9B88     		ldrh	r3, [r3, #4]	@, MEM[(struct USART_TypeDef *)1073759232B].DR
- 2368              	@ inc/tool/UARTLib.c:496: 			i = Fifo2.rct;
- 2369 000c 8A88     		ldrh	r2, [r1, #4]	@, Fifo2.rct
- 2370              	@ inc/tool/UARTLib.c:495: 			d = USART2->DR;						/* Get received byte */
- 2371 000e 9BB2     		uxth	r3, r3	@ _4, MEM[(struct USART_TypeDef *)1073759232B].DR
- 2372              	@ inc/tool/UARTLib.c:496: 			i = Fifo2.rct;
- 2373 0010 92B2     		uxth	r2, r2	@ _5, Fifo2.rct
- 2374              	@ inc/tool/UARTLib.c:497: 			if (i < UART2_RXB) {			/* Store it into the rx fifo if not full */
- 2375 0012 0F2A     		cmp	r2, #15	@ _5,
- 2376 0014 04D9     		bls	.L412	@,
- 2377 0016 DBB2     		uxtb	r3, r3	@ _4, _4
- 2378              	.L407:
- 2379              	@ inc/tool/UARTLib.c:503: 			USART2->DR = d;		//echo 
- 2380 0018 084A     		ldr	r2, .L413	@ tmp147,
- 2381 001a 9BB2     		uxth	r3, r3	@ _3, _4
- 2382 001c 9380     		strh	r3, [r2, #4]	@ movhi	@ _3, MEM[(struct USART_TypeDef *)1073759232B].DR
- 2383              	.L405:
- 2384              	@ inc/tool/UARTLib.c:506: 	}
- 2385 001e 7047     		bx	lr	@
- 2386              	.L412:
- 2387              	@ inc/tool/UARTLib.c:498: 				Fifo2.rct = ++i;
- 2388 0020 0132     		adds	r2, r2, #1	@ tmp133, _5,
- 2389 0022 92B2     		uxth	r2, r2	@ _6, tmp133
- 2390 0024 8A80     		strh	r2, [r1, #4]	@ movhi	@ _6, Fifo2.rct
- 2391              	@ inc/tool/UARTLib.c:499: 				i = Fifo2.rwi;
- 2392 0026 4A88     		ldrh	r2, [r1, #2]	@, Fifo2.rwi
- 2393              	@ inc/tool/UARTLib.c:495: 			d = USART2->DR;						/* Get received byte */
- 2394 0028 DBB2     		uxtb	r3, r3	@ _4, _4
-ARM GAS  /tmp/ccy8utXt.s 			page 43
+ 2338 0032 0A44     		add	r2, r2, r1	@ tmp145, tmp133
+ 2339 0034 9371     		strb	r3, [r2, #6]	@ _4, Fifo1.rbuf
+ 2340              	@ inc/tool/UARTLib.c:483: 				Fifo1.rwi = ++i % UART1_RXB;
+ 2341 0036 4880     		strh	r0, [r1, #2]	@ movhi	@ _9, Fifo1.rwi
+ 2342 0038 EEE7     		b	.L397	@
+ 2343              	.L404:
+ 2344 003a 00BF     		.align	2
+ 2345              	.L403:
+ 2346 003c 00380140 		.word	1073821696
+ 2347 0040 00000000 		.word	.LANCHOR0
+ 2348              		.size	USART1_IRQHandler, .-USART1_IRQHandler
+ 2349              		.section	.text.USART2_IRQHandler,"ax",%progbits
+ 2350              		.align	1
+ 2351              		.p2align 2,,3
+ 2352              		.global	USART2_IRQHandler
+ 2353              		.syntax unified
+ 2354              		.thumb
+ 2355              		.thumb_func
+ 2356              		.fpu softvfp
+ 2357              		.type	USART2_IRQHandler, %function
+ 2358              	USART2_IRQHandler:
+ 2359              		@ args = 0, pretend = 0, frame = 0
+ 2360              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2361              		@ link register save eliminated.
+ 2362              	@ inc/tool/UARTLib.c:493: 		if (USART2->SR & USART_SR_RXNE) {     // indicate interrupt from RX
+ 2363 0000 0E4B     		ldr	r3, .L413	@ tmp122,
+ 2364 0002 1A88     		ldrh	r2, [r3]	@, MEM[(struct USART_TypeDef *)1073759232B].SR
+ 2365 0004 9206     		lsls	r2, r2, #26	@, MEM[(struct USART_TypeDef *)1073759232B].SR,
+ 2366 0006 0AD5     		bpl	.L405	@,
+ 2367              	@ inc/tool/UARTLib.c:496: 			i = Fifo2.rct;
+ 2368 0008 0D49     		ldr	r1, .L413+4	@ tmp130,
+ 2369              	@ inc/tool/UARTLib.c:495: 			d = USART2->DR;						/* Get received byte */
+ 2370 000a 9B88     		ldrh	r3, [r3, #4]	@, MEM[(struct USART_TypeDef *)1073759232B].DR
+ 2371              	@ inc/tool/UARTLib.c:496: 			i = Fifo2.rct;
+ 2372 000c 8A88     		ldrh	r2, [r1, #4]	@, Fifo2.rct
+ 2373              	@ inc/tool/UARTLib.c:495: 			d = USART2->DR;						/* Get received byte */
+ 2374 000e 9BB2     		uxth	r3, r3	@ _4, MEM[(struct USART_TypeDef *)1073759232B].DR
+ 2375              	@ inc/tool/UARTLib.c:496: 			i = Fifo2.rct;
+ 2376 0010 92B2     		uxth	r2, r2	@ _5, Fifo2.rct
+ 2377              	@ inc/tool/UARTLib.c:497: 			if (i < UART2_RXB) {			/* Store it into the rx fifo if not full */
+ 2378 0012 0F2A     		cmp	r2, #15	@ _5,
+ 2379 0014 04D9     		bls	.L412	@,
+ 2380 0016 DBB2     		uxtb	r3, r3	@ _4, _4
+ 2381              	.L407:
+ 2382              	@ inc/tool/UARTLib.c:503: 			USART2->DR = d;		//echo 
+ 2383 0018 084A     		ldr	r2, .L413	@ tmp147,
+ 2384 001a 9BB2     		uxth	r3, r3	@ _3, _4
+ 2385 001c 9380     		strh	r3, [r2, #4]	@ movhi	@ _3, MEM[(struct USART_TypeDef *)1073759232B].DR
+ 2386              	.L405:
+ 2387              	@ inc/tool/UARTLib.c:506: 	}
+ 2388 001e 7047     		bx	lr	@
+ 2389              	.L412:
+ 2390              	@ inc/tool/UARTLib.c:498: 				Fifo2.rct = ++i;
+ 2391 0020 0132     		adds	r2, r2, #1	@ tmp133, _5,
+ 2392 0022 92B2     		uxth	r2, r2	@ _6, tmp133
+ 2393 0024 8A80     		strh	r2, [r1, #4]	@ movhi	@ _6, Fifo2.rct
+ 2394              	@ inc/tool/UARTLib.c:499: 				i = Fifo2.rwi;
+ARM GAS  /tmp/ccV0nYAu.s 			page 43
 
 
- 2395              	@ inc/tool/UARTLib.c:499: 				i = Fifo2.rwi;
- 2396 002a 92B2     		uxth	r2, r2	@ _7, Fifo2.rwi
- 2397              	@ inc/tool/UARTLib.c:501: 				Fifo2.rwi = ++i % UART2_RXB;
- 2398 002c 501C     		adds	r0, r2, #1	@ i, _7,
- 2399 002e 00F00F00 		and	r0, r0, #15	@ _9, i,
- 2400              	@ inc/tool/UARTLib.c:500: 				Fifo2.rbuf[i] = d;
- 2401 0032 0A44     		add	r2, r2, r1	@ tmp140, tmp130
- 2402 0034 9371     		strb	r3, [r2, #6]	@ _4, Fifo2.rbuf
- 2403              	@ inc/tool/UARTLib.c:501: 				Fifo2.rwi = ++i % UART2_RXB;
- 2404 0036 4880     		strh	r0, [r1, #2]	@ movhi	@ _9, Fifo2.rwi
- 2405 0038 EEE7     		b	.L407	@
- 2406              	.L414:
- 2407 003a 00BF     		.align	2
- 2408              	.L413:
- 2409 003c 00440040 		.word	1073759232
- 2410 0040 00000000 		.word	.LANCHOR1
- 2411              		.size	USART2_IRQHandler, .-USART2_IRQHandler
- 2412              		.global	p_Fifo3
- 2413              		.global	p_Fifo2
- 2414              		.global	p_Fifo1
- 2415              		.comm	PutChar,4,4
- 2416              		.comm	ptm,36,4
- 2417              		.section	.bss.Fifo1,"aw",%nobits
- 2418              		.align	2
- 2419              		.set	.LANCHOR0,. + 0
- 2420              		.type	Fifo1, %object
- 2421              		.size	Fifo1, 22
- 2422              	Fifo1:
- 2423 0000 00000000 		.space	22
- 2423      00000000 
- 2423      00000000 
- 2423      00000000 
- 2423      00000000 
- 2424              		.section	.bss.Fifo2,"aw",%nobits
- 2425              		.align	2
- 2426              		.set	.LANCHOR1,. + 0
- 2427              		.type	Fifo2, %object
- 2428              		.size	Fifo2, 22
- 2429              	Fifo2:
- 2430 0000 00000000 		.space	22
- 2430      00000000 
- 2430      00000000 
- 2430      00000000 
- 2430      00000000 
- 2431              		.section	.bss.Fifo3,"aw",%nobits
- 2432              		.align	2
- 2433              		.type	Fifo3, %object
- 2434              		.size	Fifo3, 22
- 2435              	Fifo3:
- 2436 0000 00000000 		.space	22
- 2436      00000000 
- 2436      00000000 
- 2436      00000000 
- 2436      00000000 
- 2437              		.section	.bss.sign.6124,"aw",%nobits
- 2438              		.set	.LANCHOR2,. + 0
- 2439              		.type	sign.6124, %object
-ARM GAS  /tmp/ccy8utXt.s 			page 44
+ 2395 0026 4A88     		ldrh	r2, [r1, #2]	@, Fifo2.rwi
+ 2396              	@ inc/tool/UARTLib.c:495: 			d = USART2->DR;						/* Get received byte */
+ 2397 0028 DBB2     		uxtb	r3, r3	@ _4, _4
+ 2398              	@ inc/tool/UARTLib.c:499: 				i = Fifo2.rwi;
+ 2399 002a 92B2     		uxth	r2, r2	@ _7, Fifo2.rwi
+ 2400              	@ inc/tool/UARTLib.c:501: 				Fifo2.rwi = ++i % UART2_RXB;
+ 2401 002c 501C     		adds	r0, r2, #1	@ i, _7,
+ 2402 002e 00F00F00 		and	r0, r0, #15	@ _9, i,
+ 2403              	@ inc/tool/UARTLib.c:500: 				Fifo2.rbuf[i] = d;
+ 2404 0032 0A44     		add	r2, r2, r1	@ tmp140, tmp130
+ 2405 0034 9371     		strb	r3, [r2, #6]	@ _4, Fifo2.rbuf
+ 2406              	@ inc/tool/UARTLib.c:501: 				Fifo2.rwi = ++i % UART2_RXB;
+ 2407 0036 4880     		strh	r0, [r1, #2]	@ movhi	@ _9, Fifo2.rwi
+ 2408 0038 EEE7     		b	.L407	@
+ 2409              	.L414:
+ 2410 003a 00BF     		.align	2
+ 2411              	.L413:
+ 2412 003c 00440040 		.word	1073759232
+ 2413 0040 00000000 		.word	.LANCHOR1
+ 2414              		.size	USART2_IRQHandler, .-USART2_IRQHandler
+ 2415              		.global	p_Fifo3
+ 2416              		.global	p_Fifo2
+ 2417              		.global	p_Fifo1
+ 2418              		.comm	PutChar,4,4
+ 2419              		.comm	ptm,36,4
+ 2420              		.section	.bss.Fifo1,"aw",%nobits
+ 2421              		.align	2
+ 2422              		.set	.LANCHOR0,. + 0
+ 2423              		.type	Fifo1, %object
+ 2424              		.size	Fifo1, 22
+ 2425              	Fifo1:
+ 2426 0000 00000000 		.space	22
+ 2426      00000000 
+ 2426      00000000 
+ 2426      00000000 
+ 2426      00000000 
+ 2427              		.section	.bss.Fifo2,"aw",%nobits
+ 2428              		.align	2
+ 2429              		.set	.LANCHOR1,. + 0
+ 2430              		.type	Fifo2, %object
+ 2431              		.size	Fifo2, 22
+ 2432              	Fifo2:
+ 2433 0000 00000000 		.space	22
+ 2433      00000000 
+ 2433      00000000 
+ 2433      00000000 
+ 2433      00000000 
+ 2434              		.section	.bss.Fifo3,"aw",%nobits
+ 2435              		.align	2
+ 2436              		.type	Fifo3, %object
+ 2437              		.size	Fifo3, 22
+ 2438              	Fifo3:
+ 2439 0000 00000000 		.space	22
+ 2439      00000000 
+ 2439      00000000 
+ 2439      00000000 
+ 2439      00000000 
+ARM GAS  /tmp/ccV0nYAu.s 			page 44
 
 
- 2440              		.size	sign.6124, 1
- 2441              	sign.6124:
- 2442 0000 00       		.space	1
- 2443              		.section	.bss.sign.6143,"aw",%nobits
- 2444              		.set	.LANCHOR3,. + 0
- 2445              		.type	sign.6143, %object
- 2446              		.size	sign.6143, 1
- 2447              	sign.6143:
- 2448 0000 00       		.space	1
- 2449              		.section	.data.p_Fifo1,"aw",%progbits
- 2450              		.align	2
- 2451              		.type	p_Fifo1, %object
- 2452              		.size	p_Fifo1, 4
- 2453              	p_Fifo1:
- 2454 0000 00000000 		.word	Fifo1
- 2455              		.section	.data.p_Fifo2,"aw",%progbits
- 2456              		.align	2
- 2457              		.type	p_Fifo2, %object
- 2458              		.size	p_Fifo2, 4
- 2459              	p_Fifo2:
- 2460 0000 00000000 		.word	Fifo2
- 2461              		.section	.data.p_Fifo3,"aw",%progbits
- 2462              		.align	2
- 2463              		.type	p_Fifo3, %object
- 2464              		.size	p_Fifo3, 4
- 2465              	p_Fifo3:
- 2466 0000 00000000 		.word	Fifo3
- 2467              		.section	.rodata.cyfhex,"a",%progbits
- 2468              		.align	2
- 2469              		.set	.LANCHOR4,. + 0
- 2470              		.type	cyfhex, %object
- 2471              		.size	cyfhex, 17
- 2472              	cyfhex:
- 2473 0000 30       		.byte	48
- 2474 0001 31       		.byte	49
- 2475 0002 32       		.byte	50
- 2476 0003 33       		.byte	51
- 2477 0004 34       		.byte	52
- 2478 0005 35       		.byte	53
- 2479 0006 36       		.byte	54
- 2480 0007 37       		.byte	55
- 2481 0008 38       		.byte	56
- 2482 0009 39       		.byte	57
- 2483 000a 61       		.byte	97
- 2484 000b 62       		.byte	98
- 2485 000c 63       		.byte	99
- 2486 000d 64       		.byte	100
- 2487 000e 65       		.byte	101
- 2488 000f 66       		.byte	102
- 2489 0010 00       		.space	1
- 2490              		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
-ARM GAS  /tmp/ccy8utXt.s 			page 45
+ 2440              		.section	.bss.sign.6124,"aw",%nobits
+ 2441              		.set	.LANCHOR2,. + 0
+ 2442              		.type	sign.6124, %object
+ 2443              		.size	sign.6124, 1
+ 2444              	sign.6124:
+ 2445 0000 00       		.space	1
+ 2446              		.section	.bss.sign.6143,"aw",%nobits
+ 2447              		.set	.LANCHOR3,. + 0
+ 2448              		.type	sign.6143, %object
+ 2449              		.size	sign.6143, 1
+ 2450              	sign.6143:
+ 2451 0000 00       		.space	1
+ 2452              		.section	.data.p_Fifo1,"aw",%progbits
+ 2453              		.align	2
+ 2454              		.type	p_Fifo1, %object
+ 2455              		.size	p_Fifo1, 4
+ 2456              	p_Fifo1:
+ 2457 0000 00000000 		.word	Fifo1
+ 2458              		.section	.data.p_Fifo2,"aw",%progbits
+ 2459              		.align	2
+ 2460              		.type	p_Fifo2, %object
+ 2461              		.size	p_Fifo2, 4
+ 2462              	p_Fifo2:
+ 2463 0000 00000000 		.word	Fifo2
+ 2464              		.section	.data.p_Fifo3,"aw",%progbits
+ 2465              		.align	2
+ 2466              		.type	p_Fifo3, %object
+ 2467              		.size	p_Fifo3, 4
+ 2468              	p_Fifo3:
+ 2469 0000 00000000 		.word	Fifo3
+ 2470              		.section	.rodata.cyfhex,"a",%progbits
+ 2471              		.align	2
+ 2472              		.set	.LANCHOR4,. + 0
+ 2473              		.type	cyfhex, %object
+ 2474              		.size	cyfhex, 17
+ 2475              	cyfhex:
+ 2476 0000 30       		.byte	48
+ 2477 0001 31       		.byte	49
+ 2478 0002 32       		.byte	50
+ 2479 0003 33       		.byte	51
+ 2480 0004 34       		.byte	52
+ 2481 0005 35       		.byte	53
+ 2482 0006 36       		.byte	54
+ 2483 0007 37       		.byte	55
+ 2484 0008 38       		.byte	56
+ 2485 0009 39       		.byte	57
+ 2486 000a 61       		.byte	97
+ 2487 000b 62       		.byte	98
+ 2488 000c 63       		.byte	99
+ 2489 000d 64       		.byte	100
+ 2490 000e 65       		.byte	101
+ 2491 000f 66       		.byte	102
+ 2492 0010 00       		.space	1
+ 2493              		.ident	"GCC: (15:7-2018-q2-6) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"
+ARM GAS  /tmp/ccV0nYAu.s 			page 45
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 UARTLib.c
-     /tmp/ccy8utXt.s:70     .text.strrev.part.0:00000000 $t
-     /tmp/ccy8utXt.s:77     .text.strrev.part.0:00000000 strrev.part.0
-     /tmp/ccy8utXt.s:114    .text.Text1:00000000 $t
-     /tmp/ccy8utXt.s:122    .text.Text1:00000000 Text1
-     /tmp/ccy8utXt.s:148    .text.Text1:00000020 $d
+     /tmp/ccV0nYAu.s:70     .text.strrev.part.0:00000000 $t
+     /tmp/ccV0nYAu.s:77     .text.strrev.part.0:00000000 strrev.part.0
+     /tmp/ccV0nYAu.s:114    .text.Text1:00000000 $t
+     /tmp/ccV0nYAu.s:122    .text.Text1:00000000 Text1
+     /tmp/ccV0nYAu.s:148    .text.Text1:00000020 $d
                             *COM*:00000004 PutChar
-     /tmp/ccy8utXt.s:151    .text.StrFF:00000000 $t
-     /tmp/ccy8utXt.s:159    .text.StrFF:00000000 StrFF
-     /tmp/ccy8utXt.s:185    .text.StrFF:00000020 $d
-     /tmp/ccy8utXt.s:188    .text.UART1_putc:00000000 $t
-     /tmp/ccy8utXt.s:196    .text.UART1_putc:00000000 UART1_putc
-     /tmp/ccy8utXt.s:215    .text.UART1_putc:00000010 $d
-     /tmp/ccy8utXt.s:218    .text.UART2_putc:00000000 $t
-     /tmp/ccy8utXt.s:226    .text.UART2_putc:00000000 UART2_putc
-     /tmp/ccy8utXt.s:245    .text.UART2_putc:00000010 $d
-     /tmp/ccy8utXt.s:248    .text.UART3_putc:00000000 $t
-     /tmp/ccy8utXt.s:256    .text.UART3_putc:00000000 UART3_putc
-     /tmp/ccy8utXt.s:275    .text.UART3_putc:00000010 $d
-     /tmp/ccy8utXt.s:278    .text.UaPutC:00000000 $t
-     /tmp/ccy8utXt.s:286    .text.UaPutC:00000000 UaPutC
-     /tmp/ccy8utXt.s:297    .text.UaPutC:00000008 $d
-     /tmp/ccy8utXt.s:300    .text.strrev:00000000 $t
-     /tmp/ccy8utXt.s:308    .text.strrev:00000000 strrev
-     /tmp/ccy8utXt.s:325    .text.reverse:00000000 $t
-     /tmp/ccy8utXt.s:333    .text.reverse:00000000 reverse
-     /tmp/ccy8utXt.s:369    .text.UaPutS:00000000 $t
-     /tmp/ccy8utXt.s:377    .text.UaPutS:00000000 UaPutS
-     /tmp/ccy8utXt.s:401    .text.UaPutS:00000018 $d
-     /tmp/ccy8utXt.s:404    .text.UaPutK:00000000 $t
-     /tmp/ccy8utXt.s:412    .text.UaPutK:00000000 UaPutK
-     /tmp/ccy8utXt.s:419    .text.UART_getChar:00000000 $t
-     /tmp/ccy8utXt.s:427    .text.UART_getChar:00000000 UART_getChar
-     /tmp/ccy8utXt.s:478    .text.UART_getChar:0000002c $d
-     /tmp/ccy8utXt.s:481    .text.UART_getChar2:00000000 $t
-     /tmp/ccy8utXt.s:489    .text.UART_getChar2:00000000 UART_getChar2
-     /tmp/ccy8utXt.s:540    .text.UART_getChar2:0000002c $d
-     /tmp/ccy8utXt.s:543    .text.UART_getStr:00000000 $t
-     /tmp/ccy8utXt.s:551    .text.UART_getStr:00000000 UART_getStr
-     /tmp/ccy8utXt.s:631    .text.UART_getStr:00000050 $d
-     /tmp/ccy8utXt.s:634    .text.uint2str:00000000 $t
-     /tmp/ccy8utXt.s:642    .text.uint2str:00000000 uint2str
-     /tmp/ccy8utXt.s:681    .text.uint2str:00000030 $d
-     /tmp/ccy8utXt.s:684    .text.sint2str:00000000 $t
-     /tmp/ccy8utXt.s:692    .text.sint2str:00000000 sint2str
-     /tmp/ccy8utXt.s:745    .text.sint2str:0000004c $d
-     /tmp/ccy8utXt.s:748    .text.unt2str:00000000 $t
-     /tmp/ccy8utXt.s:756    .text.unt2str:00000000 unt2str
-     /tmp/ccy8utXt.s:881    .text.unt2str:000000a8 $d
-     /tmp/ccy8utXt.s:884    .text.int2str:00000000 $t
-     /tmp/ccy8utXt.s:892    .text.int2str:00000000 int2str
-     /tmp/ccy8utXt.s:1066   .text.int2str:00000100 $d
-     /tmp/ccy8utXt.s:1070   .text.int2str_z:00000000 $t
-     /tmp/ccy8utXt.s:1078   .text.int2str_z:00000000 int2str_z
-     /tmp/ccy8utXt.s:1252   .text.int2str_z:00000100 $d
-     /tmp/ccy8utXt.s:1256   .text.num2str:00000000 $t
-ARM GAS  /tmp/ccy8utXt.s 			page 46
+     /tmp/ccV0nYAu.s:151    .text.StrFF:00000000 $t
+     /tmp/ccV0nYAu.s:159    .text.StrFF:00000000 StrFF
+     /tmp/ccV0nYAu.s:185    .text.StrFF:00000020 $d
+     /tmp/ccV0nYAu.s:188    .text.UART1_putc:00000000 $t
+     /tmp/ccV0nYAu.s:196    .text.UART1_putc:00000000 UART1_putc
+     /tmp/ccV0nYAu.s:215    .text.UART1_putc:00000010 $d
+     /tmp/ccV0nYAu.s:218    .text.UART2_putc:00000000 $t
+     /tmp/ccV0nYAu.s:226    .text.UART2_putc:00000000 UART2_putc
+     /tmp/ccV0nYAu.s:245    .text.UART2_putc:00000010 $d
+     /tmp/ccV0nYAu.s:248    .text.UART3_putc:00000000 $t
+     /tmp/ccV0nYAu.s:256    .text.UART3_putc:00000000 UART3_putc
+     /tmp/ccV0nYAu.s:275    .text.UART3_putc:00000010 $d
+     /tmp/ccV0nYAu.s:278    .text.UaPutC:00000000 $t
+     /tmp/ccV0nYAu.s:286    .text.UaPutC:00000000 UaPutC
+     /tmp/ccV0nYAu.s:297    .text.UaPutC:00000008 $d
+     /tmp/ccV0nYAu.s:300    .text.strrev:00000000 $t
+     /tmp/ccV0nYAu.s:308    .text.strrev:00000000 strrev
+     /tmp/ccV0nYAu.s:325    .text.reverse:00000000 $t
+     /tmp/ccV0nYAu.s:333    .text.reverse:00000000 reverse
+     /tmp/ccV0nYAu.s:369    .text.UaPutS:00000000 $t
+     /tmp/ccV0nYAu.s:377    .text.UaPutS:00000000 UaPutS
+     /tmp/ccV0nYAu.s:401    .text.UaPutS:00000018 $d
+     /tmp/ccV0nYAu.s:404    .text.UaPutK:00000000 $t
+     /tmp/ccV0nYAu.s:412    .text.UaPutK:00000000 UaPutK
+     /tmp/ccV0nYAu.s:419    .text.UART_getChar:00000000 $t
+     /tmp/ccV0nYAu.s:427    .text.UART_getChar:00000000 UART_getChar
+     /tmp/ccV0nYAu.s:478    .text.UART_getChar:0000002c $d
+     /tmp/ccV0nYAu.s:481    .text.UART_getChar2:00000000 $t
+     /tmp/ccV0nYAu.s:489    .text.UART_getChar2:00000000 UART_getChar2
+     /tmp/ccV0nYAu.s:540    .text.UART_getChar2:0000002c $d
+     /tmp/ccV0nYAu.s:543    .text.UART_getStr:00000000 $t
+     /tmp/ccV0nYAu.s:551    .text.UART_getStr:00000000 UART_getStr
+     /tmp/ccV0nYAu.s:631    .text.UART_getStr:00000050 $d
+     /tmp/ccV0nYAu.s:634    .text.uint2str:00000000 $t
+     /tmp/ccV0nYAu.s:642    .text.uint2str:00000000 uint2str
+     /tmp/ccV0nYAu.s:681    .text.uint2str:00000030 $d
+     /tmp/ccV0nYAu.s:684    .text.sint2str:00000000 $t
+     /tmp/ccV0nYAu.s:692    .text.sint2str:00000000 sint2str
+     /tmp/ccV0nYAu.s:745    .text.sint2str:0000004c $d
+     /tmp/ccV0nYAu.s:748    .text.unt2str:00000000 $t
+     /tmp/ccV0nYAu.s:756    .text.unt2str:00000000 unt2str
+     /tmp/ccV0nYAu.s:881    .text.unt2str:000000a8 $d
+     /tmp/ccV0nYAu.s:884    .text.int2str:00000000 $t
+     /tmp/ccV0nYAu.s:892    .text.int2str:00000000 int2str
+     /tmp/ccV0nYAu.s:1066   .text.int2str:00000100 $d
+     /tmp/ccV0nYAu.s:1070   .text.int2str_z:00000000 $t
+     /tmp/ccV0nYAu.s:1078   .text.int2str_z:00000000 int2str_z
+     /tmp/ccV0nYAu.s:1252   .text.int2str_z:00000100 $d
+     /tmp/ccV0nYAu.s:1256   .text.num2str:00000000 $t
+ARM GAS  /tmp/ccV0nYAu.s 			page 46
 
 
-     /tmp/ccy8utXt.s:1264   .text.num2str:00000000 num2str
-     /tmp/ccy8utXt.s:1384   .text.num2str:000000a8 $d
-     /tmp/ccy8utXt.s:1387   .text.hex2str:00000000 $t
-     /tmp/ccy8utXt.s:1395   .text.hex2str:00000000 hex2str
-     /tmp/ccy8utXt.s:1490   .text.hex2str:00000084 $d
-     /tmp/ccy8utXt.s:1493   .text.str2heX:00000000 $t
-     /tmp/ccy8utXt.s:1501   .text.str2heX:00000000 str2heX
-     /tmp/ccy8utXt.s:1564   .text.str2int:00000000 $t
-     /tmp/ccy8utXt.s:1572   .text.str2int:00000000 str2int
-     /tmp/ccy8utXt.s:1640   .text.UART_getNum:00000000 $t
-     /tmp/ccy8utXt.s:1648   .text.UART_getNum:00000000 UART_getNum
-     /tmp/ccy8utXt.s:1729   .text.UART_getNum:0000004c $d
-     /tmp/ccy8utXt.s:1732   .text.UART_getDec:00000000 $t
-     /tmp/ccy8utXt.s:1740   .text.UART_getDec:00000000 UART_getDec
-     /tmp/ccy8utXt.s:1829   .text.UART_getDec:0000005c $d
-     /tmp/ccy8utXt.s:1832   .text.str2hex:00000000 $t
-     /tmp/ccy8utXt.s:1840   .text.str2hex:00000000 str2hex
-     /tmp/ccy8utXt.s:1885   .text.UART_getHex:00000000 $t
-     /tmp/ccy8utXt.s:1893   .text.UART_getHex:00000000 UART_getHex
-     /tmp/ccy8utXt.s:1974   .text.UART_getHex:0000004c $d
-     /tmp/ccy8utXt.s:1977   .text.PSTR:00000000 $t
-     /tmp/ccy8utXt.s:1985   .text.PSTR:00000000 PSTR
-     /tmp/ccy8utXt.s:1993   .text.sint2uart:00000000 $t
-     /tmp/ccy8utXt.s:2001   .text.sint2uart:00000000 sint2uart
-     /tmp/ccy8utXt.s:2030   .text.sint2uart:00000024 $d
-     /tmp/ccy8utXt.s:2033   .text.uint2uart:00000000 $t
-     /tmp/ccy8utXt.s:2041   .text.uint2uart:00000000 uint2uart
-     /tmp/ccy8utXt.s:2070   .text.uint2uart:00000024 $d
-     /tmp/ccy8utXt.s:2073   .text.unt2uart:00000000 $t
-     /tmp/ccy8utXt.s:2081   .text.unt2uart:00000000 unt2uart
-     /tmp/ccy8utXt.s:2111   .text.unt2uart:00000024 $d
-     /tmp/ccy8utXt.s:2114   .text.int2uart:00000000 $t
-     /tmp/ccy8utXt.s:2122   .text.int2uart:00000000 int2uart
-     /tmp/ccy8utXt.s:2153   .text.int2uart:00000028 $d
-     /tmp/ccy8utXt.s:2156   .text.int2uarz:00000000 $t
-     /tmp/ccy8utXt.s:2164   .text.int2uarz:00000000 int2uarz
-     /tmp/ccy8utXt.s:2195   .text.int2uarz:00000028 $d
-     /tmp/ccy8utXt.s:2198   .text.num2uart:00000000 $t
-     /tmp/ccy8utXt.s:2206   .text.num2uart:00000000 num2uart
-     /tmp/ccy8utXt.s:2237   .text.num2uart:00000028 $d
-     /tmp/ccy8utXt.s:2240   .text.hex2uart:00000000 $t
-     /tmp/ccy8utXt.s:2248   .text.hex2uart:00000000 hex2uart
-     /tmp/ccy8utXt.s:2278   .text.hex2uart:00000024 $d
-     /tmp/ccy8utXt.s:2281   .text.USART1_IRQHandler:00000000 $t
-     /tmp/ccy8utXt.s:2289   .text.USART1_IRQHandler:00000000 USART1_IRQHandler
-     /tmp/ccy8utXt.s:2343   .text.USART1_IRQHandler:0000003c $d
-     /tmp/ccy8utXt.s:2347   .text.USART2_IRQHandler:00000000 $t
-     /tmp/ccy8utXt.s:2355   .text.USART2_IRQHandler:00000000 USART2_IRQHandler
-     /tmp/ccy8utXt.s:2409   .text.USART2_IRQHandler:0000003c $d
-     /tmp/ccy8utXt.s:2465   .data.p_Fifo3:00000000 p_Fifo3
-     /tmp/ccy8utXt.s:2459   .data.p_Fifo2:00000000 p_Fifo2
-     /tmp/ccy8utXt.s:2453   .data.p_Fifo1:00000000 p_Fifo1
+     /tmp/ccV0nYAu.s:1264   .text.num2str:00000000 num2str
+     /tmp/ccV0nYAu.s:1384   .text.num2str:000000a8 $d
+     /tmp/ccV0nYAu.s:1387   .text.hex2str:00000000 $t
+     /tmp/ccV0nYAu.s:1395   .text.hex2str:00000000 hex2str
+     /tmp/ccV0nYAu.s:1490   .text.hex2str:00000084 $d
+     /tmp/ccV0nYAu.s:1493   .text.str2heX:00000000 $t
+     /tmp/ccV0nYAu.s:1501   .text.str2heX:00000000 str2heX
+     /tmp/ccV0nYAu.s:1564   .text.str2int:00000000 $t
+     /tmp/ccV0nYAu.s:1572   .text.str2int:00000000 str2int
+     /tmp/ccV0nYAu.s:1640   .text.UART_getNum:00000000 $t
+     /tmp/ccV0nYAu.s:1648   .text.UART_getNum:00000000 UART_getNum
+     /tmp/ccV0nYAu.s:1729   .text.UART_getNum:0000004c $d
+     /tmp/ccV0nYAu.s:1732   .text.UART_getDec:00000000 $t
+     /tmp/ccV0nYAu.s:1740   .text.UART_getDec:00000000 UART_getDec
+     /tmp/ccV0nYAu.s:1832   .text.UART_getDec:00000060 $d
+     /tmp/ccV0nYAu.s:1835   .text.str2hex:00000000 $t
+     /tmp/ccV0nYAu.s:1843   .text.str2hex:00000000 str2hex
+     /tmp/ccV0nYAu.s:1888   .text.UART_getHex:00000000 $t
+     /tmp/ccV0nYAu.s:1896   .text.UART_getHex:00000000 UART_getHex
+     /tmp/ccV0nYAu.s:1977   .text.UART_getHex:0000004c $d
+     /tmp/ccV0nYAu.s:1980   .text.PSTR:00000000 $t
+     /tmp/ccV0nYAu.s:1988   .text.PSTR:00000000 PSTR
+     /tmp/ccV0nYAu.s:1996   .text.sint2uart:00000000 $t
+     /tmp/ccV0nYAu.s:2004   .text.sint2uart:00000000 sint2uart
+     /tmp/ccV0nYAu.s:2033   .text.sint2uart:00000024 $d
+     /tmp/ccV0nYAu.s:2036   .text.uint2uart:00000000 $t
+     /tmp/ccV0nYAu.s:2044   .text.uint2uart:00000000 uint2uart
+     /tmp/ccV0nYAu.s:2073   .text.uint2uart:00000024 $d
+     /tmp/ccV0nYAu.s:2076   .text.unt2uart:00000000 $t
+     /tmp/ccV0nYAu.s:2084   .text.unt2uart:00000000 unt2uart
+     /tmp/ccV0nYAu.s:2114   .text.unt2uart:00000024 $d
+     /tmp/ccV0nYAu.s:2117   .text.int2uart:00000000 $t
+     /tmp/ccV0nYAu.s:2125   .text.int2uart:00000000 int2uart
+     /tmp/ccV0nYAu.s:2156   .text.int2uart:00000028 $d
+     /tmp/ccV0nYAu.s:2159   .text.int2uarz:00000000 $t
+     /tmp/ccV0nYAu.s:2167   .text.int2uarz:00000000 int2uarz
+     /tmp/ccV0nYAu.s:2198   .text.int2uarz:00000028 $d
+     /tmp/ccV0nYAu.s:2201   .text.num2uart:00000000 $t
+     /tmp/ccV0nYAu.s:2209   .text.num2uart:00000000 num2uart
+     /tmp/ccV0nYAu.s:2240   .text.num2uart:00000028 $d
+     /tmp/ccV0nYAu.s:2243   .text.hex2uart:00000000 $t
+     /tmp/ccV0nYAu.s:2251   .text.hex2uart:00000000 hex2uart
+     /tmp/ccV0nYAu.s:2281   .text.hex2uart:00000024 $d
+     /tmp/ccV0nYAu.s:2284   .text.USART1_IRQHandler:00000000 $t
+     /tmp/ccV0nYAu.s:2292   .text.USART1_IRQHandler:00000000 USART1_IRQHandler
+     /tmp/ccV0nYAu.s:2346   .text.USART1_IRQHandler:0000003c $d
+     /tmp/ccV0nYAu.s:2350   .text.USART2_IRQHandler:00000000 $t
+     /tmp/ccV0nYAu.s:2358   .text.USART2_IRQHandler:00000000 USART2_IRQHandler
+     /tmp/ccV0nYAu.s:2412   .text.USART2_IRQHandler:0000003c $d
+     /tmp/ccV0nYAu.s:2468   .data.p_Fifo3:00000000 p_Fifo3
+     /tmp/ccV0nYAu.s:2462   .data.p_Fifo2:00000000 p_Fifo2
+     /tmp/ccV0nYAu.s:2456   .data.p_Fifo1:00000000 p_Fifo1
                             *COM*:00000024 ptm
-     /tmp/ccy8utXt.s:2418   .bss.Fifo1:00000000 $d
-     /tmp/ccy8utXt.s:2422   .bss.Fifo1:00000000 Fifo1
-     /tmp/ccy8utXt.s:2425   .bss.Fifo2:00000000 $d
-     /tmp/ccy8utXt.s:2429   .bss.Fifo2:00000000 Fifo2
-ARM GAS  /tmp/ccy8utXt.s 			page 47
+     /tmp/ccV0nYAu.s:2421   .bss.Fifo1:00000000 $d
+     /tmp/ccV0nYAu.s:2425   .bss.Fifo1:00000000 Fifo1
+     /tmp/ccV0nYAu.s:2428   .bss.Fifo2:00000000 $d
+     /tmp/ccV0nYAu.s:2432   .bss.Fifo2:00000000 Fifo2
+ARM GAS  /tmp/ccV0nYAu.s 			page 47
 
 
-     /tmp/ccy8utXt.s:2432   .bss.Fifo3:00000000 $d
-     /tmp/ccy8utXt.s:2435   .bss.Fifo3:00000000 Fifo3
-     /tmp/ccy8utXt.s:2441   .bss.sign.6124:00000000 sign.6124
-     /tmp/ccy8utXt.s:2442   .bss.sign.6124:00000000 $d
-     /tmp/ccy8utXt.s:2447   .bss.sign.6143:00000000 sign.6143
-     /tmp/ccy8utXt.s:2448   .bss.sign.6143:00000000 $d
-     /tmp/ccy8utXt.s:2450   .data.p_Fifo1:00000000 $d
-     /tmp/ccy8utXt.s:2456   .data.p_Fifo2:00000000 $d
-     /tmp/ccy8utXt.s:2462   .data.p_Fifo3:00000000 $d
-     /tmp/ccy8utXt.s:2468   .rodata.cyfhex:00000000 $d
-     /tmp/ccy8utXt.s:2472   .rodata.cyfhex:00000000 cyfhex
+     /tmp/ccV0nYAu.s:2435   .bss.Fifo3:00000000 $d
+     /tmp/ccV0nYAu.s:2438   .bss.Fifo3:00000000 Fifo3
+     /tmp/ccV0nYAu.s:2444   .bss.sign.6124:00000000 sign.6124
+     /tmp/ccV0nYAu.s:2445   .bss.sign.6124:00000000 $d
+     /tmp/ccV0nYAu.s:2450   .bss.sign.6143:00000000 sign.6143
+     /tmp/ccV0nYAu.s:2451   .bss.sign.6143:00000000 $d
+     /tmp/ccV0nYAu.s:2453   .data.p_Fifo1:00000000 $d
+     /tmp/ccV0nYAu.s:2459   .data.p_Fifo2:00000000 $d
+     /tmp/ccV0nYAu.s:2465   .data.p_Fifo3:00000000 $d
+     /tmp/ccV0nYAu.s:2471   .rodata.cyfhex:00000000 $d
+     /tmp/ccV0nYAu.s:2475   .rodata.cyfhex:00000000 cyfhex
 
 UNDEFINED SYMBOLS
 strlen

@@ -294,9 +294,11 @@ void oblicz(void){
 }
 
 void lion_updown(void){
+		// Temperatura optymalna   16-25 C
+		// Temperatura dopuszczalna 0-35 C
 		BkpRegInit();
-		Uart1Init(); // TTY4 Green->PA10_RX, White->PA9_TX 
-		Uart2Init(); // PA2_TX , PA3_RX
+		Uart1Init(); // PA9_TX(czarny), PA10_RX(bialy) 
+		Uart2Init(); // PA2_TX(braz) , PA3_RX(czerwony)
 		Uart3Init(); // 
 		//head();
 		
@@ -332,12 +334,11 @@ void lion_updown(void){
 		const u08 i2cnf[3]={0,0x1e,0x67},i2trig_bus[3]={0,0x1e,0x67};
 		
 		static u16  cnt,vr1,vr2;
-		static u32 Vavg,cah,cwh,Cah,Cwh,Rwa[2],cnt2;
+		static u32 Vavg,cah,cwh,Cah,CAh,Cwh,CWh,cnt2,Rwa;
 		static s32 vr3,vr4;
 		
-		static s16 pow,cal,ene,shunt,cur,dcur,vbus,dv,rw,ve;
+		static s16 pow,cal,ene,shunt,cur,dcur,vbus,dv,ve;
 		static u08 idt,sta,coile;
-		enum STAN{lad,roz,czk,pom,kon,rok,dal};
 		/* lad - ladowanie
 		 * roz - rozladowanie
 		 * czk - oczekiwanie
@@ -346,11 +347,11 @@ void lion_updown(void){
 		 * rok - konserwacja rozladowanie 
 		 * dal - tylko ladowanie
 		 */
+		enum STAN{					lad,			roz,			czk,			pom,			kon,			rok,			dal};
+		char tstat[7][8]={" LadPoj"," RozPoj"," Czekaj"," Napiec"," LadKon"," RozKon"," Laduj"};
 		_Bool beep=1;
 		char swh,str[3];
-		enum STAN stat;
-		char tstat[7][8]={" PojLad"," PojRoz"," Czekaj"," Napiec"," KonLad"," KonRoz"," Laduj"};
-		
+		enum STAN stat;		
 		i2c1r_init();
 		// Rshunt = 0.10156 ohm													 BADC	BADC MODE
 		//i2cnf[0]=0;    // Config Register 0x1f77 = 00011 1110 1110 111
@@ -393,13 +394,13 @@ void lion_updown(void){
 				shunt =i2reg[1] | (i2reg[0]<<8) ;//  & 0b0111111111111111;
 				
 				i2c1_read( INA219_ADDR,2,i2reg,2);
-				vbus = ((i2reg[1] | (i2reg[0]<<8))>>3)*4 ; //512/128
+				vbus = (((i2reg[1] | (i2reg[0]<<8))>>3)*510)/128 ; //512/128
 				//i2c1_read( INA219_ADDR,3,i2reg,2);
 				//pow =  i2reg[1] | (i2reg[0]<<8);
 				i2c1_read( INA219_ADDR,4,i2reg,2);
 				dcur = (i2reg[0]<<8) | i2reg[1] ;
 				
-				if( (cnt+1)%300==0 && stat == roz){  // pomiar rezystancji wewnetrznej
+				if( (cnt)%60==0 && stat == roz){  // pomiar rezystancji wewnetrznej co 1min
 					cnt2++;
 					ROZ = 0;
 					Delay_ms(500);
@@ -410,9 +411,7 @@ void lion_updown(void){
 					//sta = i2reg[1] & 0b00000111;
 					ROZ = 1;
 					Delay_ms(1);
-					rw = abs(1000*(ve-vbus)/cur);
-					Rwa[0] += rw;
-					Rwa[1] = Rwa[0]/cnt2;
+					Rwa = abs(1000*(ve-vbus)/cur);
 					//ve = ve-vbus;
 				}
 				
@@ -434,12 +433,12 @@ void lion_updown(void){
 					unt2uart ((cnt/60)%60,2);UaPutS(".");unt2uart (cnt%60,2);
 					UaPutS((char*)tstat[stat]);
 					
-					int2uart (vbus  ,4,3);	UaPutS("V");
+					int2uart (vbus  ,4,3);	UaPutS("V ");
 					int2uart (dcur  ,5,1);	UaPutS("mA");
 					int2uart (Cah   ,6,2);	UaPutS("mAh");
 					int2uart (pow   ,4,3);	UaPutS("W"); // (pow  ,4,3);
 					int2uart (Cwh   ,7,2);	UaPutS("mWh");
-					int2uart (Rwa[1],4,3);	UaPutS("ohm");
+					int2uart (Rwa   ,4,3);	UaPutS("ohm");
 					//int2uart (sta ,2,0);					
 					UaPutS("\r ");
 					
@@ -457,16 +456,16 @@ void lion_updown(void){
 					} */
 					
 
-					if(stat == lad || stat == roz || stat == kon || stat == rok) coile = 2;
+					if(stat == lad || stat == roz || stat == kon || stat == rok || stat == dal) coile = 2;
 					else coile = 2;
-					if( (cnt)%coile==0 ){  // pomiar rezystancji wewnetrznej
-						PutChar = UART2_putc; //przypisanie callback 
+					if( (cnt)%coile==0 ){   // pomiar rezystancji wewnetrznej
+						PutChar = UART2_putc; // przypisanie callback 
 						int2uarz (vbus  ,4,0); UaPutC(',');
 						int2uarz (cur   ,4,0); UaPutC(',');
 						int2uarz (Cah   ,6,0); UaPutC(',');
 						int2uarz (pow   ,4,0); UaPutC(',');
 						int2uarz (Cwh   ,7,0); UaPutC(',');
-						//int2uarz (rw 		,4,0);	
+						int2uarz (Rwa 	,4,0);	
 						//UaPutS("\n\r");
 						PutChar = UART1_putc;
 						//UaPutC = UART2_putc;
@@ -479,23 +478,35 @@ void lion_updown(void){
 			if( (STCLK_MS*2000 < (trg1 - SysTick->VAL)) ){	
 				trg1  = SysTick->VAL;	
 				
-				if(abs(cur) < 1000 && vbus > 4220 && stat == lad){ // start rozladowanie
+				if(abs(cur) < 1000 && vbus > 4200 && stat == lad){ // start rozladowanie
 					LAD = 0;
 					ROZ = 1;
 					cah = 0;
 					cwh = 0;
 					stat = roz;
-					rw = 0;
+					Rwa = 0;
 				} 
 				
-				if(vbus < 2600 && vbus > 2000 && stat==roz) { // koniec rozladowania
-					LAD = 0;
-					ROZ = 0;
-					beep= 1;
-					stat = czk;
+				if(vbus < 2600 && vbus > 2000 && stat==roz) { // koniec rozladowania z pomiarem pojemnosci
+					//LAD = 0;
+					//ROZ = 0;
+					//beep= 1;
+					//stat = czk;
+					
+					CAh = Cah/100;
+					CWh = Cwh/100;
+					cah = 0; cwh=0;
+					Cah = 0; Cwh=0;
+					
+					ROZ = 0; // odlacz zarowke
+					LAD = 1; 
+					tr_locate(3,1);  UaPutS(TRCLS" sqlite3 lion.db \"update lion set mAh="); uint2uart(CAh); 	
+					UaPutS(",mWh="); uint2uart(CWh); UaPutS(",Rw="); uint2uart(Rwa); UaPutS(",kon="); uint2uart(CAh*7/10);
+					UaPutS(" where id=85\""); tr_locate(2,1);
+					stat = kon; 
 				}
 				
-				if( abs(cur) < 50 && vbus < 4200 && stat == lad ){ // zanikanie ladowania
+				if( abs(cur) < 20 && vbus < 4200 && stat == lad ){ // zanikanie ladowania
 					LAD = 0;
 					ROZ = 1;
 					Delay_ms(50);
@@ -506,30 +517,37 @@ void lion_updown(void){
 					if(vbus < 2800 && vbus > 2000 && stat==rok) { // koniec rozladowania konserwujacego przed ladowaniem konserw
           ROZ = 0;
 					LAD = 1;
-					stat = kon;
 					cah = 0;
 					cwh = 0;
+					stat = kon;
 				}
 				
-					if( (Cah > vr1*70 || vbus > 4200) && stat == kon ){ // koniec ladowania konserwujacego 0.7*100
+					if( (Cah > CAh*70 || vbus > 4200) && stat == kon ){ // koniec ladowania konserwujacego 70%
 					LAD = 0;
 					ROZ = 0;
 					beep= 1;
 					stat = czk;	
 				}  
 				
-				if(abs(cur) < 100 && vbus > 4300 && stat == dal){ // koniec ladownia zwyklego
+				if(abs(cur) < 300 && vbus > 4200 && stat == dal){ // koniec ladownia zwyklego
 					LAD = 0;
 					ROZ = 0;
-					//beep= 1;
+					beep= 1;
 					stat = czk;
 				} 
 			}
 			
-			if( (STCLK_MS*500   < (trg2 - SysTick->VAL))) {
+			if( (STCLK_MS*200   < (trg2 - SysTick->VAL))) {
 				trg2  = SysTick->VAL;	
-				if(beep){	BEP ^= 1; }
+				if(beep){	BEP = 1; }
 			}
+			
+			if( (STCLK_MS*60000   < (trg4 - SysTick->VAL))) {
+				trg4  = SysTick->VAL;	
+				trg2  = SysTick->VAL;	
+				if(beep){	BEP = 0; }
+			}
+			
 			
 			if( (STCLK_MS*100   < (trg3 - SysTick->VAL))) {
 				trg3  = SysTick->VAL;	
@@ -585,34 +603,27 @@ void lion_updown(void){
 						//UaPutS("\r  \r");
 						beep= 0;
 						BEP = 1;
-						UaPutS(" Laduj do 70% x [mAh]=");
-						sint2uart(vr1);
-						UaPutS(" ");
-						vr4 = UART_getDec(&vr3) ;
-						if(vr4>1) vr1 = vr3;
-						UaPutS(TRCLS" Rozladuj [t/n]=");
-						UART_getStr(str) ;
-						sint2uart (vr2);
-						
-					  tr_locate(3,1);
-					  UaPutS(TRCLS"Laduj do [mAh]=");
- 						sint2uart (vr1*7/10);
+						UaPutS(" Laduj do 70% [mAh]=");	sint2uart(CAh);  UaPutS(" ");
+						if( UART_getDec(&vr3) ) CAh = vr3;
+						UaPutS(TRCLS" Zeruj [t]= ");
+						UART_getStr(str);
+						sint2uart  (vr2);
+					  tr_locate(3,1); UaPutS(TRCLS" Laduj do [mAh]=");	sint2uart (CAh*7/10);
 						tr_locate(2,1);
-						if(str[0]=='t') { stat = rok; LAD = 0;	ROZ = 1; }
-						else 			 { stat = kon; ROZ = 0;	LAD = 1; }
-						//var1 = UART_getNum();
+						if(str[0]=='n') {;}	else { cah = 0; cwh=0; }
+						stat = kon; ROZ = 0; LAD = 1; 
 					break;
 					case 'z':
 						//UaPutS("Zeruj Licznik pojemnosci");
 						cah = 0;
 						cwh = 0;
 						cnt = 0;
-						Rwa[0] = 0;
-						Rwa[1] = 0;
+						Rwa = 0;
 						//var1 = UART_getNum();
 						//UaPutS("\r\n Read Reg1=0x");	
 						//var1 = UART_getNum();
 						//var2 = UART_getHex();
+						tr_locate(3,1);  UaPutS(TRCLS);	tr_locate(2,1);
 					break;
 					case 'a':	// Ladowanie - i rozladowanie z pomiarem pojemnosci
 						ROZ = 0;
@@ -620,7 +631,10 @@ void lion_updown(void){
 						BEP = 1;
 						beep = 0; 
 						stat = lad;
-						rw = 0;
+						//rw = 0;
+						//cah = 0;
+						//cwh = 0;
+
 					break;
 					case 'd':	// Rozladowanie - z pomiarem pojemnosci
 						LAD = 0;
@@ -628,32 +642,44 @@ void lion_updown(void){
 						BEP = 1;
 						beep=0; 
 						stat = roz;
-						rw = 0;
+						Rwa = 0;
 					break;
 					case 'q':	// oczekiwanie
 						LAD = 0;
 						ROZ = 0;
 						BEP = 1;
 						stat = czk;
-						rw = 0;
+						Rwa = 0;
 					break;
 					case 'b':	// wylaczenia beepera
 						//BEP ^= 1;
-						beep   = 0;
-						BEP = 1;
+						beep ^= 1;
+						BEP  = 1;
 					break;
 					case 'v': // pomiar napiecia zrodla zasilania
 						//BEP ^= 1;
 						LAD = 1;
 						ROZ = 0;
 						stat = pom;
-						rw = 0;
+						Rwa = 0;
 					break;
-						case 'l': // pomiar napiecia zrodla zasilania
-						LAD = 1;
+					case 'l':	// Ladowanie zwykle
 						ROZ = 0;
+						LAD = 1;
+						BEP = 1;
+						beep = 0; 
 						stat = dal;
+						cah = 0;
+						cwh = 0;
 					break;
+					case 'u':	// sql update
+					CAh = Cah/100;
+					CWh = Cwh/100;
+					tr_locate(3,1);  UaPutS(TRCLS" sqlite3 lion.db \"update lion set mAh="); uint2uart(CAh); 	
+					UaPutS(",mWh="); uint2uart(CWh); UaPutS(",Rw="); uint2uart(Rwa); UaPutS(",kon="); uint2uart(CAh*7/10);
+					UaPutS(" where id=85\""); tr_locate(2,1);
+					break;
+					
 					default:
 					break;
 				}
